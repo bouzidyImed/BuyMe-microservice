@@ -1,0 +1,54 @@
+#server:
+#  port: 8080
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+#spring:
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        - id: auth-service
+#          uri: lb://auth-service
+#          predicates:
+#            - Path=/auth/**
+#          filters:
+#            - RewritePath=/auth/(?<path>.*), /$\{path}
+#        - id: product-service
+#          uri: lb://product-service
+#          predicates:
+#            - Path=/product/**
+#          filters:
+#            - RewritePath=/product/(?<path>.*), /$\{path}
+
+spring:
+  config:
+    activate:
+      on-profile: local
+  cloud:
+    gateway:
+          discovery:
+            locator:
+              enabled: false
+          routes:
+            - id: auth-service
+              uri: http://localhost:8085
+              predicates:
+                - Path=/auth/**
+            - id: product-service
+              uri: http://localhost:8086
+              predicates:
+                - Path=/product/**
+
+              #filters:
+              #  - RewritePath=/product/(?<path>.*), /${path}
+
+eureka:
+  client:
+    enabled: true
+
+
+
