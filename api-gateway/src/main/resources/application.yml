@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: ecom-api-gateway
-
-server:
-  port: 8081  # always 8081
