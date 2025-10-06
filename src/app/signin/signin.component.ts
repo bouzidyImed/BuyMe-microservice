@@ -1,16 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-signin',
-//   standalone: false,
-//   templateUrl: './signin.component.html',
-//   styleUrl: './signin.component.css'
-// })
-// export class SigninComponent {
-
-// }
-
-
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -29,8 +16,8 @@ export class SigninComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   onSubmit() {
-this.http.post('http://localhost:8081/auth/login', this.loginData).subscribe({
-        next: (response: any) => {
+    this.http.post('http://localhost:8765/auth/login', this.loginData).subscribe({
+      next: (response: any) => {
         this.successMessage = response.message || 'Login successful!';
         this.errorMessage = null;
         // Store token if needed (e.g., in localStorage)
