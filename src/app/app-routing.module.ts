@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ShopComponent } from './shop/shop.component';
 import { SingleComponent } from './single/single.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {path: 'signup', component: SignupComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'checkout', component: CheckoutComponent},
   {path: 'shop', component: ShopComponent},
   {path: 'single', component: SingleComponent},
+  {path: 'dashboard', component: DashboardComponent},
   { path: '', component: LandingComponent }
 
 ];
