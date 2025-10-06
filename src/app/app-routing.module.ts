@@ -3,14 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { LandingComponent } from './landing/landing.component';
-import { NotfoundComponent } from './notfound/notfound.component';
-import { BestsellerComponent } from './bestseller/bestseller.component';
-import { CartComponent } from './cart/cart.component';
-import { ContactComponent } from './contact/contact.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { ShopComponent } from './shop/shop.component';
-import { SingleComponent } from './single/single.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { NotfoundComponent } from './user/notfound/notfound.component';
+import { BestsellerComponent } from './user/bestseller/bestseller.component';
+import { CartComponent } from './user/cart/cart.component';
+import { ContactComponent } from './user/contact/contact.component';
+import { CheckoutComponent } from './user/checkout/checkout.component';
+import { ShopComponent } from './user/shop/shop.component';
+import { SingleComponent } from './user/single/single.component';
+import { DashboardComponent } from './user/dashboard/dashboard.component';
 
 const routes: Routes = [
   {path: 'signup', component: SignupComponent},
