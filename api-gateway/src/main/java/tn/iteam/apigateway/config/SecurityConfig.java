@@ -15,6 +15,7 @@ public class SecurityConfig {
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .cors(cors -> {})  // important: hook CorsWebFilter
                 .authorizeExchange(exchanges -> exchanges
+                        //.antMatchers("/api/categories/**").permitAll()
                         .anyExchange().permitAll() // let microservices handle auth
                 );
 
