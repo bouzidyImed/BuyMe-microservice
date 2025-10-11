@@ -1,0 +1,463 @@
+nohup: ignoring input
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------< [0;36mtn.iteam:api-gateway[0;1m >------------------------[m
+[[1;34mINFO[m] [1mBuilding api-gateway 0.0.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mspring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36mapi-gateway[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36mapi-gateway[0;1m ---[m
+[[1;34mINFO[m] Copying 3 resources from src/main/resources to target/classes
+[[1;34mINFO[m] Copying 0 resource from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.13.0:compile[m [1m(default-compile)[m @ [36mapi-gateway[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mapi-gateway[0;1m ---[m
+[[1;34mINFO[m] skip non existing resourceDirectory /home/imed/Documents/e-commerce-ms/api-gateway/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.13.0:testCompile[m [1m(default-testCompile)[m @ [36mapi-gateway[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mspring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36mapi-gateway[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[m @ [36mapi-gateway[0;1m ---[m
+[[1;34mINFO[m] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2025-10-08T19:56:27.906+01:00  INFO 15752 --- [ecom-api-gateway] [           main] t.i.apigateway.ApiGatewayApplication     : Starting ApiGatewayApplication using Java 17.0.14 with PID 15752 (/home/imed/Documents/e-commerce-ms/api-gateway/target/classes started by imed in /home/imed/Documents/e-commerce-ms/api-gateway)
+2025-10-08T19:56:27.914+01:00  INFO 15752 --- [ecom-api-gateway] [           main] t.i.apigateway.ApiGatewayApplication     : The following 1 profile is active: "local"
+2025-10-08T19:56:30.423+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=dd3bd29c-2c95-33f3-abeb-1aaa90372062
+2025-10-08T19:56:30.608+01:00  WARN 15752 --- [ecom-api-gateway] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-10-08T19:56:30.614+01:00  WARN 15752 --- [ecom-api-gateway] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-10-08T19:56:30.618+01:00  WARN 15752 --- [ecom-api-gateway] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-10-08T19:56:30.621+01:00  WARN 15752 --- [ecom-api-gateway] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-10-08T19:56:30.624+01:00  WARN 15752 --- [ecom-api-gateway] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-10-08T19:56:31.320+01:00  INFO 15752 --- [ecom-api-gateway] [           main] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 80eda302-c647-4889-82d7-2986d87efb0e
+
+2025-10-08T19:56:32.469+01:00 DEBUG 15752 --- [ecom-api-gateway] [           main] o.s.c.gateway.config.GatewayProperties   : Routes supplied from Gateway Properties: [RouteDefinition{id='auth-service', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/auth/**}}], filters=[], uri=http://localhost:8085, order=0, metadata={}}, RouteDefinition{id='catalogue-service', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/api/categories/**, _genkey_1=/api/products/**}}], filters=[], uri=http://localhost:8084, order=0, metadata={}}]
+2025-10-08T19:56:32.682+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2025-10-08T19:56:32.682+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2025-10-08T19:56:32.682+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2025-10-08T19:56:32.683+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2025-10-08T19:56:32.683+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2025-10-08T19:56:32.683+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2025-10-08T19:56:32.683+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2025-10-08T19:56:32.683+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2025-10-08T19:56:32.683+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2025-10-08T19:56:32.683+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2025-10-08T19:56:32.683+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2025-10-08T19:56:32.683+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-10-08T19:56:32.684+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2025-10-08T19:56:32.684+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-10-08T19:56:33.153+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2025-10-08T19:56:33.749+01:00  INFO 15752 --- [ecom-api-gateway] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-10-08T19:56:33.822+01:00  WARN 15752 --- [ecom-api-gateway] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-10-08T19:56:33.960+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-10-08T19:56:34.019+01:00  INFO 15752 --- [ecom-api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-10-08T19:56:34.034+01:00  INFO 15752 --- [ecom-api-gateway] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-08T19:56:34.059+01:00  INFO 15752 --- [ecom-api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-08T19:56:34.059+01:00  INFO 15752 --- [ecom-api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-08T19:56:34.060+01:00  INFO 15752 --- [ecom-api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-08T19:56:34.060+01:00  INFO 15752 --- [ecom-api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-08T19:56:34.061+01:00  INFO 15752 --- [ecom-api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-08T19:56:34.061+01:00  INFO 15752 --- [ecom-api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-10-08T19:56:34.061+01:00  INFO 15752 --- [ecom-api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-08T19:56:35.007+01:00  INFO 15752 --- [ecom-api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-08T19:56:35.009+01:00  INFO 15752 --- [ecom-api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-10-08T19:56:35.013+01:00  INFO 15752 --- [ecom-api-gateway] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-10-08T19:56:35.017+01:00  INFO 15752 --- [ecom-api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1759949795015 with initial instances count: 0
+2025-10-08T19:56:35.024+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ECOM-API-GATEWAY with eureka with status UP
+2025-10-08T19:56:35.025+01:00  INFO 15752 --- [ecom-api-gateway] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1759949795025, current=UP, previous=STARTING]
+2025-10-08T19:56:35.027+01:00  INFO 15752 --- [ecom-api-gateway] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ECOM-API-GATEWAY/192.168.189.1:ecom-api-gateway:8081: registering service...
+2025-10-08T19:56:35.068+01:00 DEBUG 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T19:56:35.140+01:00 DEBUG 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T19:56:35.140+01:00 DEBUG 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T19:56:35.144+01:00 DEBUG 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T19:56:35.159+01:00 DEBUG 15752 --- [ecom-api-gateway] [           main] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T19:56:35.304+01:00  INFO 15752 --- [ecom-api-gateway] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ECOM-API-GATEWAY/192.168.189.1:ecom-api-gateway:8081 - registration status: 204
+2025-10-08T19:56:35.364+01:00  INFO 15752 --- [ecom-api-gateway] [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8081 (http)
+2025-10-08T19:56:35.367+01:00  INFO 15752 --- [ecom-api-gateway] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2025-10-08T19:56:35.414+01:00 DEBUG 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T19:56:35.416+01:00 DEBUG 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T19:56:35.416+01:00 DEBUG 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T19:56:35.418+01:00 DEBUG 15752 --- [ecom-api-gateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T19:56:35.421+01:00 DEBUG 15752 --- [ecom-api-gateway] [           main] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T19:56:35.425+01:00  INFO 15752 --- [ecom-api-gateway] [           main] t.i.apigateway.ApiGatewayApplication     : Started ApiGatewayApplication in 8.457 seconds (process running for 9.078)
+2025-10-08T19:57:05.010+01:00  INFO 15752 --- [ecom-api-gateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-08T19:57:05.010+01:00  INFO 15752 --- [ecom-api-gateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-08T19:57:05.010+01:00  INFO 15752 --- [ecom-api-gateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-08T19:57:05.010+01:00  INFO 15752 --- [ecom-api-gateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-08T19:57:05.010+01:00  INFO 15752 --- [ecom-api-gateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-08T19:57:05.011+01:00  INFO 15752 --- [ecom-api-gateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2025-10-08T19:57:05.011+01:00  INFO 15752 --- [ecom-api-gateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-08T19:57:05.043+01:00  INFO 15752 --- [ecom-api-gateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-08T19:57:05.048+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T19:57:05.051+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T19:57:05.052+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T19:57:05.055+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T19:57:05.057+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T19:57:35.077+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T19:57:35.080+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T19:57:35.080+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T19:57:35.083+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T19:57:35.084+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T19:58:05.105+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T19:58:05.108+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T19:58:05.109+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T19:58:05.112+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T19:58:05.113+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T19:58:35.128+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T19:58:35.130+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T19:58:35.131+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T19:58:35.133+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T19:58:35.134+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T19:59:05.149+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T19:59:05.151+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T19:59:05.152+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T19:59:05.154+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T19:59:05.155+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T19:59:35.171+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T19:59:35.174+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T19:59:35.174+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T19:59:35.178+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T19:59:35.179+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:00:05.193+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:00:05.196+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:00:05.196+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:00:05.198+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:00:05.199+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:00:35.213+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:00:35.215+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:00:35.215+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:00:35.218+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:00:35.219+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:01:05.233+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:01:05.235+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:01:05.235+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:01:05.237+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:01:05.239+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:01:34.065+01:00  INFO 15752 --- [ecom-api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-08T20:01:35.250+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:01:35.253+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:01:35.254+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:01:35.256+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:01:35.258+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:02:05.270+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:02:05.272+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:02:05.272+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:02:05.275+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:02:05.276+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:02:35.288+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:02:35.290+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:02:35.291+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:02:35.293+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:02:35.294+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:03:05.305+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:03:05.307+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:03:05.307+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:03:05.309+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:03:05.310+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:03:35.321+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:03:35.323+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:03:35.324+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:03:35.326+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:03:35.327+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:04:05.339+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:04:05.341+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:04:05.342+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:04:05.344+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:04:05.345+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:04:35.356+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:04:35.359+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:04:35.360+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:04:35.362+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:04:35.364+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:05:05.375+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:05:05.378+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:05:05.379+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:05:05.381+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:05:05.383+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:05:35.395+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:05:35.397+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:05:35.397+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:05:35.399+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:05:35.400+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:06:05.411+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:06:05.413+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:06:05.414+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:06:05.416+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:06:05.417+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:06:34.067+01:00  INFO 15752 --- [ecom-api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-08T20:06:35.428+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:06:35.431+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:06:35.431+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:06:35.433+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:06:35.435+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:07:05.451+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:07:05.453+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:07:05.454+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:07:05.456+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:07:05.457+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:07:35.468+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:07:35.470+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:07:35.470+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:07:35.471+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:07:35.472+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:08:05.484+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:08:05.486+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:08:05.486+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:08:05.488+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:08:05.490+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:08:35.502+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:08:35.505+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:08:35.505+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:08:35.508+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:08:35.510+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:09:05.520+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:09:05.522+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:09:05.523+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:09:05.524+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:09:05.526+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:09:35.537+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:09:35.539+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:09:35.540+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:09:35.542+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:09:35.543+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:10:05.558+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:10:05.561+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:10:05.562+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:10:05.565+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:10:05.566+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:10:08.642+01:00 DEBUG 15752 --- [ecom-api-gateway] [     parallel-1] o.s.c.g.h.RoutePredicateHandlerMapping   : Route matched: catalogue-service
+2025-10-08T20:10:08.643+01:00 DEBUG 15752 --- [ecom-api-gateway] [     parallel-1] o.s.c.g.h.RoutePredicateHandlerMapping   : Mapping [Exchange: POST http://localhost:8081/api/products/new-prod] to Route{id='catalogue-service', uri=http://localhost:8084, order=0, predicate=Paths: [/api/categories/**, /api/products/**], match trailing slash: true, gatewayFilters=[], metadata={}}
+2025-10-08T20:10:08.644+01:00 DEBUG 15752 --- [ecom-api-gateway] [     parallel-1] o.s.c.g.h.RoutePredicateHandlerMapping   : [1cd370fc-1] Mapped to org.springframework.cloud.gateway.handler.FilteringWebHandler@54095562
+2025-10-08T20:10:08.647+01:00 DEBUG 15752 --- [ecom-api-gateway] [     parallel-1] o.s.c.g.handler.FilteringWebHandler      : Sorted gatewayFilterFactories: [[GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RemoveCachedBodyFilter@267ff4df}, order = -2147483648], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.AdaptCachedBodyGlobalFilter@681de87f}, order = -2147482648], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyWriteResponseFilter@4e8598d9}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardPathFilter@e26a3df}, order = 0], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.GatewayMetricsFilter@712cd5d3}, order = 0], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RouteToRequestUrlFilter@7c4b5ceb}, order = 10000], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ReactiveLoadBalancerClientFilter@13ef7fa1}, order = 10150], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.LoadBalancerServiceInstanceCookieFilter@23b1aa9}, order = 10151], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.WebsocketRoutingFilter@57a667c8}, order = 2147483646], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyRoutingFilter@54489296}, order = 2147483647], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardRoutingFilter@6c07add6}, order = 2147483647]]
+2025-10-08T20:10:08.668+01:00 DEBUG 15752 --- [ecom-api-gateway] [     parallel-1] g.f.h.o.ObservedRequestHttpHeadersFilter : Will instrument the HTTP request headers [Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkbWluQHdpbmRvd1Nob3BwZXIuY29tIiwiaWF0IjoxNzU5Nzc2MTA1LCJleHAiOjE3NTk4MTIxMDV9.NaRMT1WT9MBncomN-hQI_REsuUrWYbJgHaQaSAypjew3haVs99q5leqx5RH-TzGTOE8gt8EHjuNrx1EUDN2kGQ", User-Agent:"PostmanRuntime/7.48.0", Accept:"*/*", Postman-Token:"c233abfc-cd77-41a7-9192-a6b0de8f0a28", Host:"localhost:8081", Accept-Encoding:"gzip, deflate, br", Content-Length:"46", Forwarded:"proto=http;host="localhost:8081";for="[0:0:0:0:0:0:0:1]:45028"", X-Forwarded-For:"0:0:0:0:0:0:0:1", X-Forwarded-Proto:"http", X-Forwarded-Port:"8081", X-Forwarded-Host:"localhost:8081"]
+2025-10-08T20:10:08.677+01:00 DEBUG 15752 --- [ecom-api-gateway] [     parallel-1] g.f.h.o.ObservedRequestHttpHeadersFilter : Client observation  {name=http.client.requests(null), error=null, context=name='http.client.requests', contextualName='null', error='null', lowCardinalityKeyValues=[http.method='POST', http.status_code='UNKNOWN', spring.cloud.gateway.route.id='catalogue-service', spring.cloud.gateway.route.uri='http://localhost:8084'], highCardinalityKeyValues=[http.uri='http://localhost:8081/api/products/new-prod'], map=[class io.micrometer.core.instrument.Timer$Sample='io.micrometer.core.instrument.Timer$Sample@109b3bef', class io.micrometer.core.instrument.LongTaskTimer$Sample='SampleImpl{duration(seconds)=0.002934833, duration(nanos)=2934833.0, startTimeNanos=9070176872410}'], parentObservation=org.springframework.security.web.server.ObservationWebFilterChainDecorator$PhasedObservation@27bf8ee0} created for the request. New headers are [Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkbWluQHdpbmRvd1Nob3BwZXIuY29tIiwiaWF0IjoxNzU5Nzc2MTA1LCJleHAiOjE3NTk4MTIxMDV9.NaRMT1WT9MBncomN-hQI_REsuUrWYbJgHaQaSAypjew3haVs99q5leqx5RH-TzGTOE8gt8EHjuNrx1EUDN2kGQ", User-Agent:"PostmanRuntime/7.48.0", Accept:"*/*", Postman-Token:"c233abfc-cd77-41a7-9192-a6b0de8f0a28", Host:"localhost:8081", Accept-Encoding:"gzip, deflate, br", Content-Length:"46", Forwarded:"proto=http;host="localhost:8081";for="[0:0:0:0:0:0:0:1]:45028"", X-Forwarded-For:"0:0:0:0:0:0:0:1", X-Forwarded-Proto:"http", X-Forwarded-Port:"8081", X-Forwarded-Host:"localhost:8081"]
+2025-10-08T20:10:11.653+01:00 DEBUG 15752 --- [ecom-api-gateway] [or-http-epoll-5] .f.h.o.ObservedResponseHttpHeadersFilter : Will instrument the response
+2025-10-08T20:10:11.676+01:00 DEBUG 15752 --- [ecom-api-gateway] [or-http-epoll-5] .f.h.o.ObservedResponseHttpHeadersFilter : The response was handled for observation {name=http.client.requests(null), error=null, context=name='http.client.requests', contextualName='null', error='null', lowCardinalityKeyValues=[http.method='POST', http.status_code='UNKNOWN', spring.cloud.gateway.route.id='catalogue-service', spring.cloud.gateway.route.uri='http://localhost:8084'], highCardinalityKeyValues=[http.uri='http://localhost:8081/api/products/new-prod'], map=[class io.micrometer.core.instrument.Timer$Sample='io.micrometer.core.instrument.Timer$Sample@109b3bef', class io.micrometer.core.instrument.LongTaskTimer$Sample='SampleImpl{duration(seconds)=2.980078232, duration(nanos)=2.980078232E9, startTimeNanos=9070176872410}'], parentObservation=org.springframework.security.web.server.ObservationWebFilterChainDecorator$PhasedObservation@27bf8ee0}
+2025-10-08T20:10:35.580+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:10:35.584+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:10:35.585+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:10:35.589+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:10:35.591+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:11:05.601+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:11:05.604+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:11:05.605+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:11:05.607+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:11:05.608+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:11:34.068+01:00  INFO 15752 --- [ecom-api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-08T20:11:35.618+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:11:35.621+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:11:35.622+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:11:35.624+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:11:35.626+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:12:05.638+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:12:05.641+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:12:05.642+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:12:05.644+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:12:05.645+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:12:35.656+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:12:35.658+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:12:35.658+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:12:35.660+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:12:35.661+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:13:05.671+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:13:05.673+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:13:05.673+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:13:05.676+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:13:05.677+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:13:35.687+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:13:35.689+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:13:35.690+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:13:35.692+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:13:35.694+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:14:05.703+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:14:05.706+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:14:05.706+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:14:05.708+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:14:05.709+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:14:35.719+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:14:35.721+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:14:35.722+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:14:35.723+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:14:35.724+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:15:05.740+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:15:05.742+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:15:05.743+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:15:05.745+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:15:05.746+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:15:35.760+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:15:35.762+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:15:35.763+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:15:35.765+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:15:35.765+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:16:05.776+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:16:05.778+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:16:05.779+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:16:05.781+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:16:05.782+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:16:34.069+01:00  INFO 15752 --- [ecom-api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-08T20:16:35.797+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:16:35.799+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:16:35.799+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:16:35.801+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:16:35.802+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:17:05.821+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:17:05.824+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:17:05.825+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:17:05.827+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:17:05.828+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:17:35.842+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:17:35.845+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:17:35.845+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:17:35.847+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:17:35.849+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:18:05.864+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:18:05.867+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:18:05.867+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:18:05.868+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:18:05.869+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:18:35.923+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:18:35.926+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:18:35.926+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:18:35.928+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:18:35.930+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:19:05.947+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:19:05.950+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:19:05.951+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:19:05.953+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:19:05.955+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:19:35.971+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:19:35.973+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:19:35.973+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:19:35.976+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:19:35.977+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:20:05.995+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:20:05.997+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:20:05.998+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:20:05.999+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:20:06.000+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:20:36.017+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:20:36.020+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:20:36.020+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:20:36.022+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:20:36.023+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:21:06.035+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:21:06.037+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:21:06.037+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:21:06.039+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:21:06.041+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:21:34.070+01:00  INFO 15752 --- [ecom-api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-08T20:21:36.056+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:21:36.058+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:21:36.058+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:21:36.060+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:21:36.061+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:22:06.071+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:22:06.073+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:22:06.074+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:22:06.076+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:22:06.077+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:22:36.086+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:22:36.088+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:22:36.088+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:22:36.090+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:22:36.091+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:23:06.103+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:23:06.107+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:23:06.107+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:23:06.110+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:23:06.112+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:23:36.126+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:23:36.133+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:23:36.137+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:23:36.143+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:23:36.147+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:24:06.157+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:24:06.159+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:24:06.160+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:24:06.162+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:24:06.163+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:24:36.173+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:24:36.176+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:24:36.176+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:24:36.178+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:24:36.179+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:25:06.189+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:25:06.191+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:25:06.191+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:25:06.193+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:25:06.194+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:25:36.202+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:25:36.204+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:25:36.204+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:25:36.205+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:25:36.206+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:26:06.260+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:26:06.273+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:26:06.274+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:26:06.283+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:26:06.285+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:26:34.071+01:00  INFO 15752 --- [ecom-api-gateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-08T20:26:36.294+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:26:36.296+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:26:36.296+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:26:36.298+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:26:36.299+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:27:06.307+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:27:06.310+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:27:06.311+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:27:06.312+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:27:06.314+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:27:36.322+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:27:36.324+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:27:36.324+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:27:36.326+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:27:36.328+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:28:06.340+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:28:06.342+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:28:06.342+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:28:06.344+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:28:06.345+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:28:36.354+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:28:36.356+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:28:36.356+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:28:36.358+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:28:36.359+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:29:06.369+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:29:06.372+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:29:06.372+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:29:06.375+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:29:06.376+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+2025-10-08T20:29:36.385+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition auth-service applying {_genkey_0=/auth/**} to Path
+2025-10-08T20:29:36.387+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: auth-service
+2025-10-08T20:29:36.388+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition catalogue-service applying {_genkey_0=/api/categories/**, _genkey_1=/api/products/**} to Path
+2025-10-08T20:29:36.390+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: catalogue-service
+2025-10-08T20:29:36.391+01:00 DEBUG 15752 --- [ecom-api-gateway] [reshExecutor-%d] o.s.c.g.filter.GatewayMetricsFilter      : New routes count: 2
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  33:30 min
+[[1;34mINFO[m] Finished at: 2025-10-08T20:29:53+01:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.springframework.boot:spring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[m on project [36mapi-gateway[m: [1;31mProcess terminated with exit code: 137[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: cart-service
+
+jwt:
+  secret: pFagBCUehilQNym09+KkGm4DkMuW9taEC6asn3yGLULaXrziya/aZaVdd0LLZOmyJMxV8LBmwxW/9f/mxx3uDA==
+
+app:
+  upload:
+    dir: /home/imed/Documents/stage/simple_spring_ms/cart-service/uploads
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,metrics,loggers  # Standard set; add 'beans' for deeper dev debugging
+  endpoint:
+    health:
+      show-details: always  # Includes DB/JVM details
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG  # For REST endpoints
+    org.springframework.security: DEBUG  # For JWT/auth

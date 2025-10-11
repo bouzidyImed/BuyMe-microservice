@@ -1,0 +1,269 @@
+nohup: ignoring input
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------------------< [0;36mtn.iteam:eureka-server[0;1m >-----------------------[m
+[[1;34mINFO[m] [1mBuilding eureka-server 0.0.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mspring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36meureka-server[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36meureka-server[0;1m ---[m
+[[1;34mINFO[m] Copying 3 resources from src/main/resources to target/classes
+[[1;34mINFO[m] Copying 0 resource from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.13.0:compile[m [1m(default-compile)[m @ [36meureka-server[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36meureka-server[0;1m ---[m
+[[1;34mINFO[m] skip non existing resourceDirectory /home/imed/Documents/e-commerce-ms/eureka-server/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.13.0:testCompile[m [1m(default-testCompile)[m @ [36meureka-server[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mspring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36meureka-server[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[m @ [36meureka-server[0;1m ---[m
+[[1;34mINFO[m] Attaching agents: []
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2025-10-08T19:49:15.793+01:00  INFO 14947 --- [eureka-server] [           main] t.i.e.EurekaServerApplication            : Starting EurekaServerApplication using Java 17.0.14 with PID 14947 (/home/imed/Documents/e-commerce-ms/eureka-server/target/classes started by imed in /home/imed/Documents/e-commerce-ms/eureka-server)
+2025-10-08T19:49:15.800+01:00  INFO 14947 --- [eureka-server] [           main] t.i.e.EurekaServerApplication            : The following 1 profile is active: "local"
+2025-10-08T19:49:17.749+01:00  INFO 14947 --- [eureka-server] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8f3ec10f-59cd-397d-82f3-7da97306a40e
+2025-10-08T19:49:17.846+01:00  WARN 14947 --- [eureka-server] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-10-08T19:49:17.853+01:00  WARN 14947 --- [eureka-server] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-10-08T19:49:18.291+01:00  INFO 14947 --- [eureka-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8761 (http)
+2025-10-08T19:49:18.315+01:00  INFO 14947 --- [eureka-server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-08T19:49:18.315+01:00  INFO 14947 --- [eureka-server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-10-08T19:49:18.428+01:00  INFO 14947 --- [eureka-server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-08T19:49:18.430+01:00  INFO 14947 --- [eureka-server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2536 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+2025-10-08T19:49:20.076+01:00  INFO 14947 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2025-10-08T19:49:20.078+01:00  INFO 14947 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2025-10-08T19:49:20.398+01:00  INFO 14947 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2025-10-08T19:49:20.399+01:00  INFO 14947 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2025-10-08T19:49:22.037+01:00  WARN 14947 --- [eureka-server] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-10-08T19:49:22.077+01:00  INFO 14947 --- [eureka-server] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-10-08T19:49:22.129+01:00  INFO 14947 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-10-08T19:49:22.130+01:00  INFO 14947 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2025-10-08T19:49:22.133+01:00  INFO 14947 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1759949362132 with initial instances count: 0
+2025-10-08T19:49:22.210+01:00  INFO 14947 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2025-10-08T19:49:22.214+01:00  INFO 14947 --- [eureka-server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+2025-10-08T19:49:22.492+01:00  INFO 14947 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2025-10-08T19:49:22.493+01:00  INFO 14947 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2025-10-08T19:49:22.493+01:00  INFO 14947 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2025-10-08T19:49:22.493+01:00  INFO 14947 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2025-10-08T19:49:22.566+01:00  INFO 14947 --- [eureka-server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+2025-10-08T19:49:22.583+01:00  INFO 14947 --- [eureka-server] [           main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2025-10-08T19:49:22.584+01:00  INFO 14947 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2025-10-08T19:49:22.603+01:00  INFO 14947 --- [eureka-server] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-10-08T19:49:22.694+01:00  INFO 14947 --- [eureka-server] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVER with eureka with status UP
+2025-10-08T19:49:22.725+01:00  INFO 14947 --- [eureka-server] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2025-10-08T19:49:22.726+01:00  INFO 14947 --- [eureka-server] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2025-10-08T19:49:22.727+01:00  INFO 14947 --- [eureka-server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2025-10-08T19:49:22.728+01:00  INFO 14947 --- [eureka-server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2025-10-08T19:49:22.729+01:00  INFO 14947 --- [eureka-server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2025-10-08T19:49:22.735+01:00  INFO 14947 --- [eureka-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8761 (http) with context path '/'
+2025-10-08T19:49:22.736+01:00  INFO 14947 --- [eureka-server] [       Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2025-10-08T19:49:22.738+01:00  INFO 14947 --- [eureka-server] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2025-10-08T19:49:22.778+01:00  INFO 14947 --- [eureka-server] [           main] t.i.e.EurekaServerApplication            : Started EurekaServerApplication in 8.241 seconds (process running for 8.868)
+2025-10-08T19:49:53.587+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-08T19:49:53.588+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-08T19:49:53.591+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-10-08T19:50:22.731+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T19:51:22.731+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T19:52:22.731+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T19:53:22.731+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T19:54:22.732+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T19:55:22.732+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T19:56:22.732+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T19:56:35.290+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ECOM-API-GATEWAY/192.168.189.1:ecom-api-gateway:8081 with status UP (replication=false)
+2025-10-08T19:56:36.073+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ECOM-API-GATEWAY/192.168.189.1:ecom-api-gateway:8081 with status UP (replication=true)
+2025-10-08T19:57:22.732+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T19:58:07.672+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance AUTH-REGISTER-SERVICE/192.168.189.1:auth-register-service:8085 with status UP (replication=false)
+2025-10-08T19:58:08.186+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance AUTH-REGISTER-SERVICE/192.168.189.1:auth-register-service:8085 with status UP (replication=true)
+2025-10-08T19:58:22.732+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T19:59:22.733+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:00:22.733+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:01:22.733+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:02:22.733+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:03:22.733+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:04:22.584+01:00  INFO 14947 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
+2025-10-08T20:04:22.734+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:05:22.733+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:06:22.733+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:06:34.334+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATALOGUE-SERVICE/192.168.189.1:catalogue-service:8084 with status UP (replication=false)
+2025-10-08T20:06:34.844+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATALOGUE-SERVICE/192.168.189.1:catalogue-service:8084 with status UP (replication=true)
+2025-10-08T20:07:22.734+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:08:22.735+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:09:22.735+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:10:22.735+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:11:22.735+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:12:22.736+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:13:22.737+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:14:22.737+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:15:22.737+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:16:22.738+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:17:22.739+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:18:22.738+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:19:22.584+01:00  INFO 14947 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-10-08T20:19:22.744+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:19:33.171+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status UP (replication=false)
+2025-10-08T20:19:33.685+01:00  INFO 14947 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status UP (replication=true)
+2025-10-08T20:20:22.738+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:21:22.738+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:22:22.739+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:23:22.739+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:24:22.740+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:25:22.740+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:26:22.740+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:27:22.741+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:28:22.741+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:29:22.741+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:30:22.741+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:31:01.537+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ECOM-API-GATEWAY/192.168.189.1:ecom-api-gateway:8081 with status UP (replication=false)
+2025-10-08T20:31:02.051+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ECOM-API-GATEWAY/192.168.189.1:ecom-api-gateway:8081 with status UP (replication=true)
+2025-10-08T20:31:22.742+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:32:22.741+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:32:22.742+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=1, evictionLimit=1)
+2025-10-08T20:32:22.747+01:00  WARN 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for CART-SERVICE/192.168.189.1:cart-service:8086
+2025-10-08T20:32:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CART-SERVICE/192.168.189.1:cart-service:8086 (replication=false)
+2025-10-08T20:33:22.741+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:34:22.584+01:00  INFO 14947 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-10-08T20:34:22.742+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:35:22.742+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:36:22.742+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:37:22.742+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:38:22.743+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:39:22.743+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:40:22.743+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:41:22.743+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:42:22.744+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:43:22.744+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:44:22.744+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:45:22.744+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:46:22.745+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:47:22.746+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:48:22.745+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:49:22.583+01:00  INFO 14947 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-10-08T20:49:22.745+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:50:22.745+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:51:22.746+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:52:22.746+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:53:22.746+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:54:22.746+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:55:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:56:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:57:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:58:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T20:59:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:00:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:01:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:02:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:03:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:04:22.583+01:00  INFO 14947 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-10-08T21:04:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:05:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:06:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:07:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:08:22.747+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:09:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:10:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:11:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:12:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:13:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:14:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:15:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:16:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:17:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:18:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:18:53.737+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status UP (replication=false)
+2025-10-08T21:18:54.249+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status UP (replication=true)
+2025-10-08T21:19:22.583+01:00  INFO 14947 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 8
+2025-10-08T21:19:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:19:41.978+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status DOWN (replication=false)
+2025-10-08T21:19:42.495+01:00  INFO 14947 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status DOWN (replication=true)
+2025-10-08T21:19:45.024+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CART-SERVICE/192.168.189.1:cart-service:8086 (replication=false)
+2025-10-08T21:19:45.546+01:00  WARN 14947 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CART-SERVICE/192.168.189.1:cart-service:8086
+2025-10-08T21:19:45.547+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-4] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CART-SERVICE - 192.168.189.1:cart-service:8086
+2025-10-08T21:19:45.549+01:00  WARN 14947 --- [eureka-server] [et_localhost-15] c.n.eureka.cluster.ReplicationTask       : The replication of task CART-SERVICE/192.168.189.1:cart-service:8086:Cancel@localhost failed with response code 404
+2025-10-08T21:19:45.549+01:00  WARN 14947 --- [eureka-server] [et_localhost-15] c.netflix.eureka.cluster.PeerEurekaNode  : CART-SERVICE/192.168.189.1:cart-service:8086:Cancel@localhost: missing entry.
+2025-10-08T21:20:01.862+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status UP (replication=false)
+2025-10-08T21:20:02.379+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status UP (replication=true)
+2025-10-08T21:20:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:21:12.114+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status DOWN (replication=false)
+2025-10-08T21:21:12.625+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status DOWN (replication=true)
+2025-10-08T21:21:15.144+01:00  INFO 14947 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CART-SERVICE/192.168.189.1:cart-service:8086 (replication=false)
+2025-10-08T21:21:15.655+01:00  WARN 14947 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CART-SERVICE/192.168.189.1:cart-service:8086
+2025-10-08T21:21:15.655+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CART-SERVICE - 192.168.189.1:cart-service:8086
+2025-10-08T21:21:15.656+01:00  WARN 14947 --- [eureka-server] [get_localhost-5] c.n.eureka.cluster.ReplicationTask       : The replication of task CART-SERVICE/192.168.189.1:cart-service:8086:Cancel@localhost failed with response code 404
+2025-10-08T21:21:15.657+01:00  WARN 14947 --- [eureka-server] [get_localhost-5] c.netflix.eureka.cluster.PeerEurekaNode  : CART-SERVICE/192.168.189.1:cart-service:8086:Cancel@localhost: missing entry.
+2025-10-08T21:21:22.749+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:22:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:23:22.749+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:24:22.748+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:25:22.749+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:26:22.749+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:26:42.386+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status UP (replication=false)
+2025-10-08T21:26:42.897+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status UP (replication=true)
+2025-10-08T21:27:22.750+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:27:50.873+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status DOWN (replication=false)
+2025-10-08T21:27:51.389+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status DOWN (replication=true)
+2025-10-08T21:27:53.908+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CART-SERVICE/192.168.189.1:cart-service:8086 (replication=false)
+2025-10-08T21:27:54.418+01:00  WARN 14947 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CART-SERVICE/192.168.189.1:cart-service:8086
+2025-10-08T21:27:54.419+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-9] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CART-SERVICE - 192.168.189.1:cart-service:8086
+2025-10-08T21:27:54.420+01:00  WARN 14947 --- [eureka-server] [et_localhost-15] c.n.eureka.cluster.ReplicationTask       : The replication of task CART-SERVICE/192.168.189.1:cart-service:8086:Cancel@localhost failed with response code 404
+2025-10-08T21:27:54.421+01:00  WARN 14947 --- [eureka-server] [et_localhost-15] c.netflix.eureka.cluster.PeerEurekaNode  : CART-SERVICE/192.168.189.1:cart-service:8086:Cancel@localhost: missing entry.
+2025-10-08T21:28:13.859+01:00  INFO 14947 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status UP (replication=false)
+2025-10-08T21:28:14.369+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status UP (replication=true)
+2025-10-08T21:28:22.749+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:29:22.750+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:30:22.749+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:31:22.749+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:32:22.749+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:33:22.749+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:34:22.583+01:00  INFO 14947 --- [eureka-server] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 8
+2025-10-08T21:34:22.750+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:35:22.750+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:36:22.750+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:37:22.751+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:37:47.576+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status DOWN (replication=false)
+2025-10-08T21:37:48.087+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CART-SERVICE/192.168.189.1:cart-service:8086 with status DOWN (replication=true)
+2025-10-08T21:37:50.617+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CART-SERVICE/192.168.189.1:cart-service:8086 (replication=false)
+2025-10-08T21:37:51.127+01:00  WARN 14947 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CART-SERVICE/192.168.189.1:cart-service:8086
+2025-10-08T21:37:51.127+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-9] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CART-SERVICE - 192.168.189.1:cart-service:8086
+2025-10-08T21:37:51.129+01:00  WARN 14947 --- [eureka-server] [et_localhost-13] c.n.eureka.cluster.ReplicationTask       : The replication of task CART-SERVICE/192.168.189.1:cart-service:8086:Cancel@localhost failed with response code 404
+2025-10-08T21:37:51.129+01:00  WARN 14947 --- [eureka-server] [et_localhost-13] c.netflix.eureka.cluster.PeerEurekaNode  : CART-SERVICE/192.168.189.1:cart-service:8086:Cancel@localhost: missing entry.
+2025-10-08T21:38:22.750+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:38:43.231+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ECOM-API-GATEWAY/192.168.189.1:ecom-api-gateway:8081 with status DOWN (replication=false)
+2025-10-08T21:38:43.743+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ECOM-API-GATEWAY/192.168.189.1:ecom-api-gateway:8081 with status DOWN (replication=true)
+2025-10-08T21:38:48.272+01:00  INFO 14947 --- [eureka-server] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance ECOM-API-GATEWAY/192.168.189.1:ecom-api-gateway:8081 (replication=false)
+2025-10-08T21:38:48.782+01:00  WARN 14947 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: ECOM-API-GATEWAY/192.168.189.1:ecom-api-gateway:8081
+2025-10-08T21:38:48.782+01:00  INFO 14947 --- [eureka-server] [nio-8761-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): ECOM-API-GATEWAY - 192.168.189.1:ecom-api-gateway:8081
+2025-10-08T21:38:48.784+01:00  WARN 14947 --- [eureka-server] [get_localhost-3] c.n.eureka.cluster.ReplicationTask       : The replication of task ECOM-API-GATEWAY/192.168.189.1:ecom-api-gateway:8081:Cancel@localhost failed with response code 404
+2025-10-08T21:38:48.784+01:00  WARN 14947 --- [eureka-server] [get_localhost-3] c.netflix.eureka.cluster.PeerEurekaNode  : ECOM-API-GATEWAY/192.168.189.1:ecom-api-gateway:8081:Cancel@localhost: missing entry.
+2025-10-08T21:39:22.751+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:40:22.751+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-10-08T21:41:22.752+01:00  INFO 14947 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  01:52 h
+[[1;34mINFO[m] Finished at: 2025-10-08T21:41:36+01:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.springframework.boot:spring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[m on project [36meureka-server[m: [1;31mProcess terminated with exit code: 137[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

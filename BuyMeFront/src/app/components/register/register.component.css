@@ -1,0 +1,50 @@
+/* Container centers the card */
+.register-container {
+  height: 100vh;              /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f9;        /* Light gray background */
+}
+
+/* The card itself */
+.register-card {
+  width: 400px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+mat-card-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Form field full width */
+.full-width {
+  width: 100%;
+}
+
+/* Space between fields */
+mat-form-field {
+  margin-bottom: 16px;
+}
+
+/* Error messages */
+mat-error {
+  font-size: 12px;
+  color: #e53935;
+}
+
+/* Register button */
+button[type="submit"] {
+  margin-top: 12px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+}

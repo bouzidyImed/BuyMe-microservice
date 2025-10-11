@@ -87,6 +87,32 @@ services:
     networks:
       - micro-net
 
+  frontend:
+    build: ./BuyMe-AngularFront
+    container_name: angular-front
+    ports:
+      - "4200:4200"
+    environment:
+      API_URL: http://api-gateway:8081  # mapped to API Gateway port
+    depends_on:
+      api-gateway:
+        condition: service_started
+    networks:
+      - micro-net
+  zookeper:
+    image: wurstmeister/zookeeper:3.4.6
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka:2.12-2.3.0
+    ports:
+      - "9092:9092"
+    entrypoint:
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    depends_on:
+      - zookeper
+
 networks:
   micro-net:
     driver: bridge

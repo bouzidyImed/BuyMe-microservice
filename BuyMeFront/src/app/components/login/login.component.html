@@ -1,0 +1,46 @@
+<div class="login-wrapper">
+  <div class="login-container">
+
+    <!-- Welcome Panel -->
+    <div class="login-welcome-panel">
+      <div class="welcome-content">
+        <h1>Welcome to BuyMe</h1>
+        <p>bla bla.</p>
+      </div>
+    </div>
+
+    <!-- Form Panel -->
+    <div class="login-form-panel">
+      <div class="form-header">
+        <h2>Welcome Back!</h2>
+        <p>Please enter your details to sign in.</p>
+      </div>
+
+      <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+        <mat-form-field appearance="outline" class="w-100 mb-3 input-group">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" name="email" [(ngModel)]="credentials.email" required>
+          <span class="material-icons input-icon">mail_outline</span>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100 mb-3 input-group">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" name="password" [(ngModel)]="credentials.password" required>
+          <span class="material-icons input-icon">lock_outline</span>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="login-button mt-3" [disabled]="isLoading">
+          <span *ngIf="!isLoading">Login</span>
+          <mat-progress-spinner *ngIf="isLoading" diameter="20" mode="indeterminate"></mat-progress-spinner>
+        </button>
+
+        <div class="signup-link">
+          <span>Don't have an account? </span>
+          <a routerLink="/register">Register here</a>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+

@@ -1,14 +1,16 @@
 package tn.iteam.catalogueservice.interfaces;
 
-import tn.iteam.catalogueservice.models.Category;
-
+import tn.iteam.catalogueservice.dto.CategoryDto;
 import java.util.List;
 
 public interface ICategory {
-    Category getCategory(Long id);       // fetch one by id
-    Category getCategoryName(String name);
-    List<Category> getCategories();      // fetch all
-    Category addCategory(Category category); // return saved category
+    CategoryDto getCategory(Long id);
+    CategoryDto getCategoryByName(String name);
+    List<CategoryDto> getCategories();
+    CategoryDto addCategory(CategoryDto category);
     void removeCategory(Long categoryId);
-    Category updateCategory(Long id, Category category); // optional for updates
+    CategoryDto updateCategory(Long id, CategoryDto category);
+    // extra: get current connected user
+    String getCurrentConnectedUser();
 }
+

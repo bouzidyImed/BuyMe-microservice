@@ -39,6 +39,10 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path=/api/categories/**, /api/products/**
+        - id: catalogue-service
+          uri: http://localhost:8086
+          predicates:
+            - Path=/api/cart/**
         #filters:  # Uncomment if needed later
         #  - RewritePath=/product/(?<path>.*), /${path}
 
