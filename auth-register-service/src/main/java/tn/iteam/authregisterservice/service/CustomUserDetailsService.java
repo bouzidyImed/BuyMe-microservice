@@ -1,10 +1,13 @@
 package tn.iteam.authregisterservice.service;
+
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import tn.iteam.authregisterservice.config.CustomUserDetails;
+import tn.iteam.authregisterservice.model.Client;
 import tn.iteam.authregisterservice.model.User;
+import tn.iteam.authregisterservice.repos.ClientRepository;
 import tn.iteam.authregisterservice.repos.UserRepository;
 
 @Service

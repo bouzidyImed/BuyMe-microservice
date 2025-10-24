@@ -38,13 +38,15 @@ public class ProductController {
     }
 
     // 🔍 Get product by ID
-   /* @GetMapping("/{id}")
-    public ResponseEntity<?> getProductById(@PathVariable Long id) {
-        return productService.productRepo.findById(id)
-                .map(product -> ResponseEntity.ok(productService.productMapper.toDto(product)))
-                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND)
-                        .body("Product with ID " + id + " not found."));
-    }*/
+   @GetMapping("/{id}")
+   public ResponseEntity<ProductDto> getProductById(@PathVariable Long id) {
+       try {
+           ProductDto product = productService.getProduct(id);
+           return ResponseEntity.ok(product);
+       } catch (RuntimeException e) {
+           return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+       }
+   }
 
     // ✏️ Update product
     @PutMapping("/update/{id}")

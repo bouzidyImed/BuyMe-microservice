@@ -1,54 +1,28 @@
-#server:
-#  port: 8080
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://localhost:8761/eureka
-#spring:
-#  cloud:
-#    gateway:
-#      discovery:
-#        locator:
-#          enabled: true
-#      routes:
-#        - id: auth-service
-#          uri: lb://auth-service
-#          predicates:
-#            - Path=/auth/**
-#          filters:
-#            - RewritePath=/auth/(?<path>.*), /$\{path}
-#        - id: product-service
-#          uri: lb://product-service
-#          predicates:
-#            - Path=/product/**
-#          filters:
-#            - RewritePath=/product/(?<path>.*), /$\{path}
-
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: false
       routes:
         - id: auth-service
           uri: http://localhost:8085
           predicates:
-            - Path=/auth/**
-        - id: catalogue-service
+            - Path=/api/auth/**
+
+        - id: catalogue-service-products
           uri: http://localhost:8084
           predicates:
-            - Path=/api/categories/**, /api/products/**
-        - id: catalogue-service
+            - Path=/api/products/**
+
+        - id: catalogue-service-categories
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/categories/**
+
+        - id: catalogue-service-cart
           uri: http://localhost:8086
           predicates:
             - Path=/api/cart/**
-        #filters:  # Uncomment if needed later
-        #  - RewritePath=/product/(?<path>.*), /${path}
 
-eureka:
-  client:
-    enabled: true
-
-
-
+        - id: order-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/orders/**

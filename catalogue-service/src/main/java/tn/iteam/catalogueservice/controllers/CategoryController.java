@@ -39,6 +39,11 @@ public class CategoryController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<CategoryDto> getCategoryById(@PathVariable Long id) {
+        return ResponseEntity.ok(categoryService.getCategory(id));
+    }
+
     @GetMapping("/me")
     public ResponseEntity<String> getCurrentUser() {
         return ResponseEntity.ok(categoryService.getCurrentConnectedUser());

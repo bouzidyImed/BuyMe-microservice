@@ -8,5 +8,10 @@ jwt:
 app:
   upload:
     dir: /home/imed/Documents/stage/simple_spring_ms/auth-register-service/uploads
-
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG  # Filter chain details
+    io.jsonwebtoken: DEBUG  # JWT parse/signature errors
+    tn.iteam.authregisterservice: DEBUG  # Your package (adjust if different)
 

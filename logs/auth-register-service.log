@@ -1,0 +1,154 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------------< [0;36mcom.example:auth-register-service[0;1m >------------------[m
+[[1;34mINFO[m] [1mBuilding auth-register-service 0.0.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mspring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36mauth-register-service[0;1m >>>[m
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.11.2/junit-bom-5.11.2.pom
+Progress (1): 4.1 kBProgress (1): 5.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.11.2/junit-bom-5.11.2.pom (5.6 kB at 4.3 kB/s)
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36mauth-register-service[0;1m ---[m
+[[1;34mINFO[m] Copying 3 resources from src/main/resources to target/classes
+[[1;34mINFO[m] Copying 0 resource from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.13.0:compile[m [1m(default-compile)[m @ [36mauth-register-service[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mauth-register-service[0;1m ---[m
+[[1;34mINFO[m] skip non existing resourceDirectory /home/imed/Documents/e-commerce-ms/auth-register-service/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.13.0:testCompile[m [1m(default-testCompile)[m @ [36mauth-register-service[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mspring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36mauth-register-service[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[m @ [36mauth-register-service[0;1m ---[m
+[[1;34mINFO[m] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2025-10-21T21:06:00.527+01:00  INFO 20199 --- [auth-register-service] [           main] t.i.a.AuthRegisterServiceApplication     : Starting AuthRegisterServiceApplication using Java 17.0.16 with PID 20199 (/home/imed/Documents/e-commerce-ms/auth-register-service/target/classes started by imed in /home/imed/Documents/e-commerce-ms/auth-register-service)
+2025-10-21T21:06:00.530+01:00 DEBUG 20199 --- [auth-register-service] [           main] t.i.a.AuthRegisterServiceApplication     : Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-10-21T21:06:00.532+01:00  INFO 20199 --- [auth-register-service] [           main] t.i.a.AuthRegisterServiceApplication     : The following 1 profile is active: "local"
+2025-10-21T21:06:01.456+01:00  INFO 20199 --- [auth-register-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-21T21:06:01.458+01:00  INFO 20199 --- [auth-register-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-21T21:06:01.498+01:00  INFO 20199 --- [auth-register-service] [           main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface tn.iteam.authregisterservice.repos.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-21T21:06:01.499+01:00  INFO 20199 --- [auth-register-service] [           main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface tn.iteam.authregisterservice.repos.RoleRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-21T21:06:01.501+01:00  INFO 20199 --- [auth-register-service] [           main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface tn.iteam.authregisterservice.repos.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-21T21:06:01.502+01:00  INFO 20199 --- [auth-register-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 0 JDBC repository interfaces.
+2025-10-21T21:06:01.514+01:00  INFO 20199 --- [auth-register-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-21T21:06:01.516+01:00  INFO 20199 --- [auth-register-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-21T21:06:01.650+01:00  INFO 20199 --- [auth-register-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 3 JPA repository interfaces.
+2025-10-21T21:06:02.013+01:00  INFO 20199 --- [auth-register-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f51e1afe-6cb4-3bba-b2b1-9aa34604c477
+2025-10-21T21:06:02.262+01:00  WARN 20199 --- [auth-register-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-10-21T21:06:02.265+01:00  WARN 20199 --- [auth-register-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-10-21T21:06:02.527+01:00  INFO 20199 --- [auth-register-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2025-10-21T21:06:02.541+01:00  INFO 20199 --- [auth-register-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-21T21:06:02.541+01:00  INFO 20199 --- [auth-register-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-10-21T21:06:02.604+01:00  INFO 20199 --- [auth-register-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-21T21:06:02.605+01:00  INFO 20199 --- [auth-register-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2023 ms
+2025-10-21T21:06:02.835+01:00  INFO 20199 --- [auth-register-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-21T21:06:02.916+01:00  INFO 20199 --- [auth-register-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-10-21T21:06:02.969+01:00  INFO 20199 --- [auth-register-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-21T21:06:03.420+01:00  INFO 20199 --- [auth-register-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-21T21:06:03.463+01:00  INFO 20199 --- [auth-register-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-21T21:06:03.706+01:00  INFO 20199 --- [auth-register-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1eb9d69a
+2025-10-21T21:06:03.708+01:00  INFO 20199 --- [auth-register-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-21T21:06:03.758+01:00  WARN 20199 --- [auth-register-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-21T21:06:03.761+01:00  WARN 20199 --- [auth-register-service] [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-21T21:06:04.957+01:00  INFO 20199 --- [auth-register-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-21T21:06:05.042+01:00  INFO 20199 --- [auth-register-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-21T21:06:05.515+01:00  WARN 20199 --- [auth-register-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-21T21:06:05.589+01:00  INFO 20199 --- [auth-register-service] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-10-21T21:06:05.956+01:00 DEBUG 20199 --- [auth-register-service] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-10-21T21:06:06.631+01:00  INFO 20199 --- [auth-register-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-10-21T21:06:06.696+01:00  WARN 20199 --- [auth-register-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-10-21T21:06:06.727+01:00  INFO 20199 --- [auth-register-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-10-21T21:06:06.752+01:00  INFO 20199 --- [auth-register-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-10-21T21:06:06.756+01:00  INFO 20199 --- [auth-register-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-21T21:06:06.765+01:00  INFO 20199 --- [auth-register-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-21T21:06:06.765+01:00  INFO 20199 --- [auth-register-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-21T21:06:06.765+01:00  INFO 20199 --- [auth-register-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-21T21:06:06.765+01:00  INFO 20199 --- [auth-register-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-21T21:06:06.765+01:00  INFO 20199 --- [auth-register-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-21T21:06:06.765+01:00  INFO 20199 --- [auth-register-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-10-21T21:06:06.765+01:00  INFO 20199 --- [auth-register-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-21T21:06:07.208+01:00  INFO 20199 --- [auth-register-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-21T21:06:07.210+01:00  INFO 20199 --- [auth-register-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-10-21T21:06:07.213+01:00  INFO 20199 --- [auth-register-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-10-21T21:06:07.215+01:00  INFO 20199 --- [auth-register-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1761077167214 with initial instances count: 1
+2025-10-21T21:06:07.223+01:00  INFO 20199 --- [auth-register-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-REGISTER-SERVICE with eureka with status UP
+2025-10-21T21:06:07.223+01:00  INFO 20199 --- [auth-register-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1761077167223, current=UP, previous=STARTING]
+2025-10-21T21:06:07.225+01:00  INFO 20199 --- [auth-register-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-REGISTER-SERVICE/192.168.189.1:auth-register-service:8085: registering service...
+2025-10-21T21:06:07.242+01:00  INFO 20199 --- [auth-register-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
+2025-10-21T21:06:07.243+01:00  INFO 20199 --- [auth-register-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8085
+2025-10-21T21:06:07.267+01:00  INFO 20199 --- [auth-register-service] [           main] t.i.a.AuthRegisterServiceApplication     : Started AuthRegisterServiceApplication in 7.436 seconds (process running for 7.884)
+2025-10-21T21:06:07.282+01:00  INFO 20199 --- [auth-register-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-REGISTER-SERVICE/192.168.189.1:auth-register-service:8085 - registration status: 204
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: select u1_0.id,u1_0.user_type,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.address,u1_0.city,u1_0.country,u1_0.credentials_non_expired,u1_0.date_of_birth,u1_0.email,u1_0.enabled,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.phone,u1_0.profile_pic,u1_0.zip_code from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from users_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+2025-10-21T21:08:44.525+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-21T21:08:44.525+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-21T21:08:44.527+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-10-21T21:08:44.550+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2025-10-21T21:08:44.558+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-1] t.i.a.config.JwtAuthenticationFilter     : Skipping JWT filter for public path: /api/auth/login
+2025-10-21T21:08:44.560+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-10-21T21:08:44.562+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2025-10-21T21:08:44.603+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-1] t.i.a.controller.AuthController          : Login attempt for email: com
+2025-10-21T21:08:44.603+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-1] t.i.a.service.AuthService                : Login attempt for: com
+Hibernate: select u1_0.id,u1_0.user_type,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.address,u1_0.city,u1_0.country,u1_0.credentials_non_expired,u1_0.date_of_birth,u1_0.email,u1_0.enabled,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.phone,u1_0.profile_pic,u1_0.zip_code from users u1_0 where u1_0.email=?
+2025-10-21T21:08:44.608+01:00  WARN 20199 --- [auth-register-service] [nio-8085-exec-1] t.i.a.service.AuthService                : Invalid login for email: com
+2025-10-21T21:09:37.507+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2025-10-21T21:09:37.508+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-2] t.i.a.config.JwtAuthenticationFilter     : Skipping JWT filter for public path: /api/auth/login
+2025-10-21T21:09:37.508+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-10-21T21:09:37.508+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2025-10-21T21:09:37.511+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-2] t.i.a.controller.AuthController          : Login attempt for email: client3@gmail.com
+2025-10-21T21:09:37.511+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-2] t.i.a.service.AuthService                : Login attempt for: client3@gmail.com
+Hibernate: select u1_0.id,u1_0.user_type,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.address,u1_0.city,u1_0.country,u1_0.credentials_non_expired,u1_0.date_of_birth,u1_0.email,u1_0.enabled,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.phone,u1_0.profile_pic,u1_0.zip_code from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from users_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+2025-10-21T21:09:37.786+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-2] t.i.a.service.AuthService                : Login successful for: client3@gmail.com
+2025-10-21T21:11:06.768+01:00  INFO 20199 --- [auth-register-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-21T21:13:34.639+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2025-10-21T21:13:34.640+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-4] t.i.a.config.JwtAuthenticationFilter     : Skipping JWT filter for public path: /api/auth/login
+2025-10-21T21:13:34.641+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-10-21T21:13:34.642+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2025-10-21T21:13:34.646+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-4] t.i.a.controller.AuthController          : Login attempt for email: client3@gmail.com
+2025-10-21T21:13:34.646+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-4] t.i.a.service.AuthService                : Login attempt for: client3@gmail.com
+Hibernate: select u1_0.id,u1_0.user_type,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.address,u1_0.city,u1_0.country,u1_0.credentials_non_expired,u1_0.date_of_birth,u1_0.email,u1_0.enabled,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.phone,u1_0.profile_pic,u1_0.zip_code from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.user_id,r1_1.id,r1_1.name from users_roles r1_0 join role r1_1 on r1_1.id=r1_0.role_id where r1_0.user_id=?
+2025-10-21T21:13:34.748+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-4] t.i.a.service.AuthService                : Login successful for: client3@gmail.com
+2025-10-21T21:14:31.999+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2025-10-21T21:14:31.999+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-5] t.i.a.config.JwtAuthenticationFilter     : Skipping JWT filter for public path: /api/auth/register
+2025-10-21T21:14:31.999+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-10-21T21:14:32.000+01:00 DEBUG 20199 --- [auth-register-service] [nio-8085-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+2025-10-21T21:14:32.013+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-5] t.i.a.service.AuthService                : Registering new client: iiiiimed.bouzidi@iteam-univ.tn
+Hibernate: select u1_0.id,u1_0.user_type,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.address,u1_0.city,u1_0.country,u1_0.credentials_non_expired,u1_0.date_of_birth,u1_0.email,u1_0.enabled,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.phone,u1_0.profile_pic,u1_0.zip_code from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (account_non_expired,account_non_locked,address,city,country,credentials_non_expired,date_of_birth,email,enabled,first_name,last_name,password,phone,profile_pic,zip_code,user_type) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'CLIENT')
+Hibernate: insert into users_roles (user_id,role_id) values (?,?)
+2025-10-21T21:14:32.204+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-5] t.i.a.service.AuthService                : Client registered: iiiiimed.bouzidi@iteam-univ.tn
+2025-10-21T21:14:32.205+01:00  INFO 20199 --- [auth-register-service] [nio-8085-exec-5] t.i.a.controller.AuthController          : Client registered successfully: iiiiimed.bouzidi@iteam-univ.tn
+2025-10-21T21:16:06.769+01:00  INFO 20199 --- [auth-register-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  11:02 min
+[[1;34mINFO[m] Finished at: 2025-10-21T21:16:58+01:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.springframework.boot:spring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[m on project [36mauth-register-service[m: [1;31mProcess terminated with exit code: 137[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

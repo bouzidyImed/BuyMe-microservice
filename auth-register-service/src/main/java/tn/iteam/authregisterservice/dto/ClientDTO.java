@@ -22,7 +22,7 @@ public class ClientDTO {
     private String city;
     private Integer zip; // changed from int
     private String address;
-    private String password;
+    //private String password;
     private String profilePic;
 }
 

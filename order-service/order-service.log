@@ -1,0 +1,1246 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] Some problems were encountered while building the effective model for tn.iteam:order-service:jar:0.0.1-SNAPSHOT
+[[1;33mWARNING[m] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.cloud:spring-cloud-starter-openfeign:jar -> duplicate declaration of version (?) @ line 94, column 21
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] It is highly recommended to fix these problems because they threaten the stability of your build.
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] For this reason, future Maven versions might no longer support building such malformed projects.
+[[1;33mWARNING[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------------------< [0;36mtn.iteam:order-service[0;1m >-----------------------[m
+[[1;34mINFO[m] [1mBuilding order-service 0.0.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mspring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36morder-service[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36morder-service[0;1m ---[m
+[[1;34mINFO[m] Copying 4 resources from src/main/resources to target/classes
+[[1;34mINFO[m] Copying 0 resource from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.13.0:compile[m [1m(default-compile)[m @ [36morder-service[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36morder-service[0;1m ---[m
+[[1;34mINFO[m] skip non existing resourceDirectory /home/imed/Documents/e-commerce-ms/order-service/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.13.0:testCompile[m [1m(default-testCompile)[m @ [36morder-service[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mspring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36morder-service[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[m @ [36morder-service[0;1m ---[m
+[[1;34mINFO[m] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2025-10-19T16:48:43.812+01:00  INFO 19897 --- [order-service] [           main] t.i.o.OrderServiceApplication            : Starting OrderServiceApplication using Java 17.0.16 with PID 19897 (/home/imed/Documents/e-commerce-ms/order-service/target/classes started by imed in /home/imed/Documents/e-commerce-ms/order-service)
+2025-10-19T16:48:43.846+01:00  INFO 19897 --- [order-service] [           main] t.i.o.OrderServiceApplication            : The following 1 profile is active: "local"
+2025-10-19T16:48:49.234+01:00  INFO 19897 --- [order-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-19T16:48:49.236+01:00  INFO 19897 --- [order-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-10-19T16:48:49.272+01:00  INFO 19897 --- [order-service] [           main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface tn.iteam.orderservice.repositories.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-10-19T16:48:49.273+01:00  INFO 19897 --- [order-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 0 JDBC repository interfaces.
+2025-10-19T16:48:49.282+01:00  INFO 19897 --- [order-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-10-19T16:48:49.284+01:00  INFO 19897 --- [order-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-19T16:48:49.409+01:00  INFO 19897 --- [order-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 1 JPA repository interface.
+2025-10-19T16:48:49.942+01:00  INFO 19897 --- [order-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=39ea3e2d-46a9-3f38-937b-f49e300a873f
+2025-10-19T16:48:50.537+01:00  WARN 19897 --- [order-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-10-19T16:48:50.543+01:00  WARN 19897 --- [order-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-10-19T16:48:51.044+01:00  INFO 19897 --- [order-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-10-19T16:48:51.065+01:00  INFO 19897 --- [order-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-19T16:48:51.066+01:00  INFO 19897 --- [order-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-10-19T16:48:51.158+01:00  INFO 19897 --- [order-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-19T16:48:51.158+01:00  INFO 19897 --- [order-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6866 ms
+2025-10-19T16:48:51.687+01:00  INFO 19897 --- [order-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-19T16:48:51.778+01:00  INFO 19897 --- [order-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-10-19T16:48:51.825+01:00  INFO 19897 --- [order-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-19T16:48:52.222+01:00  INFO 19897 --- [order-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-19T16:48:52.253+01:00  INFO 19897 --- [order-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-19T16:48:55.046+01:00  INFO 19897 --- [order-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b762988
+2025-10-19T16:48:55.098+01:00  INFO 19897 --- [order-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-19T16:48:56.843+01:00  WARN 19897 --- [order-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-19T16:48:56.846+01:00  WARN 19897 --- [order-service] [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-19T16:49:02.136+01:00  INFO 19897 --- [order-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-19T16:49:02.285+01:00  INFO 19897 --- [order-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-19T16:49:03.061+01:00  WARN 19897 --- [order-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-19T16:49:03.174+01:00  INFO 19897 --- [order-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'AUTH-REGISTER-SERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-10-19T16:49:03.277+01:00  INFO 19897 --- [order-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'kafka-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-19T16:49:03.304+01:00  INFO 19897 --- [order-service] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'CATALOGUE-SERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-10-19T16:49:03.411+01:00  WARN 19897 --- [order-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4c62b453-18d5-44cc-a39e-c19aa380fb18
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-19T16:49:03.441+01:00  INFO 19897 --- [order-service] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-19T16:49:04.049+01:00  INFO 19897 --- [order-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 5 endpoints beneath base path '/actuator'
+2025-10-19T16:49:04.995+01:00  INFO 19897 --- [order-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-10-19T16:49:05.073+01:00  WARN 19897 --- [order-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-10-19T16:49:05.190+01:00  INFO 19897 --- [order-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-10-19T16:49:05.223+01:00  INFO 19897 --- [order-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-10-19T16:49:05.229+01:00  INFO 19897 --- [order-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-19T16:49:05.241+01:00  INFO 19897 --- [order-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-19T16:49:05.241+01:00  INFO 19897 --- [order-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-19T16:49:05.241+01:00  INFO 19897 --- [order-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-19T16:49:05.241+01:00  INFO 19897 --- [order-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-19T16:49:05.241+01:00  INFO 19897 --- [order-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-19T16:49:05.241+01:00  INFO 19897 --- [order-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-10-19T16:49:05.242+01:00  INFO 19897 --- [order-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-19T16:49:05.533+01:00 DEBUG 19897 --- [order-service] [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/
+2025-10-19T16:49:05.715+01:00 DEBUG 19897 --- [order-service] [           main] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:49:05.768+01:00 DEBUG 19897 --- [order-service] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:49:05.770+01:00 DEBUG 19897 --- [order-service] [           main] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:49:05.806+01:00  INFO 19897 --- [order-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-19T16:49:05.808+01:00  INFO 19897 --- [order-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-10-19T16:49:05.811+01:00  INFO 19897 --- [order-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-10-19T16:49:05.814+01:00  INFO 19897 --- [order-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1760888945813 with initial instances count: 2
+2025-10-19T16:49:05.823+01:00  INFO 19897 --- [order-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2025-10-19T16:49:05.824+01:00  INFO 19897 --- [order-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1760888945824, current=UP, previous=STARTING]
+2025-10-19T16:49:05.827+01:00  INFO 19897 --- [order-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/192.168.189.1:order-service:8082: registering service...
+2025-10-19T16:49:05.833+01:00 DEBUG 19897 --- [order-service] [foReplicator-%d] o.s.web.client.RestTemplate              : HTTP POST http://localhost:8761/eureka/apps/ORDER-SERVICE
+2025-10-19T16:49:05.836+01:00 DEBUG 19897 --- [order-service] [foReplicator-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:49:05.844+01:00  INFO 19897 --- [order-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-10-19T16:49:05.846+01:00  INFO 19897 --- [order-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2025-10-19T16:49:05.857+01:00 DEBUG 19897 --- [order-service] [foReplicator-%d] o.s.web.client.RestTemplate              : Writing [InstanceInfo [instanceId = 192.168.189.1:order-service:8082, appName = ORDER-SERVICE, hostName = 192.168.1.169, status = UP, ipAddr = 192.168.1.169, port = 8082, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@2122b4bd] as "application/json"
+2025-10-19T16:49:05.886+01:00 DEBUG 19897 --- [order-service] [foReplicator-%d] o.s.web.client.RestTemplate              : Response 204 NO_CONTENT
+2025-10-19T16:49:05.887+01:00  INFO 19897 --- [order-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/192.168.189.1:order-service:8082 - registration status: 204
+2025-10-19T16:49:05.889+01:00  INFO 19897 --- [order-service] [           main] t.i.o.OrderServiceApplication            : Started OrderServiceApplication in 23.113 seconds (process running for 23.779)
+2025-10-19T16:49:35.810+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:49:35.812+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:49:35.812+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:49:35.821+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:49:35.821+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:49:35.822+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:49:35.830+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:50:05.832+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:50:05.833+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:50:05.834+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:50:05.835+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:50:05.841+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:50:05.845+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:50:05.846+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:50:35.844+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:50:35.845+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:50:35.852+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:50:35.856+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:50:35.858+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:50:35.865+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:50:35.866+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:51:05.855+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:51:05.856+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:51:05.863+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:51:05.875+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:51:05.877+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:51:05.884+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:51:05.884+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:51:35.865+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:51:35.866+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:51:35.874+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:51:35.890+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:51:35.891+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:51:35.898+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:51:35.898+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:52:05.876+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:52:05.877+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:52:05.885+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:52:05.904+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:52:05.905+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:52:05.912+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:52:05.912+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:52:35.887+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:52:35.888+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:52:35.896+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:52:35.917+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:52:35.918+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:52:35.925+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:52:35.926+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:53:05.898+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:53:05.899+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:53:05.906+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:53:05.931+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:53:05.932+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:53:05.938+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:53:05.939+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:53:35.908+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:53:35.909+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:53:35.917+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:53:35.944+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:53:35.945+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:53:35.950+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:53:35.950+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:54:05.245+01:00  INFO 19897 --- [order-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-19T16:54:05.919+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:54:05.920+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:54:05.927+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:54:05.954+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:54:05.956+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:54:05.962+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:54:05.963+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:54:35.929+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:54:35.930+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:54:35.937+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:54:35.967+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:54:35.968+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:54:35.974+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:54:35.975+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:55:05.939+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:55:05.940+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:55:05.947+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:55:05.978+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:55:05.979+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:55:05.986+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:55:05.987+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:55:35.949+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:55:35.950+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:55:35.955+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:55:35.991+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:55:35.992+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:55:35.999+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:55:36.000+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:56:05.957+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:56:05.957+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:56:05.963+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:56:06.004+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:56:06.005+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:56:06.011+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:56:06.012+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:56:35.965+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:56:35.966+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:56:35.972+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:56:36.015+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:56:36.016+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:56:36.021+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:56:36.022+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:57:05.974+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:57:05.975+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:57:05.981+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:57:06.027+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:57:06.028+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:57:06.034+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:57:06.034+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:57:35.983+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:57:35.984+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:57:35.989+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:57:36.037+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:57:36.038+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:57:36.042+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:57:36.043+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:58:05.991+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:58:05.992+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:58:05.997+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:58:06.046+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:58:06.047+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:58:06.052+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:58:06.052+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:58:35.999+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:58:36.000+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:58:36.006+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:58:36.055+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:58:36.056+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:58:36.062+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:58:36.062+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:59:05.245+01:00  INFO 19897 --- [order-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-19T16:59:06.008+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:59:06.008+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:59:06.014+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:59:06.064+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:59:06.065+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:59:06.070+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:59:06.071+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T16:59:36.016+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T16:59:36.017+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:59:36.027+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:59:36.073+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T16:59:36.074+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T16:59:36.080+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T16:59:36.080+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:00:06.029+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:00:06.030+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:00:06.035+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:00:06.083+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:00:06.083+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:00:06.089+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:00:06.089+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:00:36.037+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:00:36.038+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:00:36.043+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:00:36.092+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:00:36.093+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:00:36.098+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:00:36.099+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:01:06.046+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:01:06.047+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:01:06.053+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:01:06.101+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:01:06.102+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:01:06.107+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:01:06.108+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:01:36.054+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:01:36.055+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:01:36.061+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:01:36.110+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:01:36.111+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:01:36.117+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:01:36.117+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:02:06.062+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:02:06.063+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:02:06.073+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:02:06.120+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:02:06.121+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:02:06.126+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:02:06.126+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:02:36.075+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:02:36.075+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:02:36.080+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:02:36.128+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:02:36.129+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:02:36.133+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:02:36.134+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:03:06.081+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:03:06.082+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:03:06.087+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:03:06.136+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:03:06.137+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:03:06.141+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:03:06.141+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:03:36.093+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:03:36.109+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:03:36.114+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:03:36.144+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:03:36.145+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:03:36.149+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:03:36.149+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:04:05.246+01:00  INFO 19897 --- [order-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-19T17:04:06.115+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:04:06.116+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:04:06.122+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:04:06.151+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:04:06.152+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:04:06.157+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:04:06.158+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:04:36.124+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:04:36.125+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:04:36.130+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:04:36.161+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:04:36.162+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:04:36.166+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:04:36.167+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:05:06.132+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:05:06.133+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:05:06.137+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:05:06.170+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:05:06.170+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:05:06.175+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:05:06.175+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:05:36.139+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:05:36.139+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:05:36.144+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:05:36.178+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:05:36.179+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:05:36.183+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:05:36.183+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:06:06.146+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:06:06.147+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:06:06.150+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:06:06.186+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:06:06.186+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:06:06.190+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:06:06.190+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:06:36.152+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:06:36.152+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:06:36.157+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:06:36.192+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:06:36.192+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:06:36.197+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:06:36.197+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:07:06.159+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:07:06.159+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:07:06.164+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:07:06.199+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:07:06.200+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:07:06.204+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:07:06.205+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:07:36.166+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:07:36.167+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:07:36.172+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:07:36.207+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:07:36.208+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:07:36.213+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:07:36.213+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:08:06.173+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:08:06.174+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:08:06.178+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:08:06.216+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:08:06.216+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:08:06.220+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:08:06.220+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:08:36.180+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:08:36.180+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:08:36.184+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:08:36.222+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:08:36.223+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:08:36.227+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:08:36.227+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:09:05.247+01:00  INFO 19897 --- [order-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-19T17:09:06.185+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:09:06.186+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:09:06.190+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:09:06.229+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:09:06.230+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:09:06.235+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:09:06.235+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:09:36.192+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:09:36.192+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:09:36.197+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:09:36.237+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:09:36.238+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:09:36.242+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:09:36.243+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:10:06.198+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:10:06.199+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:10:06.204+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:10:06.245+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:10:06.246+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:10:06.250+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:10:06.251+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:10:36.206+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:10:36.207+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:10:36.212+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:10:36.253+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:10:36.254+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:10:36.258+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:10:36.258+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:11:06.213+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:11:06.214+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:11:06.219+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:11:06.261+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:11:06.261+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:11:06.270+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:11:06.271+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:11:36.220+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:11:36.221+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:11:36.225+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:11:36.273+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:11:36.274+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:11:36.278+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:11:36.279+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:12:06.227+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:12:06.228+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:12:06.233+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:12:06.281+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:12:06.282+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:12:06.286+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:12:06.287+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:12:36.235+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:12:36.236+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:12:36.240+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:12:36.289+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:12:36.290+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:12:36.298+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:12:36.299+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:13:06.242+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:13:06.242+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:13:06.247+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:13:06.301+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:13:06.302+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:13:06.306+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:13:06.307+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:13:36.249+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:13:36.250+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:13:36.254+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:13:36.309+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:13:36.310+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:13:36.314+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:13:36.314+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:14:05.253+01:00  INFO 19897 --- [order-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-19T17:14:06.256+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:14:06.256+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:14:06.260+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:14:06.319+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:14:06.320+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:14:06.325+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:14:06.329+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:14:36.262+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:14:36.263+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:14:36.267+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:14:36.334+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:14:36.334+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:14:36.339+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:14:36.339+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:15:06.268+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:15:06.269+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:15:06.274+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:15:06.342+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:15:06.342+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:15:06.347+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:15:06.347+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:15:36.275+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:15:36.276+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:15:36.280+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:15:36.350+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:15:36.350+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:15:36.354+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:15:36.355+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:16:06.281+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:16:06.282+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:16:06.286+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:16:06.357+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:16:06.358+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:16:06.362+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:16:06.362+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:16:36.288+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:16:36.289+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:16:36.293+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:16:36.364+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:16:36.365+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:16:36.369+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:16:36.370+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:17:06.294+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:17:06.295+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:17:06.299+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:17:06.372+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:17:06.373+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:17:06.377+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:17:06.378+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:17:36.300+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:17:36.301+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:17:36.305+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:17:36.380+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:17:36.380+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:17:36.385+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:17:36.385+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:18:06.307+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:18:06.308+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:18:06.312+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:18:06.388+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:18:06.388+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:18:06.393+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:18:06.393+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:18:36.314+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:18:36.314+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:18:36.318+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:18:36.400+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:18:36.409+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:18:36.411+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:18:36.412+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:43:49.747+01:00  INFO 19897 --- [order-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-19T17:43:50.818+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:43:50.830+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:43:50.835+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:43:50.907+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:43:50.908+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:43:50.912+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:43:50.913+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:44:20.836+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:44:20.837+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:44:20.840+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:44:20.915+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:44:20.916+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:44:20.921+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:44:20.921+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:44:50.841+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:44:50.842+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:44:50.846+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:44:50.923+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:44:50.924+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:44:50.928+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:44:50.928+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:45:20.847+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:45:20.849+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:45:20.854+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:45:20.930+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:45:20.931+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:45:20.937+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:45:20.938+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:45:50.856+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:45:50.857+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:45:50.861+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:45:50.951+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:45:50.963+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:45:50.967+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:45:50.967+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:46:20.863+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:46:20.863+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:46:20.872+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:46:20.970+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:46:20.971+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:46:20.975+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:46:20.975+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:46:50.874+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:46:50.875+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:46:50.879+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:46:50.978+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:46:50.979+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:46:50.983+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:46:50.983+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:47:20.881+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:47:20.881+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:47:20.885+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:47:20.985+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:47:20.986+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:47:20.990+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:47:20.990+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:47:50.887+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:47:50.887+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:47:50.891+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:47:50.992+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:47:50.993+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:47:50.997+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:47:50.998+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:48:20.893+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:48:20.893+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:48:20.898+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:48:21.000+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:48:21.000+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:48:21.004+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:48:21.004+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:48:49.747+01:00  INFO 19897 --- [order-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-19T17:48:50.899+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:48:50.900+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:48:50.904+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:48:51.006+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:48:51.007+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:48:51.011+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:48:51.011+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:49:20.905+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:49:20.911+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:49:20.916+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:49:21.014+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:49:21.014+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:49:21.019+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:49:21.019+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:49:50.917+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:49:50.918+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:49:50.922+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:49:51.021+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:49:51.021+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:49:51.025+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:49:51.025+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:50:20.924+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:50:20.924+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:50:20.928+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:50:21.027+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:50:21.027+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:50:21.031+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:50:21.032+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:50:50.930+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:50:50.931+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:50:50.935+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:50:51.034+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:50:51.034+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:50:51.038+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:50:51.039+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:51:20.936+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:51:20.937+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:51:20.942+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:51:21.041+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:51:21.041+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:51:21.046+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:51:21.046+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:51:50.944+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:51:50.945+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:51:50.949+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:51:51.048+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:51:51.049+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:51:51.053+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:51:51.053+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:52:20.950+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:52:20.951+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:52:20.955+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:52:21.055+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:52:21.055+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:52:21.059+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:52:21.059+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:52:50.956+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:52:50.957+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:52:50.961+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:52:51.061+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:52:51.061+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:52:51.064+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:52:51.065+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:53:20.963+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:53:20.964+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:53:20.968+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:53:21.066+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:53:21.067+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:53:21.071+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:53:21.071+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:53:49.748+01:00  INFO 19897 --- [order-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-19T17:53:50.970+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:53:50.970+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:53:50.975+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:53:51.073+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:53:51.074+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:53:51.078+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:53:51.078+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:54:20.981+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:54:20.990+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:54:20.994+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:54:21.080+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:54:21.081+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:54:21.085+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:54:21.085+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:54:50.996+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:54:50.996+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:54:51.001+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:54:51.087+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:54:51.088+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:54:51.092+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:54:51.092+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:55:21.002+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:55:21.003+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:55:21.012+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:55:21.094+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:55:21.095+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:55:21.099+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:55:21.099+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:55:51.014+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:55:51.015+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:55:51.019+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:55:51.101+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:55:51.102+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:55:51.106+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:55:51.107+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:56:21.021+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:56:21.021+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:56:21.026+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:56:21.109+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:56:21.109+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:56:21.113+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:56:21.114+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:56:51.027+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:56:51.028+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:56:51.033+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:56:51.116+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:56:51.117+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:56:51.121+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:56:51.121+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:57:21.034+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:57:21.035+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:57:21.039+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:57:21.123+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:57:21.124+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:57:21.128+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:57:21.128+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:57:51.040+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:57:51.041+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:57:51.046+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:57:51.135+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:57:51.146+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:57:51.150+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:57:51.150+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:58:21.047+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:58:21.048+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:58:21.052+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:58:21.153+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:58:21.153+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:58:21.157+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:58:21.158+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:58:49.749+01:00  INFO 19897 --- [order-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-19T17:58:51.053+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:58:51.054+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:58:51.058+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:58:51.159+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:58:51.160+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:58:51.164+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:58:51.164+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:59:21.059+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:59:21.060+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:59:21.064+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:59:21.166+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:59:21.167+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:59:21.171+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:59:21.171+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T17:59:51.065+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T17:59:51.066+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:59:51.070+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:59:51.173+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T17:59:51.174+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T17:59:51.178+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T17:59:51.178+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T18:00:21.072+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T18:00:21.072+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:00:21.076+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:00:21.180+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:00:21.181+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:00:21.185+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:00:21.185+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T18:00:51.077+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T18:00:51.078+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:00:51.082+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:00:51.189+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:00:51.189+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:00:51.193+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:00:51.193+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T18:01:21.083+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T18:01:21.084+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:01:21.089+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:01:21.195+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:01:21.196+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:01:21.201+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:01:21.201+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T18:01:51.090+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T18:01:51.091+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:01:51.095+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:01:51.203+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:01:51.204+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:01:51.208+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:01:51.208+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T18:02:21.097+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T18:02:21.097+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:02:21.102+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:02:21.210+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:02:21.211+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:02:21.215+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:02:21.215+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T18:02:51.103+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T18:02:51.104+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:02:51.108+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:02:51.217+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:02:51.218+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:02:51.222+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:02:51.223+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T18:03:21.109+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T18:03:21.110+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:03:21.114+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:03:21.225+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:03:21.225+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:03:21.229+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:03:21.230+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T18:03:49.750+01:00  INFO 19897 --- [order-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-19T18:03:51.115+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T18:03:51.115+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:03:51.119+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:03:51.232+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:03:51.232+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:03:51.236+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:03:51.236+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T18:04:21.120+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T18:04:21.121+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:04:21.124+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:04:21.238+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:04:21.239+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:04:21.243+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:04:21.243+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T18:04:51.126+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T18:04:51.126+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:04:51.129+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:04:51.245+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:04:51.246+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:04:51.249+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-10-19T18:04:51.249+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-10-19T18:05:21.135+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T18:05:21.144+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:05:21.162+01:00  INFO 19897 --- [order-service] [beatExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1402)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 20 more
+
+2025-10-19T18:05:21.162+01:00  WARN 19897 --- [order-service] [beatExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+2025-10-19T18:05:21.162+01:00 ERROR 19897 --- [order-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/192.168.189.1:order-service:8082 - was unable to send heartbeat!
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1402) ~[eureka-client-2.0.3.jar:2.0.3]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-10-19T18:05:21.251+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:05:21.252+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:05:21.255+01:00  INFO 19897 --- [order-service] [reshExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1441)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 22 more
+
+2025-10-19T18:05:21.256+01:00  WARN 19897 --- [order-service] [reshExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+2025-10-19T18:05:21.261+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:05:21.270+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:05:21.273+01:00  INFO 19897 --- [order-service] [reshExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1441)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 23 more
+
+2025-10-19T18:05:21.274+01:00  WARN 19897 --- [order-service] [reshExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+2025-10-19T18:05:21.274+01:00  INFO 19897 --- [order-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/192.168.189.1:order-service:8082 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1441)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-10-19T18:05:51.177+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082?status=UP&lastDirtyTimestamp=1760888945824
+2025-10-19T18:05:51.185+01:00 DEBUG 19897 --- [order-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:05:51.188+01:00  INFO 19897 --- [order-service] [beatExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1402)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 20 more
+
+2025-10-19T18:05:51.188+01:00  WARN 19897 --- [order-service] [beatExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/ORDER-SERVICE/192.168.189.1:order-service:8082": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+2025-10-19T18:05:51.188+01:00 ERROR 19897 --- [order-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/192.168.189.1:order-service:8082 - was unable to send heartbeat!
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1402) ~[eureka-client-2.0.3.jar:2.0.3]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-10-19T18:05:51.279+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-10-19T18:05:51.289+01:00 DEBUG 19897 --- [order-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-10-19T18:05:51.292+01:00  INFO 19897 --- [order-service] [reshExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1441)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 23 more
+
+2025-10-19T18:05:51.292+01:00  WARN 19897 --- [order-service] [reshExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+2025-10-19T18:05:51.293+01:00  INFO 19897 --- [order-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/192.168.189.1:order-service:8082 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1441)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
