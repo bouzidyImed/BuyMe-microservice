@@ -1,0 +1,359 @@
+<div class="catalogue-admin container mt-4">
+  <!-- Alert Banner -->
+  <div *ngIf="showAlert"
+       class="alert alert-dismissible fade show smart-alert"
+       [class.alert-success]="alertType === 'success'"
+       [class.alert-danger]="alertType === 'error'"
+       [class.alert-info]="alertType === 'info'">
+    <div class="d-flex align-items-center">
+      <div class="flex-grow-1">
+        <strong class="me-1">
+          {{ alertType === 'success' ? 'Success' : alertType === 'error' ? 'Error' : 'Heads up' }}:
+        </strong>
+        {{ alertMessage }}
+      </div>
+      <button type="button" class="btn-close" (click)="closeAlert()"></button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="page-header card shadow-sm mb-4">
+    <div>
+      <p class="eyebrow text-uppercase mb-1">Catalogue cockpit</p>
+      <h3 class="mb-2">Manage categories & products in one place</h3>
+      <p class="text-muted mb-0">Create, update and clean your marketplace inventory without leaving this screen.</p>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-light me-2" (click)="refreshAll()">
+        <i class="fas fa-sync-alt me-2"></i>Refresh data
+      </button>
+      <div class="btn-group">
+        <button class="btn"
+                [class.btn-primary]="activeSection === 'categories'"
+                [class.btn-outline-primary]="activeSection !== 'categories'"
+                (click)="setSection('categories')">
+          Categories
+        </button>
+        <button class="btn"
+                [class.btn-primary]="activeSection === 'products'"
+                [class.btn-outline-primary]="activeSection !== 'products'"
+                (click)="setSection('products')">
+          Products
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Snapshot Cards -->
+  <div class="stats-grid mb-4">
+    <div class="stat-card" [class.active]="activeSection === 'categories'" (click)="setSection('categories')">
+      <div class="stat-label">Categories</div>
+      <div class="stat-value">{{ categories.length }}</div>
+      <div class="stat-meta">
+        {{ categoriesLoading ? 'Refreshing categories…' : 'Total categories in catalogue' }}
+      </div>
+    </div>
+    <div class="stat-card" [class.active]="activeSection === 'products'" (click)="setSection('products')">
+      <div class="stat-label">Products</div>
+      <div class="stat-value">{{ products.length }}</div>
+      <div class="stat-meta">
+        {{ productsLoading ? 'Refreshing products…' : 'Active products across all categories' }}
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY SECTION -->
+  <section *ngIf="activeSection === 'categories'" class="panel card shadow-sm mb-4">
+    <div class="panel-header">
+      <div>
+        <h5 class="mb-1">Categories</h5>
+        <small class="text-muted">Group your catalogue and keep it organised.</small>
+      </div>
+      <div class="panel-actions">
+        <input type="search"
+               class="form-control me-2 search-input"
+               placeholder="Search by name or description..."
+               [(ngModel)]="categorySearchTerm">
+        <button class="btn btn-outline-secondary me-2" (click)="loadCategories()">
+          <i class="fas fa-sync-alt"></i>
+        </button>
+        <button class="btn btn-success" (click)="openCategoryModal()">
+          <i class="fas fa-plus me-2"></i>New category
+        </button>
+      </div>
+    </div>
+
+    <div class="table-responsive position-relative">
+      <div *ngIf="categoriesLoading" class="table-overlay">
+        <div class="spinner-border text-success" role="status"></div>
+      </div>
+      <table class="table table-hover align-middle mb-0">
+        <thead>
+          <tr>
+            <th style="width: 80px;">ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th class="text-end" style="width: 180px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of filteredCategories()">
+            <td><span class="badge bg-light text-dark">#{{ category.id }}</span></td>
+            <td class="fw-semibold">{{ category.name }}</td>
+            <td>{{ category.description }}</td>
+            <td class="text-end">
+              <button class="btn btn-sm btn-outline-primary me-2" (click)="openCategoryModal(category)">
+                Edit
+              </button>
+              <button class="btn btn-sm btn-outline-danger" (click)="deleteCategory(category.id!)">
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr *ngIf="filteredCategories().length === 0">
+            <td colspan="4" class="text-center text-muted py-4">
+              No categories match your filter.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Category Modal -->
+  <div *ngIf="showCategoryModal" class="modal fade show d-block" style="background: rgba(0,0,0,0.5);" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{ isEditingCategory ? 'Update category' : 'Create a category' }}</h5>
+          <button type="button" class="btn-close" (click)="showCategoryModal = false"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Name <span class="text-danger">*</span></label>
+              <input type="text"
+                     class="form-control"
+                     name="categoryName"
+                     [(ngModel)]="newCategory.name"
+                     (input)="validateCategoryForm()"
+                     [class.is-invalid]="!newCategory.name.trim()">
+              <div class="invalid-feedback">Name is required.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Description <span class="text-danger">*</span></label>
+              <textarea class="form-control"
+                        rows="3"
+                        name="categoryDescription"
+                        [(ngModel)]="newCategory.description"
+                        (input)="validateCategoryForm()"
+                        [class.is-invalid]="!newCategory.description.trim()"></textarea>
+              <div class="invalid-feedback">Description is required.</div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" (click)="showCategoryModal = false">Cancel</button>
+          <button class="btn btn-success"
+                  (click)="saveCategory()"
+                  [disabled]="!categoryFormValid || savingCategory">
+            {{ isEditingCategory ? 'Save changes' : 'Create category' }}
+            <span *ngIf="savingCategory" class="spinner-border spinner-border-sm ms-2"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT SECTION -->
+  <section *ngIf="activeSection === 'products'" class="panel card shadow-sm">
+    <div class="panel-header">
+      <div>
+        <h5 class="mb-1">Products</h5>
+        <small class="text-muted">Manage pricing, availability, visuals and placement.</small>
+      </div>
+      <div class="panel-actions">
+        <input type="search"
+               class="form-control me-2 search-input"
+               placeholder="Search products..."
+               [(ngModel)]="productSearchTerm">
+        <button class="btn btn-outline-secondary me-2" (click)="loadProducts()">
+          <i class="fas fa-sync-alt"></i>
+        </button>
+        <button class="btn btn-primary" (click)="openProductModal()">
+          <i class="fas fa-plus me-2"></i>New product
+        </button>
+      </div>
+    </div>
+
+    <div class="table-responsive position-relative">
+      <div *ngIf="productsLoading" class="table-overlay">
+        <div class="spinner-border text-primary" role="status"></div>
+      </div>
+      <table class="table table-hover align-middle mb-0">
+        <thead>
+          <tr>
+            <th style="width: 80px;">ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">Qty</th>
+            <th>Category</th>
+            <th class="text-center">Images</th>
+            <th class="text-end" style="width: 220px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of filteredProducts()">
+            <td><span class="badge bg-light text-dark">#{{ product.id }}</span></td>
+            <td class="fw-semibold">{{ product.name }}</td>
+            <td class="text-truncate" style="max-width: 240px;">{{ product.description }}</td>
+            <td class="text-center fw-semibold">{{ product.price | currency }}</td>
+            <td class="text-center">
+              <span class="badge" [class.bg-success]="product.quantity > 0" [class.bg-danger]="product.quantity === 0">
+                {{ product.quantity ?? 0 }}
+              </span>
+            </td>
+            <td>
+              <span class="badge bg-light text-dark">{{ product.categoryName || getCategoryName(product.categoryId!) }}</span>
+            </td>
+            <td class="text-center">{{ product.images?.length || 0 }}</td>
+            <td class="text-end">
+              <button class="btn btn-sm btn-outline-primary me-2" (click)="openProductModal(product)">
+                Edit
+              </button>
+              <button class="btn btn-sm btn-outline-danger" (click)="deleteProduct(product.id!)">
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr *ngIf="filteredProducts().length === 0">
+            <td colspan="8" class="text-center text-muted py-4">
+              No products match your filter.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Product Modal -->
+  <div *ngIf="showProductModal" class="modal fade show d-block" style="background: rgba(0,0,0,0.5);" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{ isEditingProduct ? 'Update product' : 'Create product' }}</h5>
+          <button type="button" class="btn-close" (click)="showProductModal = false"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Name <span class="text-danger">*</span></label>
+                <input type="text"
+                       class="form-control"
+                       name="productName"
+                       [(ngModel)]="newProduct.name"
+                       (input)="validateProductForm()"
+                       [class.is-invalid]="!newProduct.name.trim()">
+                <div class="invalid-feedback">Product name is required.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Category <span class="text-danger">*</span></label>
+                <select class="form-control"
+                        name="productCategory"
+                        [(ngModel)]="newProduct.categoryId"
+                        (change)="validateProductForm()"
+                        [class.is-invalid]="!newProduct.categoryId">
+                  <option value="">Select category</option>
+                  <option *ngFor="let c of categories" [ngValue]="c.id">{{ c.name }}</option>
+                </select>
+                <div class="invalid-feedback">Please select a category.</div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">Description <span class="text-danger">*</span></label>
+                <textarea class="form-control"
+                          rows="3"
+                          name="productDescription"
+                          [(ngModel)]="newProduct.description"
+                          (input)="validateProductForm()"
+                          [class.is-invalid]="!newProduct.description.trim()"></textarea>
+                <div class="invalid-feedback">Description is required.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Price <span class="text-danger">*</span></label>
+                <input type="number"
+                       class="form-control"
+                       min="0.01"
+                       step="0.01"
+                       name="productPrice"
+                       [(ngModel)]="newProduct.price"
+                       (input)="validateProductForm()"
+                       [class.is-invalid]="newProduct.price <= 0">
+                <div class="invalid-feedback">Provide a valid price.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Quantity <span class="text-danger">*</span></label>
+                <input type="number"
+                       class="form-control"
+                       min="1"
+                       step="1"
+                       name="productQuantity"
+                       [(ngModel)]="newProduct.quantity"
+                       (input)="validateProductForm()"
+                       [class.is-invalid]="newProduct.quantity <= 0">
+                <div class="invalid-feedback">Quantity must be at least 1.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Review summary</label>
+                <input type="text"
+                       class="form-control"
+                       maxlength="500"
+                       name="productReview"
+                       [(ngModel)]="newProduct.review">
+              </div>
+              <div class="col-12" *ngIf="!isEditingProduct">
+                <label class="form-label">Product images <span class="text-danger">*</span></label>
+                <input type="file"
+                       class="form-control"
+                       accept="image/*"
+                       multiple
+                       (change)="onProductFilesSelected($event)">
+                <small class="text-muted">Upload at least one JPG or PNG.</small>
+              </div>
+              <div class="col-12" *ngIf="productImagePreviews.length">
+                <div class="preview-grid">
+                  <div class="preview-card" *ngFor="let preview of productImagePreviews; let i = index">
+                    <img [src]="preview" alt="preview">
+                    <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeImageChip(i, false)">
+                      Remove
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12" *ngIf="isEditingProduct && (newProduct.images?.length || 0) > 0">
+                <label class="form-label">Existing images</label>
+                <div class="chip-list">
+                  <span class="chip" *ngFor="let img of newProduct.images; let i = index">
+                    {{ img }}
+                    <button type="button" (click)="removeImageChip(i, true)">&times;</button>
+                  </span>
+                </div>
+                <small class="text-muted">Removing a file will drop it after the refresh.</small>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" (click)="showProductModal = false">Cancel</button>
+          <button class="btn btn-primary"
+                  (click)="saveProduct()"
+                  [disabled]="!productFormValid || savingProduct">
+            {{ isEditingProduct ? 'Save changes' : 'Create product' }}
+            <span *ngIf="savingProduct" class="spinner-border spinner-border-sm ms-2"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="mat-elevation-z2">
+  <a class="nav-logo" routerLink="/home">
+    <img ngSrc="assets/img/logo.png" alt="Aledhemtek Logo" class="logo-img" height="500" width="500"/>
+  </a>
+
+  <span class="spacer"></span>
+
+  <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+  <a mat-button routerLink="/register" routerLinkActive="active">Register</a>
+  <a mat-button routerLink="/login" routerLinkActive="active">Login</a>
+  <a mat-button
+     class="user-pill"
+     routerLink="/client/profile"
+     *ngIf="currentUser">
+    <img [src]="userAvatar" alt="User avatar">
+    <span>{{ currentUser.firstName }} {{ currentUser.lastName }}</span>
+  </a>
+
+  <button mat-button *ngIf="showLogout" (click)="logout()">Logout</button>
+</mat-toolbar>
+
+

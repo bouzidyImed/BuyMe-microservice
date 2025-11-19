@@ -1,0 +1,42 @@
+.card {
+  border: none;
+  border-radius: 15px;
+}
+
+.card-header {
+  border-radius: 15px 15px 0 0 !important;
+}
+
+.profile-wrapper {
+  min-height: 60vh;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 5px solid #fff;
+}
+
+.form-control {
+  border: 1px solid #e9ecef;
+  padding: 10px 15px;
+  border-radius: 10px;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+.border-bottom {
+  border-color: #dee2e6 !important;
+}
+
+.text-primary {
+  color: #5e72e4 !important;
+}

@@ -1,0 +1,95 @@
+/* Layout helpers */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Toolbar styling */
+mat-toolbar {
+  min-height: 64px; /* smaller toolbar height */
+  padding: 0 16px;
+  background: #ffffff;
+  color: #0d0d0d;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1001;
+}
+
+/* Branding */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px; /* smaller logo */
+  width: auto;
+  object-fit: contain;
+  margin-right: 12px;
+}
+
+/* Links & buttons */
+mat-toolbar a,
+mat-toolbar button {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-left: 12px;
+  transition: opacity 0.2s ease-in-out;
+  background: transparent;
+  border: none;
+}
+
+mat-toolbar a:hover,
+mat-toolbar button:hover {
+  opacity: 0.7;
+}
+
+/* Active route indicator */
+mat-toolbar a.active {
+  border-bottom: 2px solid #1976d2;
+  padding-bottom: 2px;
+}
+
+.user-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #f5f7fb;
+  text-transform: none;
+}
+
+.user-pill img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  mat-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+    padding: 8px;
+  }
+
+  .logo-img {
+    height: 32px;
+  }
+
+  mat-toolbar a,
+  mat-toolbar button {
+    font-size: 12px;
+    margin: 4px 0;
+  }
+
+  .spacer {
+    display: none;
+  }
+}
