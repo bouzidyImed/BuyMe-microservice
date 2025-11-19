@@ -34,29 +34,29 @@
 
  :: Spring Boot ::                (v3.3.5)
 
-2025-10-19T20:52:17.266+01:00  INFO 7001 --- [cart-service] [           main] t.i.cartservice.CartServiceApplication   : Starting CartServiceApplication using Java 17.0.16 with PID 7001 (/home/imed/Documents/e-commerce-ms/cart-service/target/classes started by imed in /home/imed/Documents/e-commerce-ms/cart-service)
-2025-10-19T20:52:17.277+01:00  INFO 7001 --- [cart-service] [           main] t.i.cartservice.CartServiceApplication   : The following 1 profile is active: "local"
-2025-10-19T20:52:21.975+01:00  INFO 7001 --- [cart-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-19T20:52:22.668+01:00  INFO 7001 --- [cart-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 602 ms. Found 1 JPA repository interface.
-2025-10-19T20:52:23.861+01:00  INFO 7001 --- [cart-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f664fa2d-f903-3014-9ccb-46442336dd57
-2025-10-19T20:52:25.410+01:00  WARN 7001 --- [cart-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2025-10-19T20:52:25.426+01:00  WARN 7001 --- [cart-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
-2025-10-19T20:52:26.620+01:00  INFO 7001 --- [cart-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
-2025-10-19T20:52:26.667+01:00  INFO 7001 --- [cart-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-10-19T20:52:26.670+01:00  INFO 7001 --- [cart-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2025-10-19T20:52:26.989+01:00  INFO 7001 --- [cart-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-10-19T20:52:26.997+01:00  INFO 7001 --- [cart-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9524 ms
-2025-10-19T20:52:27.839+01:00 DEBUG 7001 --- [cart-service] [           main] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
-2025-10-19T20:52:28.265+01:00  INFO 7001 --- [cart-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-19T20:52:28.447+01:00  INFO 7001 --- [cart-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-10-19T20:52:28.558+01:00  INFO 7001 --- [cart-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-10-19T20:52:29.330+01:00  INFO 7001 --- [cart-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-10-19T20:52:29.401+01:00  INFO 7001 --- [cart-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-10-19T20:52:30.605+01:00  WARN 7001 --- [cart-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08S01
-2025-10-19T20:52:30.606+01:00 ERROR 7001 --- [cart-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Communications link failure
+2025-10-26T20:18:49.653+01:00  INFO 29035 --- [cart-service] [           main] t.i.cartservice.CartServiceApplication   : Starting CartServiceApplication using Java 17.0.16 with PID 29035 (/home/imed/Documents/e-commerce-ms/cart-service/target/classes started by imed in /home/imed/Documents/e-commerce-ms/cart-service)
+2025-10-26T20:18:49.690+01:00  INFO 29035 --- [cart-service] [           main] t.i.cartservice.CartServiceApplication   : The following 1 profile is active: "local"
+2025-10-26T20:18:56.881+01:00  INFO 29035 --- [cart-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-26T20:18:57.787+01:00  INFO 29035 --- [cart-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 865 ms. Found 1 JPA repository interface.
+2025-10-26T20:18:59.350+01:00  INFO 29035 --- [cart-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f664fa2d-f903-3014-9ccb-46442336dd57
+2025-10-26T20:19:00.850+01:00  WARN 29035 --- [cart-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-10-26T20:19:00.861+01:00  WARN 29035 --- [cart-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-10-26T20:19:01.978+01:00  INFO 29035 --- [cart-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
+2025-10-26T20:19:02.018+01:00  INFO 29035 --- [cart-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-26T20:19:02.019+01:00  INFO 29035 --- [cart-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-10-26T20:19:02.276+01:00  INFO 29035 --- [cart-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-26T20:19:02.281+01:00  INFO 29035 --- [cart-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 12125 ms
+2025-10-26T20:19:03.160+01:00 DEBUG 29035 --- [cart-service] [           main] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2025-10-26T20:19:03.820+01:00  INFO 29035 --- [cart-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-26T20:19:04.015+01:00  INFO 29035 --- [cart-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-10-26T20:19:04.092+01:00  INFO 29035 --- [cart-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-26T20:19:04.985+01:00  INFO 29035 --- [cart-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-26T20:19:05.102+01:00  INFO 29035 --- [cart-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-26T20:19:06.302+01:00  WARN 29035 --- [cart-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08S01
+2025-10-26T20:19:06.303+01:00 ERROR 29035 --- [cart-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-2025-10-19T20:52:30.608+01:00  WARN 7001 --- [cart-service] [           main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2025-10-26T20:19:06.305+01:00  WARN 29035 --- [cart-service] [           main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
 
 org.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC connection [Communications link failure
 
@@ -149,25 +149,25 @@ Caused by: java.net.ConnectException: Connection refused
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:62) ~[mysql-connector-j-8.3.0.jar:8.3.0]
 	... 51 common frames omitted
 
-2025-10-19T20:52:30.651+01:00  WARN 7001 --- [cart-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-10-19T20:52:30.654+01:00  WARN 7001 --- [cart-service] [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-10-19T20:52:31.885+01:00  INFO 7001 --- [cart-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-10-19T20:52:31.920+01:00  INFO 7001 --- [cart-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-10-19T20:52:32.923+01:00  WARN 7001 --- [cart-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08S01
-2025-10-19T20:52:32.924+01:00 ERROR 7001 --- [cart-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Communications link failure
+2025-10-26T20:19:06.360+01:00  WARN 29035 --- [cart-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-26T20:19:06.365+01:00  WARN 29035 --- [cart-service] [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-26T20:19:08.519+01:00  INFO 29035 --- [cart-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-26T20:19:08.621+01:00  INFO 29035 --- [cart-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-26T20:19:09.632+01:00  WARN 29035 --- [cart-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08S01
+2025-10-26T20:19:09.633+01:00 ERROR 29035 --- [cart-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-2025-10-19T20:52:32.935+01:00 ERROR 7001 --- [cart-service] [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Communications link failure
+2025-10-26T20:19:09.651+01:00 ERROR 29035 --- [cart-service] [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] [n/a]
-2025-10-19T20:52:32.937+01:00  WARN 7001 --- [cart-service] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Communications link failure
+2025-10-26T20:19:09.655+01:00  WARN 29035 --- [cart-service] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] [n/a]
-2025-10-19T20:52:32.941+01:00  INFO 7001 --- [cart-service] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2025-10-19T20:52:32.987+01:00  INFO 7001 --- [cart-service] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2025-10-26T20:19:09.661+01:00  INFO 29035 --- [cart-service] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-26T20:19:09.713+01:00  INFO 29035 --- [cart-service] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-10-19T20:52:33.029+01:00 ERROR 7001 --- [cart-service] [           main] o.s.boot.SpringApplication               : Application run failed
+2025-10-26T20:19:09.765+01:00 ERROR 29035 --- [cart-service] [           main] o.s.boot.SpringApplication               : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Communications link failure
 
@@ -278,8 +278,8 @@ Caused by: java.net.ConnectException: Connection refused
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;31mBUILD FAILURE[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  23.851 s
-[[1;34mINFO[m] Finished at: 2025-10-19T20:52:33+01:00
+[[1;34mINFO[m] Total time:  37.478 s
+[[1;34mINFO[m] Finished at: 2025-10-26T20:19:09+01:00
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;31mERROR[m] Failed to execute goal [32morg.springframework.boot:spring-boot-maven-plugin:3.3.5:run[m [1m(default-cli)[m on project [36mcart-service[m: [1;31mProcess terminated with exit code: 1[m -> [1m[Help 1][m
 [[1;31mERROR[m] 

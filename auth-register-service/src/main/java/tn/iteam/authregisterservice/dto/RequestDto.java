@@ -1,15 +1,16 @@
 package tn.iteam.authregisterservice.dto;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestDto {
+    @JsonProperty("email")
     private String email;
+
+    @JsonProperty("password")
     private String password;
 }
+

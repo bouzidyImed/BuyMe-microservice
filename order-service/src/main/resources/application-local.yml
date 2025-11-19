@@ -36,3 +36,20 @@ spring:
 server:
   port: 8082
   address: 0.0.0.0  # Bind to all interfaces (IPv4 + IPv6) to fix IPv6-only listen
+# application.yml (order-service)
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.http: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    feign: DEBUG
+    org.springframework.cloud.openfeign: DEBUG
+    tn.iteam.orderservice: DEBUG
+    tn.iteam.orderservice.feign: DEBUG
+    tn.iteam.orderservice.service: DEBUG
+    tn.iteam.orderservice.controller: DEBUG
+    org.apache.kafka: DEBUG
+    org.springframework.kafka: DEBUG

@@ -2,6 +2,7 @@ package tn.iteam.orderservice.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import tn.iteam.orderservice.enums.OrderStatus;
 
 import java.util.Date;  // Changed from LocalDateTime to Date
 
@@ -21,4 +22,6 @@ public class Order {
     private Date orderDate;  // Reformulated as Date (serializes to ISO string in JSON)
     private Long productId;
     private Long userId;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
 }

@@ -1,9 +1,7 @@
 package tn.iteam.catalogueservice.mappers;
 
 import org.springframework.stereotype.Component;
-import tn.iteam.catalogueservice.dto.CategoryDto;
 import tn.iteam.catalogueservice.dto.ProductDto;
-import tn.iteam.catalogueservice.models.Category;
 import tn.iteam.catalogueservice.models.Product;
 
 @Component
@@ -17,9 +15,18 @@ public class ProductMapper {
                 .name(product.getName())
                 .description(product.getDescription())
                 .price(product.getPrice())
+                .rate(product.getRate())
+                .review(product.getReview())
+                .images(product.getImages())
+                .quantity(product.getQuantity())
                 .categoryId(
                         product.getCategory() != null ? product.getCategory().getId() : null
                 )
+                .categoryName(
+                        product.getCategory() != null ? product.getCategory().getName() : null
+                )
+                .createdAt(product.getCreatedAt())
+                .updatedAt(product.getUpdatedAt())
                 .build();
     }
 
@@ -31,7 +38,14 @@ public class ProductMapper {
         product.setName(dto.getName());
         product.setDescription(dto.getDescription());
         product.setPrice(dto.getPrice());
-        // 🟡 Category will be set in the service layer
+        product.setRate(dto.getRate());
+        product.setReview(dto.getReview());
+        product.setImages(dto.getImages());
+        product.setCreatedAt(dto.getCreatedAt() != null ? dto.getCreatedAt() : product.getCreatedAt());
+        product.setUpdatedAt(dto.getUpdatedAt() != null ? dto.getUpdatedAt() : product.getUpdatedAt());
+        product.setQuantity(dto.getQuantity());
+
+        // 🟡 Category is set later in the service layer
         return product;
     }
 }

@@ -22,3 +22,11 @@ eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
+# ------------------------------------------------------------------
+# Swagger on a dedicated 90xx port
+# ------------------------------------------------------------------
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui

@@ -2,10 +2,12 @@ package tn.iteam.authregisterservice.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -36,7 +38,8 @@ public class User implements UserDetails {
     private String lastName;
     private Integer phone;
     @Column(name = "date_of_birth")
-    private Date dob;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate dob;
     private String country;
     private String city;
     @Column(name = "zip_code")
@@ -63,7 +66,6 @@ public class User implements UserDetails {
                 .map(role -> new SimpleGrantedAuthority("ROLE_" + role.getName()))
                 .collect(Collectors.toList());
     }
-
     @Override
     public String getUsername() { return email; }
     @Override

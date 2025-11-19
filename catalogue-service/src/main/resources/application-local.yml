@@ -44,6 +44,23 @@ eureka:
       defaultZone: http://localhost:8761/eureka  # Points to your Eureka server
 
 logging:
+  # ── File output (absolute path) ─────────────────────
+  file:
+    name: /home/imed/Documents/e-commerce-ms/logs/catalogue-service.log
+
+  # ── Log levels ───────────────────────────────────────
   level:
+    root: INFO
     org.springframework.kafka: DEBUG
     org.apache.kafka: DEBUG
+    tn.iteam.catalogueservice: DEBUG   # your package
+    # (you already had the same in the external config – keep it)
+
+# ------------------------------------------------------------------
+# Swagger on a dedicated 90xx port
+# ------------------------------------------------------------------
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
