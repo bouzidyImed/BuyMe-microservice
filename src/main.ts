@@ -9,8 +9,9 @@ import {importProvidersFrom, InjectionToken} from '@angular/core';
 import {bootstrapApplication} from '@angular/platform-browser';
 //import {HttpClientModule} from '@angular/common/module.d-CnjH8Dlt';
 import {HttpClientModule} from '@angular/common/http';
-import {provideHttpClient} from '@angular/common/http';
+import {provideHttpClient, withInterceptors} from '@angular/common/http';
 import {AppComponent} from './app/app.component';
+import {authInterceptor} from './app/core/auth.interceptor';
 import {provideRouter} from '@angular/router';
 import {routes} from './app/app.routes';
 
@@ -25,7 +26,7 @@ fetch('/assets/config/config.json')
     bootstrapApplication(AppComponent, {
       providers: [
         importProvidersFrom(HttpClientModule),
-        provideHttpClient(),
+        provideHttpClient(withInterceptors([authInterceptor])),
         provideRouter(routes),
         { provide: APP_CONFIG, useValue: config }
       ]
@@ -37,7 +38,7 @@ fetch('/assets/config/config.json')
     bootstrapApplication(AppComponent, {
       providers: [
         importProvidersFrom(HttpClientModule),
-        provideHttpClient(),
+        provideHttpClient(withInterceptors([authInterceptor])),
         provideRouter(routes),
         { provide: APP_CONFIG, useValue: fallbackConfig }
       ]

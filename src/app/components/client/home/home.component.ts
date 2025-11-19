@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { forkJoin } from 'rxjs';
 import { CategoryService } from '../../../services/category.service';
@@ -36,19 +37,46 @@ interface CategoryGroup {
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
+  // ...existing code...
+
+  navigateToProfile() {
+    this.router.navigate(['/client/profile']);
+  }
+
   categoriesWithProducts: CategoryGroup[] = [];
   allProducts: Product[] = [];
   loading = true;
   error: string | null = null;
   selectedCategoryId: number | 'all' = 'all';
-  private productImageBaseUrl: string;
+  private readonly productImageBaseUrl: string;
+
 
   constructor(
-    private categoryService: CategoryService,
-    private productService: ProductService,
+    private readonly categoryService: CategoryService,
+    private readonly productService: ProductService,
+    private readonly router: Router,
     @Inject(APP_CONFIG) config: any
   ) {
-    this.productImageBaseUrl = `${config.apiUrl}/uploads/products`;
+    const apiFromConfig: string = (config?.apiUrl || '').replace(/\/$/, '');
+    if (apiFromConfig.includes('api-gateway')) {
+      // When running locally (not docker), the hostname 'api-gateway' may not resolve from the browser.
+      // Use the local host and API gateway port so images load during local dev.
+      this.productImageBaseUrl = `${globalThis.location.protocol}//${globalThis.location.hostname}:8081/api/uploads/products`;
+    } else if (apiFromConfig.endsWith('/api')) {
+      this.productImageBaseUrl = `${apiFromConfig}/uploads/products`;
+    } else if (/^https?:\/\/[^/]+:\d+$/.test(apiFromConfig)) {
+      // host:port without /api
+      this.productImageBaseUrl = `${apiFromConfig}/api/uploads/products`;
+    } else {
+      this.productImageBaseUrl = `${apiFromConfig}/uploads/products`;
+    }
+  }
+
+  onImageError(event: Event) {
+    const img = event.target as HTMLImageElement;
+    if (img && !img.src.includes('/assets/img/default-avatar.png')) {
+      img.src = '/assets/img/product-3.png';
+    }
   }
 
   ngOnInit(): void {

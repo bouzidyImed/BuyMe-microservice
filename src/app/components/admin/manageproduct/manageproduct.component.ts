@@ -35,6 +35,7 @@ interface Product {
   imports: [CommonModule, FormsModule]
 })
 export class ManageproductComponent implements OnInit, OnDestroy {
+  autoRefreshPending = false;
   products: Product[] = [];
   categories: Category[] = [];
 
@@ -431,14 +432,11 @@ export class ManageproductComponent implements OnInit, OnDestroy {
     if (this.autoRefreshTimeout) {
       clearTimeout(this.autoRefreshTimeout);
     }
+    this.autoRefreshPending = true;
     this.autoRefreshTimeout = setTimeout(() => {
-      if (target === 'categories' || target === 'all') {
-        this.loadCategories(false);
-      }
-      if (target === 'products' || target === 'all') {
-        this.loadProducts(false);
-      }
+      this.autoRefreshPending = false;
       this.autoRefreshTimeout = undefined;
+      globalThis.location.reload();
     }, 3000);
   }
 
