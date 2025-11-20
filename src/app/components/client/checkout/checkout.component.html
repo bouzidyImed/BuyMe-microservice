@@ -419,106 +419,57 @@
                 <th scope="col">Total</th>
               </tr>
               </thead>
-              <tbody>
-              <tr class="text-center">
-                <th scope="row" class="text-start py-4">
-                  Apple iPad Mini
-                </th>
-                <td class="py-4">G2356</td>
-                <td class="py-4">$269.00</td>
-                <td class="py-4 text-center">2</td>
-                <td class="py-4">$538.00</td>
-              </tr>
-              <tr class="text-center">
-                <th scope="row" class="text-start py-4">
-                  Apple iPad Mini
-                </th>
-                <td class="py-4">G2356</td>
-                <td class="py-4">$269.00</td>
-                <td class="py-4">2</td>
-                <td class="py-4">$538.00</td>
-              </tr>
-              <tr class="text-center">
-                <th scope="row" class="text-start py-4">
-                  Apple iPad Mini
-                </th>
-                <td class="py-4">G2356</td>
-                <td class="py-4">$269.00</td>
-                <td class="py-4">2</td>
-                <td class="py-4">$538.00</td>
-              </tr>
-              <tr class="text-center">
-                <th scope="row" class="text-start py-4">
-                  Apple iPad Mini
-                </th>
-                <td class="py-4">G2356</td>
-                <td class="py-4">$269.00</td>
-                <td class="py-4">2</td>
-                <td class="py-4">$538.00</td>
-              </tr>
-              <tr class="text-center">
-                <th scope="row" class="text-start py-4">
-                  Apple iPad Mini
-                </th>
-                <td class="py-4">G2356</td>
-                <td class="py-4">$269.00</td>
-                <td class="py-4">2</td>
-                <td class="py-4">$538.00</td>
-              </tr>
-              <tr>
-                <th scope="row">
-                </th>
-                <td class="py-4"></td>
-                <td class="py-4"></td>
-                <td class="py-4">
-                  <p class="mb-0 text-dark py-2">Subtotal</p>
-                </td>
-                <td class="py-4">
-                  <div class="py-2 text-center border-bottom border-top">
-                    <p class="mb-0 text-dark">$1134.00</p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                </th>
-                <td class="py-4">
-                  <p class="mb-0 text-dark py-4">Shipping</p>
-                </td>
-                <td colspan="3" class="py-4">
-                  <div class="form-check text-start">
-                    <input type="checkbox" class="form-check-input bg-primary border-0"
-                           id="Shipping-1" name="Shipping-1" value="Shipping">
-                    <label class="form-check-label" for="Shipping-1">Free Shipping</label>
-                  </div>
-                  <div class="form-check text-start">
-                    <input type="checkbox" class="form-check-input bg-primary border-0"
-                           id="Shipping-2" name="Shipping-1" value="Shipping">
-                    <label class="form-check-label" for="Shipping-2">Flat rate:
-                      $15.00</label>
-                  </div>
-                  <div class="form-check text-start">
-                    <input type="checkbox" class="form-check-input bg-primary border-0"
-                           id="Shipping-3" name="Shipping-1" value="Shipping">
-                    <label class="form-check-label" for="Shipping-3">Local Pickup:
-                      $8.00</label>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                </th>
-                <td class="py-4">
-                  <p class="mb-0 text-dark text-uppercase py-2">TOTAL</p>
-                </td>
-                <td class="py-4"></td>
-                <td class="py-4"></td>
-                <td class="py-4">
-                  <div class="py-2 text-center border-bottom border-top">
-                    <p class="mb-0 text-dark">$135.00</p>
-                  </div>
-                </td>
-              </tr>
+              <tbody *ngIf="(items$ | async) as items">
+                <tr *ngFor="let item of items" class="text-center">
+                  <th scope="row" class="text-start py-4">{{ item.name }}</th>
+                  <td class="py-4">Model</td>
+                  <td class="py-4">{{ item.price | currency }}</td>
+                  <td class="py-4 text-center">{{ item.quantity }}</td>
+                  <td class="py-4">{{ (item.price * item.quantity) | currency }}</td>
+                </tr>
+
+                <tr *ngIf="items.length === 0">
+                  <td colspan="5" class="text-center py-4">Your cart is empty.</td>
+                </tr>
+
+                <tr *ngIf="items.length > 0">
+                  <th scope="row"></th>
+                  <td class="py-4"></td>
+                  <td class="py-4"></td>
+                  <td class="py-4">
+                    <p class="mb-0 text-dark py-2">Subtotal</p>
+                  </td>
+                  <td class="py-4">
+                    <div class="py-2 text-center border-bottom border-top">
+                      <p class="mb-0 text-dark">{{ getSubtotal(items) | currency }}</p>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr *ngIf="items.length > 0">
+                  <th scope="row"></th>
+                  <td class="py-4">
+                    <p class="mb-0 text-dark py-4">Shipping</p>
+                  </td>
+                  <td colspan="3" class="py-4">
+                    <div class="form-check text-start">
+                      <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-1" name="Shipping-1" value="Shipping">
+                      <label class="form-check-label" for="Shipping-1">Free Shipping</label>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr *ngIf="items.length > 0">
+                  <th scope="row"></th>
+                  <td class="py-4"><p class="mb-0 text-dark text-uppercase py-2">TOTAL</p></td>
+                  <td class="py-4"></td>
+                  <td class="py-4"></td>
+                  <td class="py-4">
+                    <div class="py-2 text-center border-bottom border-top">
+                      <p class="mb-0 text-dark">{{ getSubtotal(items) | currency }}</p>
+                    </div>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -566,6 +517,11 @@
                     class="btn btn-primary border-secondary py-3 px-4 text-uppercase w-100 text-primary">Place
               Order</button>
           </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 text-end">
+          <button class="btn btn-success rounded-pill px-4 py-3" type="button" (click)="placeOrders()">Place Order</button>
         </div>
       </div>
     </form>

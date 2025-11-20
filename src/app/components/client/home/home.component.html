@@ -56,7 +56,9 @@
   <!-- Topbar Start -->
   <div class="container-fluid px-5 d-none border-bottom d-lg-block">
     <div class="d-flex justify-content-end align-items-center py-2">
-    
+      <a routerLink="/client/profile" class="btn btn-outline-primary rounded-circle me-2" title="Profile">
+        <i class="fas fa-user fa-lg"></i>
+      </a>
       <button class="btn btn-outline-primary ms-2" (click)="navigateToProfile()" title="Go to Profile">
         <i class="fas fa-user"></i> Profile
       </button>
@@ -349,7 +351,7 @@
                     <div class="product-item rounded wow fadeInUp" [attr.data-wow-delay]="'0.' + idx + 's'">
                       <div class="product-item-inner border rounded">
                         <div class="product-item-inner-item">
-                          <img [src]="getProductImage(product)" class="img-fluid w-100 rounded-top" alt="{{ product.name }}"/>
+                          <img [src]="getProductImage(product)" (error)="onImageError($event)" class="img-fluid w-100 rounded-top" alt="{{ product.name }}"/>
                           <!-- CATEGORY LABEL OR BADGES CAN GO HERE IF NEEDED -->
                           <div class="product-details">
                             <a href="#"><i class="fa fa-eye fa-1x"></i></a>
@@ -364,8 +366,14 @@
                         </div>
                         <div class="text-muted small py-1 px-2">{{ product.description | slice:0:50 }}<span *ngIf="product.description.length > 50">...</span></div>
                       </div>
-                      <div class="product-item-add border border-top-0 rounded-bottom text-center p-4 pt-0">
-                        <button class="btn btn-primary border-secondary rounded-pill py-2 px-4 mb-4" disabled><i class="fas fa-shopping-cart me-2"></i> Add To Cart</button>
+                        <div class="product-item-add border border-top-0 rounded-bottom text-center p-4 pt-0">
+                        <button class="btn btn-primary border-secondary rounded-pill py-2 px-4 mb-4"
+                                (click)="addToCart(product)"
+                                [disabled]="isInCart(product) || (product.quantity === 0)">
+                          <i class="fas fa-shopping-cart me-2"></i>
+                          <span *ngIf="!isInCart(product)">Add To Cart</span>
+                          <span *ngIf="isInCart(product)"><i class="fas fa-check me-1"></i>Added to cart</span>
+                        </button>
                         <div class="d-flex justify-content-between align-items-center">
                           <div class="d-flex">
                             <i class="fas fa-star text-primary"></i>

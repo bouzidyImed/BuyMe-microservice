@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { forkJoin } from 'rxjs';
 import { CategoryService } from '../../../services/category.service';
 import { ProductService } from '../../../services/product.service';
+import { CartService, CartItem } from '../../../services/cart.service';
 import { APP_CONFIG } from '../../../../main';
 
 interface Category {
@@ -38,6 +39,7 @@ interface CategoryGroup {
 })
 export class HomeComponent implements OnInit {
   // ...existing code...
+  cartProductIds = new Set<number>();
 
   navigateToProfile() {
     this.router.navigate(['/client/profile']);
@@ -54,6 +56,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private readonly categoryService: CategoryService,
     private readonly productService: ProductService,
+    private readonly cartService: CartService,
     private readonly router: Router,
     @Inject(APP_CONFIG) config: any
   ) {
@@ -81,6 +84,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchCatalogue();
+    // keep an updated set of product ids currently in the cart
+    this.cartService.items$.subscribe((items: CartItem[]) => {
+      this.cartProductIds.clear();
+      for (const it of items) {
+        this.cartProductIds.add(it.productId);
+      }
+    });
   }
 
   getProductImage(product: Product): string {
@@ -113,6 +123,26 @@ export class HomeComponent implements OnInit {
   cardAnimationDelay(index: number): string {
     const step = (index % 4) * 0.2;
     return `${0.1 + step}s`;
+  }
+
+  isInCart(product: Product): boolean {
+    return this.cartProductIds.has(product.id);
+  }
+
+  addToCart(product: Product): void {
+    const items = this.cartService.getItems();
+    const existing = items.find(i => i.productId === product.id);
+    const existingQty = existing ? existing.quantity : 0;
+    // validate against stock
+    const available = product.quantity ?? 0;
+    if (existingQty + 1 > available) {
+      alert('Cannot add to cart: requested quantity exceeds available stock.');
+      return;
+    }
+
+    // include stock so cart keeps track of limits
+    this.cartService.addToCartProduct({ id: product.id, name: product.name, price: product.price, images: product.images, stock: available }, 1);
+    console.log('Product added to cart:', product.id);
   }
 
   private fetchCatalogue(): void {

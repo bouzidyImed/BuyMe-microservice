@@ -1,11 +1,55 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CartService, CartItem } from '../../../services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
+  items$;
+  shippingRate = 3;
 
+  constructor(private readonly cartService: CartService, private readonly router: Router) {
+    this.items$ = this.cartService.items$;
+  }
+
+  increase(item: CartItem) {
+    // enforce stock limit if available
+    if (typeof item.stock === 'number' && item.quantity >= item.stock) {
+      alert('Cannot add more — product stock limit reached.');
+      return;
+    }
+    this.cartService.addToCartProduct({ id: item.productId, name: item.name, price: item.price, images: item.image ? [item.image] : [], stock: item.stock }, 1);
+  }
+
+  decrease(item: CartItem) {
+    if (item.quantity > 1) {
+      // reduce quantity by 1
+      const items = this.cartService.getItems().map(i => i.productId === item.productId ? { ...i, quantity: i.quantity - 1 } : i);
+      // update subject and storage via internal methods (use remove/add to keep interface simple)
+      this.cartService.clear();
+      for (const i of items) {
+        this.cartService.addItem(i);
+      }
+    } else {
+      this.remove(item.productId);
+    }
+  }
+
+  remove(productId: number) {
+    this.cartService.removeItem(productId);
+  }
+
+  getSubtotal(items: CartItem[]) {
+    return items.reduce((s, it) => s + (it.price * it.quantity), 0);
+  }
+
+  proceedToCheckout() {
+    this.router.navigate(['/client/checkout']);
+  }
 }

@@ -10,17 +10,19 @@ import {SingleComponent} from './components/client/single/single.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {NotfoundComponent} from './components/notfound/notfound.component';
 import { ProfileComponent } from './components/client/profile/profile.component';
+import { MyOrdersComponent } from './components/client/my-orders/my-orders.component';
 import { ManageproductComponent } from './components/admin/manageproduct/manageproduct.component';
 
 export const routes: Routes = [
   { path: 'client/home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  {path: 'bestseller', component: BestsellerComponent},
-  {path: 'cart', component: CartComponent},
-  {path: 'checkout', component: CheckoutComponent},
-  {path: 'shop', component: ShopComponent},
-  {path: 'single', component: SingleComponent},
+  {path: 'client/bestseller', component: BestsellerComponent},
+  {path: 'client/cart', component: CartComponent},
+  {path: 'client/checkout', component: CheckoutComponent},
+  {path: 'client/orders', component: MyOrdersComponent},
+  {path: 'client/shop', component: ShopComponent},
+  {path: 'client/single', component: SingleComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'notfound', component: NotfoundComponent},
   {path: 'client/profile', component: ProfileComponent},

@@ -217,8 +217,8 @@
             <td class="text-truncate" style="max-width: 240px;">{{ product.description }}</td>
             <td class="text-center fw-semibold">{{ product.price | currency }}</td>
             <td class="text-center">
-              <span class="badge" [class.bg-success]="product.quantity > 0" [class.bg-danger]="product.quantity === 0">
-                {{ product.quantity ?? 0 }}
+                <span class="badge" [class.bg-success]="product.quantity > 0" [class.bg-danger]="product.quantity === 0">
+                {{ product.quantity }}
               </span>
             </td>
             <td>

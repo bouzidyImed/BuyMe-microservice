@@ -21,8 +21,8 @@
             <img [src]="avatarUrl"
                  alt="Profile Picture"
                  class="rounded-circle shadow-lg profile-avatar">
-            <h4 class="mt-3 mb-0">{{ userProfile?.firstName }} {{ userProfile?.lastName }}</h4>
-            <small class="text-muted">{{ userProfile?.email }}</small>
+            <h4 class="mt-3 mb-0">{{ userProfile.firstName }} {{ userProfile.lastName }}</h4>
+            <small class="text-muted">{{ userProfile.email }}</small>
           </div>
 
           <div class="row mb-4">
@@ -31,15 +31,15 @@
             </div>
             <div class="col-md-6 mb-3">
               <label class="form-label text-muted small">First Name</label>
-              <div class="form-control bg-light">{{ userProfile?.firstName || 'Not provided' }}</div>
+              <div class="form-control bg-light">{{ userProfile.firstName || 'Not provided' }}</div>
             </div>
             <div class="col-md-6 mb-3">
               <label class="form-label text-muted small">Last Name</label>
-              <div class="form-control bg-light">{{ userProfile?.lastName || 'Not provided' }}</div>
+              <div class="form-control bg-light">{{ userProfile.lastName || 'Not provided' }}</div>
             </div>
             <div class="col-12 mb-3">
               <label class="form-label text-muted small">Date of Birth</label>
-              <div class="form-control bg-light">{{ userProfile?.dob ? (userProfile?.dob | date:'longDate') : 'Not provided' }}</div>
+              <div class="form-control bg-light">{{ userProfile.dob ? (userProfile.dob | date:'longDate') : 'Not provided' }}</div>
             </div>
           </div>
 
@@ -49,23 +49,23 @@
             </div>
             <div class="col-md-6 mb-3">
               <label class="form-label text-muted small">Phone Number</label>
-              <div class="form-control bg-light">{{ userProfile?.phone || 'Not provided' }}</div>
+              <div class="form-control bg-light">{{ userProfile.phone || 'Not provided' }}</div>
             </div>
             <div class="col-md-6 mb-3">
               <label class="form-label text-muted small">Country</label>
-              <div class="form-control bg-light">{{ userProfile?.country || 'Not provided' }}</div>
+              <div class="form-control bg-light">{{ userProfile.country || 'Not provided' }}</div>
             </div>
             <div class="col-md-6 mb-3">
               <label class="form-label text-muted small">City</label>
-              <div class="form-control bg-light">{{ userProfile?.city || 'Not provided' }}</div>
+              <div class="form-control bg-light">{{ userProfile.city || 'Not provided' }}</div>
             </div>
             <div class="col-md-6 mb-3">
               <label class="form-label text-muted small">ZIP Code</label>
-              <div class="form-control bg-light">{{ userProfile?.zip || 'Not provided' }}</div>
+              <div class="form-control bg-light">{{ userProfile.zip || 'Not provided' }}</div>
             </div>
             <div class="col-12 mb-3">
               <label class="form-label text-muted small">Address</label>
-              <div class="form-control bg-light">{{ userProfile?.address || 'Not provided' }}</div>
+              <div class="form-control bg-light">{{ userProfile.address || 'Not provided' }}</div>
             </div>
           </div>
 

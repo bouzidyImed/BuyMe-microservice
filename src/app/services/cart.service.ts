@@ -1,0 +1,79 @@
+import { Injectable, Inject } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { APP_CONFIG } from '../../main';
+
+export interface CartItem {
+  productId: number;
+  name: string;
+  price: number;
+  quantity: number;
+  image?: string | null;
+  stock?: number;
+}
+
+@Injectable({ providedIn: 'root' })
+export class CartService {
+  private readonly itemsSubject = new BehaviorSubject<CartItem[]>(this.loadFromStorage());
+  readonly items$ = this.itemsSubject.asObservable();
+
+  private readonly apiUrl: string;
+
+  constructor(private readonly http: HttpClient, @Inject(APP_CONFIG) private readonly config: any) {
+    const base = (this.config?.apiUrl || '').replace(/\/$/, '');
+    // backend orders endpoint is under /api/orders
+    this.apiUrl = base.replace(/\/api$/, '') + '/api/orders';
+  }
+
+  private saveToStorage(items: CartItem[]) {
+    localStorage.setItem('cart_items', JSON.stringify(items));
+  }
+
+  private loadFromStorage(): CartItem[] {
+    const raw = localStorage.getItem('cart_items');
+    return raw ? JSON.parse(raw) : [];
+  }
+
+  getItems(): CartItem[] {
+    return this.itemsSubject.value;
+  }
+
+  addToCartProduct(product: { id: number; name: string; price: number; images?: string[]; stock?: number }, qty = 1) {
+    const items = [...this.getItems()];
+    const idx = items.findIndex(i => i.productId === product.id);
+    const image = product.images?.length ? product.images[0] : null;
+    if (idx === -1) {
+      items.push({ productId: product.id, name: product.name, price: product.price, quantity: qty, image, stock: product.stock });
+    } else {
+      items[idx].quantity += qty;
+      // update stock if provided
+      if (typeof product.stock === 'number') {
+        items[idx].stock = product.stock;
+      }
+    }
+    this.itemsSubject.next(items);
+    this.saveToStorage(items);
+  }
+
+  addItem(item: CartItem) {
+    this.addToCartProduct({ id: item.productId, name: item.name, price: item.price, images: item.image ? [item.image] : [], stock: item.stock }, item.quantity);
+  }
+
+  removeItem(productId: number) {
+    const items = this.getItems().filter(i => i.productId !== productId);
+    this.itemsSubject.next(items);
+    this.saveToStorage(items);
+  }
+
+  clear() {
+    this.itemsSubject.next([]);
+    this.saveToStorage([]);
+  }
+
+  // place order using backend
+  placeOrder(orderPayload: any) {
+    const url = `${this.apiUrl}/place-order`;
+    console.debug('[CartService] placeOrder ->', { url, orderPayload, tokenPreview: (localStorage.getItem('jwt_token') || '').slice(0, 20) + '...' });
+    return this.http.post<any>(url, orderPayload);
+  }
+}
