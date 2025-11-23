@@ -15,6 +15,7 @@ import { ManageproductComponent } from './components/admin/manageproduct/managep
 
 export const routes: Routes = [
   { path: 'client/home', component: HomeComponent },
+    { path: 'client/my-orders', component: MyOrdersComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {path: 'client/bestseller', component: BestsellerComponent},
