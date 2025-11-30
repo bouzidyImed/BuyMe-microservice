@@ -19,31 +19,45 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
   kafka:
-    bootstrap-servers: localhost:9092  # Or 'kafka:9092' if Docker-internal
+    bootstrap-servers: localhost:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer  # Spring's JSON serializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        enable.idempotence: true  # Optional: Reliable delivery
+        enable.idempotence: true
     consumer:
       group-id: catalogue-group
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer  # Spring's JSON deserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.trusted.packages: "tn.iteam.catalogueservice.dto.*"  # For JSON DTOs
+        spring.json.trusted.packages: "tn.iteam.catalogueservice.dto.*"
     admin:
       properties:
-        auto.create.topics.enable: true  # Auto-creates topics on publish (default true, but explicit)
+        auto.create.topics.enable: true
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/e-commerce
 
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka  # Points to your Eureka server
+      defaultZone: http://localhost:8761/eureka
 
 logging:
   level:
     org.springframework.kafka: DEBUG
     org.apache.kafka: DEBUG
+    tn.iteam.cart-service: DEBUG
+
+keycloak:
+  auth-server-url: http://localhost:8080
+  realm: e-commerce
+  resource: cart-service
+  credentials:
+    secret: uFOTgCCVM7YUY2g82JQAMZG2rEoBroTn

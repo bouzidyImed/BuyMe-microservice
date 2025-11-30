@@ -4,6 +4,11 @@ spring:
   config:
     activate:
       on-profile: docker
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak:8080/realms/e-commerce
   datasource:
     url: jdbc:mysql://mysql:3306/e-com-catalogue-db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root

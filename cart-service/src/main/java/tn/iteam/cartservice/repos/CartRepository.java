@@ -6,5 +6,5 @@ import tn.iteam.cartservice.model.Cart;
 import java.util.List;
 
 public interface CartRepository extends JpaRepository<Cart, Long> {
-    List<Cart> findByUserId(Long userId);
+    List<Cart> findByUserId(String userId);
 }

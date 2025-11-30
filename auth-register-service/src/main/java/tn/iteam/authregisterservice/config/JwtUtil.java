@@ -1,6 +1,6 @@
 package tn.iteam.authregisterservice.config;
 
-import io.jsonwebtoken.Claims;
+/*import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component;
 import javax.crypto.SecretKey;
 import java.util.*;
 import java.util.function.Function;
-import java.util.stream.Collectors;
-
-@Component
+import java.util.stream.Collectors;*/
+/*
+@Component*/
 public class JwtUtil {
 
-    private final SecretKey secretKey;
+    /*private final SecretKey secretKey;
     private final long expiration = 1000 * 60 * 60 * 10; // 10 hours
 
     public JwtUtil(@Value("${jwt.secret}") String secret) {
@@ -75,5 +75,5 @@ public class JwtUtil {
 
     private Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
-    }
+    }*/
 }

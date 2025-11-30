@@ -34,23 +34,23 @@
 
  :: Spring Boot ::                (v3.3.5)
 
-2025-11-02T17:14:11.111+01:00  INFO 33955 --- [kafka-service] [           main] t.i.k.KafkaServiceApplication            : Starting KafkaServiceApplication using Java 17.0.16 with PID 33955 (/home/imed/Documents/e-commerce-ms/kafka-service/target/classes started by imed in /home/imed/Documents/e-commerce-ms/kafka-service)
-2025-11-02T17:14:11.114+01:00  INFO 33955 --- [kafka-service] [           main] t.i.k.KafkaServiceApplication            : The following 1 profile is active: "local"
-2025-11-02T17:14:11.975+01:00  INFO 33955 --- [kafka-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=872a0675-2980-34fd-a360-e8f0445d1796
-2025-11-02T17:14:12.033+01:00  WARN 33955 --- [kafka-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2025-11-02T17:14:12.037+01:00  WARN 33955 --- [kafka-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
-2025-11-02T17:14:12.289+01:00  INFO 33955 --- [kafka-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
-2025-11-02T17:14:12.303+01:00  INFO 33955 --- [kafka-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-11-02T17:14:12.303+01:00  INFO 33955 --- [kafka-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2025-11-02T17:14:12.362+01:00  INFO 33955 --- [kafka-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-11-02T17:14:12.364+01:00  INFO 33955 --- [kafka-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1203 ms
-2025-11-02T17:14:12.693+01:00 DEBUG 33955 --- [kafka-service] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
-2025-11-02T17:14:12.772+01:00 DEBUG 33955 --- [kafka-service] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-11-02T17:14:12.879+01:00 DEBUG 33955 --- [kafka-service] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-11-02T17:14:12.909+01:00 DEBUG 33955 --- [kafka-service] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-11-02T17:14:13.162+01:00  INFO 33955 --- [kafka-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2025-11-02T17:14:13.215+01:00  WARN 33955 --- [kafka-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-11-02T17:14:13.253+01:00  INFO 33955 --- [kafka-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+2025-11-28T17:59:15.254+01:00  INFO 283495 --- [kafka-service] [           main] t.i.k.KafkaServiceApplication            : Starting KafkaServiceApplication using Java 17.0.16 with PID 283495 (/home/imed/Documents/e-commerce-ms/kafka-service/target/classes started by imed in /home/imed/Documents/e-commerce-ms/kafka-service)
+2025-11-28T17:59:15.257+01:00  INFO 283495 --- [kafka-service] [           main] t.i.k.KafkaServiceApplication            : The following 1 profile is active: "local"
+2025-11-28T17:59:16.439+01:00  INFO 283495 --- [kafka-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=872a0675-2980-34fd-a360-e8f0445d1796
+2025-11-28T17:59:16.504+01:00  WARN 283495 --- [kafka-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-11-28T17:59:16.509+01:00  WARN 283495 --- [kafka-service] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-11-28T17:59:16.793+01:00  INFO 283495 --- [kafka-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2025-11-28T17:59:16.810+01:00  INFO 283495 --- [kafka-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-28T17:59:16.810+01:00  INFO 283495 --- [kafka-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-11-28T17:59:16.889+01:00  INFO 283495 --- [kafka-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-28T17:59:16.891+01:00  INFO 283495 --- [kafka-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1570 ms
+2025-11-28T17:59:17.250+01:00 DEBUG 283495 --- [kafka-service] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2025-11-28T17:59:17.318+01:00 DEBUG 283495 --- [kafka-service] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-11-28T17:59:17.448+01:00 DEBUG 283495 --- [kafka-service] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-11-28T17:59:17.480+01:00 DEBUG 283495 --- [kafka-service] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-11-28T17:59:17.713+01:00  INFO 283495 --- [kafka-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-11-28T17:59:17.774+01:00  WARN 283495 --- [kafka-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-28T17:59:17.811+01:00  INFO 283495 --- [kafka-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
 	auto.include.jmx.reporter = true
 	bootstrap.controllers = []
 	bootstrap.servers = [localhost:9092]
@@ -124,196 +124,693 @@
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2025-11-02T17:14:13.367+01:00  INFO 33955 --- [kafka-service] [           main] o.a.k.clients.admin.AdminClientConfig    : These configurations '[auto.create.topics.enable]' were supplied but are not used yet.
-2025-11-02T17:14:13.369+01:00  INFO 33955 --- [kafka-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.1
-2025-11-02T17:14:13.369+01:00  INFO 33955 --- [kafka-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: e2494e6ffb89f828
-2025-11-02T17:14:13.369+01:00  INFO 33955 --- [kafka-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1762100053368
-2025-11-02T17:14:14.079+01:00  INFO 33955 --- [kafka-service] [service-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for kafka-service-admin-0 unregistered
-2025-11-02T17:14:14.092+01:00  INFO 33955 --- [kafka-service] [service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2025-11-02T17:14:14.093+01:00  INFO 33955 --- [kafka-service] [service-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2025-11-02T17:14:14.093+01:00  INFO 33955 --- [kafka-service] [service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2025-11-02T17:14:14.124+01:00  INFO 33955 --- [kafka-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2025-11-02T17:14:14.157+01:00  INFO 33955 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2025-11-02T17:14:14.161+01:00  INFO 33955 --- [kafka-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2025-11-02T17:14:14.172+01:00  INFO 33955 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2025-11-02T17:14:14.172+01:00  INFO 33955 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2025-11-02T17:14:14.172+01:00  INFO 33955 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2025-11-02T17:14:14.172+01:00  INFO 33955 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2025-11-02T17:14:14.172+01:00  INFO 33955 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2025-11-02T17:14:14.172+01:00  INFO 33955 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2025-11-02T17:14:14.172+01:00  INFO 33955 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2025-11-02T17:14:14.376+01:00 DEBUG 33955 --- [kafka-service] [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/
-2025-11-02T17:14:14.505+01:00 DEBUG 33955 --- [kafka-service] [           main] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:14:14.555+01:00 DEBUG 33955 --- [kafka-service] [           main] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:14:14.557+01:00 DEBUG 33955 --- [kafka-service] [           main] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:14:14.594+01:00  INFO 33955 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2025-11-02T17:14:14.597+01:00  INFO 33955 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2025-11-02T17:14:14.599+01:00  INFO 33955 --- [kafka-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-11-02T17:14:14.602+01:00  INFO 33955 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1762100054601 with initial instances count: 3
-2025-11-02T17:14:14.606+01:00  INFO 33955 --- [kafka-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application KAFKA-SERVICE with eureka with status UP
-2025-11-02T17:14:14.609+01:00  INFO 33955 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762100054609, current=UP, previous=STARTING]
-2025-11-02T17:14:14.611+01:00  INFO 33955 --- [kafka-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KAFKA-SERVICE/192.168.189.1:kafka-service:8087: registering service...
-2025-11-02T17:14:14.615+01:00 DEBUG 33955 --- [kafka-service] [foReplicator-%d] o.s.web.client.RestTemplate              : HTTP POST http://localhost:8761/eureka/apps/KAFKA-SERVICE
-2025-11-02T17:14:14.617+01:00 DEBUG 33955 --- [kafka-service] [foReplicator-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:14:14.626+01:00  INFO 33955 --- [kafka-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/'
-2025-11-02T17:14:14.628+01:00  INFO 33955 --- [kafka-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8087
-2025-11-02T17:14:14.633+01:00 DEBUG 33955 --- [kafka-service] [foReplicator-%d] o.s.web.client.RestTemplate              : Writing [InstanceInfo [instanceId = 192.168.189.1:kafka-service:8087, appName = KAFKA-SERVICE, hostName = 192.168.189.1, status = UP, ipAddr = 192.168.189.1, port = 8087, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@46b0a8d5] as "application/json"
-2025-11-02T17:14:14.651+01:00  INFO 33955 --- [kafka-service] [           main] t.i.k.KafkaServiceApplication            : Started KafkaServiceApplication in 4.077 seconds (process running for 4.443)
-2025-11-02T17:14:14.656+01:00 DEBUG 33955 --- [kafka-service] [foReplicator-%d] o.s.web.client.RestTemplate              : Response 204 NO_CONTENT
-2025-11-02T17:14:14.657+01:00  INFO 33955 --- [kafka-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KAFKA-SERVICE/192.168.189.1:kafka-service:8087 - registration status: 204
-2025-11-02T17:14:44.598+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:14:44.598+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:14:44.601+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:14:44.606+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:14:44.606+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:14:44.614+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:14:44.623+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:15:14.612+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:15:14.613+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:15:14.621+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:15:14.621+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:15:14.624+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:15:14.625+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:15:14.634+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:15:44.631+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:15:44.632+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:15:44.636+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:15:44.637+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:15:44.640+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:15:44.640+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:15:44.644+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:16:14.645+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:16:14.646+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:16:14.647+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:16:14.647+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:16:14.653+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:16:14.654+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:16:14.654+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:16:44.655+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:16:44.656+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:16:44.657+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:16:44.657+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:16:44.663+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:16:44.663+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:16:44.664+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:17:14.665+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:17:14.666+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:17:14.668+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:17:14.669+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:17:14.674+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:17:14.676+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:17:14.676+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:17:44.676+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:17:44.681+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:17:44.682+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:17:44.682+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:17:44.689+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:17:44.689+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:17:44.690+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:18:14.691+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:18:14.692+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:18:14.697+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:18:14.697+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:18:14.698+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:18:14.702+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:18:14.703+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:18:44.700+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:18:44.700+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:18:44.707+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:18:44.708+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:18:44.708+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:18:44.714+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:18:44.715+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:19:14.174+01:00  INFO 33955 --- [kafka-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2025-11-02T17:19:14.709+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:19:14.710+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:19:14.717+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:19:14.717+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:19:14.718+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:19:14.724+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:19:14.725+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:19:44.719+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:19:44.720+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:19:44.727+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:19:44.727+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:19:44.728+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:19:44.735+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:19:44.735+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:20:14.729+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:20:14.729+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:20:14.736+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:20:14.738+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:20:14.738+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:20:14.745+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:20:14.745+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:20:44.738+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:20:44.739+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:20:44.745+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:20:44.747+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:20:44.748+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:20:44.754+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:20:44.754+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:21:14.747+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:21:14.748+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:21:14.754+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:21:14.756+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:21:14.757+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:21:14.762+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:21:14.763+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:21:44.756+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:21:44.756+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:21:44.762+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:21:44.765+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:21:44.765+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:21:44.770+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:21:44.771+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:22:14.763+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:22:14.764+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:22:14.769+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:22:14.773+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:22:14.774+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:22:14.780+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:22:14.781+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:22:44.770+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:22:44.771+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:22:44.777+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:22:44.783+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:22:44.784+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:22:44.789+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:22:44.790+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:23:14.778+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:23:14.779+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:23:14.785+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:23:14.792+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:23:14.793+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:23:14.799+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:23:14.800+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:23:44.787+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:23:44.787+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:23:44.793+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:23:44.802+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:23:44.802+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:23:44.808+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:23:44.808+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:24:14.175+01:00  INFO 33955 --- [kafka-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2025-11-02T17:24:14.794+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:24:14.795+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:24:14.801+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:24:14.810+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:24:14.811+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:24:14.816+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:24:14.816+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:24:44.802+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:24:44.803+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:24:44.818+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:24:44.819+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:24:46.362+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:24:46.515+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:24:46.733+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
-2025-11-02T17:25:16.735+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.189.1:kafka-service:8087?status=UP&lastDirtyTimestamp=1762100054609
-2025-11-02T17:25:16.735+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:25:16.736+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
-2025-11-02T17:25:16.736+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2025-11-02T17:25:18.089+01:00 DEBUG 33955 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:25:18.092+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
-2025-11-02T17:25:18.092+01:00 DEBUG 33955 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T17:59:17.988+01:00  INFO 283495 --- [kafka-service] [           main] o.a.k.clients.admin.AdminClientConfig    : These configurations '[auto.create.topics.enable]' were supplied but are not used yet.
+2025-11-28T17:59:17.991+01:00  INFO 283495 --- [kafka-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.1
+2025-11-28T17:59:17.991+01:00  INFO 283495 --- [kafka-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: e2494e6ffb89f828
+2025-11-28T17:59:17.991+01:00  INFO 283495 --- [kafka-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1764349157989
+2025-11-28T17:59:18.534+01:00  INFO 283495 --- [kafka-service] [service-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for kafka-service-admin-0 unregistered
+2025-11-28T17:59:18.541+01:00  INFO 283495 --- [kafka-service] [service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-11-28T17:59:18.541+01:00  INFO 283495 --- [kafka-service] [service-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-11-28T17:59:18.541+01:00  INFO 283495 --- [kafka-service] [service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-11-28T17:59:18.559+01:00  INFO 283495 --- [kafka-service] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-11-28T17:59:18.629+01:00  INFO 283495 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-11-28T17:59:18.634+01:00  INFO 283495 --- [kafka-service] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-28T17:59:18.646+01:00  INFO 283495 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-28T17:59:18.646+01:00  INFO 283495 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-28T17:59:18.647+01:00  INFO 283495 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-28T17:59:18.647+01:00  INFO 283495 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-28T17:59:18.647+01:00  INFO 283495 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-28T17:59:18.647+01:00  INFO 283495 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-28T17:59:18.647+01:00  INFO 283495 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-11-28T17:59:18.902+01:00 DEBUG 283495 --- [kafka-service] [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/
+2025-11-28T17:59:19.045+01:00 DEBUG 283495 --- [kafka-service] [           main] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T17:59:19.120+01:00 DEBUG 283495 --- [kafka-service] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T17:59:19.124+01:00 DEBUG 283495 --- [kafka-service] [           main] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T17:59:19.156+01:00  INFO 283495 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-11-28T17:59:19.159+01:00  INFO 283495 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-11-28T17:59:19.162+01:00  INFO 283495 --- [kafka-service] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-28T17:59:19.166+01:00  INFO 283495 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1764349159164 with initial instances count: 4
+2025-11-28T17:59:19.171+01:00  INFO 283495 --- [kafka-service] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application KAFKA-SERVICE with eureka with status UP
+2025-11-28T17:59:19.172+01:00  INFO 283495 --- [kafka-service] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1764349159172, current=UP, previous=STARTING]
+2025-11-28T17:59:19.174+01:00  INFO 283495 --- [kafka-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KAFKA-SERVICE/192.168.1.189:kafka-service:8087: registering service...
+2025-11-28T17:59:19.178+01:00 DEBUG 283495 --- [kafka-service] [foReplicator-%d] o.s.web.client.RestTemplate              : HTTP POST http://localhost:8761/eureka/apps/KAFKA-SERVICE
+2025-11-28T17:59:19.181+01:00 DEBUG 283495 --- [kafka-service] [foReplicator-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T17:59:19.191+01:00  INFO 283495 --- [kafka-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/'
+2025-11-28T17:59:19.192+01:00  INFO 283495 --- [kafka-service] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8087
+2025-11-28T17:59:19.201+01:00 DEBUG 283495 --- [kafka-service] [foReplicator-%d] o.s.web.client.RestTemplate              : Writing [InstanceInfo [instanceId = 192.168.1.189:kafka-service:8087, appName = KAFKA-SERVICE, hostName = 192.168.1.189, status = UP, ipAddr = 192.168.1.189, port = 8087, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@35a78e5f] as "application/json"
+2025-11-28T17:59:19.211+01:00  INFO 283495 --- [kafka-service] [           main] t.i.k.KafkaServiceApplication            : Started KafkaServiceApplication in 4.613 seconds (process running for 5.046)
+2025-11-28T17:59:19.227+01:00 DEBUG 283495 --- [kafka-service] [foReplicator-%d] o.s.web.client.RestTemplate              : Response 204 NO_CONTENT
+2025-11-28T17:59:19.228+01:00  INFO 283495 --- [kafka-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KAFKA-SERVICE/192.168.1.189:kafka-service:8087 - registration status: 204
+2025-11-28T17:59:49.165+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T17:59:49.166+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T17:59:49.167+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T17:59:49.171+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T17:59:49.171+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T17:59:49.177+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T17:59:49.182+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:00:19.178+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:00:19.179+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:00:19.184+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:00:19.185+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:00:19.185+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:00:19.186+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:00:19.189+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:00:49.188+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:00:49.189+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:00:49.190+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:00:49.191+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:00:49.194+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:00:49.195+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:00:49.195+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:01:19.196+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:01:19.197+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:01:19.199+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:01:19.199+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:01:19.201+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:01:19.203+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:01:19.203+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:01:49.203+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:01:49.206+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:01:49.209+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:01:49.209+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:01:49.214+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:01:49.214+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:01:49.214+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:02:19.215+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:02:19.216+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:02:19.217+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:02:19.217+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:02:19.222+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:02:19.222+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:02:19.223+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:02:49.223+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:02:49.224+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:02:49.226+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:02:49.226+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:02:49.228+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:02:49.230+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:02:49.230+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:03:19.229+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:03:19.230+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:03:19.233+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:03:19.234+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:03:19.235+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:03:19.237+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:03:19.238+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:03:49.236+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:03:49.237+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:03:49.239+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:03:49.240+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:03:49.242+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:03:49.251+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:03:49.251+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:04:18.650+01:00  INFO 283495 --- [kafka-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-28T18:04:19.244+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:04:19.245+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:04:19.250+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:04:19.253+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:04:19.254+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:04:19.258+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:04:19.258+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:04:49.251+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:04:49.252+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:04:49.257+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:04:49.260+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:04:49.261+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:04:49.266+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:04:49.267+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:05:19.259+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:05:19.260+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:05:19.265+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:05:19.269+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:05:19.270+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:05:19.274+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:05:19.275+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:05:49.266+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:05:49.267+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:05:49.271+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:05:49.278+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:05:49.278+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:05:49.282+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:05:49.282+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:06:19.272+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:06:19.273+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:06:19.277+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:06:19.284+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:06:19.285+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:06:19.288+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:06:19.289+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:06:49.278+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:06:49.279+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:06:49.284+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:06:49.291+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:06:49.292+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:06:49.296+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:06:49.297+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:07:19.285+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:07:19.286+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:07:19.291+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:07:19.302+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:07:19.302+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:07:19.306+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:07:19.307+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:07:49.292+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:07:49.293+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:07:49.298+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:07:49.310+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:07:49.311+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:07:49.315+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:07:49.316+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:08:19.299+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:08:19.300+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:08:19.305+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:08:19.319+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:08:19.319+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:08:19.324+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:08:19.324+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:08:49.306+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:08:49.307+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:08:49.311+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:08:49.328+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:08:49.328+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:08:49.332+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:08:49.332+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:09:18.650+01:00  INFO 283495 --- [kafka-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-28T18:09:19.312+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:09:19.313+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:09:19.318+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:09:19.338+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:09:19.339+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:09:19.343+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:09:19.343+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:09:49.319+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:09:49.320+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:09:49.326+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:09:49.346+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:09:49.347+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:09:49.351+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:09:49.352+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:10:19.327+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:10:19.333+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:10:19.337+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:10:19.355+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:10:19.356+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:10:19.360+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:10:19.360+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:10:49.339+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:10:49.340+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:10:49.345+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:10:49.369+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:10:49.385+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:10:49.390+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:10:49.390+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:11:19.346+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:11:19.347+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:11:19.374+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:11:19.393+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:11:19.393+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:11:19.397+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:11:19.397+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:11:49.375+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:11:49.375+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:11:49.379+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:11:49.400+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:11:49.400+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:11:49.405+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:11:49.405+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:12:19.380+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:12:19.381+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:12:19.385+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:12:19.408+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:12:19.408+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:12:19.412+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:12:19.413+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:12:49.386+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:12:49.386+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:12:49.391+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:12:49.416+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:12:49.416+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:12:49.420+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:12:49.420+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:13:19.392+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:13:19.392+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:13:19.396+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:13:19.423+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:13:19.423+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:13:19.427+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:13:19.428+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:13:49.397+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:13:49.398+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:13:49.403+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:13:49.431+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:13:49.431+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:13:49.435+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:13:49.436+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:14:18.651+01:00  INFO 283495 --- [kafka-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-28T18:14:19.405+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:14:19.406+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:14:19.410+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:14:19.439+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:14:19.439+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:14:19.443+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:14:19.443+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:14:49.412+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:14:49.413+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:14:49.418+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:14:49.445+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:14:49.446+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:14:49.451+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:14:49.452+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:15:19.419+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:15:19.419+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:15:19.424+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:15:19.454+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:15:19.455+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:15:19.459+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:15:19.460+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:15:49.425+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:15:49.426+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:15:49.430+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:15:49.462+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:15:49.462+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:15:49.466+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:15:49.466+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:16:19.431+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:16:19.431+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:16:19.436+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:16:19.468+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:16:19.469+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:16:19.473+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:16:19.473+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:16:49.437+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:16:49.438+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:16:49.442+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:16:49.475+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:16:49.476+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:16:49.480+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:16:49.480+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:17:19.443+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:17:19.443+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:17:19.447+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:17:19.482+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:17:19.482+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:17:19.486+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:17:19.487+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:17:49.448+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:17:49.448+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:17:49.452+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:17:49.489+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:17:49.489+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:17:49.493+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:17:49.493+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:18:19.454+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:18:19.454+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:18:19.459+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:18:19.495+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:18:19.496+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:18:19.500+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:18:19.500+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:18:49.460+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:18:49.461+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:18:49.464+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:18:49.502+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:18:49.503+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:18:49.506+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:18:49.506+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:19:18.652+01:00  INFO 283495 --- [kafka-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-28T18:19:19.470+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:19:19.477+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:19:19.480+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:19:19.508+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:19:19.508+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:19:19.512+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:19:19.513+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:19:49.482+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:19:49.482+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:19:49.487+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:19:49.515+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:19:49.515+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:19:49.520+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:19:49.520+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:20:19.488+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:20:19.488+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:20:19.492+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:20:19.522+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:20:19.523+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:20:19.527+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:20:19.527+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:20:49.493+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:20:49.494+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:20:49.499+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:20:49.529+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:20:49.529+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:20:49.533+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:20:49.533+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:21:19.500+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:21:19.501+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:21:19.504+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:21:19.535+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:21:19.535+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:21:19.539+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:21:19.539+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:21:49.505+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:21:49.506+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:21:49.510+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:21:49.541+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:21:49.541+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:21:49.545+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:21:49.546+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:46:43.843+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:46:43.860+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:46:43.862+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:46:43.892+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:46:43.893+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:46:43.899+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:46:43.900+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:47:13.896+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:47:13.898+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:47:13.903+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:47:13.904+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:47:13.905+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:47:13.910+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:47:13.911+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:47:43.906+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:47:43.909+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:47:43.913+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:47:43.914+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:47:43.916+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:47:43.924+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:47:43.926+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:48:13.919+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:48:13.920+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:48:13.925+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:48:13.929+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:48:13.930+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:48:13.935+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:48:13.935+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:48:42.960+01:00  INFO 283495 --- [kafka-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-28T18:48:43.927+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:48:43.929+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:48:43.938+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:48:43.939+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:48:43.949+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:48:43.954+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:48:43.959+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:49:13.952+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:49:13.953+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:49:13.959+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:49:13.967+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:49:13.967+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:49:13.974+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:49:13.974+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:49:43.961+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:49:43.961+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:49:43.967+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:49:43.977+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:49:43.977+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:49:43.983+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:49:43.984+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:50:13.968+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:50:13.969+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:50:13.974+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:50:13.986+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:50:13.987+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:50:13.991+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:50:13.992+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:50:43.975+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:50:43.976+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:50:43.982+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:50:43.994+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:50:43.995+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:50:44.001+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:50:44.001+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:51:13.984+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:51:13.986+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:51:13.993+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:51:14.004+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:51:14.004+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:51:14.011+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:51:14.011+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:51:43.995+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:51:43.995+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:51:44.001+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:51:44.014+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:51:44.015+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:51:44.019+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:51:44.020+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:52:14.002+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:52:14.003+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:52:14.007+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:52:14.022+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:52:14.023+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:52:14.027+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:52:14.028+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:52:44.009+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:52:44.010+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:52:44.015+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:52:44.030+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:52:44.030+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:52:44.035+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:52:44.036+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:53:14.016+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:53:14.017+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:53:14.023+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:53:14.038+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:53:14.039+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:53:14.044+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:53:14.045+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:53:42.966+01:00  INFO 283495 --- [kafka-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-28T18:53:44.030+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:53:44.031+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:53:44.035+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:53:44.047+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:53:44.047+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:53:44.053+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:53:44.053+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:54:14.037+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:54:14.037+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:54:14.042+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:54:14.056+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:54:14.056+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:54:14.061+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:54:14.061+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:54:44.044+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:54:44.044+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:54:44.052+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:54:44.063+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:54:44.064+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:54:44.071+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:54:44.071+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:55:14.053+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:55:14.054+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:55:14.060+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:55:14.074+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:55:14.075+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:55:14.081+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:55:14.082+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:55:44.061+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:55:44.062+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:55:44.067+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:55:44.085+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:55:44.086+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:55:44.090+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:55:44.090+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:56:14.069+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:56:14.069+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:56:14.076+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:56:14.092+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:56:14.093+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:56:14.099+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:56:14.099+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:56:44.077+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:56:44.078+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:56:44.083+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:56:44.101+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:56:44.101+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:56:44.106+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:56:44.106+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:57:14.085+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:57:14.086+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:57:14.092+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:57:14.108+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:57:14.109+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:57:14.119+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:57:14.119+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:57:44.094+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:57:44.100+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:57:44.106+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:57:44.130+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:57:44.130+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:57:44.135+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:57:44.136+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:58:14.108+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:58:14.110+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:58:14.116+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:58:14.138+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:58:14.139+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:58:14.145+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:58:14.145+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:58:42.968+01:00  INFO 283495 --- [kafka-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-28T18:58:44.118+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:58:44.118+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:58:44.124+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:58:44.147+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:58:44.148+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:58:44.152+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:58:44.152+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:59:14.125+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:59:14.126+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:59:14.132+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:59:14.155+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:59:14.155+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:59:14.161+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:59:14.162+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T18:59:44.133+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T18:59:44.134+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:59:44.139+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:59:44.165+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T18:59:44.165+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T18:59:44.171+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T18:59:44.171+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:00:14.140+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:00:14.141+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:00:14.146+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:00:14.173+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:00:14.174+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:00:14.180+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:00:14.181+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:00:44.147+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:00:44.147+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:00:44.153+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:00:44.188+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:00:44.188+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:00:44.194+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:00:44.194+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:01:14.154+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:01:14.155+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:01:14.160+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:01:14.197+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:01:14.197+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:01:14.202+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:01:14.203+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:01:44.164+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:01:44.167+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:01:44.174+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:01:44.206+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:01:44.207+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:01:44.212+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:01:44.213+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:02:14.175+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:02:14.176+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:02:14.181+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:02:14.218+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:02:14.218+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:02:14.223+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:02:14.223+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:02:44.188+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:02:44.190+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:02:44.217+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:02:44.232+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:02:44.235+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:02:44.248+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:02:44.249+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:03:14.222+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:03:14.223+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:03:14.227+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:03:14.252+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:03:14.252+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:03:14.256+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:03:14.257+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:03:42.968+01:00  INFO 283495 --- [kafka-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-28T19:03:44.229+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:03:44.229+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:03:44.234+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:03:44.259+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:03:44.260+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:03:44.264+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:03:44.264+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:04:14.236+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:04:14.236+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:04:14.243+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:04:14.267+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:04:14.267+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:04:14.272+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:04:14.272+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:04:44.275+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:04:44.275+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:04:44.277+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:04:44.281+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:04:44.282+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:04:44.300+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:04:44.310+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:05:14.295+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:05:14.308+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:05:14.312+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:05:14.312+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:05:14.315+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:05:14.316+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:05:14.319+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:05:44.322+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:05:44.322+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:05:44.322+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:05:44.322+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:05:44.326+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:05:44.326+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:05:44.327+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:06:14.328+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:06:14.328+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:06:14.329+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:06:14.330+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:06:14.334+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:06:14.336+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:06:14.337+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:06:44.336+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:06:44.337+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:06:44.340+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:06:44.340+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:06:44.342+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:06:44.345+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:06:44.345+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:07:14.345+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:07:14.346+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:07:14.348+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:07:14.350+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:07:14.354+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:07:14.358+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:07:14.369+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:07:44.356+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:07:44.357+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:07:44.362+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:07:44.386+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:07:44.387+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:07:44.391+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:07:44.392+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:08:14.363+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:08:14.364+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:08:14.370+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:08:14.394+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:08:14.394+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:08:14.400+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:08:14.400+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:08:42.969+01:00  INFO 283495 --- [kafka-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-28T19:08:44.371+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:08:44.372+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:08:44.378+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:08:44.403+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:08:44.403+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:08:44.408+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:08:44.408+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:09:14.379+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:09:14.380+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:09:14.385+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:09:14.411+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:09:14.411+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:09:14.416+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:09:14.416+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:09:44.563+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-28T19:09:44.833+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:09:44.547+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/KAFKA-SERVICE/192.168.1.189:kafka-service:8087?status=UP&lastDirtyTimestamp=1764349159172
+2025-11-28T19:09:45.157+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-28T19:09:46.240+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-28T19:09:46.402+01:00 DEBUG 283495 --- [kafka-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-28T19:09:46.450+01:00 DEBUG 283495 --- [kafka-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK

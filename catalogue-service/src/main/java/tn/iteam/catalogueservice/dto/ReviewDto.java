@@ -23,10 +23,6 @@ public class ReviewDto {
     @Max(value = 5, message = "Rating must be at most 5")
     private Integer rating;
 
-    @NotBlank(message = "Reviewer name is required")
-    @Size(max = 100, message = "Reviewer name too long")
-    private String reviewerName;
-
     @NotNull(message = "Product ID is required")
     private Long productId;
 

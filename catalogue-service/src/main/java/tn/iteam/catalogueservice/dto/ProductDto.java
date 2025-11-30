@@ -26,8 +26,7 @@ public class ProductDto {
     @NotNull(message = "Price is required")
     @Positive(message = "Price must be positive")
     private Integer quantity;
-    @Size(max = 500, message = "Review summary too long")
-    private String review;
+    private List<String> review;
 
     // No validation on images (can be filenames, paths, or URLs)
     private List<String> images;

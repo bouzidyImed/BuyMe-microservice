@@ -1,5 +1,6 @@
 package tn.iteam.catalogueservice.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;
@@ -23,7 +24,11 @@ public class Product {
     private Integer quantity;
     // Optional: average rating (calculated or updated via service)
     private Double rate = 0.0;
-    private String review;
+    
+    @ElementCollection
+    @CollectionTable(name = "product_reviews", joinColumns = @JoinColumn(name = "product_id"))
+    @Column(name = "review_comment")
+    private List<String> review = new ArrayList<>();
 
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
@@ -42,5 +47,6 @@ public class Product {
 
     // One product → Many reviews
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Review> reviews = new ArrayList<>();
 }

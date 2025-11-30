@@ -1,3 +1,41 @@
+#spring:
+#  application:
+#    name: auth-register-service
+#  config:
+#    activate:
+#      on-profile: docker
+#  datasource:
+#    url: jdbc:mysql://mysql:3306/auth-reg-db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    hikari:
+#      connection-timeout: 30000
+#      maximum-pool-size: 10
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
+#
+#server:
+#  port: 8081
+#
+#eureka:
+#  client:
+#    enabled: true
+#    service-url:
+#      defaultZone: http://eureka-server:8761/eureka
+#  instance:
+#    instance-id: ${spring.application.name}:${server.port}
+#    metadata-map:
+#      zone: docker
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health,info
 spring:
   application:
     name: auth-register-service
@@ -5,6 +43,7 @@ spring:
     activate:
       on-profile: docker
   datasource:
+    # 💡 Docker Change 1: Use the MySQL service name ('mysql') instead of 'localhost'
     url: jdbc:mysql://mysql:3306/auth-reg-db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
     password: root
@@ -16,15 +55,39 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    # 💡 Minor Update: Use the full platform property name
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
+  # 🔑 Added Security Configuration from application-local.yml
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # 💡 Docker Change 2: Keycloak URL is often 'keycloak:8080' in a Docker network
+          # Using 'localhost' here might still work if you expose the port, but 'keycloak' is safer
+          issuer-uri: http://keycloak:8080/realms/ecommerce
+
 server:
-  port: 8081
+  # 💡 Change 3: Set back to 8085 for consistency/microservice port (from your local setup)
+  port: 8085
+  servlet:
+    context-path: /api # Add context-path from local config
+
+keycloak:
+  # 🔑 Added Keycloak Configuration from application-local.yml
+  realm: e-commerce
+  # 💡 Docker Change 4: Use the Keycloak service name
+  auth-server-url: http://keycloak:8080
+  resource: auth-service
+  credentials:
+    secret: ${KEYCLOAK_CLIENT_SECRET:hKMs68og1tJyS4qUm2EtbI6zkhgv2ePc} # Use an environment variable or secret
+  use-resource-role-mappings: true
 
 eureka:
   client:
     enabled: true
     service-url:
+      # 💡 Docker Change 5: Use the Eureka service name ('eureka-server')
       defaultZone: http://eureka-server:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${server.port}
@@ -35,4 +98,13 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info
+        include: health,info,metrics # Added 'metrics' back from your original setup
+  endpoint:
+    health:
+      show-details: always # Added detail visibility back
+
+app:
+  # 🔑 Added App-Specific Configuration from application-local.yml
+  upload:
+    # 💡 Docker Change 6: Use a path suitable for Docker container volumes
+    dir: /app/uploads

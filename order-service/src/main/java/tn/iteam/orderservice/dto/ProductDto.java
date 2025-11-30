@@ -1,5 +1,6 @@
 package tn.iteam.orderservice.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -15,6 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductDto {
     private Long id;
     @NotBlank(message = "Product name is required")
@@ -29,8 +31,9 @@ public class ProductDto {
     @NotNull(message = "Price is required")
     @Positive(message = "Price must be positive")
     private Integer quantity;
-    @Size(max = 500, message = "Review summary too long")
-    private String review;
+    // Review can be either String or List<String> from product service
+    // Using List to handle array responses, ignored if not used
+    private List<String> review;
     private OrderStatus status;
 
     // No validation on images (can be filenames, paths, or URLs)

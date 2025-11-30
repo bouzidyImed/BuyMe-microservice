@@ -1,4 +1,6 @@
 package tn.iteam.catalogueservice.models;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -31,6 +33,8 @@ public class Review {
     @Column(nullable = false)
     private Integer rating;
 
+    @Column(name = "reviewer_id", nullable = false)
+    private String reviewerId;
     @NotBlank(message = "Reviewer name is required")
     @Size(max = 100, message = "Reviewer name too long")
     @Column(name = "reviewer_name", nullable = false)
@@ -38,6 +42,8 @@ public class Review {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false)
+    @JsonIgnore
+    @JsonBackReference
     private Product product;
 
     @Column(name = "created_at", updatable = false)

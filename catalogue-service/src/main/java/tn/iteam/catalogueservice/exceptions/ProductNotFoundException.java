@@ -1,4 +1,4 @@
-package tn.iteam.catalogueservice.exeptions;
+package tn.iteam.catalogueservice.exceptions;
 
 public class ProductNotFoundException extends RuntimeException {
     public ProductNotFoundException(Long id) {

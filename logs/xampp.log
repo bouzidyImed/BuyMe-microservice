@@ -1,4 +1,4 @@
 Stopping XAMPP for Linux 8.2.12-0...
-XAMPP: Stopping Apache...ok.
-XAMPP: Stopping MySQL...ok.
-XAMPP: Stopping ProFTPD...ok.
+XAMPP: Stopping Apache...not running.
+XAMPP: Stopping MySQL...not running.
+XAMPP: Stopping ProFTPD...not running.

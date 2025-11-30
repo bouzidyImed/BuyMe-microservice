@@ -16,8 +16,8 @@ import java.io.IOException;
 import java.util.List;
 
 @Slf4j
-public class JwtAuthenticationFilter extends OncePerRequestFilter {
-    private final JwtUtil jwtUtil;
+public class JwtAuthenticationFilter /*extends OncePerRequestFilter*/ {
+    /*private final JwtUtil jwtUtil;
     private final UserDetailsService userDetailsService;
 
     public JwtAuthenticationFilter(JwtUtil jwtUtil, UserDetailsService userDetailsService) {
@@ -69,5 +69,5 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
 
         chain.doFilter(request, response);
-    }
+    }*/
 }

@@ -1,10 +1,16 @@
-server:
-  port: 8084
-
 spring:
   config:
     activate:
       on-profile: local
+
+  application:
+    name: catalogue-service
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/e-commerce
 
   datasource:
     url: jdbc:mysql://localhost:3306/e-com-catalogue-db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
@@ -16,51 +22,31 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
 
-  kafka:
-    bootstrap-servers: localhost:9092  # Or 'kafka:9092' if Docker-internal
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer  # Spring's JSON serializer
-      properties:
-        enable.idempotence: true  # Optional: Reliable delivery
-    consumer:
-      group-id: catalogue-group
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer  # Spring's JSON deserializer
-      properties:
-        spring.json.trusted.packages: "tn.iteam.catalogueservice.dto.*"  # For JSON DTOs
-    admin:
-      properties:
-        auto.create.topics.enable: true  # Auto-creates topics on publish (default true, but explicit)
+server:
+  port: 8084
+
+keycloak:
+  auth-server-url: http://localhost:8080
+  realm: e-commerce
+  resource: catalogue-service
+  credentials:
+    secret: hKMs68og1tJyS4qUm2EtbI6zkhgv2ePc
+  use-resource-role-mappings: true
+  bearer-only: true
 
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka  # Points to your Eureka server
+      defaultZone: http://localhost:8761/eureka
 
 logging:
-  # ── File output (absolute path) ─────────────────────
-  file:
-    name: /home/imed/Documents/e-commerce-ms/logs/catalogue-service.log
-
-  # ── Log levels ───────────────────────────────────────
   level:
-    root: INFO
-    org.springframework.kafka: DEBUG
-    org.apache.kafka: DEBUG
-    tn.iteam.catalogueservice: DEBUG   # your package
-    # (you already had the same in the external config – keep it)
-
-# ------------------------------------------------------------------
-# Swagger on a dedicated 90xx port
-# ------------------------------------------------------------------
-springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
-  api-docs:
-    path: /v3/api-docs
+    org.springframework.security: DEBUG
+    org.keycloak: DEBUG
+    tn.iteam.catalogueservice: DEBUG

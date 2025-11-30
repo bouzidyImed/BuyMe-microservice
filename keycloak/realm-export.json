@@ -1,0 +1,83 @@
+{
+  "realm": "ecommerce",
+  "enabled": true,
+  "registrationEmailAsUsername": true,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": true,
+  "rememberMe": true,
+  "verifyEmail": false,
+  "registrationAllowed": true,
+  "clients": [
+    {
+      "clientId": "ecommerce-backend",
+      "name": "E-commerce Backend (confidential)",
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": false,
+      "secret": "backend-secret",
+      "fullScopeAllowed": false,
+      "defaultClientScopes": [
+        "profile",
+        "email",
+        "roles"
+      ],
+      "redirectUris": [
+        "*"
+      ],
+      "webOrigins": [
+        "*"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      }
+    },
+    {
+      "clientId": "ecommerce-frontend",
+      "name": "E-commerce Angular Frontend",
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": false,
+      "authorizationServicesEnabled": false,
+      "webOrigins": [
+        "*"
+      ],
+      "redirectUris": [
+        "http://localhost:4200/*",
+        "http://angular-front:4200/*"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      },
+      "defaultClientScopes": [
+        "profile",
+        "email",
+        "roles"
+      ]
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "CLIENT",
+        "description": "Standard shopper"
+      },
+      {
+        "name": "ADMIN",
+        "description": "Backoffice admin"
+      }
+    ]
+  },
+  "groups": [],
+  "users": [],
+  "smtpServer": {},
+  "internationalizationEnabled": false
+}
+
+

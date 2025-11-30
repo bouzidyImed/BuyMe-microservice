@@ -7,12 +7,13 @@ import tn.iteam.orderservice.config.FeignConfig;
 import tn.iteam.orderservice.dto.UserDto;
 
 @FeignClient(
-        name = "AUTH-REGISTER-SERVICE",
-        path = "/api/auth",  // THIS IS THE MISSING PIECE
+        name = "auth-register-service",
+        url = "http://localhost:8085/api/auth",
         configuration = FeignConfig.class
 )
 public interface AuthClient {
 
     @GetMapping("/me")
-    UserDto getCurrentUser(@RequestHeader("Authorization") String token);
+    UserDto getCurrentUser();
 }
+

@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import tn.iteam.catalogueservice.dto.ReviewDto;
 import tn.iteam.catalogueservice.models.Review;
@@ -23,6 +24,7 @@ public class ReviewController {
     }
 
     // ---------------- Add Review ----------------
+    @PreAuthorize("hasRole('CLIENT')")
     @PostMapping("/product/{productId}")
     @Operation(summary = "Add a review to a product", description = "Adds a new review and updates the product's average rating")
     public ResponseEntity<Review> addReview(
@@ -32,6 +34,7 @@ public class ReviewController {
         Review review = reviewService.addReview(productId, reviewDto);
         return ResponseEntity.ok(review);
     }
+
 
     // ---------------- Update Review ----------------
     @PutMapping("/{reviewId}")

@@ -1,32 +1,93 @@
-server:
-  port: 8085
-
+#server:
+#  port: 8085
+#
+#spring:
+#  config:
+#    activate:
+#      on-profile: local
+#
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/auth-reg-db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+#    username: root
+#    password: ""
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
+#
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+## ------------------------------------------------------------------
+## Swagger on a dedicated 90xx port
+## ------------------------------------------------------------------
+#springdoc:
+#  api-docs:
+#    path: /v3/api-docs
+#  swagger-ui:
+#    path: /swagger-ui
 spring:
   config:
     activate:
       on-profile: local
-
+  # 💡 Correction: The 'application' property belongs directly under 'spring'
+  application:
+    name: auth-register-service
   datasource:
     url: jdbc:mysql://localhost:3306/auth-reg-db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
     username: root
     password: ""
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        # Note: MySQL8Dialect is correct for modern MySQL versions
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/e-commerce
 
+server:
+  port: 8085
+keycloak:
+  auth-server-url: http://localhost:8080
+  realm: e-commerce
+  resource: auth-service
+  credentials:
+    secret: uURLrZBRm5HqOhl0RXdsI0tt89ZtQWri
+  admin:
+    username: admin
+    password: admin123
+
+app:
+  upload:
+    dir: /home/imed/Documents/e-commerce-ms/auth-register-service/uploads
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
-# ------------------------------------------------------------------
-# Swagger on a dedicated 90xx port
-# ------------------------------------------------------------------
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG
+    org.keycloak: DEBUG
+    tn.iteam.authregisterservice: DEBUG

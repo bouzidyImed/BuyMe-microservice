@@ -16,8 +16,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import tn.iteam.catalogueservice.dto.ProductDto;
-import tn.iteam.catalogueservice.exeptions.ProductAlreadyExistsException;
-import tn.iteam.catalogueservice.exeptions.ProductNotFoundException;
+import tn.iteam.catalogueservice.exceptions.ProductAlreadyExistsException;
+import tn.iteam.catalogueservice.exceptions.ProductNotFoundException;
 import tn.iteam.catalogueservice.service.FileStorageServiceImpl;
 import tn.iteam.catalogueservice.service.ProductService;
 
@@ -58,16 +58,12 @@ public class ProductController {
     public ResponseEntity<?> createProduct(
             @Parameter(description = "Name of the product", required = true)
             @RequestParam("name") String name,
-
             @Parameter(description = "Description of the product", required = true)
             @RequestParam("description") String description,
-
             @Parameter(description = "Price of the product (must be positive)", required = true)
             @RequestParam("price") Double price,
-
             @Parameter(description = "Category ID the product belongs to", required = true)
             @RequestParam("categoryId") Long categoryId,
-
             @Parameter(description = "List of product images (JPEG/PNG)", required = true)
             @RequestParam("images") List<MultipartFile> images
     ) {

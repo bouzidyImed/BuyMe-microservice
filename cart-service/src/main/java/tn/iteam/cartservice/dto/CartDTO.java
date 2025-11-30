@@ -9,7 +9,7 @@ import lombok.*;
 @Builder
 public class CartDTO {
     private Long id;
-    private Long userId;
+    private String userId;
     private Long productId;
     private Integer quantity;
 }

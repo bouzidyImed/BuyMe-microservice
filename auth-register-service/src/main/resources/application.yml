@@ -1,17 +1,85 @@
+#spring:
+#  application:
+#    name: auth-register-service
+#
+#jwt:
+#  secret: pFagBCUehilQNym09+KkGm4DkMuW9taEC6asn3yGLULaXrziya/aZaVdd0LLZOmyJMxV8LBmwxW/9f/mxx3uDA==
+#
+#app:
+#  upload:
+#    dir: /home/imed/Documents/e-commerce-ms/auth-register-service/uploads
+#logging:
+#  level:
+#    root: INFO
+#    org.springframework.security: DEBUG  # Filter chain details
+#    io.jsonwebtoken: DEBUG  # JWT parse/signature errors
+#    tn.iteam.authregisterservice: DEBUG  # Your package (adjust if different)
+#
+server:
+  port: 8085
+  # Removed context-path to expose endpoints at root
+
 spring:
   application:
     name: auth-register-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth-reg-db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: ""
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/e-commerce
 
-jwt:
-  secret: pFagBCUehilQNym09+KkGm4DkMuW9taEC6asn3yGLULaXrziya/aZaVdd0LLZOmyJMxV8LBmwxW/9f/mxx3uDA==
+keycloak:
+  auth-server-url: http://localhost:8080
+  realm: e-commerce
+  resource: auth-service
+  credentials:
+    secret: hKMs68og1tJyS4qUm2EtbI6zkhgv2ePc
+  admin:
+    username: admin
+    password: admin123
+
 
 app:
   upload:
     dir: /home/imed/Documents/e-commerce-ms/auth-register-service/uploads
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
 logging:
   level:
     root: INFO
-    org.springframework.security: DEBUG  # Filter chain details
-    io.jsonwebtoken: DEBUG  # JWT parse/signature errors
-    tn.iteam.authregisterservice: DEBUG  # Your package (adjust if different)
-
+    org.springframework.security: DEBUG
+    org.keycloak: DEBUG
+    tn.iteam.authregisterservice: DEBUG
+    # Hibernate SQL logging
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

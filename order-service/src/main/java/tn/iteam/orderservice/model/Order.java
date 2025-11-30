@@ -3,6 +3,7 @@ package tn.iteam.orderservice.model;
 import jakarta.persistence.*;
 import lombok.*;
 import tn.iteam.orderservice.enums.OrderStatus;
+import tn.iteam.orderservice.enums.PaymentStatus;
 
 import java.util.Date;  // Changed from LocalDateTime to Date
 
@@ -24,4 +25,11 @@ public class Order {
     private Long userId;
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    @Builder.Default
+    private PaymentStatus paymentStatus = PaymentStatus.PENDING;
+
+    private Long approvedBy; // Admin user ID who approved the order
+    private Date approvedAt; // Timestamp when order was approved
 }

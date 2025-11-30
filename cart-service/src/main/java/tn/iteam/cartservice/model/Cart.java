@@ -15,7 +15,7 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long userId; // from authenticated user (JWT or context)
+    private String userId; // from authenticated user (JWT or context)
     private Long productId;
     private Integer quantity;
 }

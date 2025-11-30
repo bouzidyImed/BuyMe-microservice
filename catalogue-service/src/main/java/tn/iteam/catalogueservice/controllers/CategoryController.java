@@ -58,7 +58,7 @@ public class CategoryController {
             @ApiResponse(responseCode = "403", description = "Forbidden – insufficient rights")
     })
     @PostMapping("/create")
-    /*@PreAuthorize("hasRole('ADMIN')")*/
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CategoryDto> createCategory(
             @Parameter(description = "Category data", required = true)
             @Valid @RequestBody CategoryDto dto) {  // ADD @Valid
@@ -79,7 +79,7 @@ public class CategoryController {
             @ApiResponse(responseCode = "403", description = "Forbidden")
     })
     @PutMapping("/update/{id}")
-    /*@PreAuthorize("hasRole('ADMIN')")*/
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CategoryDto> updateCategory(
             @Parameter(description = "Category ID", required = true) @PathVariable Long id,
             @Parameter(description = "Updated category data", required = true) @RequestBody CategoryDto dto) {
@@ -99,7 +99,7 @@ public class CategoryController {
             @ApiResponse(responseCode = "403", description = "Forbidden")
     })
     @DeleteMapping("/delete/{id}")
-    /*@PreAuthorize("hasRole('ADMIN')")*/
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteCategory(
             @Parameter(description = "Category ID", required = true) @PathVariable Long id) {
         categoryService.removeCategory(id);

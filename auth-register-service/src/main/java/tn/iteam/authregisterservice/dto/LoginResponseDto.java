@@ -14,4 +14,8 @@ public class LoginResponseDto {
     private String token;
     private List<String> roles;
     private String message;
+
+    public void setUserId(String string) {
+
+    }
 }

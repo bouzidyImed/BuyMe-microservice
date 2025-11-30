@@ -14,7 +14,7 @@ public class ReviewMapper {
                 .id(review.getId())
                 .comment(review.getComment())
                 .rating(review.getRating())
-                .reviewerName(review.getReviewerName())
+                //.reviewerName(review.getReviewerName())
                 .productId(
                         review.getProduct() != null ? review.getProduct().getId() : null
                 )
@@ -32,7 +32,7 @@ public class ReviewMapper {
         review.setId(dto.getId());
         review.setComment(dto.getComment());
         review.setRating(dto.getRating());
-        review.setReviewerName(dto.getReviewerName());
+        //review.setReviewerName(dto.getReviewerName());
         review.setCreatedAt(dto.getCreatedAt() != null ? dto.getCreatedAt() : review.getCreatedAt());
 
         // 🟡 Product will be set in the service layer using dto.getProductId()

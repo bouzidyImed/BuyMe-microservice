@@ -17,6 +17,11 @@ spring:
           predicates:
             - Path=/api/categories/**
 
+        - id: catalogue-service-reviews
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/reviews/**
+
         - id: catalogue-service-cart
           uri: http://localhost:8086
           predicates:
