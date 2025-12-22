@@ -5,6 +5,14 @@
     <span class="ms-3 fw-semibold">Refreshing data…</span>
   </div>
 
+  <!-- Operation in progress full-page loader -->
+  <div *ngIf="operationInProgress" class="table-overlay" style="z-index:2100;background:rgba(255,255,255,0.75);">
+    <div class="d-flex align-items-center">
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
+      <span class="ms-3 fw-semibold">Processing…</span>
+    </div>
+  </div>
+
   
   <!-- Alert Banner -->
   <div *ngIf="showAlert"
@@ -300,17 +308,18 @@
                 <div class="invalid-feedback">Provide a valid price.</div>
               </div>
               <div class="col-md-4">
-                <label class="form-label">Quantity <span class="text-danger">*</span></label>
-                <input type="number"
-                       class="form-control"
-                       min="1"
-                       step="1"
-                       name="productQuantity"
-                       [(ngModel)]="newProduct.quantity"
-                       (input)="validateProductForm()"
-                       [class.is-invalid]="newProduct.quantity <= 0">
-                <div class="invalid-feedback">Quantity must be at least 1.</div>
-              </div>
+  <label class="form-label">Quantity <span class="text-danger">*</span></label>
+  <input type="number"
+         class="form-control"
+         min="1"
+         step="1"
+         name="productQuantity"
+         [(ngModel)]="newProduct.quantity"
+         (input)="validateProductForm()"
+         (ngModelChange)="updateQuantity($event)"
+         [class.is-invalid]="newProduct.quantity <= 0">
+  <div class="invalid-feedback">Quantity must be at least 1.</div>
+</div>
               <div class="col-md-4">
                 <label class="form-label">Review summary</label>
                 <input type="text"

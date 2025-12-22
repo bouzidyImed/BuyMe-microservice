@@ -36,6 +36,7 @@ interface Product {
 })
 export class ManageproductComponent implements OnInit, OnDestroy {
   autoRefreshPending = false;
+  operationInProgress = false;
   products: Product[] = [];
   categories: Category[] = [];
 
@@ -79,31 +80,40 @@ export class ManageproductComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscriptions.forEach(sub => sub.unsubscribe());
-    if (this.alertTimeout) {
-      clearTimeout(this.alertTimeout);
-    }
-    if (this.autoRefreshTimeout) {
-      clearTimeout(this.autoRefreshTimeout);
-    }
+    if (this.alertTimeout) clearTimeout(this.alertTimeout);
+    if (this.autoRefreshTimeout) clearTimeout(this.autoRefreshTimeout);
   }
 
   displayAlert(message: string, type: AlertType = 'info', refreshTarget?: 'categories' | 'products' | 'all') {
-    if (this.alertTimeout) {
-      clearTimeout(this.alertTimeout);
+    // Alerts are disabled per user request. This function is intentionally a no-op.
+    // Kept for compatibility if other code calls it.
+  }
+
+  private scheduleCloseAndRefresh(target: 'categories' | 'products' | 'all') {
+    // Clear any existing auto-refresh timeouts
+    if (this.autoRefreshTimeout) {
+      clearTimeout(this.autoRefreshTimeout);
+      this.autoRefreshTimeout = undefined;
     }
-    this.alertMessage = message;
-    this.alertType = type;
-    this.showAlert = true;
-    this.alertTimeout = setTimeout(() => this.showAlert = false, 4500);
-    if (refreshTarget) {
-      this.scheduleAutoRefresh(refreshTarget);
-    }
+
+    // Close modals after 3 seconds
+    setTimeout(() => {
+      if (target === 'categories' || target === 'all') this.showCategoryModal = false;
+      if (target === 'products' || target === 'all') this.showProductModal = false;
+      // also ensure loader overlay is hidden once modal is closed
+      this.operationInProgress = false;
+      this.savingCategory = false;
+      this.savingProduct = false;
+    }, 3000);
+
+    // Reload page after 4 seconds to reflect backend state
+    setTimeout(() => {
+      globalThis.location.reload();
+    }, 4000);
   }
 
   closeAlert() {
-    if (this.alertTimeout) {
-      clearTimeout(this.alertTimeout);
-    }
+    if (this.alertTimeout) clearTimeout(this.alertTimeout);
     this.showAlert = false;
   }
 
@@ -136,22 +146,25 @@ export class ManageproductComponent implements OnInit, OnDestroy {
   }
 
   saveCategory() {
-    if (!this.categoryFormValid || this.savingCategory) {
-      return;
-    }
+    if (!this.categoryFormValid || this.savingCategory) return;
 
     this.savingCategory = true;
+    this.operationInProgress = true;
+
     const request$ = this.isEditingCategory
       ? this.categoryService.update(this.newCategory.id!, this.newCategory)
       : this.categoryService.create(this.newCategory);
 
     const sub = request$.pipe(
-      timeout(30000),
+      timeout(3000),
       catchError(err => throwError(() => err))
     ).subscribe({
       next: () => {
+        // Close modal immediately
         this.showCategoryModal = false;
         this.savingCategory = false;
+        this.operationInProgress = false;
+
         this.displayAlert(
           `Category ${this.isEditingCategory ? 'updated' : 'created'} successfully! Refreshing in 3 seconds...`,
           'success',
@@ -160,10 +173,17 @@ export class ManageproductComponent implements OnInit, OnDestroy {
       },
       error: (err) => {
         this.savingCategory = false;
+        this.operationInProgress = false;
+
         const operation = this.isEditingCategory ? 'updating' : 'creating';
-        const errorMsg = err.name === 'TimeoutError'
-          ? 'Request timeout (30s) – backend is slow; operation may still succeed (refresh to verify).'
-          : this.extractErrorMessage(err);
+        let errorMsg = 'Unknown error';
+
+        if (err.name === 'TimeoutError') {
+          errorMsg = 'Request timed out (3s). Please try again.';
+        } else {
+          errorMsg = this.extractErrorMessage(err);
+        }
+
         this.displayAlert(`Error ${operation} category: ${errorMsg}`, 'error');
       },
     });
@@ -171,19 +191,22 @@ export class ManageproductComponent implements OnInit, OnDestroy {
   }
 
   deleteCategory(id: number) {
-    if (!confirm('Delete this category? This cannot be undone.')) {
-      return;
-    }
+    if (!confirm('Delete this category? This cannot be undone.')) return;
+
+    this.operationInProgress = true;
+
     const sub = this.categoryService.delete(id).pipe(
-      timeout(30000),
+      timeout(3000),
       catchError(err => throwError(() => err))
     ).subscribe({
       next: () => {
+        this.operationInProgress = false;
         this.displayAlert('Category deleted successfully! Refreshing in 3 seconds...', 'success', 'categories');
       },
       error: (err) => {
+        this.operationInProgress = false;
         const errorMsg = err.name === 'TimeoutError'
-          ? 'Request timeout (30s) – backend is slow; operation may still succeed (refresh to verify).'
+          ? 'Request timed out (3s). Please try again.'
           : this.extractErrorMessage(err);
         this.displayAlert(`Error deleting category: ${errorMsg}`, 'error');
       }
@@ -215,7 +238,7 @@ export class ManageproductComponent implements OnInit, OnDestroy {
           name: product.name,
           description: product.description,
           price: product.price,
-          quantity: product.quantity ?? 0,
+          quantity: product.quantity ?? 1,
           review: product.review ?? '',
           images: [...(product.images ?? [])],
           rate: product.rate ?? 0,
@@ -234,9 +257,9 @@ export class ManageproductComponent implements OnInit, OnDestroy {
   validateProductForm() {
     const hasBasics = !!this.newProduct.name.trim() &&
       !!this.newProduct.description.trim() &&
-      this.newProduct.price > 0 &&
+      Number(this.newProduct.price) > 0 &&
       !!this.newProduct.categoryId &&
-      this.toPositiveQuantity(this.newProduct.quantity) > 0;
+      Number(this.newProduct.quantity) >= 1;
 
     const hasImages = this.isEditingProduct
       ? (this.newProduct.images?.length ?? 0) > 0 || this.selectedProductFiles.length > 0
@@ -247,9 +270,8 @@ export class ManageproductComponent implements OnInit, OnDestroy {
 
   onProductFilesSelected(event: Event) {
     const input = event.target as HTMLInputElement;
-    if (!input.files) {
-      return;
-    }
+    if (!input.files) return;
+
     this.selectedProductFiles = Array.from(input.files);
     this.productImagePreviews = [];
     this.selectedProductFiles.forEach(file => {
@@ -271,29 +293,28 @@ export class ManageproductComponent implements OnInit, OnDestroy {
   }
 
   saveProduct() {
-    if (!this.productFormValid || this.savingProduct) {
-      return;
-    }
+    if (!this.productFormValid || this.savingProduct) return;
 
     this.savingProduct = true;
+    this.operationInProgress = true;
+
     const payload = this.isEditingProduct
       ? this.buildProductUpdatePayload()
       : this.buildProductCreatePayload();
 
     const request$ = this.isEditingProduct
-      ? this.productService.update(this.newProduct.id!, payload).pipe(
-          timeout(30000),
-          catchError(err => throwError(() => err))
-        )
-      : this.productService.create(payload as FormData).pipe(
-          timeout(30000),
-          catchError(err => throwError(() => err))
-        );
+      ? this.productService.update(this.newProduct.id!, payload)
+      : this.productService.create(payload as FormData);
 
-    const sub = request$.subscribe({
+    const sub = request$.pipe(
+      timeout(3000),
+      catchError(err => throwError(() => err))
+    ).subscribe({
       next: () => {
         this.showProductModal = false;
         this.savingProduct = false;
+        this.operationInProgress = false;
+
         this.displayAlert(
           `Product ${this.isEditingProduct ? 'updated' : 'created'} successfully! Refreshing in 3 seconds...`,
           'success',
@@ -303,29 +324,40 @@ export class ManageproductComponent implements OnInit, OnDestroy {
       },
       error: (err) => {
         this.savingProduct = false;
+        this.operationInProgress = false;
+
         const operation = this.isEditingProduct ? 'updating' : 'creating';
-        const errorMsg = err.error?.message || err.message || JSON.stringify(err) || 'Unknown error';
+        let errorMsg = 'Unknown error';
+
+        if (err.name === 'TimeoutError') {
+          errorMsg = 'Request timed out (3s). Please try again.';
+        } else {
+          errorMsg = err.error?.message || err.message || 'Unknown error';
+        }
+
         this.displayAlert(`Error ${operation} product: ${errorMsg}`, 'error');
-        console.error('PUT/POST error for product:', err, errorMsg);
       },
     });
     this.subscriptions.push(sub);
   }
 
   deleteProduct(id: number) {
-    if (!confirm('Delete this product? This cannot be undone.')) {
-      return;
-    }
+    if (!confirm('Delete this product? This cannot be undone.')) return;
+
+    this.operationInProgress = true;
+
     const sub = this.productService.delete(id).pipe(
-      timeout(30000),
+      timeout(3000),
       catchError(err => throwError(() => err))
     ).subscribe({
       next: () => {
+        this.operationInProgress = false;
         this.displayAlert('Product deleted successfully! Refreshing in 3 seconds...', 'success', 'products');
       },
       error: (err) => {
+        this.operationInProgress = false;
         const errorMsg = err.name === 'TimeoutError'
-          ? 'Request timeout (30s) – backend is slow; operation may still succeed (refresh to verify).'
+          ? 'Request timed out (3s). Please try again.'
           : this.extractErrorMessage(err);
         this.displayAlert(`Error deleting product: ${errorMsg}`, 'error');
       }
@@ -354,7 +386,7 @@ export class ManageproductComponent implements OnInit, OnDestroy {
   }
 
   getCategoryName(catId: number) {
-    return this.categories.find((c) => c.id === catId)?.name || 'N/A';
+    return this.categories.find(c => c.id === catId)?.name || 'N/A';
   }
 
   setSection(section: 'categories' | 'products') {
@@ -368,39 +400,38 @@ export class ManageproductComponent implements OnInit, OnDestroy {
 
   private buildProductCreatePayload(): FormData {
     const formData = new FormData();
-    const quantity = this.toPositiveQuantity(this.newProduct.quantity);
     formData.append('name', this.newProduct.name.trim());
     formData.append('description', this.newProduct.description.trim());
     formData.append('price', this.newProduct.price.toString());
     formData.append('categoryId', String(this.newProduct.categoryId));
+    
+    // Ensure quantity is properly converted to string
+    const quantity = Number(this.newProduct.quantity) || 1;
     formData.append('quantity', quantity.toString());
-    if (this.newProduct.review) {
-      formData.append('review', this.newProduct.review.trim());
-    }
+    
+    if (this.newProduct.review) formData.append('review', this.newProduct.review.trim());
     this.selectedProductFiles.forEach(file => formData.append('images', file, file.name));
     return formData;
   }
 
   private buildProductUpdatePayload(): Product {
-    const images = (this.newProduct.images ?? []).filter((img): img is string => !!img && img.trim().length > 0);
-    if (!images.length) {
-      // No image would be a backend validation error
-      images.push('placeholder.jpg'); // Optionally signal error if you have a fallback
-    }
-    const payload = {
+    const images = (this.newProduct.images ?? []).filter(img => img?.trim());
+    
+    // Ensure quantity is properly parsed as a number
+    const quantity = Number(this.newProduct.quantity) || 1;
+    
+    return {
       id: this.newProduct.id,
       name: this.newProduct.name.trim(),
       description: this.newProduct.description.trim(),
       price: Number(this.newProduct.price),
-      quantity: this.toPositiveQuantity(this.newProduct.quantity),
+      quantity: quantity,
       review: this.newProduct.review?.trim() || '',
-      images,
+      images: images.length ? images : ['placeholder.jpg'],
       rate: this.newProduct.rate ?? 0,
       categoryId: this.newProduct.categoryId,
       categoryName: this.newProduct.categoryName || undefined
     };
-    console.log('PUT update payload:', payload);
-    return payload;
   }
 
   private resetProductForm() {
@@ -429,34 +460,32 @@ export class ManageproductComponent implements OnInit, OnDestroy {
   }
 
   private scheduleAutoRefresh(target: 'categories' | 'products' | 'all') {
-    if (this.autoRefreshTimeout) {
-      clearTimeout(this.autoRefreshTimeout);
-    }
+    if (this.autoRefreshTimeout) clearTimeout(this.autoRefreshTimeout);
+
+    // Show the overlay and perform a full page reload after 3 seconds
     this.autoRefreshPending = true;
     this.autoRefreshTimeout = setTimeout(() => {
       this.autoRefreshPending = false;
       this.autoRefreshTimeout = undefined;
+      // Full reload ensures the UI and any caches are consistent after backend changes
       globalThis.location.reload();
     }, 3000);
   }
 
-  private toPositiveQuantity(value: number | null | undefined): number {
-    const numeric = Number(value);
-    if (Number.isFinite(numeric) && numeric > 0) {
-      return Math.floor(numeric);
-    }
-    return 1;
-  }
-
   private extractErrorMessage(err: any): string {
     if (err?.error) {
-      if (typeof err.error === 'string') {
-        return err.error;
-      }
-      if (err.error.message) {
-        return err.error.message;
-      }
+      if (typeof err.error === 'string') return err.error;
+      if (err.error.message) return err.error.message;
+      if (typeof err.error === 'object') return JSON.stringify(err.error);
     }
     return err?.message || 'Unknown error';
   }
+  // Add this method to your component class, right after the existing methods:
+
+updateQuantity(value: any) {
+  // Convert the value to a number, default to 1 if invalid
+  const numValue = Number(value);
+  this.newProduct.quantity = isNaN(numValue) || numValue < 1 ? 1 : numValue;
+  this.validateProductForm();
+}
 }

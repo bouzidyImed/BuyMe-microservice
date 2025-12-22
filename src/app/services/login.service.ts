@@ -1,7 +1,7 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {Observable} from 'rxjs';
+import {catchError, Observable, tap, throwError} from 'rxjs';
 import {APP_CONFIG} from '../../main';
 
 @Injectable({
@@ -19,9 +19,18 @@ export class LoginService {
     this.apiUrl = `${this.config.apiUrl}/auth`;
   }
 
-  login(email: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/login`, { email, password });
-  }
+// Example for login.service.ts
+login(email: string, password: string): Observable<any> {
+  const url = `${this.apiUrl}/login`;
+  console.log('Login Request:', { url, body: { email, password } });  // Log before send
+  return this.http.post<any>(url, { email, password }).pipe(
+    tap(response => console.log('Login Success:', response)),  // Import tap from 'rxjs/operators'
+    catchError(err => {
+      console.error('Login Error Details:', err);  // Full error
+      return throwError(err);
+    })
+  );
+}
 
   logout(): void {
     localStorage.removeItem('jwt_token');
