@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Electro - Electronics Website Template</title>
+  <title>BuyMe home page</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -45,54 +45,15 @@
 
 <!-- Topbar Start -->
 <div class="container-fluid px-5 d-none border-bottom d-lg-block">
-  <div class="row gx-0 align-items-center">
-    <div class="col-lg-4 text-center text-lg-start mb-lg-0">
-      <div class="d-inline-flex align-items-center" style="height: 45px;">
-        <a href="#" class="text-muted me-2"> Help</a><small> / </small>
-        <a href="#" class="text-muted mx-2"> Support</a><small> / </small>
-        <a href="#" class="text-muted ms-2"> Contact</a>
-      </div>
-    </div>
-    <div class="col-lg-4 text-center d-flex align-items-center justify-content-center">
-      <small class="text-dark">Call Us:</small>
-      <a href="#" class="text-muted">(+012) 1234 567890</a>
-    </div>
-
-    <div class="col-lg-4 text-center text-lg-end">
-      <div class="d-inline-flex align-items-center" style="height: 45px;">
-        <div class="dropdown">
-          <a href="#" class="dropdown-toggle text-muted me-2" data-bs-toggle="dropdown"><small>
-            USD</small></a>
-          <div class="dropdown-menu rounded">
-            <a href="#" class="dropdown-item"> Euro</a>
-            <a href="#" class="dropdown-item"> Dolar</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#" class="dropdown-toggle text-muted mx-2" data-bs-toggle="dropdown"><small>
-            English</small></a>
-          <div class="dropdown-menu rounded">
-            <a href="#" class="dropdown-item"> English</a>
-            <a href="#" class="dropdown-item"> Turkish</a>
-            <a href="#" class="dropdown-item"> Spanol</a>
-            <a href="#" class="dropdown-item"> Italiano</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#" class="dropdown-toggle text-muted ms-2" data-bs-toggle="dropdown"><small><i
-            class="fa fa-home me-2"></i> My Dashboard</small></a>
-          <div class="dropdown-menu rounded">
-            <a href="#" class="dropdown-item"> Login</a>
-            <a href="#" class="dropdown-item"> Wishlist</a>
-            <a href="#" class="dropdown-item"> My Card</a>
-            <a href="#" class="dropdown-item"> Notifications</a>
-            <a href="#" class="dropdown-item"> Account Settings</a>
-            <a href="#" class="dropdown-item"> My Account</a>
-            <a href="#" class="dropdown-item"> Log Out</a>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="d-flex justify-content-end align-items-center py-2">
+    
+    <button class="btn btn-outline-danger ms-2" (click)="logout()" title="Logout">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right me-1" viewBox="0 0 16 16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 15a1 1 0 0 0 1-1v-2h-1v2H4V2h6v2h1V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6z"/>
+        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L14.293 7.5H7.5a.5.5 0 0 0 0 1h6.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+      </svg>
+      
+    </button>
   </div>
 </div>
 <div class="container-fluid px-5 py-4 d-none d-lg-block">
@@ -101,7 +62,7 @@
       <div class="d-inline-flex align-items-center">
         <a href="" class="navbar-brand p-0">
           <h1 class="display-5 text-primary m-0"><i
-            class="fas fa-shopping-bag text-secondary me-2"></i>Electro</h1>
+            class="fas fa-shopping-bag text-secondary me-2"></i>BuyMe</h1>
           <img src="img/logo.png" alt="Logo">
         </a>
       </div>
@@ -185,7 +146,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <a href="" class="navbar-brand d-block d-lg-none">
           <h1 class="display-5 text-secondary m-0"><i
-            class="fas fa-shopping-bag text-white me-2"></i>Electro</h1>
+            class="fas fa-shopping-bag text-white me-2"></i>BuyMe</h1>
           <img src="img/logo.png" alt="Logo">
         </a>
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
@@ -274,7 +235,6 @@
         <thead>
         <tr>
           <th scope="col">Name</th>
-          <th scope="col">Model</th>
           <th scope="col">Price</th>
           <th scope="col">Quantity</th>
           <th scope="col">Total</th>
@@ -286,9 +246,6 @@
             <th scope="row">
               <p class="mb-0 py-4">{{ item.name }}</p>
             </th>
-            <td>
-              <p class="mb-0 py-4">Model</p>
-            </td>
             <td>
               <p class="mb-0 py-4">{{ item.price | currency }}</p>
             </td>
@@ -322,28 +279,12 @@
         </tbody>
       </table>
     </div>
-    <div class="mt-5">
-      <input type="text" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code">
-      <button class="btn btn-primary rounded-pill px-4 py-3" type="button">Apply Coupon</button>
-    </div>
+
     <div class="row g-4 justify-content-end">
       <div class="col-8"></div>
       <div class="col-sm-8 col-md-7 col-lg-6 col-xl-4">
         <div *ngIf="(items$ | async) as items" class="bg-light rounded">
-          <div class="p-4">
-            <h1 class="display-6 mb-4">Cart <span class="fw-normal">Total</span></h1>
-            <div class="d-flex justify-content-between mb-4">
-              <h5 class="mb-0 me-4">Subtotal:</h5>
-              <p class="mb-0">{{ getSubtotal(items) | currency }}</p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <h5 class="mb-0 me-4">Shipping</h5>
-              <div>
-                <p class="mb-0">Flat rate: {{ shippingRate | currency }}</p>
-              </div>
-            </div>
-            <p class="mb-0 text-end">Shipping to Ukraine.</p>
-          </div>
+          
           <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
             <h5 class="mb-0 ps-4 me-4">Total</h5>
             <p class="mb-0 pe-4">{{ (getSubtotal(items) + shippingRate) | currency }}</p>
@@ -473,17 +414,14 @@
   <div class="container">
     <div class="row g-4 align-items-center">
       <div class="col-md-6 text-center text-md-start mb-md-0">
-                    <span class="text-white"><a href="#" class="border-bottom text-white"><i
-                      class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right
-                        reserved.</span>
+                  
       </div>
       <div class="col-md-6 text-center text-md-end text-white">
 
         <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
         <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>.
-        Distributed By <a class="border-bottom text-white" href="https://themewagon.com">ThemeWagon</a>
+        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">Aziz</a>.
       </div>
     </div>
   </div>

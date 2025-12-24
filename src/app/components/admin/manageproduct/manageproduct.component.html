@@ -53,17 +53,9 @@
         Logout
       </button>
       <div class="btn-group">
-        <button class="btn"
-                [class.btn-primary]="activeSection === 'categories'"
-                [class.btn-outline-primary]="activeSection !== 'categories'"
-                (click)="setSection('categories')">
-          Categories
-        </button>
-        <button class="btn"
-                [class.btn-primary]="activeSection === 'products'"
-                [class.btn-outline-primary]="activeSection !== 'products'"
-                (click)="setSection('products')">
-          Products
+        <button class="btn btn-primary"
+                [routerLink]="['/admin/manageorders']">
+          Manage orders
         </button>
       </div>
     </div>
@@ -161,11 +153,11 @@
             <div class="mb-3">
               <label class="form-label">Name <span class="text-danger">*</span></label>
               <input type="text"
-                     class="form-control"
-                     name="categoryName"
-                     [(ngModel)]="newCategory.name"
-                     (input)="validateCategoryForm()"
-                     [class.is-invalid]="!newCategory.name.trim()">
+                class="form-control"
+                name="categoryName"
+                [(ngModel)]="newCategory.name"
+                (input)="validateCategoryForm()"
+                [class.is-invalid]="!newCategory.name.trim()">
               <div class="invalid-feedback">Name is required.</div>
             </div>
             <div class="mb-3">
@@ -283,11 +275,11 @@
               <div class="col-md-6">
                 <label class="form-label">Name <span class="text-danger">*</span></label>
                 <input type="text"
-                       class="form-control"
-                       [(ngModel)]="newProduct.name"
-                       name="productName"
-                       (input)="validateProductForm()"
-                       [class.is-invalid]="!newProduct.name?.trim()">
+                         class="form-control"
+                         [(ngModel)]="newProduct.name"
+                         name="productName"
+                         (input)="validateProductForm()"
+                         [class.is-invalid]="!newProduct.name.trim()">
                 <div class="invalid-feedback">Product name is required.</div>
               </div>
 
@@ -313,7 +305,7 @@
                           [(ngModel)]="newProduct.description"
                           name="productDescription"
                           (input)="validateProductForm()"
-                          [class.is-invalid]="!newProduct.description?.trim()"></textarea>
+                          [class.is-invalid]="!newProduct.description.trim()"></textarea>
                 <div class="invalid-feedback">Description is required.</div>
               </div>
 

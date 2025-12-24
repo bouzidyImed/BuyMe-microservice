@@ -12,6 +12,7 @@ import {NotfoundComponent} from './components/notfound/notfound.component';
 import { ProfileComponent } from './components/client/profile/profile.component';
 import { MyOrdersComponent } from './components/client/my-orders/my-orders.component';
 import { ManageproductComponent } from './components/admin/manageproduct/manageproduct.component';
+import { ManageordersComponent } from './components/admin/manageorders/manageorders.component';
 
 export const routes: Routes = [
   { path: 'client/home', component: HomeComponent },
@@ -27,7 +28,8 @@ export const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'notfound', component: NotfoundComponent},
   {path: 'client/profile', component: ProfileComponent},
-  {path: 'admin/manageproduct', component: ManageproductComponent}
+  {path: 'admin/manageproduct', component: ManageproductComponent},
+  {path: 'admin/manageorders', component: ManageordersComponent}
 
 
 

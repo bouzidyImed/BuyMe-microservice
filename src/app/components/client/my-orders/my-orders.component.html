@@ -1,5 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>BuyMe home page</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="/assets/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Spinner Start -->
+<!-- <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div> -->
+<!-- Spinner End -->
+
+
+<!-- Topbar Start -->
+<div class="container-fluid px-5 d-none border-bottom d-lg-block">
+  <div class="d-flex justify-content-end align-items-center py-2">
+    
+    <button class="btn btn-outline-danger ms-2" (click)="logout()" title="Logout">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right me-1" viewBox="0 0 16 16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 15a1 1 0 0 0 1-1v-2h-1v2H4V2h6v2h1V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6z"/>
+        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L14.293 7.5H7.5a.5.5 0 0 0 0 1h6.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+      </svg>
+      
+    </button>
+  </div>
+</div>
+<div class="container-fluid px-5 py-4 d-none d-lg-block">
+  <div class="row gx-0 align-items-center text-center">
+    <div class="col-md-4 col-lg-3 text-center text-lg-start">
+      <div class="d-inline-flex align-items-center">
+        <a href="" class="navbar-brand p-0">
+          <h1 class="display-5 text-primary m-0"><i
+            class="fas fa-shopping-bag text-secondary me-2"></i>BuyMe</h1>
+          <img src="img/logo.png" alt="Logo">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Topbar End -->
+
+<!-- Navbar & Hero Start -->
+<div class="container-fluid nav-bar p-0">
+  <div class="row gx-0 bg-primary px-5 align-items-center">
+    <div class="col-lg-3 d-none d-lg-block">
+      <nav class="navbar navbar-light position-relative" style="width: 250px;">
+        <!-- <button class="navbar-toggler border-0 fs-4 w-100 px-0 text-start" type="button"
+                data-bs-toggle="collapse" data-bs-target="#allCat">
+          <h4 class="m-0"><i class="fa fa-bars me-2"></i>All Categories</h4>
+        </button> -->
+        <div class="collapse navbar-collapse rounded-bottom" id="allCat">
+          <div class="navbar-nav ms-auto py-0">
+            <ul class="list-unstyled categories-bars">
+              <li>
+                <div class="categories-bars-item">
+                  <a href="#">Accessories</a>
+                  <span>(3)</span>
+                </div>
+              </li>
+              <li>
+                <div class="categories-bars-item">
+                  <a href="#">Electronics & Computer</a>
+                  <span>(5)</span>
+                </div>
+              </li>
+              <li>
+                <div class="categories-bars-item">
+                  <a href="#">Laptops & Desktops</a>
+                  <span>(2)</span>
+                </div>
+              </li>
+              <li>
+                <div class="categories-bars-item">
+                  <a href="#">Mobiles & Tablets</a>
+                  <span>(8)</span>
+                </div>
+              </li>
+              <li>
+                <div class="categories-bars-item">
+                  <a href="#">SmartPhone & Smart TV</a>
+                  <span>(5)</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="col-12 col-lg-9">
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a href="" class="navbar-brand d-block d-lg-none">
+          <h1 class="display-5 text-secondary m-0"><i
+            class="fas fa-shopping-bag text-white me-2"></i>BuyMe</h1>
+          <img src="img/logo.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars fa-1x"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="shop.html" class="nav-item nav-link">Shop</a>
+            <a href="single.html" class="nav-item nav-link">Single Page</a>
+            <a href="single.html" class="nav-item active nav-link">My Orders</a>
+            <a href="contact.html" class="nav-item nav-link me-2">Contact</a>
+            <div class="nav-item dropdown d-block d-lg-none mb-3">
+              <a href="#" class="nav-link" data-bs-toggle="dropdown"><span class="dropdown-toggle">All
+                                        Category</span></a>
+              <div class="dropdown-menu m-0">
+                <ul class="list-unstyled categories-bars">
+                  <li>
+                    <div class="categories-bars-item">
+                      <a href="#">Accessories</a>
+                      <span>(3)</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="categories-bars-item">
+                      <a href="#">Electronics & Computer</a>
+                      <span>(5)</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="categories-bars-item">
+                      <a href="#">Laptops & Desktops</a>
+                      <span>(2)</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="categories-bars-item">
+                      <a href="#">Mobiles & Tablets</a>
+                      <span>(8)</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="categories-bars-item">
+                      <a href="#">SmartPhone & Smart TV</a>
+                      <span>(5)</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <a href="" class="btn btn-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0"><i  class="fa fa-mobile-alt me-2"></i> +0123 456 7890</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- Navbar & Hero End -->
+
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+  <h1 class="text-center text-white display-6 wow fadeInUp" data-wow-delay="0.1s">My orders Page</h1>
+  <ol class="breadcrumb justify-content-center mb-0 wow fadeInUp" data-wow-delay="0.3s">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+    <li class="breadcrumb-item active text-white">My orders Page</li>
+  </ol>
+</div>
+<!-- Single Page Header End -->
+
 <div class="container py-5">
-  <div class="page-header mb-4">
+  <div>
     <h1 class="h3 mb-0">My Orders</h1>
     <p class="text-muted">Review your recent purchases and order status.</p>
   </div>
@@ -12,24 +208,189 @@
   <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
 
   <div *ngIf="!loading && !error">
-    <div *ngIf="orders.length === 0" class="alert alert-info">You have no orders yet.</div>
+    <div *ngIf="orders.length === 0" class="empty-note">You have no orders yet.</div>
 
-    <div class="row g-3">
-      <div *ngFor="let o of orders" class="col-12">
-        <div class="card shadow-sm">
-          <div class="card-body d-flex justify-content-between align-items-center">
-            <div>
-              <h5 class="mb-1">Order #{{ o.id }}</h5>
-              <div class="text-muted small">Placed: {{ o.orderDate | date:'medium' }}</div>
-              <p class="mb-0 mt-2">Product ID: <strong>#{{ o.productId }}</strong> &nbsp; • &nbsp; Quantity: <strong>{{ o.qteOrdered }}</strong></p>
-            </div>
-            <div class="text-end">
-              <span class="badge bg-info text-dark me-2">{{ o.status }}</span>
-              <a class="btn btn-outline-primary btn-sm" [routerLink]="['/client/orders', o.id]">Details</a>
+    <div class="orders-container">
+      <div class="row g-3">
+        <div *ngFor="let o of pagedOrders" class="col-12">
+          <div class="card order-card">
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <div>
+                <h5 class="mb-1">Order #{{ o.id }}</h5>
+                <div class="order-meta">Placed: {{ o.orderDate | date:'medium' }}</div>
+                <p class="mb-0 mt-2">Product ID: <strong>#{{ o.productId }}</strong> &nbsp; • &nbsp; Quantity: <strong>{{ o.qteOrdered }}</strong></p>
+              </div>
+              <div class="order-actions">
+                <span class="badge status me-2">{{ o.status }}</span>
+                <a class="btn btn-outline-primary btn-sm" [routerLink]="['/client/orders', o.id]">Details</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <nav *ngIf="totalPages > 1" class="d-flex justify-content-center" aria-label="Orders pagination">
+      <ul class="pagination mt-4">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <button class="page-link" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">+</button>
+        </li>
+        <li *ngFor="let p of pagesArray()" class="page-item" [class.active]="p === currentPage">
+          <button class="page-link" (click)="changePage(p)">{{ p }}</button>
+        </li>
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <button class="page-link" (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">-</button>
+        </li>
+      </ul>
+    </nav>
   </div>
 </div>
+
+
+
+<!-- Footer Start -->
+<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+  <div class="container py-5">
+    <div class="row g-4 rounded mb-5" style="background: rgba(255, 255, 255, .03);">
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="rounded p-4">
+          <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center mb-4"
+               style="width: 70px; height: 70px;">
+            <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+          </div>
+          <div>
+            <h4 class="text-white">Address</h4>
+            <p class="mb-2">123 Street New York.USA</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="rounded p-4">
+          <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center mb-4"
+               style="width: 70px; height: 70px;">
+            <i class="fas fa-envelope fa-2x text-primary"></i>
+          </div>
+          <div>
+            <h4 class="text-white">Mail Us</h4>
+            <p class="mb-2">infoexample.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="rounded p-4">
+          <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center mb-4"
+               style="width: 70px; height: 70px;">
+            <i class="fa fa-phone-alt fa-2x text-primary"></i>
+          </div>
+          <div>
+            <h4 class="text-white">Telephone</h4>
+            <p class="mb-2">(+012) 3456 7890</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="rounded p-4">
+          <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center mb-4"
+               style="width: 70px; height: 70px;">
+            <i class="fab fa-firefox-browser fa-2x text-primary"></i>
+          </div>
+          <div>
+            <h4 class="text-white">Yoursiteex.com</h4>
+            <p class="mb-2">(+012) 3456 7890</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="footer-item d-flex flex-column">
+          <div class="footer-item">
+            <h4 class="text-primary mb-4">Newsletter</h4>
+            <p class="text-white mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum
+              dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
+            <div class="position-relative mx-auto rounded-pill">
+              <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text"
+                     placeholder="Enter your email">
+              <button type="button"
+                      class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="footer-item d-flex flex-column">
+          <h4 class="text-primary mb-4">Customer Service</h4>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Returns</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Order History</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Site Map</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Testimonials</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> My Account</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Unsubscribe Notification</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="footer-item d-flex flex-column">
+          <h4 class="text-primary mb-4">Information</h4>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> About Us</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Delivery infomation</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Warranty</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> FAQ</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Seller Login</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="footer-item d-flex flex-column">
+          <h4 class="text-primary mb-4">Extras</h4>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Brands</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Gift Vouchers</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Affiliates</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Wishlist</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Order History</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Track Your Order</a>
+          <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Track Your Order</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Copyright Start -->
+<div class="container-fluid copyright py-4">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6 text-center text-md-start mb-md-0">
+                  
+      </div>
+      <div class="col-md-6 text-center text-md-end text-white">
+
+        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">Aziz</a>.
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Copyright End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+
+</html>

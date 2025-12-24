@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { timeout, catchError } from 'rxjs/operators';
 import { throwError, Subscription } from 'rxjs';
 import { ProductService } from '../../../services/product.service';
@@ -33,7 +34,7 @@ review?: string;  // ← Still string for UI binding
   standalone: true,
   templateUrl: './manageproduct.component.html',
   styleUrls: ['./manageproduct.component.css'],
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, RouterModule]
 })
 export class ManageproductComponent implements OnInit, OnDestroy {
   autoRefreshPending = false;

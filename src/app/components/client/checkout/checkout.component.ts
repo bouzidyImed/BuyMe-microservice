@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { CartService } from '../../../services/cart.service';
 import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
@@ -7,12 +8,13 @@ import { firstValueFrom } from 'rxjs';
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.css'
 })
 export class CheckoutComponent {
   items$;
+  mobile: string = '';
 
   constructor(private readonly cartService: CartService, private readonly router: Router) {
     this.items$ = this.cartService.items$;
@@ -25,11 +27,14 @@ export class CheckoutComponent {
       return;
     }
 
+    const normalizedPhone = String(this.mobile || '').trim();
+
     const calls = items.map(i => {
       const payload = {
         orderDate: new Date(),
         productId: i.productId,
-        qteOrdered: i.quantity
+        qteOrdered: i.quantity,
+        mobile: normalizedPhone
       };
       return firstValueFrom(this.cartService.placeOrder(payload))
         .then(res => ({ success: true, item: i, res }))

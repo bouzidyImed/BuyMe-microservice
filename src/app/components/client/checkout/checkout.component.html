@@ -385,27 +385,17 @@
           </div>
           <div class="form-item">
             <label class="form-label my-3">Mobile<sup>*</sup></label>
-            <input type="tel" class="form-control">
+            <input type="tel" class="form-control" name="mobile" [(ngModel)]="mobile" placeholder="e.g. +1234567890">
           </div>
           <div class="form-item">
             <label class="form-label my-3">Email Address<sup>*</sup></label>
             <input type="email" class="form-control">
           </div>
-          <div class="form-check my-3">
-            <input type="checkbox" class="form-check-input" id="Account-1" name="Accounts"
-                   value="Accounts">
-            <label class="form-check-label" for="Account-1">Create an account?</label>
-          </div>
           <hr>
-          <div class="form-check my-3">
-            <input class="form-check-input" type="checkbox" id="Address-1" name="Address"
-                   value="Address">
-            <label class="form-check-label" for="Address-1">Ship to a different address?</label>
-          </div>
-          <div class="form-item">
+          <!-- <div class="form-item">
                             <textarea name="text" class="form-control" spellcheck="false" cols="30" rows="11"
                                       placeholder="Oreder Notes (Optional)"></textarea>
-          </div>
+          </div> -->
         </div>
         <div class="col-md-12 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.3s">
           <div class="table-responsive">
@@ -413,7 +403,6 @@
               <thead>
               <tr class="text-center">
                 <th scope="col" class="text-start">Name</th>
-                <th scope="col">Model</th>
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Total</th>
@@ -422,7 +411,6 @@
               <tbody *ngIf="(items$ | async) as items">
                 <tr *ngFor="let item of items" class="text-center">
                   <th scope="row" class="text-start py-4">{{ item.name }}</th>
-                  <td class="py-4">Model</td>
                   <td class="py-4">{{ item.price | currency }}</td>
                   <td class="py-4 text-center">{{ item.quantity }}</td>
                   <td class="py-4">{{ (item.price * item.quantity) | currency }}</td>
@@ -473,7 +461,7 @@
               </tbody>
             </table>
           </div>
-          <div class="row g-0 text-center align-items-center justify-content-center border-bottom py-2">
+          <!-- <div class="row g-0 text-center align-items-center justify-content-center border-bottom py-2">
             <div class="col-12">
               <div class="form-check text-start my-2">
                 <input type="checkbox" class="form-check-input bg-primary border-0" id="Transfer-1"
@@ -484,8 +472,8 @@
                 use your Order ID as the payment reference. Your order will not be shipped until the
                 funds have cleared in our account.</p>
             </div>
-          </div>
-          <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-2">
+          </div> -->
+          <!-- <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-2">
             <div class="col-12">
               <div class="form-check text-start my-2">
                 <input type="checkbox" class="form-check-input bg-primary border-0" id="Payments-1"
@@ -493,8 +481,8 @@
                 <label class="form-check-label" for="Payments-1">Check Payments</label>
               </div>
             </div>
-          </div>
-          <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-2">
+          </div> -->
+          <!-- <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-2">
             <div class="col-12">
               <div class="form-check text-start my-2">
                 <input type="checkbox" class="form-check-input bg-primary border-0" id="Delivery-1"
@@ -502,8 +490,8 @@
                 <label class="form-check-label" for="Delivery-1">Cash On Delivery</label>
               </div>
             </div>
-          </div>
-          <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-2">
+          </div> -->
+          <!-- <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-2">
             <div class="col-12">
               <div class="form-check text-start my-2">
                 <input type="checkbox" class="form-check-input bg-primary border-0" id="Paypal-1"
@@ -511,17 +499,12 @@
                 <label class="form-check-label" for="Paypal-1">Paypal</label>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="row g-4 text-center align-items-center justify-content-center pt-4">
             <button type="button"
-                    class="btn btn-primary border-secondary py-3 px-4 text-uppercase w-100 text-primary">Place
+                    class="btn btn-primary border-secondary py-3 px-4 text-uppercase w-100 text-primary" (click)="placeOrders()">Place
               Order</button>
           </div>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-12 text-end">
-          <button class="btn btn-success rounded-pill px-4 py-3" type="button" (click)="placeOrders()">Place Order</button>
         </div>
       </div>
     </form>
@@ -530,6 +513,7 @@
 <!-- Checkout Page End -->
 
 <!-- Footer Start -->
+
 <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
   <div class="container py-5">
     <div class="row g-4 rounded mb-5" style="background: rgba(255, 255, 255, .03);">

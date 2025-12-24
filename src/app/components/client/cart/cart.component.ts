@@ -1,21 +1,29 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { CartService, CartItem } from '../../../services/cart.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
   items$;
-  shippingRate = 3;
+  shippingRate = 0; // Set to 0 since we're removing shipping
+  filteredItems: CartItem[] = [];
+  searchTerm = '';
+  private allItems: CartItem[] = [];
 
   constructor(private readonly cartService: CartService, private readonly router: Router) {
     this.items$ = this.cartService.items$;
+    this.items$.subscribe(items => {
+      this.allItems = items;
+      this.filteredItems = items;
+    });
   }
 
   increase(item: CartItem) {
@@ -51,5 +59,43 @@ export class CartComponent {
 
   proceedToCheckout() {
     this.router.navigate(['/client/checkout']);
+  }
+
+  // Search functionality
+  onSearch() {
+    if (!this.searchTerm.trim()) {
+      this.filteredItems = [...this.allItems];
+      return;
+    }
+    
+    const term = this.searchTerm.toLowerCase().trim();
+    this.filteredItems = this.allItems.filter(item => 
+      item.name.toLowerCase().includes(term)
+    );
+  }
+
+  clearSearch() {
+    this.searchTerm = '';
+    this.filteredItems = [...this.allItems];
+  }
+
+  // Navigation methods
+  navigateToProfile() {
+    this.router.navigate(['/client/profile']);
+  }
+
+  logout() {
+    try {
+      // clear auth-related storage and navigate to login
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('currentUser');
+    } catch (e) {
+      // ignore
+    }
+    this.router.navigate(['/login']);
+  }
+
+  navigateToHome() {
+    this.router.navigate(['/client/home']);
   }
 }

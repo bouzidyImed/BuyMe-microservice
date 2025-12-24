@@ -39,11 +39,21 @@ interface CategoryGroup {
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  // ...existing code...
   cartProductIds = new Set<number>();
 
   navigateToProfile() {
     this.router.navigate(['/client/profile']);
+  }
+
+  logout() {
+    try {
+      // clear auth-related storage and navigate to login
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('currentUser');
+    } catch (e) {
+      // ignore
+    }
+    this.router.navigate(['/login']);
   }
 
   categoriesWithProducts: CategoryGroup[] = [];
@@ -195,5 +205,4 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-
 }

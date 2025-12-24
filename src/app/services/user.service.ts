@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 import { APP_CONFIG } from '../../main';
 
 export interface UserProfile {
@@ -35,7 +36,16 @@ export class UserService {
   getCurrentUser(): Observable<UserProfile> {
     return this.http.get<UserProfile>(`${this.apiUrl}/me`).pipe(
       catchError(() => this.http.get<UserProfile>(`${this.apiUrl}/profile`)),
-      catchError(() => this.http.get<UserProfile>(`${this.config.apiUrl.replace(/\/$/, '')}/users/me`))
+      catchError(() => this.http.get<UserProfile>(`${this.config.apiUrl.replace(/\/\/$/, '')}/users/me`))
+    );
+  }
+
+  // Try to resolve an arbitrary user by id (best-effort across possible auth API shapes)
+  // Returns Observable<UserProfile | null> so callers can gracefully handle missing profiles.
+  getUserById(userId: number): Observable<UserProfile | null> {
+    // Call the auth service user-by-id endpoint we just added.
+    return this.http.get<UserProfile>(`${this.apiUrl}/users/${userId}`).pipe(
+      catchError(() => of(null))
     );
   }
 
