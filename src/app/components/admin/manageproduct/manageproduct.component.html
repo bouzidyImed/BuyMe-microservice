@@ -38,9 +38,19 @@
       <h3 class="mb-2">Manage categories & products in one place</h3>
       <p class="text-muted mb-0">Create, update and clean your marketplace inventory without leaving this screen.</p>
     </div>
-    <div class="header-actions">
+      <div class="header-actions">
       <button class="btn btn-light me-2" (click)="refreshAll()">
-        <i class="fas fa-sync-alt me-2"></i>Refresh data
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise me-2" viewBox="0 0 16 16" aria-hidden="true">
+          <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+          <path d="M8 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.853.354L6.5 2.207A.5.5 0 0 1 7 1.5V.5A.5.5 0 0 1 8 0z"/>
+        </svg>Refresh data
+      </button>
+      <button class="btn btn-outline-danger" (click)="logout()" title="Logout">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right me-1" viewBox="0 0 16 16" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 15a1 1 0 0 0 1-1v-2h-1v2H4V2h6v2h1V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6z"/>
+          <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L14.293 7.5H7.5a.5.5 0 0 0 0 1h6.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+        </svg>
+        Logout
       </button>
       <div class="btn-group">
         <button class="btn"
@@ -89,8 +99,11 @@
                class="form-control me-2 search-input"
                placeholder="Search by name or description..."
                [(ngModel)]="categorySearchTerm">
-        <button class="btn btn-outline-secondary me-2" (click)="loadCategories()">
-          <i class="fas fa-sync-alt"></i>
+        <button class="btn btn-outline-secondary me-2" (click)="loadCategories()" title="Refresh categories">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+            <path d="M8 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.853.354L6.5 2.207A.5.5 0 0 1 7 1.5V.5A.5.5 0 0 1 8 0z"/>
+          </svg>
         </button>
         <button class="btn btn-success" (click)="openCategoryModal()">
           <i class="fas fa-plus me-2"></i>New category
@@ -192,8 +205,11 @@
                class="form-control me-2 search-input"
                placeholder="Search products..."
                [(ngModel)]="productSearchTerm">
-        <button class="btn btn-outline-secondary me-2" (click)="loadProducts()">
-          <i class="fas fa-sync-alt"></i>
+        <button class="btn btn-outline-secondary me-2" (click)="loadProducts()" title="Refresh products">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+            <path d="M8 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.853.354L6.5 2.207A.5.5 0 0 1 7 1.5V.5A.5.5 0 0 1 8 0z"/>
+          </svg>
         </button>
         <button class="btn btn-primary" (click)="openProductModal()">
           <i class="fas fa-plus me-2"></i>New product
@@ -252,7 +268,7 @@
     </div>
   </section>
 
-  <!-- Product Modal -->
+   <!-- Product Modal -->
   <div *ngIf="showProductModal" class="modal fade show d-block" style="background: rgba(0,0,0,0.5);" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
@@ -263,71 +279,86 @@
         <div class="modal-body">
           <form>
             <div class="row g-3">
+              <!-- Name -->
               <div class="col-md-6">
                 <label class="form-label">Name <span class="text-danger">*</span></label>
                 <input type="text"
                        class="form-control"
-                       name="productName"
                        [(ngModel)]="newProduct.name"
+                       name="productName"
                        (input)="validateProductForm()"
-                       [class.is-invalid]="!newProduct.name.trim()">
+                       [class.is-invalid]="!newProduct.name?.trim()">
                 <div class="invalid-feedback">Product name is required.</div>
               </div>
+
+              <!-- Category -->
               <div class="col-md-6">
                 <label class="form-label">Category <span class="text-danger">*</span></label>
-                <select class="form-control"
-                        name="productCategory"
+                <select class="form-select"
                         [(ngModel)]="newProduct.categoryId"
+                        name="productCategory"
                         (change)="validateProductForm()"
                         [class.is-invalid]="!newProduct.categoryId">
-                  <option value="">Select category</option>
+                  <option [ngValue]="null">Select category</option>
                   <option *ngFor="let c of categories" [ngValue]="c.id">{{ c.name }}</option>
                 </select>
                 <div class="invalid-feedback">Please select a category.</div>
               </div>
-              <div class="col-md-12">
+
+              <!-- Description -->
+              <div class="col-12">
                 <label class="form-label">Description <span class="text-danger">*</span></label>
                 <textarea class="form-control"
-                          rows="3"
-                          name="productDescription"
+                          rows="4"
                           [(ngModel)]="newProduct.description"
+                          name="productDescription"
                           (input)="validateProductForm()"
-                          [class.is-invalid]="!newProduct.description.trim()"></textarea>
+                          [class.is-invalid]="!newProduct.description?.trim()"></textarea>
                 <div class="invalid-feedback">Description is required.</div>
               </div>
+
+              <!-- Price -->
               <div class="col-md-4">
                 <label class="form-label">Price <span class="text-danger">*</span></label>
                 <input type="number"
                        class="form-control"
                        min="0.01"
                        step="0.01"
-                       name="productPrice"
                        [(ngModel)]="newProduct.price"
+                       name="productPrice"
                        (input)="validateProductForm()"
                        [class.is-invalid]="newProduct.price <= 0">
-                <div class="invalid-feedback">Provide a valid price.</div>
+                <div class="invalid-feedback">Provide a valid price greater than 0.</div>
               </div>
+
+              <!-- Quantity -->
               <div class="col-md-4">
-  <label class="form-label">Quantity <span class="text-danger">*</span></label>
-  <input type="number"
-         class="form-control"
-         min="1"
-         step="1"
-         name="productQuantity"
-         [(ngModel)]="newProduct.quantity"
-         (input)="validateProductForm()"
-         (ngModelChange)="updateQuantity($event)"
-         [class.is-invalid]="newProduct.quantity <= 0">
-  <div class="invalid-feedback">Quantity must be at least 1.</div>
-</div>
+                <label class="form-label">Quantity <span class="text-danger">*</span></label>
+                <input type="number"
+                       class="form-control"
+                       min="1"
+                       step="1"
+                       [(ngModel)]="newProduct.quantity"
+                       name="productQuantity"
+                       (ngModelChange)="updateQuantity($event)"
+                       (input)="validateProductForm()"
+                       [class.is-invalid]="newProduct.quantity <= 0">
+                <div class="invalid-feedback">Quantity must be at least 1.</div>
+              </div>
+
+              <!-- Review Summary -->
               <div class="col-md-4">
                 <label class="form-label">Review summary</label>
                 <input type="text"
                        class="form-control"
                        maxlength="500"
+                       [(ngModel)]="newProduct.review"
                        name="productReview"
-                       [(ngModel)]="newProduct.review">
+                       placeholder="Optional highlight or short review">
+                <small class="text-muted">Optional</small>
               </div>
+
+              <!-- Images Upload - ONLY when creating a new product -->
               <div class="col-12" *ngIf="!isEditingProduct">
                 <label class="form-label">Product images <span class="text-danger">*</span></label>
                 <input type="file"
@@ -335,38 +366,34 @@
                        accept="image/*"
                        multiple
                        (change)="onProductFilesSelected($event)">
-                <small class="text-muted">Upload at least one JPG or PNG.</small>
+                <small class="text-muted mt-1 d-block">Upload at least one image (JPG/PNG).</small>
               </div>
-              <div class="col-12" *ngIf="productImagePreviews.length">
-                <div class="preview-grid">
-                  <div class="preview-card" *ngFor="let preview of productImagePreviews; let i = index">
-                    <img [src]="preview" alt="preview">
-                    <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeImageChip(i, false)">
-                      Remove
+
+              <!-- New Image Previews - ONLY during creation -->
+              <div class="col-12" *ngIf="!isEditingProduct && productImagePreviews.length > 0">
+                <label class="form-label">Image previews</label>
+                <div class="preview-grid d-flex flex-wrap gap-3">
+                  <div class="preview-card position-relative" *ngFor="let preview of productImagePreviews; let i = index">
+                    <img [src]="preview" alt="Preview {{i+1}}" class="img-thumbnail" style="width: 120px; height: 120px; object-fit: cover;">
+                    <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 mt-1 me-1" (click)="removeImageChip(i, false)">
+                      &times;
                     </button>
                   </div>
                 </div>
-              </div>
-              <div class="col-12" *ngIf="isEditingProduct && (newProduct.images?.length || 0) > 0">
-                <label class="form-label">Existing images</label>
-                <div class="chip-list">
-                  <span class="chip" *ngFor="let img of newProduct.images; let i = index">
-                    {{ img }}
-                    <button type="button" (click)="removeImageChip(i, true)">&times;</button>
-                  </span>
-                </div>
-                <small class="text-muted">Removing a file will drop it after the refresh.</small>
               </div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-outline-secondary" (click)="showProductModal = false">Cancel</button>
-          <button class="btn btn-primary"
+          <button type="button" class="btn btn-outline-secondary" (click)="showProductModal = false">
+            Cancel
+          </button>
+          <button type="button"
+                  class="btn btn-primary"
                   (click)="saveProduct()"
                   [disabled]="!productFormValid || savingProduct">
             {{ isEditingProduct ? 'Save changes' : 'Create product' }}
-            <span *ngIf="savingProduct" class="spinner-border spinner-border-sm ms-2"></span>
+            <span *ngIf="savingProduct" class="spinner-border spinner-border-sm ms-2" role="status"></span>
           </button>
         </div>
       </div>

@@ -23,7 +23,7 @@ export const routes: Routes = [
   {path: 'client/checkout', component: CheckoutComponent},
   {path: 'client/orders', component: MyOrdersComponent},
   {path: 'client/shop', component: ShopComponent},
-  {path: 'client/single', component: SingleComponent},
+  {path: 'client/single/:id', component: SingleComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'notfound', component: NotfoundComponent},
   {path: 'client/profile', component: ProfileComponent},

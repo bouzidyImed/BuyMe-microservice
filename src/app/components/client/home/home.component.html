@@ -354,14 +354,14 @@
                           <img [src]="getProductImage(product)" (error)="onImageError($event)" class="img-fluid w-100 rounded-top" alt="{{ product.name }}"/>
                           <!-- CATEGORY LABEL OR BADGES CAN GO HERE IF NEEDED -->
                           <div class="product-details">
-                            <a href="#"><i class="fa fa-eye fa-1x"></i></a>
+                            <a [routerLink]="['/client/single', product.id]"><i class="fa fa-eye fa-1x"></i></a>
                           </div>
                         </div>
                         <div class="text-center rounded-bottom p-4">
                           <span class="d-block mb-1">
                             <span class="badge bg-light text-dark">{{ group.category.name }}</span>
                           </span>
-                          <a href="#" class="d-block h4">{{ product.name }}</a>
+                          <a [routerLink]="['/client/single', product.id]" class="d-block h4">{{ product.name }}</a>
                           <span class="text-primary fs-5">{{ product.price | currency }}</span>
                         </div>
                         <div class="text-muted small py-1 px-2">{{ product.description | slice:0:50 }}<span *ngIf="product.description.length > 50">...</span></div>

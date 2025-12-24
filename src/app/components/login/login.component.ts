@@ -6,7 +6,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgIf } from '@angular/common';
-import {MatButton} from '@angular/material/button';
 import { Router } from '@angular/router';
 //import {LoginResponseDto} from '../../models/login-response-dto';
 import {LoginResponse} from '../../models/login-response';
@@ -21,8 +20,7 @@ import {LoginResponse} from '../../models/login-response';
     MatFormFieldModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    NgIf,
-    MatButton
+    NgIf
   ]
 })
 export class LoginComponent {

@@ -119,7 +119,12 @@ export class RegisterComponent {
     }
 
     if (formValues.phone) {
-      formData.append('phone', formValues.phone.toString());
+      // Normalize phone: send digits only to avoid server validation issues (strip +, spaces, dashes)
+      const phoneStr: string = String(formValues.phone || '').trim();
+      const digitsOnly = phoneStr.replace(/\D+/g, '');
+      if (digitsOnly) {
+        formData.append('phone', digitsOnly);
+      }
     }
 
     if (formValues.country) {

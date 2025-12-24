@@ -5,6 +5,7 @@ import { timeout, catchError } from 'rxjs/operators';
 import { throwError, Subscription } from 'rxjs';
 import { ProductService } from '../../../services/product.service';
 import { CategoryService } from '../../../services/category.service';
+import { Router } from '@angular/router';
 
 type AlertType = 'success' | 'error' | 'info';
 
@@ -20,7 +21,7 @@ interface Product {
   description: string;
   price: number;
   quantity: number;
-  review?: string;
+review?: string;  // ← Still string for UI binding
   images?: string[];
   rate?: number;
   categoryId: number | null;
@@ -70,7 +71,8 @@ export class ManageproductComponent implements OnInit, OnDestroy {
 
   constructor(
     private productService: ProductService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -84,33 +86,46 @@ export class ManageproductComponent implements OnInit, OnDestroy {
     if (this.autoRefreshTimeout) clearTimeout(this.autoRefreshTimeout);
   }
 
-  displayAlert(message: string, type: AlertType = 'info', refreshTarget?: 'categories' | 'products' | 'all') {
-    // Alerts are disabled per user request. This function is intentionally a no-op.
-    // Kept for compatibility if other code calls it.
+displayAlert(message: string, type: AlertType = 'info', refreshTarget?: 'categories' | 'products' | 'all') {
+  this.alertMessage = message;
+  this.alertType = type;
+  this.showAlert = true;
+
+  // Auto-close success/info alerts after 5 seconds (errors stay until manual close)
+  if (type !== 'error') {
+    this.alertTimeout = setTimeout(() => {
+      this.showAlert = false;
+    }, 5000);
+  }
+}
+
+private scheduleCloseAndRefresh(target: 'categories' | 'products' | 'all') {
+  // Clear any existing auto-refresh timeouts
+  if (this.autoRefreshTimeout) {
+    clearTimeout(this.autoRefreshTimeout);
+    this.autoRefreshTimeout = undefined;
   }
 
-  private scheduleCloseAndRefresh(target: 'categories' | 'products' | 'all') {
-    // Clear any existing auto-refresh timeouts
-    if (this.autoRefreshTimeout) {
-      clearTimeout(this.autoRefreshTimeout);
-      this.autoRefreshTimeout = undefined;
-    }
+  // Show success alert immediately
+  this.showAlert = true;
+  this.alertType = 'success';
+  this.alertMessage = `Success! Modal closing and page refreshing in 3 seconds...`;
 
-    // Close modals after 3 seconds
-    setTimeout(() => {
-      if (target === 'categories' || target === 'all') this.showCategoryModal = false;
-      if (target === 'products' || target === 'all') this.showProductModal = false;
-      // also ensure loader overlay is hidden once modal is closed
-      this.operationInProgress = false;
-      this.savingCategory = false;
-      this.savingProduct = false;
-    }, 3000);
+  // Close modals after 3 seconds
+  setTimeout(() => {
+    if (target === 'categories' || target === 'all') this.showCategoryModal = false;
+    if (target === 'products' || target === 'all') this.showProductModal = false;
+    // Ensure loader overlay is hidden once modal is closed
+    this.operationInProgress = false;
+    this.savingCategory = false;
+    this.savingProduct = false;
+  }, 3000);
 
-    // Reload page after 4 seconds to reflect backend state
-    setTimeout(() => {
-      globalThis.location.reload();
-    }, 4000);
-  }
+  // Reload page after 4 seconds to reflect backend state (after modal fully closed)
+  this.autoRefreshTimeout = setTimeout(() => {
+    globalThis.location.reload();
+  }, 4000);
+}
 
   closeAlert() {
     if (this.alertTimeout) clearTimeout(this.alertTimeout);
@@ -144,52 +159,34 @@ export class ManageproductComponent implements OnInit, OnDestroy {
   validateCategoryForm() {
     this.categoryFormValid = !!this.newCategory.name.trim() && !!this.newCategory.description.trim();
   }
+saveCategory() {
+  if (!this.categoryFormValid || this.savingCategory) return;
 
-  saveCategory() {
-    if (!this.categoryFormValid || this.savingCategory) return;
+  this.savingCategory = true;
+  this.operationInProgress = true;
 
-    this.savingCategory = true;
-    this.operationInProgress = true;
+  const request$ = this.isEditingCategory
+    ? this.categoryService.update(this.newCategory.id!, this.newCategory)
+    : this.categoryService.create(this.newCategory);
 
-    const request$ = this.isEditingCategory
-      ? this.categoryService.update(this.newCategory.id!, this.newCategory)
-      : this.categoryService.create(this.newCategory);
-
-    const sub = request$.pipe(
-      timeout(3000),
-      catchError(err => throwError(() => err))
-    ).subscribe({
-      next: () => {
-        // Close modal immediately
-        this.showCategoryModal = false;
-        this.savingCategory = false;
-        this.operationInProgress = false;
-
-        this.displayAlert(
-          `Category ${this.isEditingCategory ? 'updated' : 'created'} successfully! Refreshing in 3 seconds...`,
-          'success',
-          'categories'
-        );
-      },
-      error: (err) => {
-        this.savingCategory = false;
-        this.operationInProgress = false;
-
-        const operation = this.isEditingCategory ? 'updating' : 'creating';
-        let errorMsg = 'Unknown error';
-
-        if (err.name === 'TimeoutError') {
-          errorMsg = 'Request timed out (3s). Please try again.';
-        } else {
-          errorMsg = this.extractErrorMessage(err);
-        }
-
-        this.displayAlert(`Error ${operation} category: ${errorMsg}`, 'error');
-      },
-    });
-    this.subscriptions.push(sub);
-  }
-
+  const sub = request$.subscribe({
+    next: () => {
+      // Success: close modal and reload page immediately
+      this.showCategoryModal = false;
+      this.operationInProgress = false;
+      this.savingCategory = false;
+      globalThis.location.reload();
+    },
+    error: (err) => {
+      this.savingCategory = false;
+      this.operationInProgress = false;
+      // Optional: console log for debugging, no alert shown to user
+      console.error('Category operation failed:', err);
+      // Modal stays open so user can retry
+    },
+  });
+  this.subscriptions.push(sub);
+}
   deleteCategory(id: number) {
     if (!confirm('Delete this category? This cannot be undone.')) return;
 
@@ -239,16 +236,17 @@ export class ManageproductComponent implements OnInit, OnDestroy {
           description: product.description,
           price: product.price,
           quantity: product.quantity ?? 1,
-          review: product.review ?? '',
-          images: [...(product.images ?? [])],
+          review: Array.isArray(product.review) 
+  ? (product.review[0] ?? '') 
+  : (product.review ?? ''),
+          images: [...(product.images || [])],
           rate: product.rate ?? 0,
-          categoryId: product.categoryId ?? null,
+          categoryId: product.categoryId,
           categoryName: product.categoryName
         }
       : this.getEmptyProduct();
-
-    this.selectedProductFiles = [];
     this.productImagePreviews = [];
+    this.selectedProductFiles = [];
     this.savingProduct = false;
     this.showProductModal = true;
     this.validateProductForm();
@@ -257,9 +255,9 @@ export class ManageproductComponent implements OnInit, OnDestroy {
   validateProductForm() {
     const hasBasics = !!this.newProduct.name.trim() &&
       !!this.newProduct.description.trim() &&
-      Number(this.newProduct.price) > 0 &&
-      !!this.newProduct.categoryId &&
-      Number(this.newProduct.quantity) >= 1;
+      this.newProduct.price > 0 &&
+      this.newProduct.quantity > 0 &&
+      !!this.newProduct.categoryId;
 
     const hasImages = this.isEditingProduct
       ? (this.newProduct.images?.length ?? 0) > 0 || this.selectedProductFiles.length > 0
@@ -293,54 +291,36 @@ export class ManageproductComponent implements OnInit, OnDestroy {
   }
 
   saveProduct() {
-    if (!this.productFormValid || this.savingProduct) return;
+  if (!this.productFormValid || this.savingProduct) return;
 
-    this.savingProduct = true;
-    this.operationInProgress = true;
+  this.savingProduct = true;
+  this.operationInProgress = true;
 
-    const payload = this.isEditingProduct
-      ? this.buildProductUpdatePayload()
-      : this.buildProductCreatePayload();
+  const payload = this.isEditingProduct
+    ? this.buildProductUpdatePayload()
+    : this.buildProductCreatePayload();
 
-    const request$ = this.isEditingProduct
-      ? this.productService.update(this.newProduct.id!, payload)
-      : this.productService.create(payload as FormData);
+  const request$ = this.isEditingProduct
+    ? this.productService.update(this.newProduct.id!, payload)
+    : this.productService.create(payload as FormData);
 
-    const sub = request$.pipe(
-      timeout(3000),
-      catchError(err => throwError(() => err))
-    ).subscribe({
-      next: () => {
-        this.showProductModal = false;
-        this.savingProduct = false;
-        this.operationInProgress = false;
-
-        this.displayAlert(
-          `Product ${this.isEditingProduct ? 'updated' : 'created'} successfully! Refreshing in 3 seconds...`,
-          'success',
-          'products'
-        );
-        this.resetProductForm();
-      },
-      error: (err) => {
-        this.savingProduct = false;
-        this.operationInProgress = false;
-
-        const operation = this.isEditingProduct ? 'updating' : 'creating';
-        let errorMsg = 'Unknown error';
-
-        if (err.name === 'TimeoutError') {
-          errorMsg = 'Request timed out (3s). Please try again.';
-        } else {
-          errorMsg = err.error?.message || err.message || 'Unknown error';
-        }
-
-        this.displayAlert(`Error ${operation} product: ${errorMsg}`, 'error');
-      },
-    });
-    this.subscriptions.push(sub);
-  }
-
+  const sub = request$.subscribe({
+    next: () => {
+      // Success: close modal and reload page immediately
+      this.showProductModal = false;
+      this.operationInProgress = false;
+      this.savingProduct = false;
+      globalThis.location.reload();
+    },
+    error: (err) => {
+      this.savingProduct = false;
+      this.operationInProgress = false;
+      console.error('Product operation failed:', err);
+      // Modal stays open so user can retry
+    },
+  });
+  this.subscriptions.push(sub);
+}
   deleteProduct(id: number) {
     if (!confirm('Delete this product? This cannot be undone.')) return;
 
@@ -374,6 +354,9 @@ export class ManageproductComponent implements OnInit, OnDestroy {
       cat.description.toLowerCase().includes(term)
     );
   }
+  onImageError(event: any) {
+  event.target.src = '/assets/placeholder.jpg'; // fallback image
+}
 
   filteredProducts(): Product[] {
     const term = this.productSearchTerm.trim().toLowerCase();
@@ -398,6 +381,17 @@ export class ManageproductComponent implements OnInit, OnDestroy {
     this.loadProducts();
   }
 
+  logout() {
+    try {
+      // clear auth-related storage and navigate to login
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('currentUser');
+    } catch (e) {
+      // ignore
+    }
+    this.router.navigate(['/login']);
+  }
+
   private buildProductCreatePayload(): FormData {
     const formData = new FormData();
     formData.append('name', this.newProduct.name.trim());
@@ -414,25 +408,27 @@ export class ManageproductComponent implements OnInit, OnDestroy {
     return formData;
   }
 
-  private buildProductUpdatePayload(): Product {
-    const images = (this.newProduct.images ?? []).filter(img => img?.trim());
-    
-    // Ensure quantity is properly parsed as a number
-    const quantity = Number(this.newProduct.quantity) || 1;
-    
-    return {
-      id: this.newProduct.id,
-      name: this.newProduct.name.trim(),
-      description: this.newProduct.description.trim(),
-      price: Number(this.newProduct.price),
-      quantity: quantity,
-      review: this.newProduct.review?.trim() || '',
-      images: images.length ? images : ['placeholder.jpg'],
-      rate: this.newProduct.rate ?? 0,
-      categoryId: this.newProduct.categoryId,
-      categoryName: this.newProduct.categoryName || undefined
-    };
-  }
+private buildProductUpdatePayload(): any {
+  // Convert single review string to array for backend compatibility
+  const reviewForBackend = this.newProduct.review?.trim() 
+    ? [this.newProduct.review.trim()] 
+    : [];
+
+  const quantity = Number(this.newProduct.quantity) || 1;
+
+  return {
+    id: this.newProduct.id,
+    name: this.newProduct.name.trim(),
+    description: this.newProduct.description.trim(),
+    price: Number(this.newProduct.price),
+    quantity: quantity,
+    review: reviewForBackend,        // ← Now allowed: string[] for backend
+    rate: this.newProduct.rate ?? 0,
+    categoryId: this.newProduct.categoryId,
+    categoryName: this.newProduct.categoryName || undefined
+    // images intentionally omitted — not updated
+  };
+}
 
   private resetProductForm() {
     this.newProduct = this.getEmptyProduct();

@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import { CategoryService } from '../../../services/category.service';
 import { ProductService } from '../../../services/product.service';
@@ -33,7 +34,7 @@ interface CategoryGroup {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -152,7 +153,8 @@ export class HomeComponent implements OnInit {
       products: this.productService.getAll()
     }).subscribe({
       next: ({ categories, products }) => {
-        const availableProducts = (products ?? []).filter(p => (p.quantity ?? 0) > 0);
+        // include all products (show out-of-stock items too) so categories display even when stock is zero
+        const availableProducts = (products ?? []);
         const grouped: CategoryGroup[] = (categories ?? [])
           .map((category) => ({
             category,
