@@ -326,3 +326,364 @@ Hibernate: select c1_0.id,c1_0.product_id,c1_0.quantity,c1_0.user_id from cart c
 2025-11-30T19:05:48.077+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
 2025-11-30T19:05:48.078+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
 2025-11-30T19:05:48.078+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-30T19:06:18.080+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086?status=UP&lastDirtyTimestamp=1764525828039
+2025-11-30T19:06:18.081+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:06:18.082+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-30T19:06:18.083+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:06:18.088+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:06:18.089+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-30T19:06:18.092+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:06:48.094+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-30T19:06:48.096+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086?status=UP&lastDirtyTimestamp=1764525828039
+2025-11-30T19:06:48.096+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:06:48.097+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:06:48.103+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:06:48.104+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-30T19:06:48.105+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:07:18.107+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-30T19:07:18.108+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:07:18.108+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086?status=UP&lastDirtyTimestamp=1764525828039
+2025-11-30T19:07:18.109+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:07:18.114+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:07:18.114+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-30T19:07:18.128+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:07:48.118+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-30T19:07:48.120+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:07:48.125+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:07:48.125+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-30T19:07:48.129+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086?status=UP&lastDirtyTimestamp=1764525828039
+2025-11-30T19:07:48.130+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:07:48.134+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:08:18.128+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-30T19:08:18.129+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:08:18.135+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:08:18.135+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-30T19:08:18.139+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086?status=UP&lastDirtyTimestamp=1764525828039
+2025-11-30T19:08:18.140+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:08:18.149+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:08:47.442+01:00  INFO 492749 --- [cart-service] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-30T19:08:48.140+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-30T19:08:48.141+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:08:48.147+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:08:48.147+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-30T19:08:48.151+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086?status=UP&lastDirtyTimestamp=1764525828039
+2025-11-30T19:08:48.152+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:08:48.156+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:09:18.151+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-30T19:09:18.151+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:09:18.156+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:09:18.156+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-30T19:09:18.158+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086?status=UP&lastDirtyTimestamp=1764525828039
+2025-11-30T19:09:18.158+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:09:18.162+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:09:48.158+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-30T19:09:48.159+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:09:48.164+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086?status=UP&lastDirtyTimestamp=1764525828039
+2025-11-30T19:09:48.164+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:09:48.170+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:09:48.170+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Response 200 OK
+2025-11-30T19:09:48.171+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-11-30T19:10:18.172+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086?status=UP&lastDirtyTimestamp=1764525828039
+2025-11-30T19:10:18.174+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:10:18.175+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-30T19:10:18.176+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:10:18.187+01:00  INFO 492749 --- [cart-service] [beatExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1402)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 19 more
+
+2025-11-30T19:10:18.188+01:00  WARN 492749 --- [cart-service] [beatExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+2025-11-30T19:10:18.188+01:00  INFO 492749 --- [cart-service] [reshExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1441)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 22 more
+
+2025-11-30T19:10:18.188+01:00  WARN 492749 --- [cart-service] [reshExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+2025-11-30T19:10:18.194+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : HTTP GET http://localhost:8761/eureka/apps/delta
+2025-11-30T19:10:18.195+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : HTTP PUT http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086?status=UP&lastDirtyTimestamp=1764525828039
+2025-11-30T19:10:18.207+01:00 DEBUG 492749 --- [cart-service] [beatExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:10:18.207+01:00 DEBUG 492749 --- [cart-service] [reshExecutor-%d] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2025-11-30T19:10:18.210+01:00  INFO 492749 --- [cart-service] [beatExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1402)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 20 more
+
+2025-11-30T19:10:18.210+01:00  INFO 492749 --- [cart-service] [reshExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1441)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 23 more
+
+2025-11-30T19:10:18.211+01:00  WARN 492749 --- [cart-service] [beatExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/CART-SERVICE/192.168.1.189:cart-service:8086": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+2025-11-30T19:10:18.211+01:00  WARN 492749 --- [cart-service] [reshExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Connection refused
+2025-11-30T19:10:18.211+01:00 ERROR 492749 --- [cart-service] [beatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CART-SERVICE/192.168.1.189:cart-service:8086 - was unable to send heartbeat!
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845) ~[eureka-client-2.0.3.jar:2.0.3]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1402) ~[eureka-client-2.0.3.jar:2.0.3]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-11-30T19:10:18.212+01:00  INFO 492749 --- [cart-service] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CART-SERVICE/192.168.1.189:cart-service:8086 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1441)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+

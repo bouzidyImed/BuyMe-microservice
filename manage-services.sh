@@ -22,6 +22,7 @@ SPRING_SERVICES=(
   cart-service
   kafka-service
   order-service
+  payment-service
 )
 ANGULAR_SERVICES=(
   BuyMeFront
@@ -61,6 +62,13 @@ show_manual() {
     echo -e "                     Example: ./manage-services.sh menu"
     echo -e "${GREEN}help${NC}                   : Display this help manual."
     echo -e "                     Example: ./manage-services.sh help\n"
+
+    echo -e "${GREEN}payment-start${NC}         : Start the payment service (shorthand)."
+    echo -e "                     Example: ./manage-services.sh payment-start"
+    echo -e "${GREEN}payment-stop${NC}          : Stop the payment service (shorthand)."
+    echo -e "                     Example: ./manage-services.sh payment-stop"
+    echo -e "${GREEN}payment-restart${NC}       : Restart the payment service (shorthand)."
+    echo -e "                     Example: ./manage-services.sh payment-restart"
 
     echo -e "${BLUE}=== SUPPORTED SERVICES ===${NC}"
     echo -e "${YELLOW}Spring Boot Services:${NC}"
@@ -299,6 +307,9 @@ case $CMD in
     start) start_service "$ARG";;
     stop) stop_service "$ARG";;
     restart) restart_service "$ARG";;
+    payment-start) start_service "payment-service";;
+    payment-stop) stop_service "payment-service";;
+    payment-restart) restart_service "payment-service";;
     status) show_status;;
     watch) watch_service "$ARG";;
     menu) interactive_menu;;

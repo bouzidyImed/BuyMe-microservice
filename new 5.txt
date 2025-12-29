@@ -2,3 +2,44 @@ bocasey.com
 blog.actualilties.informatique
 offshareagile
 manus.ia
+
+curl -X POST http://localhost:8081/api/products \
+  -H "Authorization: Bearer " \
+  -F "name=Iphone 16 Pro Max" \
+  -F "description=Le meilleur smartphone du monde" \
+  -F "price=1499.99" \
+  -F "categoryId=1" \
+  -F "images=@/home/imed/Pictures/chstr.jpg" \
+  -F "images=@/home/imed/Pictures/chstr.jpg" \
+  --verbose
+  
+  recrutement.otbs@onetech-group.com
+  SYS-01
+  SYS-02
+  
+ //start zookeeper 
+ bin/zookeeper-server-start.sh config/zookeeper.properties
+ bin/zookeeper-server-stop.sh
+
+//start kafka 
+bin/kafka-server-start.sh config/server.properties
+bin/kafka-server-stop.sh
+
+
+sudo lsof -i :2181
+sudo lsof -i :9092
+
+//start keycloak 
+bin/kc.sh start-dev
+bin/kc.sh stop-dev
+
+
+tensorflow ==>pytorch deeplearning
+ link https://cnn-deep-iteam.netlify.app/ lab 
+ https://deep-nn.netlify.app/
+
+
+WEBHOOK_URL = "https://discordapp.com/api/webhooks/1435552835063517184/k4JqtiCu0PFdnHnvPkirZoT7AugxvXL8yTcjt1Uzr320LJcH4icTdT-gDFn1hedNmjKt%22
+
+
+tenserflow to 

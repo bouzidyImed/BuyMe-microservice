@@ -153,6 +153,29 @@ public class ProductController {
         }
     }
 
+        // ➖ Decrease product quantity (internal use)
+        @Operation(summary = "Decrease product quantity", description = "Decrease the available quantity of a product by a given amount.")
+        @ApiResponses({
+                        @ApiResponse(responseCode = "200", description = "Product quantity decreased successfully",
+                                        content = @Content(schema = @Schema(implementation = ProductDto.class))),
+                        @ApiResponse(responseCode = "400", description = "Invalid request or insufficient stock"),
+                        @ApiResponse(responseCode = "404", description = "Product not found")
+        })
+
+        @PreAuthorize("hasRole('CLIENT') or hasRole('SERVICE') or hasRole('ADMIN')")
+        @PutMapping("/{id}/decrease")
+        public ResponseEntity<?> decreaseQuantity(@PathVariable Long id, @RequestParam Integer amount) {
+            try {
+                ProductDto updated = productService.decreaseQuantity(id, amount);
+                return ResponseEntity.ok(updated);
+            } catch (ProductNotFoundException e) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product with ID " + id + " not found.");
+            } catch (RuntimeException e) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            }
+        }
+
+
     // ❌ Delete product
     @Operation(summary = "Delete a product", description = "Removes a product from the catalogue by its ID.")
     @ApiResponses({
@@ -172,4 +195,6 @@ public class ProductController {
                     .body("Product with ID " + id + " not found.");
         }
     }
+
+
 }

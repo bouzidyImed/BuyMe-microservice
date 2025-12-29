@@ -109,4 +109,17 @@ public class ProductService implements IProduct {
     public ProductDto getProduct(Long id) {
         return productMapper.toDto(getProductOrThrow(id));
     }
+
+    public ProductDto decreaseQuantity(Long id, Integer amount) {
+        if (amount == null || amount <= 0) throw new RuntimeException("Invalid decrease amount");
+        Product existing = getProductOrThrow(id);
+        Integer current = existing.getQuantity();
+        if (current == null || current < amount) {
+            throw new RuntimeException("Insufficient stock for product: " + id);
+        }
+        existing.setQuantity(current - amount);
+        Product saved = productRepo.save(existing);
+        sendKafkaEvent("Product stock decreased: " + saved.getName() + " by " + amount);
+        return productMapper.toDto(saved);
+    }
 }

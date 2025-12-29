@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import tn.iteam.orderservice.dto.OrderResponseDto;
 import tn.iteam.orderservice.enums.PaymentStatus;
 import tn.iteam.orderservice.model.Order;
 import tn.iteam.orderservice.service.OrderService;
@@ -73,4 +74,23 @@ public class OrderController {
         Order order = orderService.updatePaymentStatus(orderId, paymentStatus);
         return ResponseEntity.ok(order);
     }
+
+    //@PreAuthorize("hasAuthority('SCOPE_order:read')")
+    @PreAuthorize("hasAnyRole('CLIENT', 'ADMIN')")
+    @GetMapping("/{orderId}")
+    public ResponseEntity<OrderResponseDto> getOrderById(@PathVariable Long orderId) {
+
+        Order order = orderService.findById(orderId);
+
+        OrderResponseDto dto = OrderResponseDto.builder()
+                .orderId(order.getId())
+                .productId(order.getProductId())
+                .qteOrdered(order.getQteOrdered())
+                .amount(order.getTotalAmount())
+                .paymentStatus(order.getPaymentStatus().name())
+                .build();
+
+        return ResponseEntity.ok(dto);
+    }
+
 }

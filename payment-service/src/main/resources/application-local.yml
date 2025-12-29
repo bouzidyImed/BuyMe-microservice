@@ -1,0 +1,89 @@
+spring:
+  application:
+    name: payment-service   # REQUIRED for Eureka to register
+
+  config:
+    activate:
+      on-profile: local
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/e-com-payment-db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: ""
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    # No database-platform needed — auto-detected!
+
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        enable.idempotence: true
+    consumer:
+      group-id: order-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "tn.iteam.orderservice.dto.*"
+    admin:
+      properties:
+        auto.create.topics.enable: true
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/e-commerce
+
+  cloud:
+    openfeign:
+      lazy-attributes-resolution: true
+
+server:
+  port: 8087
+  address: 0.0.0.0   # allows Docker, K8s, and local network access
+
+# Eureka Registration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+
+# Keycloak client config (used by spring-boot-starter-oauth2-client if needed)
+keycloak:
+  auth-server-url: http://localhost:8080
+  realm: e-commerce
+  resource: payment-service
+  credentials:
+    secret: f4oMsqgFfuY588kd1SrhEmMAPMwxFOgD
+  admin:
+    username: admin
+    password: admin123
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    feign: DEBUG
+    org.springframework.cloud.openfeign: DEBUG
+    tn.iteam.orderservice: DEBUG
+    tn.iteam.orderservice.service: DEBUG
+    tn.iteam.orderservice.controller: DEBUG
+    org.apache.kafka: DEBUG
+    org.springframework.kafka: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.security.oauth2.server.resource: DEBUG

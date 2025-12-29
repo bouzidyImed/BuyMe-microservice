@@ -13,6 +13,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 import tn.iteam.orderservice.dto.ProductDto;
 import tn.iteam.orderservice.dto.UserDto;
 import tn.iteam.orderservice.enums.OrderStatus;
@@ -348,6 +349,11 @@ public class OrderService {
         log.info("Found {} total orders", orders.size());
         return orders;
     }
+    public Order findById(Long orderId) {
+        return orderRepository.findById(orderId)
+                .orElseThrow(() ->
+                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
+    }
 
 
     /**
@@ -359,14 +365,25 @@ public class OrderService {
                 .orElseThrow(() -> new BusinessException("Order not found: " + orderId, HttpStatus.NOT_FOUND));
         
         PaymentStatus oldStatus = order.getPaymentStatus();
+        // If moving to PAID from a non-PAID state, reserve/decrease product stock
+        if (paymentStatus == PaymentStatus.PAID && oldStatus != PaymentStatus.PAID) {
+            try {
+                log.info("Decreasing stock for product {} by {} as order {} is being paid", order.getProductId(), order.getQteOrdered(), orderId);
+                productClient.decreaseQuantity(order.getProductId(), order.getQteOrdered());
+            } catch (Exception ex) {
+                log.error("Failed to decrease product stock for order {}: {}", orderId, ex.getMessage(), ex);
+                throw new BusinessException("Failed to reserve product stock: " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        }
+
         order.setPaymentStatus(paymentStatus);
         orderRepository.save(order);
-        
+
         log.info("Payment status updated for order {}: {} -> {}", orderId, oldStatus, paymentStatus);
-        
+
         // Publish event
         publishPaymentStatusUpdatedEventAsync(order, paymentStatus);
-        
+
         return order;
     }
 

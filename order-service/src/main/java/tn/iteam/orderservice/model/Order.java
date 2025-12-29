@@ -23,6 +23,7 @@ public class Order {
     private Date orderDate;  // Reformulated as Date (serializes to ISO string in JSON)
     private Long productId;
     private Long userId;
+    private double TotalAmount;
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
     @Enumerated(EnumType.STRING)
