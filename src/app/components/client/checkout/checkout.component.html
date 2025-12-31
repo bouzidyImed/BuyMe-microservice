@@ -127,7 +127,7 @@
       <div class="d-inline-flex align-items-center">
         <a href="#" class="text-muted d-flex align-items-center justify-content-center me-3"><span class="rounded-circle btn-md-square border"><i class="fas fa-random"></i></span></a>
         <a href="#" class="text-muted d-flex align-items-center justify-content-center me-3"><span class="rounded-circle btn-md-square border"><i class="fas fa-heart"></i></span></a>
-        <a href="#" class="text-muted d-flex align-items-center justify-content-center"><span  class="rounded-circle btn-md-square border"><i class="fas fa-shopping-cart"></i></span>
+        <a routerLink="/cart" class="text-muted d-flex align-items-center justify-content-center"><span  class="rounded-circle btn-md-square border"><i class="fas fa-shopping-cart"></i></span>
           <span class="text-dark ms-2">$0.00</span></a>
       </div>
     </div>
@@ -346,164 +346,183 @@
 <div class="container-fluid bg-light overflow-hidden py-5">
   <div class="container py-5">
     <h1 class="mb-4 wow fadeInUp" data-wow-delay="0.1s">Billing details</h1>
-    <form action="#">
+    <form #checkoutForm="ngForm" (ngSubmit)="placeOrders()">
       <div class="row g-5">
         <div class="col-md-12 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
           <div class="row">
             <div class="col-md-12 col-lg-6">
               <div class="form-item w-100">
                 <label class="form-label my-3">First Name<sup>*</sup></label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" required>
               </div>
             </div>
             <div class="col-md-12 col-lg-6">
               <div class="form-item w-100">
                 <label class="form-label my-3">Last Name<sup>*</sup></label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" required>
               </div>
             </div>
           </div>
           <div class="form-item">
-            <label class="form-label my-3">Company Name<sup>*</sup></label>
+            <label class="form-label my-3">Company Name</label>
             <input type="text" class="form-control">
           </div>
           <div class="form-item">
             <label class="form-label my-3">Address <sup>*</sup></label>
-            <input type="text" class="form-control" placeholder="House Number Street Name">
+            <input type="text" class="form-control" placeholder="House Number Street Name" required>
           </div>
           <div class="form-item">
             <label class="form-label my-3">Town/City<sup>*</sup></label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" required>
           </div>
           <div class="form-item">
             <label class="form-label my-3">Country<sup>*</sup></label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" required>
           </div>
           <div class="form-item">
             <label class="form-label my-3">Postcode/Zip<sup>*</sup></label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" required>
           </div>
           <div class="form-item">
             <label class="form-label my-3">Mobile<sup>*</sup></label>
-            <input type="tel" class="form-control" name="mobile" [(ngModel)]="mobile" placeholder="e.g. +1234567890">
+            <input 
+              type="tel" 
+              class="form-control" 
+              name="mobile" 
+              [(ngModel)]="mobile" 
+              placeholder="e.g. +1234567890"
+              required>
           </div>
           <div class="form-item">
             <label class="form-label my-3">Email Address<sup>*</sup></label>
-            <input type="email" class="form-control">
+            <input type="email" class="form-control" required>
           </div>
           <hr>
-          <!-- <div class="form-item">
-                            <textarea name="text" class="form-control" spellcheck="false" cols="30" rows="11"
-                                      placeholder="Oreder Notes (Optional)"></textarea>
-          </div> -->
         </div>
+
         <div class="col-md-12 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.3s">
-          <div class="table-responsive">
+          <div class="table-responsive futuristic-panel p-4">
             <table class="table">
               <thead>
-              <tr class="text-center">
-                <th scope="col" class="text-start">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Total</th>
-              </tr>
+                <tr class="text-center">
+                  <th scope="col" class="text-start">Name</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Total</th>
+                </tr>
               </thead>
               <tbody *ngIf="(items$ | async) as items">
                 <tr *ngFor="let item of items" class="text-center">
-                  <th scope="row" class="text-start py-4">{{ item.name }}</th>
+<td class="text-start py-4">Product #{{ item.productId }}</td>  
                   <td class="py-4">{{ item.price | currency }}</td>
-                  <td class="py-4 text-center">{{ item.quantity }}</td>
+                  <td class="py-4">{{ item.quantity }}</td>
                   <td class="py-4">{{ (item.price * item.quantity) | currency }}</td>
                 </tr>
 
                 <tr *ngIf="items.length === 0">
-                  <td colspan="5" class="text-center py-4">Your cart is empty.</td>
+                  <td colspan="4" class="text-center py-4">Your cart is empty.</td>
                 </tr>
 
                 <tr *ngIf="items.length > 0">
-                  <th scope="row"></th>
-                  <td class="py-4"></td>
-                  <td class="py-4"></td>
-                  <td class="py-4">
-                    <p class="mb-0 text-dark py-2">Subtotal</p>
-                  </td>
-                  <td class="py-4">
-                    <div class="py-2 text-center border-bottom border-top">
-                      <p class="mb-0 text-dark">{{ getSubtotal(items) | currency }}</p>
-                    </div>
-                  </td>
+                  <td></td>
+                  <td></td>
+                  <td class="py-4 text-end"><strong>Subtotal</strong></td>
+                  <td class="py-4"><strong>{{ getSubtotal(items) | currency }}</strong></td>
                 </tr>
 
                 <tr *ngIf="items.length > 0">
-                  <th scope="row"></th>
-                  <td class="py-4">
-                    <p class="mb-0 text-dark py-4">Shipping</p>
-                  </td>
-                  <td colspan="3" class="py-4">
-                    <div class="form-check text-start">
-                      <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-1" name="Shipping-1" value="Shipping">
+                  <td colspan="2" class="py-4 text-start">Shipping</td>
+                  <td colspan="2" class="py-4 text-start">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-1">
                       <label class="form-check-label" for="Shipping-1">Free Shipping</label>
                     </div>
                   </td>
                 </tr>
 
                 <tr *ngIf="items.length > 0">
-                  <th scope="row"></th>
-                  <td class="py-4"><p class="mb-0 text-dark text-uppercase py-2">TOTAL</p></td>
-                  <td class="py-4"></td>
-                  <td class="py-4"></td>
-                  <td class="py-4">
-                    <div class="py-2 text-center border-bottom border-top">
-                      <p class="mb-0 text-dark">{{ getSubtotal(items) | currency }}</p>
-                    </div>
-                  </td>
+                  <td colspan="2" class="py-4 text-start"><strong>TOTAL</strong></td>
+                  <td></td>
+                  <td class="py-4"><strong>{{ getSubtotal(items) | currency }}</strong></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <!-- <div class="row g-0 text-center align-items-center justify-content-center border-bottom py-2">
-            <div class="col-12">
-              <div class="form-check text-start my-2">
-                <input type="checkbox" class="form-check-input bg-primary border-0" id="Transfer-1"
-                       name="Transfer" value="Transfer">
-                <label class="form-check-label" for="Transfer-1">Direct Bank Transfer</label>
-              </div>
-              <p class="text-start text-dark">Make your payment directly into our bank account. Please
-                use your Order ID as the payment reference. Your order will not be shipped until the
-                funds have cleared in our account.</p>
-            </div>
-          </div> -->
-          <!-- <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-2">
-            <div class="col-12">
-              <div class="form-check text-start my-2">
-                <input type="checkbox" class="form-check-input bg-primary border-0" id="Payments-1"
-                       name="Payments" value="Payments">
-                <label class="form-check-label" for="Payments-1">Check Payments</label>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-2">
-            <div class="col-12">
-              <div class="form-check text-start my-2">
-                <input type="checkbox" class="form-check-input bg-primary border-0" id="Delivery-1"
-                       name="Delivery" value="Delivery">
-                <label class="form-check-label" for="Delivery-1">Cash On Delivery</label>
+
+          <div class="row g-4 pt-4">
+            <div class="col-12 mb-4 text-start">
+              <label class="form-label mb-3 h5">Payment Method</label>
+              <div class="d-flex gap-3 flex-wrap">
+                <button 
+                  type="button" 
+                  class="btn btn-outline-primary px-4 py-2"
+                  [class.active]="paymentMethod === 'CARD'"
+                  (click)="paymentMethod = 'CARD'">
+                  <i class="fas fa-credit-card me-2"></i> Pay with Card
+                </button>
+                <button 
+                  type="button" 
+                  class="btn btn-outline-primary px-4 py-2"
+                  [class.active]="paymentMethod === 'COD'"
+                  (click)="paymentMethod = 'COD'">
+                  <i class="fas fa-truck me-2"></i> Cash on Delivery
+                </button>
               </div>
             </div>
-          </div> -->
-          <!-- <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-2">
-            <div class="col-12">
-              <div class="form-check text-start my-2">
-                <input type="checkbox" class="form-check-input bg-primary border-0" id="Paypal-1"
-                       name="Paypal" value="Paypal">
-                <label class="form-check-label" for="Paypal-1">Paypal</label>
+
+            <!-- Card Details Section -->
+            <div class="col-12" *ngIf="paymentMethod === 'CARD'">
+              <div class="border rounded p-4 bg-white">
+                <h6 class="mb-3">Card Details (Test Cards Available)</h6>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="Card Number (e.g. 4111111111111111)" 
+                      name="cardNumber"
+                      [(ngModel)]="cardNumber"
+                      required>
+                  </div>
+                  <div class="col-6">
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="MM/YY (e.g. 12/26)" 
+                      name="cardExpiry"
+                      [(ngModel)]="cardExpiry"
+                      required>
+                  </div>
+                  <div class="col-6">
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="CVV (e.g. 123)" 
+                      name="cardCvv"
+                      [(ngModel)]="cardCvv"
+                      required>
+                  </div>
+                </div>
+                <small class="text-muted mt-2 d-block">
+                  Use test card: 4111111111111111 | CVV: 123 | Expiry: 12/26
+                </small>
               </div>
             </div>
-          </div> -->
-          <div class="row g-4 text-center align-items-center justify-content-center pt-4">
-            <button type="button"
-                    class="btn btn-primary border-secondary py-3 px-4 text-uppercase w-100 text-primary" (click)="placeOrders()">Place
-              Order</button>
+
+            <!-- Submit Button -->
+            <div class="col-12 mt-4">
+              <button 
+                type="button"
+                class="btn btn-primary w-100 py-3 text-uppercase fw-bold"
+                (click)="placeOrders()"
+                [disabled]="processing || (items$ | async)?.length === 0">
+                <span *ngIf="!processing">Complete Secure Checkout</span>
+                <span *ngIf="processing">
+                  <span class="spinner-border spinner-border-sm me-2"></span>
+                  Processing...
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

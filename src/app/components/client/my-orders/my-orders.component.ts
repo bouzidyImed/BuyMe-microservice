@@ -50,15 +50,19 @@ export class MyOrdersComponent implements OnInit {
     try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (_) {}
   }
 
-
-    logout() {
+  logout() {
     try {
-      // clear auth-related storage and navigate to login
       localStorage.removeItem('authToken');
       localStorage.removeItem('currentUser');
     } catch (e) {
       // ignore
     }
     this.router.navigate(['/login']);
+  }
+
+  getPaymentMethodDisplay(method: string | undefined): string {
+    if (method === 'CARD') return 'Credit Card';
+    if (method === 'COD') return 'Cash on Delivery';
+    return 'Unknown';
   }
 }

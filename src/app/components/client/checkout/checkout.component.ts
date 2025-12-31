@@ -1,68 +1,118 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe, AsyncPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CartService } from '../../../services/cart.service';
+import { OrderService, CreateOrderRequest } from '../../../services/order.service';
+import { PaymentService } from '../../../services/payment.service';
 import { Router } from '@angular/router';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
+
+interface CartItem {
+  productId: number;
+  quantity: number;
+  price: number;
+  // add more if needed (name, image, etc.)
+}
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, CurrencyPipe, AsyncPipe],
   templateUrl: './checkout.component.html',
-  styleUrl: './checkout.component.css'
+  styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent {
-  items$;
-  mobile: string = '';
+  mobile = '';
+  paymentMethod: 'CARD' | 'COD' = 'COD';
+  cardNumber = '';
+  cardExpiry = '';
+  cardCvv = '';
+  processing = false;
 
-  constructor(private readonly cartService: CartService, private readonly router: Router) {
-    this.items$ = this.cartService.items$;
+  items$!: Observable<CartItem[]>;  // ← Will be assigned in constructor
+
+  private cartService!: CartService;  // ← Non-null assertion
+  private orderService!: OrderService;
+  private paymentService!: PaymentService;
+  private router!: Router;
+
+  constructor(
+    cartService: CartService,
+    orderService: OrderService,
+    paymentService: PaymentService,
+    router: Router
+  ) {
+    this.cartService = cartService;
+    this.orderService = orderService;
+    this.paymentService = paymentService;
+    this.router = router;
+
+    this.items$ = this.cartService.items$;  // ← Safe: assigned after injection
   }
 
-  placeOrders() {
-    const items = this.cartService.getItems();
-    if (!items.length) {
-      alert('Cart is empty');
-      return;
-    }
+  getSubtotal(items: CartItem[]): number {
+    return items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  }
 
-    const normalizedPhone = String(this.mobile || '').trim();
+  async placeOrders() {
+    if (this.processing) return;
+    this.processing = true;
 
-    const calls = items.map(i => {
-      const payload = {
-        orderDate: new Date(),
-        productId: i.productId,
-        qteOrdered: i.quantity,
-        mobile: normalizedPhone
-      };
-      return firstValueFrom(this.cartService.placeOrder(payload))
-        .then(res => ({ success: true, item: i, res }))
-        .catch(err => ({ success: false, item: i, err }));
-    });
-
-    Promise.all(calls).then(results => {
-      const failed = results.filter((r: any) => !r.success);
-      if (failed.length === 0) {
-        this.cartService.clear();
-        alert('Order placed successfully');
-        this.router.navigate(['/client/home']);
+    try {
+      const items: CartItem[] = await firstValueFrom(this.items$);
+      if (!items || items.length === 0) {
+        alert('Your cart is empty.');
         return;
       }
 
-      // Build friendly error message
-      const messages = failed.map((f: any) => {
-        const reason = f.err?.error?.message || f.err?.message || 'Unavailable';
-        return `${f.item.name || 'Product ' + f.item.productId}: ${reason}`;
-      });
-      alert('Some items could not be ordered:\n' + messages.join('\n'));
-    }).catch(err => {
-      console.error('Unexpected error placing orders', err);
-      alert('Failed to place orders: ' + (err?.message || err));
-    });
-  }
+      const payments = [];
 
-  getSubtotal(items: { price: number; quantity: number }[]) {
-    return items.reduce((s, it) => s + (it.price * it.quantity), 0);
+      for (const item of items) {
+        const orderPayload: CreateOrderRequest = {
+          productId: item.productId,
+          qteOrdered: item.quantity,
+          mobile: this.mobile,
+          paymentMethod: this.paymentMethod
+        };
+
+        const order = await firstValueFrom(this.orderService.createOrder(orderPayload));
+
+        if (this.paymentMethod === 'CARD') {
+          const paymentDto = {
+            orderId: order.id,
+            paymentMethod: this.paymentMethod,
+            amount: item.price * item.quantity
+          };
+          const cardDto = {
+            cardNumber: this.cardNumber,
+            cvv: this.cardCvv,
+            expiry: this.cardExpiry
+          };
+          const pay = await firstValueFrom(this.paymentService.createPaymentWithCard(paymentDto, cardDto));
+          payments.push(pay);
+        } else {
+          const codPayload = {
+            orderId: order.id,
+            paymentMethod: this.paymentMethod,
+            amount: item.price * item.quantity
+          };
+          const pay = await firstValueFrom(this.paymentService.createPayment(codPayload));
+          payments.push(pay);
+        }
+      }
+
+      this.cartService.clear();
+      alert(
+        this.paymentMethod === 'CARD'
+          ? 'Order placed and paid successfully — thank you!'
+          : 'Order placed successfully. Pay on delivery when you receive the items.'
+      );
+      this.router.navigate(['/client/home']);
+    } catch (err: any) {
+      console.error('Checkout failed', err);
+      alert('Checkout failed: ' + (err.error?.message || err.message || 'Please try again.'));
+    } finally {
+      this.processing = false;
+    }
   }
 }

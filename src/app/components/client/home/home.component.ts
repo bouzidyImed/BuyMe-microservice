@@ -106,11 +106,10 @@ export class HomeComponent implements OnInit {
 
   getProductImage(product: Product): string {
     if (product.images && product.images.length > 0) {
-      return `${this.productImageBaseUrl}/${product.images[0]}`;
+      return product.images[0]; // now this is already "data:image/jpeg;base64,..."
     }
     return '/assets/img/product-3.png';
   }
-
   trackByCategory(_: number, group: CategoryGroup) {
     return group.category.id;
   }

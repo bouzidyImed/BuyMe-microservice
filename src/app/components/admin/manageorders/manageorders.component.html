@@ -155,18 +155,57 @@
                 {{ order.paymentStatus }}
               </span>
             </td>
-            <td class="text-end">
-              <div class="btn-group" role="group">
-                <button class="btn btn-sm btn-success"
-                  (click)="approveOrder(order)"
-                  [disabled]="order.status === 'APPROVED' || order.paymentStatus === 'FAILED' || approvingOrder">
-                  <span *ngIf="approvingOrder" class="spinner-border spinner-border-sm me-1"></span>
-                  Approve
-                </button>
-                <button class="btn btn-sm btn-warning" (click)="declineOrder(order)" [disabled]="order.status === 'CANCELLED' || operationInProgress">Decline</button>
-                <button class="btn btn-sm btn-outline-danger" (click)="deleteOrder(order)" [disabled]="operationInProgress">Delete</button>
-              </div>
-            </td>
+<td class="text-end">
+  <div class="btn-group" role="group">
+
+    <!-- Approve Button -->
+    <button class="btn btn-sm btn-success"
+            (click)="approveOrder(order)"
+            [disabled]="order.status === 'APPROVED' || approvingOrder">
+      <span *ngIf="approvingOrder" class="spinner-border spinner-border-sm me-1"></span>
+      Approve
+    </button>
+
+    <!-- Decline Button -->
+    <button class="btn btn-sm btn-warning"
+            (click)="declineOrder(order)"
+            [disabled]="order.status === 'CANCELLED' || operationInProgress">
+      Decline
+    </button>
+
+    <!-- Mark Delivered Button - ONLY for COD and not yet paid -->
+    <button class="btn btn-sm btn-primary"
+            *ngIf="order.paymentMethod === 'COD' && order.paymentStatus !== 'PAID' && order.paymentStatus !== 'PAID_BY_CARD'"
+            (click)="markDelivered(order)"
+            [disabled]="operationInProgress">
+      Mark Delivered
+    </button>
+
+    <!-- Paid by Card Badge - for CARD orders -->
+    <span class="badge bg-success ms-2"
+          *ngIf="order.paymentMethod === 'CARD' && (order.paymentStatus === 'PAID' || order.paymentStatus === 'PAID_BY_CARD')">
+      Paid by Card
+    </span>
+
+    <!-- Processing Card Payment - if still pending -->
+    <span class="badge bg-warning text-dark ms-2"
+          *ngIf="order.paymentMethod === 'CARD' && order.paymentStatus === 'PENDING'">
+      Card Processing
+    </span>
+
+    <!-- Delete Button -->
+    <button class="btn btn-sm btn-outline-danger ms-2"
+            (click)="deleteOrder(order)"
+            [disabled]="operationInProgress">
+      Delete
+    </button>
+  </div>
+
+  <!-- Payment Info Below Buttons -->
+  <div class="small text-muted mt-1">
+    {{ getPaymentInfo(order) }}
+  </div>
+</td>
           </tr>
           <tr *ngIf="filteredOrders().length === 0">
             <td colspan="8" class="text-center text-muted py-4">

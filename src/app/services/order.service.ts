@@ -12,23 +12,37 @@ export interface OrderItem {
   mobile?: string;
   status: string;
   paymentStatus: string;
+  paymentMethod?: 'CARD' | 'COD';
   approvedBy?: number;
   approvedAt?: string;
+}
+
+export interface CreateOrderRequest {
+  productId: number;
+  qteOrdered: number;
+  mobile: string;
+  paymentMethod: 'CARD' | 'COD';
 }
 
 @Injectable({ providedIn: 'root' })
 export class OrderService {
   private readonly apiUrl: string;
 
-  constructor(private readonly http: HttpClient, @Inject(APP_CONFIG) private readonly config: any) {
+  constructor(
+    private readonly http: HttpClient,
+    @Inject(APP_CONFIG) private readonly config: any
+  ) {
     const base = (this.config?.apiUrl || '').replace(/\/$/, '');
     this.apiUrl = base.replace(/\/api$/, '') + '/api/orders';
   }
 
   getMyOrders(): Observable<OrderItem[]> {
-    const url = `${this.apiUrl}/my-orders`;
-    console.debug('[OrderService] getMyOrders ->', { url, tokenPreview: (localStorage.getItem('jwt_token') || '').slice(0,20) + '...' });
-    return this.http.get<OrderItem[]>(url);
+    return this.http.get<OrderItem[]>(`${this.apiUrl}/my-orders`);
+  }
+
+  // ← ADD THIS METHOD
+  createOrder(payload: CreateOrderRequest): Observable<OrderItem> {
+    return this.http.post<OrderItem>(`${this.apiUrl}/place-order`, payload);
   }
 
   getAllOrders(): Observable<OrderItem[]> {
@@ -53,4 +67,15 @@ export class OrderService {
     const url = `${this.apiUrl}/${orderId}/admin`;
     return this.http.delete<void>(url);
   }
+
+  // Mark payment status (used by admin to mark COD as paid when delivered)
+  markPaymentPaid(orderId: number) {
+    const url = `${this.apiUrl}/${orderId}/payment-status?paymentStatus=PAID`;
+    return this.http.put<OrderItem>(url, {});
+  }
+
+  markAsDelivered(orderId: number): Observable<OrderItem> {
+  const url = `${this.apiUrl}/${orderId}/delivered`;
+  return this.http.put<OrderItem>(url, {});
+}
 }

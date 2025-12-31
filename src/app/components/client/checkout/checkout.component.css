@@ -1,0 +1,44 @@
+/* Futuristic checkout panel */
+.futuristic-panel {
+	background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+	border-radius: 12px;
+	backdrop-filter: blur(6px) saturate(120%);
+	box-shadow: 0 8px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+	border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Place button style */
+.place-btn {
+	background: linear-gradient(90deg, #00d4ff, #6a00ff);
+	color: white;
+	font-weight: 700;
+	letter-spacing: 0.6px;
+	border: none;
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(106,0,255,0.18);
+	transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+.place-btn:active { transform: translateY(1px) scale(0.998); }
+.place-btn[disabled] { opacity: 0.7; cursor: not-allowed; }
+
+/* Payment method buttons */
+.btn-outline-light {
+	background: rgba(255,255,255,0.03);
+	border: 1px solid rgba(255,255,255,0.06);
+	color: #fff;
+}
+.btn-outline-light.active {
+	background: linear-gradient(90deg,#00d4ff,#6a00ff);
+	color: #fff;
+	box-shadow: 0 6px 18px rgba(106,0,255,0.18);
+}
+
+/* Table modern tweaks */
+.table th, .table td { vertical-align: middle; }
+.table thead th { background: transparent; color: #e6eefb; font-weight:600; }
+
+/* Small responsive improvements */
+@media (max-width: 768px) {
+	.futuristic-panel { padding: 1rem !important; }
+	.place-btn { font-size: 14px; }
+}

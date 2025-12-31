@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { timeout, catchError } from 'rxjs/operators';
 import { throwError, Subscription } from 'rxjs';
 import { OrderService, OrderItem } from '../../../services/order.service';
+import { PaymentService } from '../../../services/payment.service';
 import { UserService, UserProfile } from '../../../services/user.service';
 import { Router } from '@angular/router';
 
@@ -42,6 +43,7 @@ export class ManageordersComponent implements OnInit, OnDestroy {
   constructor(
     private orderService: OrderService,
     private router: Router,
+    private paymentService: PaymentService,
     private userService: UserService
   ) {}
 
@@ -178,6 +180,45 @@ export class ManageordersComponent implements OnInit, OnDestroy {
     this.subscriptions.push(sub);
   }
 
+markDelivered(order: OrderItem) {
+  if (order.paymentMethod !== 'COD') {
+    this.displayAlert('Only COD orders can be marked as delivered.', 'error');
+    return;
+  }
+
+  if (!confirm(`Mark order #${order.id} as delivered? This will set payment to PAID and decrease stock.`)) return;
+
+  this.operationInProgress = true;
+
+  // Use the new /delivered endpoint
+  const sub = this.orderService.markAsDelivered(order.id).subscribe({
+    next: (updatedOrder) => {
+      const idx = this.orders.findIndex(o => o.id === order.id);
+      if (idx !== -1) {
+        this.orders[idx] = updatedOrder;
+      }
+      this.displayAlert('Order marked as delivered! Stock decreased and payment set to PAID.', 'success');
+      this.operationInProgress = false;
+    },
+    error: (err) => {
+      this.displayAlert('Failed to mark order as delivered: ' + (err.error?.message || 'Unknown error'), 'error');
+      this.operationInProgress = false;
+    }
+  });
+  this.subscriptions.push(sub);
+}
+
+// Helper to show payment info clearly
+getPaymentInfo(order: OrderItem): string {
+  if (order.paymentMethod === 'CARD') {
+    return order.paymentStatus.includes('PAID') ? 'Paid by Card' : 'Processing Card Payment';
+  }
+  if (order.paymentMethod === 'COD') {
+    return order.paymentStatus === 'PAID' ? 'Paid on Delivery' : 'Cash on Delivery (Pending)';
+  }
+  return order.paymentStatus;
+}
+
   declineOrder(order: OrderItem) {
     if (order.status === 'CANCELLED') return;
     if (!confirm(`Decline order #${order.id}? This will cancel the order.`)) return;
@@ -240,13 +281,12 @@ export class ManageordersComponent implements OnInit, OnDestroy {
   }
 
   getPaymentStatusBadgeClass(status: string): string {
-    switch (status.toUpperCase()) {
-      case 'PENDING': return 'bg-warning text-dark';
-      case 'PAID': return 'bg-success text-white';
-      case 'FAILED': return 'bg-danger text-white';
-      case 'REFUNDED': return 'bg-info text-white';
-      default: return 'bg-secondary text-white';
-    }
+    const s = (status || '').toUpperCase();
+    if (s.includes('PAID')) return 'bg-success text-white';
+    if (s === 'PENDING') return 'bg-warning text-dark';
+    if (s === 'FAILED') return 'bg-danger text-white';
+    if (s === 'REFUNDED') return 'bg-info text-white';
+    return 'bg-secondary text-white';
   }
 
   get pendingApprovalCount(): number {
