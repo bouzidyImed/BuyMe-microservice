@@ -5,4 +5,7 @@ export interface Product {
     price: number;
     image: string;
     quantity: number;
+    images?: string[];
+    rate?: number; // average rating (0-5)
+    review?: string[];
 }

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CartService } from '../../../services/cart.service';
 import { OrderService, CreateOrderRequest } from '../../../services/order.service';
 import { PaymentService } from '../../../services/payment.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { firstValueFrom, Observable } from 'rxjs';
 
 interface CartItem {
@@ -17,7 +17,7 @@ interface CartItem {
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule, FormsModule, CurrencyPipe, AsyncPipe],
+  imports: [CommonModule, FormsModule, CurrencyPipe, AsyncPipe, RouterModule],
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
@@ -114,5 +114,16 @@ export class CheckoutComponent {
     } finally {
       this.processing = false;
     }
+  }
+
+  logout() {
+    try {
+      // clear auth-related storage and navigate to login
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('currentUser');
+    } catch (e) {
+      // ignore
+    }
+    this.router.navigate(['/login']);
   }
 }

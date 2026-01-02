@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../../services/product.service';
 import { CartService } from '../../../services/cart.service';
+import { ReviewService } from '../../../services/review.service';
 
 @Component({
   selector: 'app-single',
@@ -16,12 +17,16 @@ export class SingleComponent implements OnInit {
   loading = true;
   error: string | null = null;
   quantity = 1;
+  reviews: any[] = [];
+  selectedRating = 0;
+  isAuthenticated = false;
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
     private cartService: CartService,
-    private router: Router
+    private router: Router,
+    private reviewService: ReviewService
   ) {}
 
   ngOnInit(): void {
@@ -36,6 +41,12 @@ export class SingleComponent implements OnInit {
       next: (p) => {
         this.product = p;
         this.loading = false;
+
+        // set authentication flag
+        this.isAuthenticated = !!localStorage.getItem('jwt_token');
+
+        // load existing reviews for product
+        this.loadReviews();
 
         // CRITICAL: Trigger Owl Carousel re-initialization via global event
         // This tells main.js to initialize new carousels
@@ -84,7 +95,7 @@ export class SingleComponent implements OnInit {
   }
 
   logout(): void {
-    localStorage.removeItem('authToken');
+    localStorage.removeItem('jwt_token');
     localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
   }
@@ -97,6 +108,51 @@ export class SingleComponent implements OnInit {
     const img = event.target as HTMLImageElement;
     if (img && !img.src.includes('product-3.png')) {
       img.src = '/assets/img/product-3.png';
+    }
+  }
+
+  loadReviews(): void {
+    if (!this.product?.id) return;
+    this.reviewService.getByProduct(this.product.id).subscribe({
+      next: (r) => this.reviews = r || [],
+      error: () => { /* ignore errors for now */ }
+    });
+  }
+
+  setRating(n: number): void {
+    this.selectedRating = n;
+  }
+
+  submitReview(): void {
+    if (!this.isAuthenticated) {
+      alert('You must be logged in to submit a rating.');
+      return;
+    }
+    if (!this.selectedRating || this.selectedRating < 1 || this.selectedRating > 5) {
+      alert('Please select a rating between 1 and 5 stars.');
+      return;
+    }
+    const payload = { rating: this.selectedRating };
+    this.reviewService.addReview(this.product.id, payload).subscribe({
+      next: () => {
+        this.selectedRating = 0;
+        this.loadReviews();
+        this.productService.getById(this.product.id).subscribe(p => this.product = p);
+        this.showSuccessModal();
+      },
+      error: (err) => alert(err.error || err.error?.message || err.message || 'Unable to submit review.')
+    });
+  }
+
+  showSuccessModal(): void {
+    const el = document.getElementById('ratingSuccessModal');
+    if (!el) return;
+    try {
+      const modal = (window as any).bootstrap?.Modal?.getOrCreateInstance(el) || (window as any).bootstrap?.Modal?.new(el);
+      modal.show();
+    } catch (e) {
+      // fallback to simple alert
+      alert('Rating submitted successfully');
     }
   }
 }

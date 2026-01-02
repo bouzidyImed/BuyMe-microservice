@@ -44,98 +44,20 @@
 <!-- Spinner End -->
 
 
-<!-- Topbar Start -->
-<div class="container-fluid px-5 d-none border-bottom d-lg-block">
-  <div class="d-flex justify-content-end align-items-center py-2">
-    <!-- <button class="btn btn-outline-primary" (click)="navigateToProfile()" title="Go to Profile">
-      <i class="fas fa-user"></i> Profile
-    </button> -->
-    <button class="btn btn-outline-danger ms-2" (click)="logout()" title="Logout">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right me-1" viewBox="0 0 16 16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M10 15a1 1 0 0 0 1-1v-2h-1v2H4V2h6v2h1V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6z"/>
-        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L14.293 7.5H7.5a.5.5 0 0 0 0 1h6.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-      </svg>
-      
-    </button>
-  </div>
-</div>
+
 
 <!-- Navbar & Hero Start -->
 <div class="container-fluid nav-bar p-0">
   <div class="row gx-0 bg-primary px-5 align-items-center">
     <div class="col-lg-3 d-none d-lg-block">
-      <nav class="navbar navbar-light position-relative" style="width: 250px;">
-        <button class="navbar-toggler border-0 fs-4 w-100 px-0 text-start" type="button"
-                data-bs-toggle="collapse" data-bs-target="#allCat">
-          <h4 class="m-0"><i class="fa fa-bars me-2"></i>All Categories</h4>
-        </button>
-        <div class="collapse navbar-collapse rounded-bottom" id="allCat">
-          <div class="navbar-nav ms-auto py-0">
-            <ul class="list-unstyled categories-bars">
-              <li>
-                <div class="categories-bars-item">
-                  <a href="#">Accessories</a>
-                  <span>(3)</span>
-                </div>
-              </li>
-              <li>
-                <div class="categories-bars-item">
-                  <a href="#">Electronics & Computer</a>
-                  <span>(5)</span>
-                </div>
-              </li>
-              <li>
-                <div class="categories-bars-item">
-                  <a href="#">Laptops & Desktops</a>
-                  <span>(2)</span>
-                </div>
-              </li>
-              <li>
-                <div class="categories-bars-item">
-                  <a href="#">Mobiles & Tablets</a>
-                  <span>(8)</span>
-                </div>
-              </li>
-              <li>
-                <div class="categories-bars-item">
-                  <a href="#">SmartPhone & Smart TV</a>
-                  <span>(5)</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+
     </div>
-      <div class="col-md-4 col-lg-6 text-center">
-        <div class="position-relative ps-4">
-          <div class="d-flex border rounded-pill">
-            <input class="form-control border-0 rounded-pill w-100 py-3" type="text"
-                   data-bs-target="#dropdownToggle123" placeholder="Search Looking For?">
-            <select class="form-select text-dark border-0 border-start rounded-0 p-3" style="width: 200px;">
-              <option value="All Category">All Category</option>
-              <option value="Pest Control-2">Category 1</option>
-              <option value="Pest Control-3">Category 2</option>
-              <option value="Pest Control-4">Category 3</option>
-              <option value="Pest Control-5">Category 4</option>
-            </select>
-            <button type="button" class="btn btn-primary rounded-pill py-3 px-5" style="border: 0;"><i class="fas fa-search"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-lg-3 text-center text-lg-end">
-        <div class="d-inline-flex align-items-center">
-          <a routerLink="/cart" class="text-muted d-flex align-items-center justify-content-center me-3"><span class="rounded-circle btn-md-square border"><i class="fas fa-shopping-cart"></i></span>
-            <span class="text-dark ms-2">$0.00</span></a>
-          <a href="#" class="text-muted d-flex align-items-center justify-content-center"><span class="rounded-circle btn-md-square border"><i class="fas fa-heart"></i></span></a>
-        </div>
-      </div>
     <div class="col-12 col-lg-9">
       <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
         <a href="" class="navbar-brand d-block d-lg-none">
           <h1 class="display-5 text-secondary m-0"><i
-            class="fas fa-shopping-bag text-white me-2"></i>Electro</h1>
-          <img src="img/logo.png" alt="Logo">
+            class="fas fa-shopping-bag text-white me-2"></i>BuyMe</h1>
+          <!-- <img src="img/logo.png" alt="Logo"> -->
         </a>
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -143,64 +65,26 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto py-0">
-            <a href="index.html" class="nav-item nav-link">Home</a>
-            <a href="shop.html" class="nav-item nav-link">Shop</a>
-            <a href="single.html" class="nav-item nav-link active">Single Page</a>
-            <div class="nav-item dropdown">
-              <a href="#" class="nav-link" data-bs-toggle="dropdown"><span
-                class="dropdown-toggle">Pages</span></a>
-              <div class="dropdown-menu m-0">
-                <a href="bestseller.html" class="dropdown-item">Bestseller</a>
-                <a href="cart.html" class="dropdown-item">Cart Page</a>
-                <a href="cheackout.html" class="dropdown-item">Cheackout</a>
-                <a href="404.html" class="dropdown-item">404 Page</a>
-              </div>
-            </div>
-            <a href="contact.html" class="nav-item nav-link me-2">Contact</a>
-            <div class="nav-item dropdown d-block d-lg-none mb-3">
-              <a href="#" class="nav-link" data-bs-toggle="dropdown"><span class="dropdown-toggle">All
-                                        Category</span></a>
-              <div class="dropdown-menu m-0">
-                <ul class="list-unstyled categories-bars">
-                  <li>
-                    <div class="categories-bars-item">
-                      <a href="#">Accessories</a>
-                      <span>(3)</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="categories-bars-item">
-                      <a href="#">Electronics & Computer</a>
-                      <span>(5)</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="categories-bars-item">
-                      <a href="#">Laptops & Desktops</a>
-                      <span>(2)</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="categories-bars-item">
-                      <a href="#">Mobiles & Tablets</a>
-                      <span>(8)</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="categories-bars-item">
-                      <a href="#">SmartPhone & Smart TV</a>
-                      <span>(5)</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
+             <a [routerLink]="['/client/home']" class="nav-item nav-link" >Home</a>
+            <a routerLink="/client/profile" class="nav-item nav-link">Profile</a>
+            <a   class="nav-item nav-link"  [routerLink]="['/client/cart']">Cart</a>
+                        <a   class="nav-item nav-link" [routerLink]="['/client/single']" class="nav-link active" >Single</a>
+            <a   class="nav-item nav-link" [routerLink]="['/client/checkout']" >Checkout</a>
+                        <a   class="nav-item nav-link" [routerLink]="['/client/my-orders']">My Orders</a>
+
           </div>
-          <a href="" class="btn btn-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0"><i
-            class="fa fa-mobile-alt me-2"></i> +0123 456 7890</a>
-        </div>
+         <button class="btn btn-outline-danger ms-2" (click)="logout()" title="Logout">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right me-1" viewBox="0 0 16 16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 15a1 1 0 0 0 1-1v-2h-1v2H4V2h6v2h1V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6z"/>
+        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L14.293 7.5H7.5a.5.5 0 0 0 0 1h6.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+      </svg>
+      
+    </button>
+        </div>      
       </nav>
     </div>
+
+
   </div>
 </div>
 <!-- Navbar & Hero End -->
@@ -243,15 +127,9 @@
             <h4 class="fw-bold mb-3">{{ product?.name || 'Product' }}</h4>
             <p class="mb-3">Category: {{ product?.categoryName || product?.categoryId || '—' }}</p>
             <h5 class="fw-bold mb-3">{{ product?.price != null ? (product.price + ' $') : '—' }}</h5>
-            <div class="d-flex mb-4">
-              <i class="fa fa-star text-secondary"></i>
-              <i class="fa fa-star text-secondary"></i>
-              <i class="fa fa-star text-secondary"></i>
-              <i class="fa fa-star text-secondary"></i>
-              <i class="fa fa-star"></i>
-            </div>
+            <!-- product average rate removed from single view: rating shown only on home product cards -->
             <div class="d-flex flex-column mb-3">
-              <small>Product SKU: {{ product?.sku || 'N/A' }}</small>
+              <!-- <small>Product SKU: {{ product?.sku || 'N/A' }}</small> -->
               <small>Available: <strong class="text-primary">{{ product?.quantity ?? 'N/A' }} items in stock</strong></small>
             </div>
             <p class="mb-4">{{ product?.description || 'No description available.' }}</p>
@@ -275,6 +153,41 @@
                [disabled]="product?.quantity === 0 || loading">
               <i class="fa fa-shopping-bag me-2 text-white"></i> Add to cart
             </button>
+
+            <!-- Rating form -->
+            <div class="mb-4">
+              <div *ngIf="isAuthenticated; else loginPrompt">
+                <label class="form-label">Rate this product</label>
+                <div class="d-flex align-items-center mb-2">
+                  <ng-container *ngFor="let n of [1,2,3,4,5]">
+                    <i class="fa fa-star" [ngClass]="{'text-primary': selectedRating >= n, 'text-secondary': selectedRating < n}" (click)="setRating(n)" style="cursor:pointer; font-size:1.25rem; margin-right:6px;"></i>
+                  </ng-container>
+                </div>
+                <!-- comment removed: rating-only reviews -->
+                <button class="btn btn-sm btn-outline-primary" (click)="submitReview()">Submit Rating</button>
+              </div>
+              <ng-template #loginPrompt>
+                <small class="text-muted">Log in to rate this product.</small>
+              </ng-template>
+            </div>
+
+            <!-- Rating success modal -->
+            <div class="modal fade" id="ratingSuccessModal" tabindex="-1" aria-labelledby="ratingSuccessModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="ratingSuccessModalLabel">Thank you</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Your rating has been submitted successfully.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col-lg-12">
 

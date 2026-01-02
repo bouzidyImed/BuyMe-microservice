@@ -5,13 +5,10 @@
     <span class="ms-3 fw-semibold">Refreshing data…</span>
   </div>
 
-  <!-- Operation in progress full-page loader -->
-  <div *ngIf="operationInProgress" class="table-overlay" style="z-index:2100;background:rgba(255,255,255,0.75);">
-    <div class="d-flex align-items-center">
-      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
-      <span class="ms-3 fw-semibold">Processing…</span>
-    </div>
-  </div>
+<!-- Operation in progress full-page loader -->
+<div *ngIf="ordersLoading" class="table-overlay">
+  <div class="spinner-border text-primary" role="status"></div>
+</div>
 
 
   <!-- Alert Banner -->
@@ -120,7 +117,7 @@
             <th class="text-center">Quantity</th>
             <th class="text-center">Order Date</th>
             <th class="text-center">Order Status</th>
-            <th class="text-center">Payment Status</th>
+            <th class="text-center">Payment / Delivery Status</th>
             <th class="text-end" style="width: 150px;">Actions</th>
           </tr>
         </thead>
@@ -150,11 +147,15 @@
                 {{ order.status }}
               </span>
             </td>
-            <td class="text-center">
-              <span class="badge" [class]="getPaymentStatusBadgeClass(order.paymentStatus)">
-                {{ order.paymentStatus }}
-              </span>
-            </td>
+
+
+
+
+<td class="text-center">
+  <span class="badge fw-bold" [class]="getPaymentStatusBadgeClass(order)">
+    {{ getPaymentInfo(order) }}
+  </span>
+</td>
 <td class="text-end">
   <div class="btn-group" role="group">
 
@@ -173,25 +174,19 @@
       Decline
     </button>
 
-    <!-- Mark Delivered Button - ONLY for COD and not yet paid -->
-    <button class="btn btn-sm btn-primary"
-            *ngIf="order.paymentMethod === 'COD' && order.paymentStatus !== 'PAID' && order.paymentStatus !== 'PAID_BY_CARD'"
-            (click)="markDelivered(order)"
-            [disabled]="operationInProgress">
-      Mark Delivered
-    </button>
+<button class="btn btn-sm btn-primary"
+        *ngIf="order.paymentMethod === 'COD' && order.paymentStatus !== 'PAID_COD'"
+        (click)="markDelivered(order)"
+        [disabled]="operationInProgress">
+  Mark Delivered
+</button>
 
-    <!-- Paid by Card Badge - for CARD orders -->
-    <span class="badge bg-success ms-2"
-          *ngIf="order.paymentMethod === 'CARD' && (order.paymentStatus === 'PAID' || order.paymentStatus === 'PAID_BY_CARD')">
-      Paid by Card
-    </span>
+<span class="badge bg-success"
+      *ngIf="order.paymentMethod === 'COD' && order.paymentStatus === 'PAID_COD'">
+  Delivered
+</span>
 
-    <!-- Processing Card Payment - if still pending -->
-    <span class="badge bg-warning text-dark ms-2"
-          *ngIf="order.paymentMethod === 'CARD' && order.paymentStatus === 'PENDING'">
-      Card Processing
-    </span>
+
 
     <!-- Delete Button -->
     <button class="btn btn-sm btn-outline-danger ms-2"
@@ -201,10 +196,7 @@
     </button>
   </div>
 
-  <!-- Payment Info Below Buttons -->
-  <div class="small text-muted mt-1">
-    {{ getPaymentInfo(order) }}
-  </div>
+
 </td>
           </tr>
           <tr *ngIf="filteredOrders().length === 0">

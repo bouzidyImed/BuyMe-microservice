@@ -186,18 +186,19 @@ markDelivered(order: OrderItem) {
     return;
   }
 
-  if (!confirm(`Mark order #${order.id} as delivered? This will set payment to PAID and decrease stock.`)) return;
+  if (!confirm(`Mark order #${order.id} as delivered?`)) return;
 
   this.operationInProgress = true;
 
-  // Use the new /delivered endpoint
   const sub = this.orderService.markAsDelivered(order.id).subscribe({
     next: (updatedOrder) => {
+      // Update local list
       const idx = this.orders.findIndex(o => o.id === order.id);
       if (idx !== -1) {
-        this.orders[idx] = updatedOrder;
+        this.orders[idx].paymentStatus = 'PAID_COD';  // Force local update
+        this.orders[idx].status = 'DELIVERED';
       }
-      this.displayAlert('Order marked as delivered! Stock decreased and payment set to PAID.', 'success');
+      this.displayAlert('Order marked as delivered!', 'success');
       this.operationInProgress = false;
     },
     error: (err) => {
@@ -208,15 +209,15 @@ markDelivered(order: OrderItem) {
   this.subscriptions.push(sub);
 }
 
-// Helper to show payment info clearly
+// Custom display for Payment Status column
 getPaymentInfo(order: OrderItem): string {
   if (order.paymentMethod === 'CARD') {
-    return order.paymentStatus.includes('PAID') ? 'Paid by Card' : 'Processing Card Payment';
+    return 'Paid by Card';
   }
   if (order.paymentMethod === 'COD') {
-    return order.paymentStatus === 'PAID' ? 'Paid on Delivery' : 'Cash on Delivery (Pending)';
+    return order.paymentStatus === 'PAID_COD' || order.paymentStatus.includes('PAID') ? 'Delivered' : 'Pending Delivery';
   }
-  return order.paymentStatus;
+  return 'Unknown';
 }
 
   declineOrder(order: OrderItem) {
@@ -280,14 +281,17 @@ getPaymentInfo(order: OrderItem): string {
     }
   }
 
-  getPaymentStatusBadgeClass(status: string): string {
-    const s = (status || '').toUpperCase();
-    if (s.includes('PAID')) return 'bg-success text-white';
-    if (s === 'PENDING') return 'bg-warning text-dark';
-    if (s === 'FAILED') return 'bg-danger text-white';
-    if (s === 'REFUNDED') return 'bg-info text-white';
-    return 'bg-secondary text-white';
+// Badge classes for Payment Status
+getPaymentStatusBadgeClass(order: OrderItem): string {
+  const info = this.getPaymentInfo(order);
+  if (info === 'Paid by Card' || info === 'Delivered') {
+    return 'bg-success text-white';  // Green
   }
+  if (info === 'Pending Delivery') {
+    return 'bg-warning text-dark';   // Orange/Yellow
+  }
+  return 'bg-secondary text-white';
+}
 
   get pendingApprovalCount(): number {
     return this.orders.filter(o => o.status === 'PENDING' && o.paymentStatus === 'PAID').length;
