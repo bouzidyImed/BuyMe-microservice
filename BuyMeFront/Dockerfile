@@ -1,19 +1,23 @@
-FROM node:18-alpine
+# Stage 1: Build the Angular app
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Install dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm ci --quiet
 
-# Copy project files
 COPY . .
+RUN npm run build -- --configuration production
 
-# Copy start script
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
+# Stage 2: Serve with Nginx
+FROM nginx:alpine
 
-EXPOSE 4200
+# Copy built artifacts from builder stage
+COPY --from=builder /app/dist/buyme-front /usr/share/nginx/html
 
-# Run start script
-CMD ["/start.sh"]
+# Optional: Copy custom nginx config if needed
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

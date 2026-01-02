@@ -56,16 +56,33 @@ pipeline {
             }
         }
 
-        stage('Build Angular Front') {
+                stage('Build Angular Frontend (Production)') {
             steps {
-                script {
-                    // Use npm ci when lockfile exists, otherwise fall back to npm install
-                    def cmd = "cd BuyMe-microservice-front && if [ -f package-lock.json ]; then npm ci; else npm install; fi && npm run build"
-                    def rc = sh(script: cmd, returnStatus: true)
-                    if (rc != 0) {
-                        echo 'Angular build failed; printing npm logs'
-                        sh "cd BuyMe-microservice-front && cat /var/lib/jenkins/.npm/_logs/*.log || true"
-                        error('Angular build failed')
+                dir('BuyMeFront') {
+                    // Clean install dependencies (npm ci is faster and more reliable in CI)
+                    sh 'npm ci --quiet'
+
+                    // Build for production
+                    sh 'npm run build -- --configuration production'
+
+                    // Helpful verification and debug output
+                    sh 'echo "Angular build completed. Listing dist contents:"'
+                    sh 'ls -la dist/ || echo "dist/ not found - check angular.json outputPath"'
+                    
+                    // Show the actual output folder name (common issue)
+                    sh '''
+                        echo "Looking for built files..."
+                        find dist -type f -name "*.js" | head -10 || echo "No JS files found in dist/"
+                    '''
+                }
+            }
+            post {
+                failure {
+                    echo 'Angular frontend build failed!'
+                    dir('BuyMeFront') {
+                        sh 'cat .npm/_logs/*-debug.log || echo "No npm debug logs found"'
+                        sh 'npm --version && node --version'
+                        sh 'cat angular.json | grep -A5 -B5 "outputPath" || echo "outputPath not found in angular.json"'
                     }
                 }
             }
