@@ -6,7 +6,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: run the jar
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jre
 VOLUME /tmp
 VOLUME /uploads
 COPY --from=build /app/target/*.jar app.jar
