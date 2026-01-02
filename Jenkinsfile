@@ -8,82 +8,43 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'dev', url: 'git@github.com:bouzidyImed/BuyMe-microservice.git'
+                git branch: 'dev', 
+                    url: 'git@github.com:bouzidyImed/BuyMe-microservice.git'
             }
         }
+
         stage('Build Java Services') {
             steps {
                 script {
                     def services = [
                         'api-gateway', 'auth-register-service', 'catalogue-service',
-                        'eureka-server', 'order-service', 'cart-service', 'kafka-service', 'payment-service'
+                        'eureka-server', 'order-service', 'cart-service',
+                        'kafka-service', 'payment-service'
                     ]
-                    for (s in services) {
-                        echo "Building ${s}..."
-                        def rc = sh(script: "mvn -B -DskipTests -f ${s}/pom.xml clean package", returnStatus: true)
-                        if (rc != 0) {
-                            echo "Build failed for ${s} (rc=${rc}). See ${s}/target for logs."
-                            error("Maven build failed for ${s}")
+                    for (service in services) {
+                        dir(service) {
+                            sh './mvnw -B -DskipTests clean package'
                         }
                     }
                 }
             }
         }
 
-        stage('Build Docker Images') {
+        stage('Build & Start Full Stack') {
             steps {
                 script {
-                    def rc = sh(script: "docker-compose -f ${DOCKER_COMPOSE_FILE} build --parallel", returnStatus: true)
-                    if (rc != 0) {
-                        echo 'docker-compose build failed; dumping compose logs for debugging'
-                        sh "docker-compose -f ${DOCKER_COMPOSE_FILE} logs --no-color --tail=200 || true"
-                        error('docker-compose build failed')
+                    echo 'Building all Docker images (Angular runs ng serve inside container)...'
+                    def buildRc = sh(script: "docker-compose -f ${DOCKER_COMPOSE_FILE} build --parallel", returnStatus: true)
+                    if (buildRc != 0) {
+                        sh "docker-compose -f ${DOCKER_COMPOSE_FILE} logs frontend"
+                        error('Docker build failed — check frontend logs above')
                     }
-                }
-            }
-        }
 
-        stage('Bring up Integration Environment') {
-            steps {
-                script {
-                    def rc = sh(script: "docker-compose -f ${DOCKER_COMPOSE_FILE} up -d", returnStatus: true)
-                    if (rc != 0) {
-                        echo 'docker-compose up failed; dumping compose logs for debugging'
-                        sh "docker-compose -f ${DOCKER_COMPOSE_FILE} logs --no-color --tail=200 || true"
-                        error('docker-compose up failed')
-                    }
-                }
-            }
-        }
+                    echo 'Starting all services...'
+                    sh "docker-compose -f ${DOCKER_COMPOSE_FILE} up -d"
 
-                stage('Build Angular Frontend (Production)') {
-            steps {
-                dir('BuyMeFront') {
-                    // Clean install dependencies (npm ci is faster and more reliable in CI)
-                    sh 'npm ci --quiet'
-
-                    // Build for production
-                    sh 'npm run build -- --configuration production'
-
-                    // Helpful verification and debug output
-                    sh 'echo "Angular build completed. Listing dist contents:"'
-                    sh 'ls -la dist/ || echo "dist/ not found - check angular.json outputPath"'
-                    
-                    // Show the actual output folder name (common issue)
-                    sh '''
-                        echo "Looking for built files..."
-                        find dist -type f -name "*.js" | head -10 || echo "No JS files found in dist/"
-                    '''
-                }
-            }
-            post {
-                failure {
-                    echo 'Angular frontend build failed!'
-                    dir('BuyMeFront') {
-                        sh 'cat .npm/_logs/*-debug.log || echo "No npm debug logs found"'
-                        sh 'npm --version && node --version'
-                        sh 'cat angular.json | grep -A5 -B5 "outputPath" || echo "outputPath not found in angular.json"'
-                    }
+                    // Wait for services to boot
+                    sleep time: 90, unit: 'SECONDS'
                 }
             }
         }
@@ -91,13 +52,16 @@ pipeline {
         stage('Smoke Tests') {
             steps {
                 script {
-                    def eureka = sh(script: "curl -sSf http://localhost:8761/ || true", returnStatus: true)
-                    def gateway = sh(script: "curl -sSf http://localhost:8081/actuator/health || true", returnStatus: true)
-                    if (eureka != 0 || gateway != 0) {
-                        echo 'Smoke tests failed; dumping docker-compose logs for failing services'
-                        sh "docker-compose -f ${DOCKER_COMPOSE_FILE} logs eureka-server api-gateway --no-color --tail=200 || true"
-                        error('Smoke tests failed')
-                    }
+                    echo 'Checking Eureka...'
+                    sh 'curl -f http://localhost:8761 || exit 1'
+
+                    echo 'Checking API Gateway...'
+                    sh 'curl -f http://localhost:8081/actuator/health || exit 1'
+
+                    echo 'Checking Angular Frontend...'
+                    sh 'curl -f http://localhost:4200 || exit 1'
+
+                    echo 'All services are healthy!'
                 }
             }
         }
@@ -105,13 +69,15 @@ pipeline {
 
     post {
         always {
-            sh "docker-compose -f ${DOCKER_COMPOSE_FILE} down --remove-orphans || true"
+            echo 'Cleaning up...'
+            sh "docker-compose -f ${DOCKER_COMPOSE_FILE} down --remove-orphans --volumes || true"
         }
         success {
-            echo '✅ Pipeline completed successfully!'
+            echo 'Pipeline passed successfully!'
         }
         failure {
-            echo '❌ Pipeline failed.'
+            echo 'Pipeline failed — dumping logs'
+            sh "docker-compose -f ${DOCKER_COMPOSE_FILE} logs --tail=500 || true"
         }
     }
 }

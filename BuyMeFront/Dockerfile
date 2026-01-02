@@ -1,23 +1,22 @@
-# Stage 1: Build the Angular app
-FROM node:18-alpine AS builder
+# Official Node image
+FROM node:18-alpine
 
+# Create app directory
 WORKDIR /app
 
+# Copy package files
 COPY package*.json ./
+
+# Install dependencies (exact versions from lockfile)
 RUN npm ci --quiet
 
+# Copy source code
 COPY . .
-RUN npm run build -- --configuration production
 
-# Stage 2: Serve with Nginx
-FROM nginx:alpine
+# Expose Angular port
+EXPOSE 4200
 
-# Copy built artifacts from builder stage
-COPY --from=builder /app/dist/buyme-front /usr/share/nginx/html
-
-# Optional: Copy custom nginx config if needed
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+# Start Angular dev server
+# --host 0.0.0.0: makes it accessible from outside container
+# --poll: fixes file watching issues in Docker/Jenkins
+CMD ["npm", "start", "--", "--host", "0.0.0.0", "--poll=2000"]
