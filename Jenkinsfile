@@ -59,10 +59,12 @@ pipeline {
         stage('Build Angular Front') {
             steps {
                 script {
-                    def rc = sh(script: "cd BuyMe-microservice-front && npm ci && npm run build", returnStatus: true)
+                    // Use npm ci when lockfile exists, otherwise fall back to npm install
+                    def cmd = "cd BuyMe-microservice-front && if [ -f package-lock.json ]; then npm ci; else npm install; fi && npm run build"
+                    def rc = sh(script: cmd, returnStatus: true)
                     if (rc != 0) {
                         echo 'Angular build failed; printing npm logs'
-                        sh "cd BuyMe-microservice-front && cat npm-debug.log || true"
+                        sh "cd BuyMe-microservice-front && cat /var/lib/jenkins/.npm/_logs/*.log || true"
                         error('Angular build failed')
                     }
                 }
