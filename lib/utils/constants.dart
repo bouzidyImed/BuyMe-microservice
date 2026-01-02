@@ -11,4 +11,8 @@ class AppConstants {
   }
   
   static String get profilePicBaseUrl => '$apiUrl/uploads/profiles-pics';
+
+  // Product images are served from the backend uploads location.
+  // This produces e.g. http://localhost:8081/api/uploads/products
+  static String get productImageBaseUrl => '$apiUrl/uploads/products';
 }

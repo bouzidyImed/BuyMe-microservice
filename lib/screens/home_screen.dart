@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/product.dart';
+import '../models/category.dart';
 import '../services/product_service.dart';
-import '../services/auth_service.dart';
+import '../services/category_service.dart';
 import '../services/cart_service.dart';
 import 'product_detail_screen.dart';
 
@@ -13,14 +14,48 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   final ProductService _productService = ProductService();
+  final CategoryService _categoryService = CategoryService();
   late Future<List<Product>> _productsFuture;
+  late Future<List<Category>> _categoriesFuture;
+  late TabController _tabController;
+  List<Category> _categories = [];
+  List<Product> _allProducts = [];
+  int _selectedCategoryIndex = 0;
 
   @override
   void initState() {
     super.initState();
     _productsFuture = _productService.getAll();
+    _categoriesFuture = _categoryService.getAll();
+    _tabController = TabController(length: 1, vsync: this); // Start with 1 tab for "All"
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  void _updateTabs(List<Category> categories) {
+    setState(() {
+      _categories = categories;
+      _tabController = TabController(length: categories.length + 1, vsync: this);
+      _tabController.addListener(() {
+        setState(() {
+          _selectedCategoryIndex = _tabController.index;
+        });
+      });
+    });
+  }
+
+  List<Product> _getProductsForTab() {
+    if (_selectedCategoryIndex == 0) {
+      return _allProducts;
+    }
+    final categoryId = _categories[_selectedCategoryIndex - 1].id;
+    return _allProducts.where((p) => p.categoryId == categoryId).toList();
   }
 
   @override
@@ -31,26 +66,29 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             const Icon(Icons.shopping_bag, color: Color(0xFFF97316)),
             const SizedBox(width: 8),
-            Text('Electro', style: TextStyle(color: Theme.of(context).primaryColor)),
+            Text('BuyMe', style: TextStyle(color: Theme.of(context).primaryColor)),
           ],
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.shopping_cart),
-            onPressed: () => Navigator.pushNamed(context, '/cart'),
-          ),
-          IconButton(
-            icon: const Icon(Icons.person),
-            onPressed: () => Navigator.pushNamed(context, '/profile'),
-          ),
-          IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: () {
-              Provider.of<AuthService>(context, listen: false).logout();
-              Navigator.pushReplacementNamed(context, '/login');
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(48.0),
+          child: FutureBuilder<List<Category>>(
+            future: _categoriesFuture,
+            builder: (context, snapshot) {
+              if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                _updateTabs(snapshot.data!);
+                return TabBar(
+                  controller: _tabController,
+                  isScrollable: true,
+                  tabs: [
+                    const Tab(text: 'All'),
+                    ..._categories.map((cat) => Tab(text: cat.name)),
+                  ],
+                );
+              }
+              return const SizedBox.shrink();
             },
           ),
-        ],
+        ),
       ),
       body: Column(
         children: [
@@ -84,6 +122,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   return const Center(child: Text('No products found'));
                 }
 
+                _allProducts = snapshot.data!;
+                final products = _getProductsForTab();
+
                 return GridView.builder(
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -92,9 +133,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisSpacing: 16,
                     mainAxisSpacing: 16,
                   ),
-                  itemCount: snapshot.data!.length,
+                  itemCount: products.length,
                   itemBuilder: (context, index) {
-                    final product = snapshot.data![index];
+                    final product = products[index];
                     return GestureDetector(
                       onTap: () {
                         Navigator.push(

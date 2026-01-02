@@ -4,13 +4,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../utils/constants.dart';
 
 class ApiService {
-  Future<Map<String, String>> getHeaders() async {
+  Future<Map<String, String>> getHeaders({bool includeAuth = true}) async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('jwt_token');
-    return {
-      'Content-Type': 'application/json',
-      if (token != null) 'Authorization': 'Bearer $token',
+    final headers = <String, String>{
+      'Accept': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest',
     };
+    if (includeAuth && token != null) headers['Authorization'] = 'Bearer $token';
+    return headers;
   }
 
   String _normalizeUrl(String url) {
@@ -24,13 +26,16 @@ class ApiService {
     return _processResponse(response);
   }
 
-  Future<dynamic> post(String url, dynamic body) async {
+  Future<dynamic> post(String url, dynamic body, {bool includeAuth = true}) async {
     print('ApiService: POST request to $url');
     print('ApiService: AppConstants.apiUrl = ${AppConstants.apiUrl}');
     final normalizedUrl = _normalizeUrl(url);
     print('ApiService: Normalized URL = $normalizedUrl');
     
-    final headers = await getHeaders();
+    final headers = await getHeaders(includeAuth: includeAuth);
+    headers['Content-Type'] = 'application/json';
+    print('ApiService: Request headers: $headers');
+    print('ApiService: Request body: ${jsonEncode(body)}');
     final response = await http.post(
       Uri.parse(normalizedUrl),
       headers: headers,
@@ -39,28 +44,30 @@ class ApiService {
     return _processResponse(response);
   }
 
-  Future<dynamic> put(String url, dynamic body) async {
-    final headers = await getHeaders();
+  Future<dynamic> put(String url, dynamic body, {bool includeAuth = true}) async {
+    final headers = await getHeaders(includeAuth: includeAuth);
+    headers['Content-Type'] = 'application/json';
+    final normalizedUrl = _normalizeUrl(url);
+    print('ApiService: PUT $normalizedUrl');
+    print('ApiService: Request headers: $headers');
+    print('ApiService: Request body: ${jsonEncode(body)}');
     final response = await http.put(
-      Uri.parse(url),
+      Uri.parse(normalizedUrl),
       headers: headers,
       body: jsonEncode(body),
     );
     return _processResponse(response);
   }
 
-  Future<dynamic> postMultipart(String url, Map<String, String> fields, {http.MultipartFile? file}) async {
+  Future<dynamic> postMultipart(String url, Map<String, String> fields, {http.MultipartFile? file, bool includeAuth = true}) async {
     print('ApiService: POST MULTIPART request to $url');
     final normalizedUrl = _normalizeUrl(url);
-    
     final request = http.MultipartRequest('POST', Uri.parse(normalizedUrl));
-    
-    // Add headers (Authorization)
-    final headers = await getHeaders();
-    if (headers.containsKey('Authorization')) {
-      request.headers['Authorization'] = headers['Authorization']!;
-    }
-    // Content-Type is set automatically to multipart/form-data by MultipartRequest
+
+    // Add headers (Authorization + others)
+    final headers = await getHeaders(includeAuth: includeAuth);
+    request.headers.addAll(headers);
+    // MultipartRequest will set proper Content-Type including boundary
 
     request.fields.addAll(fields);
     if (file != null) {
@@ -69,12 +76,15 @@ class ApiService {
 
     final streamedResponse = await request.send();
     final response = await http.Response.fromStream(streamedResponse);
+    print('ApiService: Multipart response status: ${response.statusCode}');
+    print('ApiService: Multipart response body: ${response.body}');
     return _processResponse(response);
   }
 
-  Future<dynamic> delete(String url) async {
-    final headers = await getHeaders();
-    final response = await http.delete(Uri.parse(url), headers: headers);
+  Future<dynamic> delete(String url, {bool includeAuth = true}) async {
+    final headers = await getHeaders(includeAuth: includeAuth);
+    final normalizedUrl = _normalizeUrl(url);
+    final response = await http.delete(Uri.parse(normalizedUrl), headers: headers);
     return _processResponse(response);
   }
 

@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const Icon(Icons.shopping_bag, size: 64, color: Color(0xFFF97316)),
                 const SizedBox(height: 16),
                 Text(
-                  'Electro',
+                  'BuyMe',
                   style: Theme.of(context).textTheme.displaySmall?.copyWith(
                         color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.bold,

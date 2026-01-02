@@ -1,25 +1,26 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/auth_response.dart';
-import '../utils/constants.dart';
 import 'api_service.dart';
 
 class AuthService extends ChangeNotifier {
   final ApiService _apiService = ApiService();
   bool _isAuthenticated = false;
   bool get isAuthenticated => _isAuthenticated;
+  List<String>? _roles;
+  List<String>? get roles => _roles;
 
   Future<void> checkAuthStatus() async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('jwt_token');
     _isAuthenticated = token != null;
+    _roles = prefs.getStringList('roles');
     notifyListeners();
   }
 
   Future<LoginResponse> login(String email, String password) async {
     try {
-      final response = await _apiService.post('/auth/login', {'email': email, 'password': password});
+      final response = await _apiService.post('/auth/login', {'email': email, 'password': password}, includeAuth: false);
       // response is already decoded JSON map
       final loginResponse = LoginResponse.fromJson(response);
       if (loginResponse.token != null) {
@@ -27,6 +28,7 @@ class AuthService extends ChangeNotifier {
         await prefs.setString('jwt_token', loginResponse.token!);
         if (loginResponse.roles != null) {
           await prefs.setStringList('roles', loginResponse.roles!);
+          _roles = loginResponse.roles;
         }
         _isAuthenticated = true;
         notifyListeners();
@@ -63,7 +65,7 @@ class AuthService extends ChangeNotifier {
       if (city != null) fields['city'] = city;
       if (country != null) fields['country'] = country;
       if (zip != null) fields['zip'] = zip;
-      await _apiService.postMultipart('/auth/register', fields);
+      await _apiService.postMultipart('/auth/register', fields, includeAuth: false);
     } catch (e) {
       rethrow;
     }
@@ -85,6 +87,14 @@ class AuthService extends ChangeNotifier {
     await prefs.remove('jwt_token');
     await prefs.remove('roles');
     _isAuthenticated = false;
+    _roles = null;
     notifyListeners();
+  }
+
+  Future<bool> isAdmin() async {
+    if (_roles != null) return _roles!.contains('ADMIN');
+    final prefs = await SharedPreferences.getInstance();
+    final r = prefs.getStringList('roles');
+    return r != null && r.contains('ADMIN');
   }
 }
