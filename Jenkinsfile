@@ -16,14 +16,39 @@ pipeline {
         stage('Build Java Services') {
             steps {
                 script {
-                    def services = [
+                    def javaServices = [
                         'api-gateway', 'auth-register-service', 'catalogue-service',
                         'eureka-server', 'order-service', 'cart-service',
                         'kafka-service', 'payment-service'
                     ]
-                    for (service in services) {
-                        dir(service) {
+                    for (svc in javaServices) {
+                        dir(svc) {
+                            echo "Building Java service ${svc} with Maven..."
                             sh './mvnw -B -DskipTests clean package'
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Validate AI Services') {
+            steps {
+                script {
+                    // AI services are built via their Dockerfiles during docker-compose build.
+                    // Here we check presence and basic files so builds are predictable.
+                    def aiServices = ['recommender-service', 'customer-segmentation-service']
+                    for (ai in aiServices) {
+                        if (fileExists(ai)) {
+                            dir(ai) {
+                                echo "Found AI service: ${ai}"
+                                if (fileExists('requirements.txt')) {
+                                    echo "${ai} has requirements.txt (will be installed in image)."
+                                } else {
+                                    echo "${ai} has no requirements.txt. Ensure Dockerfile handles dependencies."
+                                }
+                            }
+                        } else {
+                            echo "Warning: AI service directory ${ai} not found in workspace."
                         }
                     }
                 }
