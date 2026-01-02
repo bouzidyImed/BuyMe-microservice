@@ -1,108 +1,184 @@
 pipeline {
     agent any
 
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+        ansiColor('xterm')
+    }
+
     environment {
         DOCKER_COMPOSE_FILE = 'docker-compose.yml'
+        MAVEN_OPTS = '-Dmaven.repo.local=.m2/repository'
     }
 
     stages {
+
+        /* =======================================================
+         * 1. CHECKOUT
+         * ======================================================= */
         stage('Checkout') {
             steps {
-                git branch: 'dev', 
-                    url: 'git@github.com:bouzidyImed/BuyMe-microservice.git'
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/dev']],
+                    userRemoteConfigs: [[
+                        url: 'git@github.com:bouzidyImed/BuyMe-microservice.git'
+                    ]]
+                ])
             }
         }
 
+        /* =======================================================
+         * 2. BUILD JAVA MICROSERVICES
+         * ======================================================= */
         stage('Build Java Services') {
             steps {
                 script {
                     def javaServices = [
-                        'api-gateway', 'auth-register-service', 'catalogue-service',
-                        'eureka-server', 'order-service', 'cart-service',
-                        'kafka-service', 'payment-service'
+                        'api-gateway',
+                        'auth-register-service',
+                        'catalogue-service',
+                        'eureka-server',
+                        'order-service',
+                        'cart-service',
+                        'kafka-service',
+                        'payment-service'
                     ]
+
                     for (svc in javaServices) {
                         dir(svc) {
-                            echo "Building Java service ${svc} with Maven..."
-                            sh './mvnw -B -DskipTests clean package'
+                            echo "▶ Building ${svc}"
+                            sh '''
+                                chmod +x mvnw
+                                ./mvnw -B -DskipTests clean package
+                            '''
                         }
                     }
                 }
             }
         }
 
+        /* =======================================================
+         * 3. VALIDATE AI SERVICES
+         * ======================================================= */
         stage('Validate AI Services') {
             steps {
                 script {
-                    // AI services are built via their Dockerfiles during docker-compose build.
-                    // Here we check presence and basic files so builds are predictable.
-                    def aiServices = ['recommender-service', 'customer-segmentation-service']
+                    def aiServices = [
+                        'recommender-service',
+                        'customer-segmentation-service'
+                    ]
+
                     for (ai in aiServices) {
                         if (fileExists(ai)) {
                             dir(ai) {
-                                echo "Found AI service: ${ai}"
-                                if (fileExists('requirements.txt')) {
-                                    echo "${ai} has requirements.txt (will be installed in image)."
-                                } else {
-                                    echo "${ai} has no requirements.txt. Ensure Dockerfile handles dependencies."
+                                echo "✔ AI service detected: ${ai}"
+                                if (!fileExists('Dockerfile')) {
+                                    error("❌ ${ai} is missing Dockerfile")
                                 }
                             }
                         } else {
-                            echo "Warning: AI service directory ${ai} not found in workspace."
+                            echo "⚠ AI service ${ai} not found (skipped)"
                         }
                     }
                 }
             }
         }
 
-        stage('Build & Start Full Stack') {
+        /* =======================================================
+         * 4. BUILD DOCKER IMAGES
+         * ======================================================= */
+        stage('Docker Build') {
             steps {
-                script {
-                    echo 'Building all Docker images (Angular runs ng serve inside container)...'
-                    def buildRc = sh(script: "docker-compose -f ${DOCKER_COMPOSE_FILE} build --parallel", returnStatus: true)
-                    if (buildRc != 0) {
-                        sh "docker-compose -f ${DOCKER_COMPOSE_FILE} logs frontend"
-                        error('Docker build failed — check frontend logs above')
-                    }
-
-                    echo 'Starting all services...'
-                    sh "docker-compose -f ${DOCKER_COMPOSE_FILE} up -d"
-
-                    // Wait for services to boot
-                    sleep time: 90, unit: 'SECONDS'
-                }
+                echo '▶ Building Docker images...'
+                sh '''
+                    docker-compose -f ${DOCKER_COMPOSE_FILE} build --parallel
+                '''
             }
         }
 
+        /* =======================================================
+         * 5. START STACK
+         * ======================================================= */
+        stage('Start Stack') {
+            steps {
+                echo '▶ Starting all services...'
+                sh '''
+                    docker-compose -f ${DOCKER_COMPOSE_FILE} up -d
+                '''
+            }
+        }
+
+        /* =======================================================
+         * 6. WAIT FOR CORE SERVICES
+         * ======================================================= */
+        stage('Wait for Services') {
+            steps {
+                echo '▶ Waiting for infrastructure to be ready...'
+                sh '''
+                    wait_for() {
+                      name=$1
+                      url=$2
+                      for i in {1..30}; do
+                        if curl -sf "$url" > /dev/null; then
+                          echo "✔ $name is UP"
+                          return 0
+                        fi
+                        echo "⏳ Waiting for $name..."
+                        sleep 10
+                      done
+                      echo "❌ $name failed to start"
+                      exit 1
+                    }
+
+                    wait_for "Eureka" "http://localhost:8761"
+                    wait_for "API Gateway" "http://localhost:8081/actuator/health"
+                    wait_for "Angular Frontend" "http://localhost:4200"
+                '''
+            }
+        }
+
+        /* =======================================================
+         * 7. SMOKE TESTS
+         * ======================================================= */
         stage('Smoke Tests') {
             steps {
-                script {
-                    echo 'Checking Eureka...'
-                    sh 'curl -f http://localhost:8761 || exit 1'
-
-                    echo 'Checking API Gateway...'
-                    sh 'curl -f http://localhost:8081/actuator/health || exit 1'
-
-                    echo 'Checking Angular Frontend...'
-                    sh 'curl -f http://localhost:4200 || exit 1'
-
-                    echo 'All services are healthy!'
-                }
+                echo '▶ Running smoke tests...'
+                sh '''
+                    curl -sf http://localhost:8761
+                    curl -sf http://localhost:8081/actuator/health
+                    curl -sf http://localhost:4200
+                '''
+                echo '✔ Smoke tests passed'
             }
         }
     }
 
+    /* =======================================================
+     * POST ACTIONS
+     * ======================================================= */
     post {
-        always {
-            echo 'Cleaning up...'
-            sh "docker-compose -f ${DOCKER_COMPOSE_FILE} down --remove-orphans --volumes || true"
-        }
-        success {
-            echo 'Pipeline passed successfully!'
-        }
+
         failure {
-            echo 'Pipeline failed — dumping logs'
-            sh "docker-compose -f ${DOCKER_COMPOSE_FILE} logs --tail=500 || true"
+            echo '❌ Pipeline failed — dumping logs'
+            sh '''
+                docker-compose -f ${DOCKER_COMPOSE_FILE} ps || true
+                docker-compose -f ${DOCKER_COMPOSE_FILE} logs --tail=300 || true
+            '''
+        }
+
+        always {
+            echo '🧹 Cleaning up Docker resources'
+            sh '''
+                docker-compose -f ${DOCKER_COMPOSE_FILE} down \
+                  --remove-orphans \
+                  --volumes || true
+            '''
+        }
+
+        success {
+            echo '✅ Pipeline completed successfully'
         }
     }
 }
