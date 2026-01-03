@@ -19,12 +19,19 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_formKey.currentState!.validate()) {
       setState(() => _isLoading = true);
       try {
-        await Provider.of<AuthService>(context, listen: false).login(
+        final authService = Provider.of<AuthService>(context, listen: false);
+        await authService.login(
           _emailController.text,
           _passwordController.text,
         );
         if (mounted) {
-          Navigator.pushReplacementNamed(context, '/home');
+          // Check if user is admin and route accordingly
+          final isAdmin = await authService.isAdmin();
+          if (isAdmin) {
+            Navigator.pushReplacementNamed(context, '/admin');
+          } else {
+            Navigator.pushReplacementNamed(context, '/home');
+          }
         }
       } catch (e) {
         if (mounted) {

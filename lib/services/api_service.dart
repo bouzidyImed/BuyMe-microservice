@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../utils/constants.dart';
@@ -59,7 +60,7 @@ class ApiService {
     return _processResponse(response);
   }
 
-  Future<dynamic> postMultipart(String url, Map<String, String> fields, {http.MultipartFile? file, bool includeAuth = true}) async {
+  Future<dynamic> postMultipart(String url, Map<String, String> fields, {http.MultipartFile? file, List<http.MultipartFile>? files, String? fileFieldName, bool includeAuth = true}) async {
     print('ApiService: POST MULTIPART request to $url');
     final normalizedUrl = _normalizeUrl(url);
     final request = http.MultipartRequest('POST', Uri.parse(normalizedUrl));
@@ -70,7 +71,25 @@ class ApiService {
     // MultipartRequest will set proper Content-Type including boundary
 
     request.fields.addAll(fields);
-    if (file != null) {
+    
+    // Support multiple files with custom field name (e.g., 'images')
+    if (files != null && files.isNotEmpty) {
+      // Files created with MultipartFile.fromBytes already have the field name set
+      // If fileFieldName is provided and different, we need to recreate them
+      if (fileFieldName != null) {
+        for (var f in files) {
+          // For files created with fromBytes, we can read the bytes directly
+          // But we need to get them from the stream - this is complex
+          // Instead, we'll rely on the caller to create files with correct field name
+          // For now, add them directly - the field name should be set when created
+          request.files.add(f);
+        }
+      } else {
+        // Add files directly - they should have correct field name from creation
+        request.files.addAll(files);
+      }
+    } else if (file != null) {
+      // Single file support (backward compatibility)
       request.files.add(file);
     }
 

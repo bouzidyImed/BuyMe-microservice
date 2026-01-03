@@ -17,6 +17,12 @@ class OrderService extends ChangeNotifier {
     }
   }
 
+  // Create a new order
+  Future<OrderItem> createOrder(Map<String, dynamic> payload) async {
+    final response = await _apiService.post('/orders/place-order', payload);
+    return OrderItem.fromJson(Map<String, dynamic>.from(response as Map));
+  }
+
   // Admin: get all orders
   Future<List<OrderItem>> getAllOrders() async {
     final response = await _apiService.get('/orders/all');

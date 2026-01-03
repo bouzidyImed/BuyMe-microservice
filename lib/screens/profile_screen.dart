@@ -70,7 +70,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Text('Address: ${user['address'] ?? ''}, ${user['city'] ?? ''}, ${user['country'] ?? ''} ${user['zip'] ?? ''}'),
           const SizedBox(height: 32),
           ListTile(
-            leading: const Icon(Icons.shopping_bag),
+            leading: const Icon(Icons.list),
             title: const Text('My Orders'),
             onTap: () {
               Navigator.pushNamed(context, '/my-orders');

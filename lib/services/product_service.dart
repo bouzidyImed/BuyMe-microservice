@@ -1,3 +1,4 @@
+import 'package:http/http.dart' as http;
 import '../models/product.dart';
 import '../utils/constants.dart';
 import 'api_service.dart';
@@ -61,6 +62,14 @@ class ProductService {
   Future<Product> createWithFile(Map<String, String> fields, dynamic multipartFile) async {
     // multipartFile should be an instance of http.MultipartFile
     final resp = await _apiService.postMultipart(_baseUrl, fields, file: multipartFile);
+    final Map<String, dynamic> m = Map<String, dynamic>.from(resp as Map);
+    m['image'] = _buildImageUrl(m['image'] as String?);
+    return Product.fromJson(m);
+  }
+
+  Future<Product> createWithImages(Map<String, String> fields, List<http.MultipartFile> imageFiles) async {
+    // Create product with multiple images using 'images' field name
+    final resp = await _apiService.postMultipart(_baseUrl, fields, files: imageFiles, fileFieldName: 'images');
     final Map<String, dynamic> m = Map<String, dynamic>.from(resp as Map);
     m['image'] = _buildImageUrl(m['image'] as String?);
     return Product.fromJson(m);
