@@ -9,6 +9,8 @@ pipeline {
     environment {
         DOCKER_COMPOSE_FILE = 'docker-compose.yml'
         MAVEN_OPTS = '-Dmaven.repo.local=.m2/repository'
+        COMPOSE_HTTP_TIMEOUT = '300'
+        DOCKER_CLIENT_TIMEOUT = '300'
     }
 
     stages {
@@ -91,9 +93,23 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo '▶ Building Docker images...'
-                sh '''
-                    docker-compose -f ${DOCKER_COMPOSE_FILE} build --parallel
-                '''
+                                sh '''
+                                        set -eu
+                                        max_retries=3
+                                        attempt=1
+                                        until [ "$attempt" -gt "$max_retries" ]; do
+                                            echo "▶ docker-compose build attempt #$attempt"
+                                            COMPOSE_HTTP_TIMEOUT=${COMPOSE_HTTP_TIMEOUT} DOCKER_CLIENT_TIMEOUT=${DOCKER_CLIENT_TIMEOUT} \
+                                                docker-compose -f ${DOCKER_COMPOSE_FILE} build --parallel && break || true
+                                            attempt=$((attempt+1))
+                                            echo "⏳ waiting before retry..."
+                                            sleep 10
+                                        done
+                                        if [ "$attempt" -gt "$max_retries" ]; then
+                                            echo "❌ docker-compose build failed after ${max_retries} attempts"
+                                            exit 1
+                                        fi
+                                '''
             }
         }
 

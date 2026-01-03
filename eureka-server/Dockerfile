@@ -1,5 +1,5 @@
 ## Stage 1: build the jar
-#FROM maven:3.9.4-eclipse-temurin-17 AS build
+#FROM maven:3.9.4-jdk-17-slim AS build
 #WORKDIR /app
 #COPY pom.xml .
 #COPY src ./src
@@ -16,13 +16,13 @@
 #COPY --from=build /app/target/*.jar app.jar
 #ENTRYPOINT ["java", "-jar", "/app.jar"]
 
-FROM maven:3.9.4-eclipse-temurin-17 AS build
+FROM maven:3.9.4-jdk-17-slim AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-FROM eclipse-temurin:17-jre
+FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Install curl for healthcheck
