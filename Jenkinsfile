@@ -116,20 +116,20 @@ pipeline {
             steps {
                 echo '▶ Waiting for infrastructure to be ready...'
                 sh '''
-                    wait_for() {
-                      name=$1
-                      url=$2
-                      for i in {1..30}; do
-                        if curl -sf "$url" > /dev/null; then
-                          echo "✔ $name is UP"
-                          return 0
-                        fi
-                        echo "⏳ Waiting for $name..."
-                        sleep 10
-                      done
-                      echo "❌ $name failed to start"
-                      exit 1
-                    }
+                                        wait_for() {
+                                            name=$1
+                                            url=$2
+                                            for i in $(seq 1 30); do
+                                                if curl -sf "$url" > /dev/null; then
+                                                    echo "✔ $name is UP"
+                                                    return 0
+                                                fi
+                                                echo "⏳ Waiting for $name..."
+                                                sleep 10
+                                            done
+                                            echo "❌ $name failed to start"
+                                            exit 1
+                                        }
 
                     wait_for "Eureka" "http://localhost:8761"
                     wait_for "API Gateway" "http://localhost:8081/actuator/health"
