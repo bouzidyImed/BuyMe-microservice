@@ -11,6 +11,7 @@ pipeline {
         MAVEN_OPTS = '-Dmaven.repo.local=.m2/repository'
         COMPOSE_HTTP_TIMEOUT = '300'
         DOCKER_CLIENT_TIMEOUT = '300'
+        REGISTRY = 'localhost:5000/'
     }
 
     stages {
@@ -93,22 +94,12 @@ pipeline {
         stage('Docker Build') {
             steps {
                                 echo '▶ Building Docker images...'
-                                // Pre-pull important base images and docker login (uses Jenkins credentials)
+                                // Start local registry and mirror base images (uses Jenkins credentials)
                                 withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                                        sh '''
-                                                set -eu
-                                                echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin || true
-                                                images="maven:3.9.4-jdk-17-slim openjdk:17-jdk-slim"
-                                                for img in $images; do
-                                                    echo "▶ pre-pulling $img"
-                                                    for try in $(seq 1 3); do
-                                                        docker pull $img && break || {
-                                                            echo "⏳ retrying pull $img ($try)"
-                                                            sleep 5
-                                                        }
-                                                    done
-                                                done
-                                        '''
+                                    sh '''
+                                        set -eu
+                                        DOCKER_USER="$DOCKER_USER" DOCKER_PASS="$DOCKER_PASS" bash ci/setup-local-registry.sh
+                                    '''
                                 }
 
                                 sh '''

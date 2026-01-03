@@ -12,13 +12,14 @@
 #COPY --from=build /app/target/*.jar app.jar
 #ENTRYPOINT ["java", "-jar", "/app.jar"]
 
-FROM maven:3.9.4-jdk-17-slim AS build
+ARG REGISTRY=
+FROM ${REGISTRY}maven:3.9.4-jdk-17-slim AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-FROM openjdk:17-jdk-slim
+FROM ${REGISTRY}openjdk:17-jdk-slim
 WORKDIR /app
 
 # Install curl for healthcheck

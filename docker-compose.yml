@@ -1,6 +1,9 @@
 services:
   eureka-server:
-    build: ./eureka-server
+    build:
+      context: ./eureka-server
+      args:
+        REGISTRY: ${REGISTRY}
     container_name: ecom-eureka-server
     ports:
       - "8761:8761"
@@ -17,7 +20,10 @@ services:
       start_period: 40s
 
   api-gateway:
-    build: ./api-gateway
+    build:
+      context: ./api-gateway
+      args:
+        REGISTRY: ${REGISTRY}
     container_name: ecom-api-gateway
     depends_on:
       eureka-server:
@@ -32,7 +38,10 @@ services:
       - micro-net
 
   auth-register-service:
-    build: ./auth-register-service
+    build:
+      context: ./auth-register-service
+      args:
+        REGISTRY: ${REGISTRY}
     container_name: auth-register-service
     depends_on:
       eureka-server:
@@ -103,7 +112,10 @@ services:
       - micro-net
 
   frontend:
-    build: ./BuyMeFront
+    build:
+      context: ./BuyMeFront
+      args:
+        REGISTRY: ${REGISTRY}
     container_name: angular-front
     ports:
       - "4200:4200"
@@ -144,7 +156,10 @@ services:
       - micro-net
 
   recommender-service:
-    build: ./recommender-service
+    build:
+      context: ./recommender-service
+      args:
+        REGISTRY: ${REGISTRY}
     container_name: recommender-service
     depends_on:
       eureka-server:
@@ -164,7 +179,10 @@ services:
       start_period: 40s
 
   customer-segmentation-service:
-    build: ./customer-segmentation-service
+    build:
+      context: ./customer-segmentation-service
+      args:
+        REGISTRY: ${REGISTRY}
     container_name: customer-segmentation-service
     depends_on:
       eureka-server:
