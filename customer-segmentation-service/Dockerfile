@@ -18,11 +18,8 @@ COPY wheels /wheels
 # Install Python deps: prefer local requirements file; use wheels if provided, otherwise fallback to PyPI
 RUN pip install --upgrade pip setuptools wheel && \
     if [ -s requirements_local.txt ]; then REQ=requirements_local.txt; else REQ=requirements.txt; fi && \
-    if [ -d /wheels ] && [ "$(ls -A /wheels 2>/dev/null)" ]; then \
-        pip install --no-index --find-links=/wheels -r "$REQ"; \
-    else \
-        pip install -r "$REQ"; \
-    fi
+    # Try installing from local wheels first; if that fails, fall back to PyPI
+    (pip install --no-index --find-links=/wheels -r "$REQ" || pip install -r "$REQ")
 
 # Copy app code
 COPY . /app
