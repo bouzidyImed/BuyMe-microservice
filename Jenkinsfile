@@ -129,14 +129,24 @@ pipeline {
          * ======================================================= */
         stage('Publish Customer Segmentation Image') {
             steps {
-                echo '▶ Tagging and pushing customer-segmentation-service image'
-                sh '''
-                    set -eu
-                    IMAGE_NAME=${REGISTRY}customer-segmentation-service:latest
-                    echo "Building and pushing ${IMAGE_NAME}"
-                    docker build -t "${IMAGE_NAME}" ./customer-segmentation-service
-                    docker push "${IMAGE_NAME}"
-                '''
+                script {
+                    echo '▶ Tagging and pushing customer-segmentation-service image (if credentials available)'
+                    try {
+                        withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                            sh '''
+                                set -eu
+                                IMAGE_NAME=${REGISTRY}customer-segmentation-service:latest
+                                echo "Building ${IMAGE_NAME}"
+                                docker build -t "${IMAGE_NAME}" ./customer-segmentation-service
+                                # login if registry requires authentication; use --password-stdin for safety
+                                echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin ${REGISTRY%/} || true
+                                docker push "${IMAGE_NAME}"
+                            '''
+                        }
+                    } catch (err) {
+                        echo "⚠ Credentials 'dockerhub-creds' not found; skipping image push."
+                    }
+                }
             }
         }
         stage('Start Stack') {
