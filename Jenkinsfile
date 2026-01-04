@@ -105,22 +105,8 @@ pipeline {
                                 sh '''
                                         set -eu
                                         max_retries=3
-
-        /* =======================================================
-         * 4.1 PUBLISH CUSTOMER SEGMENTATION IMAGE
-         * ======================================================= */
-        stage('Publish Customer Segmentation Image') {
-            steps {
-                echo '▶ Tagging and pushing customer-segmentation-service image'
-                sh '''
-                    set -eu
-                    IMAGE_NAME=${REGISTRY}customer-segmentation-service:latest
-                    echo "Building and pushing ${IMAGE_NAME}"
-                    docker build -t "${IMAGE_NAME}" ./customer-segmentation-service
-                    docker push "${IMAGE_NAME}"
-                '''
-            }
-        }
+                                        
+                                        attempt=1
                                         attempt=1
                                         until [ "$attempt" -gt "$max_retries" ]; do
                                             echo "▶ docker-compose build attempt #$attempt"
@@ -141,6 +127,18 @@ pipeline {
         /* =======================================================
          * 5. START STACK
          * ======================================================= */
+        stage('Publish Customer Segmentation Image') {
+            steps {
+                echo '▶ Tagging and pushing customer-segmentation-service image'
+                sh '''
+                    set -eu
+                    IMAGE_NAME=${REGISTRY}customer-segmentation-service:latest
+                    echo "Building and pushing ${IMAGE_NAME}"
+                    docker build -t "${IMAGE_NAME}" ./customer-segmentation-service
+                    docker push "${IMAGE_NAME}"
+                '''
+            }
+        }
         stage('Start Stack') {
             steps {
                 echo '▶ Starting all services...'
