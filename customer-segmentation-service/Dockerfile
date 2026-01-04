@@ -1,25 +1,47 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    POETRY_VIRTUALENVS_CREATE=false
+
 WORKDIR /app
 
-# Copy requirements first for better layer caching
-COPY requirements.txt /app/requirements.txt
+# system deps (if needed) and cleanup to keep image small
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-# Optional local wheelhouse (populate `customer-segmentation-service/wheels/` in CI to enable offline installs)
-COPY wheels /wheels
-
-RUN if [ -f /app/requirements.txt ]; then \
-			if [ -d /wheels ] && [ "$(ls -A /wheels)" ]; then \
-				pip install --no-cache-dir --no-index --find-links=/wheels -r /app/requirements.txt; \
-			else \
-				pip install --no-cache-dir -r /app/requirements.txt; \
-			fi; \
-		else \
-			echo "No requirements.txt, skipping pip install"; \
-		fi
-
-# Copy application sources after installing dependencies to leverage Docker layer cache
+# Copy project files
 COPY . /app
 
-ENV PYTHONUNBUFFERED=1
+# Install Python deps (use local relaxed requirements if present)
+RUN pip install --upgrade pip setuptools wheel && \
+    if [ -f requirements_local.txt ]; then pip install -r requirements_local.txt; else pip install -r requirements.txt; fi
+
 EXPOSE 5000
-CMD ["python","app.py"]
+
+ENV PORT=5000
+
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD curl -f http://localhost:${PORT}/health || exit 1
+
+CMD ["python", "app.py"]
+FROM python:3.12-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy wheels for offline install
+COPY wheels /wheels
+COPY requirements.txt .
+
+# Install dependencies from wheels
+RUN pip install --no-index --find-links=/wheels -r requirements.txt
+
+# Copy app code
+COPY . .
+
+# Expose port (if using Flask)
+EXPOSE 5000
+
+# Start service
+CMD ["python", "app.py"]

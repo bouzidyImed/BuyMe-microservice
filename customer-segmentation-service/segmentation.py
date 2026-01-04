@@ -38,8 +38,10 @@ def assign_discounts(segmented_df):
     # Compute loyalty score: inverse recency + normalized frequency + normalized monetary
     df = segmented_df.copy()
     df['recency_inv'] = (df['recency'].max() - df['recency'])
-    df['freq_n'] = (df['frequency'] - df['frequency'].min()) / (df['frequency'].ptp() if df['frequency'].ptp() else 1)
-    df['mon_n'] = (df['monetary'] - df['monetary'].min()) / (df['monetary'].ptp() if df['monetary'].ptp() else 1)
+    freq_range = (df['frequency'].max() - df['frequency'].min())
+    mon_range = (df['monetary'].max() - df['monetary'].min())
+    df['freq_n'] = (df['frequency'] - df['frequency'].min()) / (freq_range if freq_range else 1)
+    df['mon_n'] = (df['monetary'] - df['monetary'].min()) / (mon_range if mon_range else 1)
     df['loyalty_score'] = df['recency_inv'] + df['freq_n'] + df['mon_n']
 
     # map segment to discount based on average loyalty_score per segment
