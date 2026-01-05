@@ -113,7 +113,7 @@
                 <div class="single-item" *ngFor="let img of (product.images || []); let i = index"
                   [attr.data-dot]="'<img class=\'img-fluid\' src=\'' + getImageUrl(img) + '\' alt=\'\'>'">
                 <div class="single-inner bg-light rounded">
-                  <img [src]="getImageUrl(img)" (error)="onImageError($event)" class="img-fluid rounded" alt="Image">
+                  <img [src]="getImageUrl(img)" (error)="onImageError($event)" (load)="onImageLoaded()" class="img-fluid rounded" alt="Image">
                 </div>
               </div>
             </div>
@@ -126,7 +126,16 @@
           <div class="col-xl-6">
             <h4 class="fw-bold mb-3">{{ product?.name || 'Product' }}</h4>
             <p class="mb-3">Category: {{ product?.categoryName || product?.categoryId || '—' }}</p>
-            <h5 class="fw-bold mb-3">{{ product?.price != null ? (product.price + ' $') : '—' }}</h5>
+            <h5 class="fw-bold mb-3">
+              <ng-container *ngIf="discountPercent && discountPercent > 0; else noDiscountSingle">
+                <span class="text-muted small me-2"><del>{{ product?.price | currency }}</del></span>
+                <span class="text-primary">{{ (product?.price * (1 - (discountPercent / 100))) | currency }}</span>
+                <small class="text-success ms-2">-{{ discountPercent }}%</small>
+              </ng-container>
+              <ng-template #noDiscountSingle>
+                {{ product?.price != null ? (product.price | currency) : '—' }}
+              </ng-template>
+            </h5>
             <!-- product average rate removed from single view: rating shown only on home product cards -->
             <div class="d-flex flex-column mb-3">
               <!-- <small>Product SKU: {{ product?.sku || 'N/A' }}</small> -->

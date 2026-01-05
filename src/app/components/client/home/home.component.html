@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>BuyMe Index</title>
+  <title>BuyMe home</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -97,63 +97,188 @@
 </div>
 <!-- Navbar & Hero End -->
 
-<!-- Carousel Start -->
+<!-- Interactive Recommendations & Segmentation Start -->
 <div class="container-fluid carousel bg-light px-0">
   <div class="row g-0 justify-content-end">
+    <!-- Recommendations Carousel Section -->
     <div class="col-12 col-lg-7 col-xl-9">
-      <div class="header-carousel owl-carousel bg-light py-5">
-        <div class="row g-0 header-carousel-item align-items-center">
-          <div class="col-xl-6 carousel-img wow fadeInLeft" data-wow-delay="0.1s">
-            <img src="/assets/img/carousel-1.png" class="img-fluid w-100" alt="Image">
+      <div class="bg-light py-5 position-relative" style="min-height: 400px;">
+        <!-- Loading State -->
+        <ng-container *ngIf="loadingRecommendations">
+          <div class="d-flex align-items-center justify-content-center h-100" style="min-height: 400px;">
+            <div class="text-center">
+              <div class="spinner-border text-primary mb-3" style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <p class="text-muted fs-5">Loading personalized recommendations...</p>
+            </div>
           </div>
-          <div class="col-xl-6 carousel-content p-4">
-            <h4 class="text-uppercase fw-bold mb-4 wow fadeInRight" data-wow-delay="0.1s"
-                style="letter-spacing: 3px;">Save Up To A $400</h4>
-            <h1 class="display-3 text-capitalize mb-4 wow fadeInRight" data-wow-delay="0.3s">On Selected
-              Laptops & Desktop Or Smartphone</h1>
-            <p class="text-dark wow fadeInRight" data-wow-delay="0.5s">Terms and Condition Apply</p>
-            <a class="btn btn-primary rounded-pill py-3 px-5 wow fadeInRight" data-wow-delay="0.7s"
-               href="#">Shop Now</a>
+        </ng-container>
+
+        <!-- Recommendations Display -->
+        <ng-container *ngIf="!loadingRecommendations && recommendedProducts.length > 0 && getCurrentRecommendation()">
+          <div class="row g-0 align-items-center h-100 position-relative">
+            <!-- Navigation Arrow Left removed: auto-rotating carousel -->
+
+            <!-- Product Content -->
+            <div class="col-12 px-5" style="transition: all 0.5s ease-in-out;" [style.opacity]="recommendationFade ? 1 : 0">
+              <div class="row g-4 align-items-center">
+                <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+                  <div class="position-relative">
+                    <img [src]="getProductImage(getCurrentRecommendation()!)" 
+                         (error)="onImageError($event)" 
+                         class="img-fluid w-100 rounded shadow-lg recommendation-image" 
+                         [alt]="getCurrentRecommendation()?.name"
+                         style="max-height: 350px; object-fit: contain;">
+                    <div class="position-absolute top-0 start-0 m-3">
+                      <span class="badge bg-danger fs-6 px-3 py-2">
+                        <i class="fas fa-star me-1"></i>Recommended For You
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 wow fadeInRight" data-wow-delay="0.4s">
+                  <h4 class="text-uppercase fw-bold mb-3 text-primary" style="letter-spacing: 2px;">
+                    <i class="fas fa-magic me-2"></i>AI-Powered Recommendation
+                  </h4>
+                  <h1 class="display-4 text-capitalize mb-3 fw-bold" style="line-height: 1.2;">
+                    {{ getCurrentRecommendation()?.name }}
+                  </h1>
+                  <p class="text-muted mb-4 fs-5" style="line-height: 1.6;">
+                    {{ getCurrentRecommendation()?.description | slice:0:150 }}<span *ngIf="(getCurrentRecommendation()?.description?.length || 0) > 150">...</span>
+                  </p>
+                  <div class="d-flex align-items-center mb-4">
+                    <span class="text-primary fs-2 fw-bold me-3">{{ getCurrentRecommendation()?.price | currency }}</span>
+                    <span class="badge bg-success fs-6 px-3 py-2">
+                      <i class="fas fa-check-circle me-1"></i>{{ getCurrentRecommendation()?.quantity }} in stock
+                    </span>
+                  </div>
+                  <div class="d-flex gap-3">
+                    <a [routerLink]="['/client/single', getCurrentRecommendation()?.id]" 
+                       class="btn btn-primary btn-lg rounded-pill px-5 py-3">
+                      <i class="fas fa-shopping-bag me-2"></i>View Details
+                    </a>
+                    <button class="btn btn-outline-primary btn-lg rounded-pill px-4 py-3"
+                            (click)="addToCart(getCurrentRecommendation()!)"
+                            [disabled]="!getCurrentRecommendation() || isInCart(getCurrentRecommendation()!) || (getCurrentRecommendation()?.quantity === 0)">
+                      <i class="fas fa-cart-plus me-2"></i>
+                      <span *ngIf="!getCurrentRecommendation() || !isInCart(getCurrentRecommendation()!)">Add to Cart</span>
+                      <span *ngIf="getCurrentRecommendation() && isInCart(getCurrentRecommendation()!)">In Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dots Indicator (moved under product card) -->
+            <div class="w-100 d-flex justify-content-center mt-3 mb-3" *ngIf="recommendedProducts.length > 1">
+              <div class="d-flex gap-2">
+                <button *ngFor="let product of recommendedProducts; let i = index"
+                        class="btn rounded-circle p-0"
+                        [class.bg-primary]="i === currentRecommendationIndex"
+                        [class.bg-secondary]="i !== currentRecommendationIndex"
+                        (click)="goToRecommendation(i)"
+                        style="width: 12px; height: 12px; border: none; transition: all 0.3s ease;"
+                        [attr.aria-label]="'Go to recommendation ' + (i + 1)">
+                </button>
+              </div>
+            </div>
+
+            <!-- Navigation arrows removed: auto-rotating carousel -->
+            <!-- Dots moved under product card (see below) -->
           </div>
-        </div>
-        <div class="row g-0 header-carousel-item align-items-center">
-          <div class="col-xl-6 carousel-img wow fadeInLeft" data-wow-delay="0.1s">
-            <img src="/assets/img/carousel-2.png" class="img-fluid w-100" alt="Image">
+        </ng-container>
+
+        <!-- No Recommendations Fallback -->
+        <ng-container *ngIf="!loadingRecommendations && recommendedProducts.length === 0">
+          <div class="d-flex align-items-center justify-content-center h-100" style="min-height: 400px;">
+            <div class="text-center">
+              <i class="fas fa-search fa-4x text-muted mb-3"></i>
+              <p class="text-muted fs-5">No recommendations available yet. Start shopping to get personalized recommendations!</p>
+            </div>
           </div>
-          <div class="col-xl-6 carousel-content p-4">
-            <h4 class="text-uppercase fw-bold mb-4 wow fadeInRight" data-wow-delay="0.1s"
-                style="letter-spacing: 3px;">Save Up To A $200</h4>
-            <h1 class="display-3 text-capitalize mb-4 wow fadeInRight" data-wow-delay="0.3s">On Selected
-              Laptops & Desktop Or Smartphone</h1>
-            <p class="text-dark wow fadeInRight" data-wow-delay="0.5s">Terms and Condition Apply</p>
-            <a class="btn btn-primary rounded-pill py-3 px-5 wow fadeInRight" data-wow-delay="0.7s"
-               href="#">Shop Now</a>
-          </div>
-        </div>
+        </ng-container>
       </div>
     </div>
-    <div class="col-12 col-lg-5 col-xl-3 wow fadeInRight" data-wow-delay="0.1s">
-      <div class="carousel-header-banner h-100">
-        <img src="/assets/img/header-img.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Image">
-        <div class="carousel-banner-offer">
-          <p class="bg-primary text-white rounded fs-5 py-2 px-4 mb-0 me-3">Save $48.00</p>
-          <p class="text-primary fs-5 fw-bold mb-0">Special Offer</p>
-        </div>
-        <div class="carousel-banner">
-          <div class="carousel-banner-content text-center p-4">
-            <a href="#" class="d-block mb-2">SmartPhone</a>
-            <a href="#" class="d-block text-white fs-3">Apple iPad Mini <br> G2356</a>
-            <del class="me-2 text-white fs-5">$1,250.00</del>
-            <span class="text-primary fs-5">$1,050.00</span>
-          </div>
-          <a href="#" class="btn btn-primary rounded-pill py-2 px-4"><i
-            class="fas fa-shopping-cart me-2"></i> Add To Cart</a>
+
+    <!-- Customer Segmentation Promotions Banner -->
+    <div class="col-12 col-lg-5 col-xl-3">
+      <div class="carousel-header-banner h-100 position-relative" style="min-height: 400px;">
+        <img src="/assets/img/header-img.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Promotions">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(0,123,255,0.9) 0%, rgba(0,86,179,0.9) 100%);">
+          
+          <!-- Loading State -->
+          <ng-container *ngIf="loadingPromotions">
+            <div class="d-flex align-items-center justify-content-center h-100">
+              <div class="text-center text-white">
+                <div class="spinner-border text-white mb-3" role="status"></div>
+                <p class="mb-0">Analyzing customer segments...</p>
+              </div>
+            </div>
+          </ng-container>
+
+          <!-- Promotions Display -->
+          <ng-container *ngIf="!loadingPromotions && currentPromotion">
+            <div class="h-100 d-flex flex-column justify-content-between p-4 text-white promo-card" style="animation: fadeIn 0.45s ease-in;">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <h6 class="text-uppercase mb-1 small fw-bold" style="letter-spacing:1.5px;">{{ currentPromotion.segment || 'Valued' }} Segment</h6>
+                  <h3 class="fw-bold mb-0">Exclusive Offer</h3>
+                </div>
+                <div class="badge bg-white text-primary rounded-circle p-3 pulse-badge" *ngIf="(currentPromotion.discount_percent || currentPromotion.discount)" title="Discount">
+                  <div class="text-center">
+                    <div class="fw-bold" style="font-size:1.1rem">{{ currentPromotion.discount_percent || currentPromotion.discount }}%</div>
+                    <div class="small">OFF</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex-grow-1 d-flex flex-column justify-content-center text-center">
+                <div class="mb-3">
+                  <i class="fas fa-gift fa-3x mb-2" style="opacity:0.9;"></i>
+                  <p class="mb-2 lead">Get <strong *ngIf="(currentPromotion.discount_percent || currentPromotion.discount)">{{ currentPromotion.discount_percent || currentPromotion.discount }}%</strong> off — available for <strong>{{ currentPromotion.display_name || userDisplayName || currentPromotion.customer_id || 'selected customers' }}</strong>.</p>
+                </div>
+              </div>
+
+              <div class="text-center">
+                  <div class="d-flex gap-2 mb-3 justify-content-center">
+                  <button class="btn btn-outline-light btn-sm rounded-pill" (click)="fetchCustomerSegmentation()">Refresh</button>
+                </div>
+                <div *ngIf="customerPromotions.length > 1" class="d-flex justify-content-center gap-2">
+                  <button class="btn btn-sm btn-white rounded-circle p-2" (click)="previousPromotion()"><i class="fas fa-chevron-left"></i></button>
+                  <div class="d-flex align-items-center gap-1">
+                    <span *ngFor="let promo of customerPromotions; let i = index"
+                          class="promotion-dot rounded-circle"
+                          [class.bg-white]="i === currentPromotionIndex"
+                          [class.bg-white-50]="i !== currentPromotionIndex"
+                          (click)="goToPromotion(i)"
+                          style="width:8px;height:8px;display:inline-block;">
+                    </span>
+                  </div>
+                  <button class="btn btn-sm btn-white rounded-circle p-2" (click)="nextPromotion()"><i class="fas fa-chevron-right"></i></button>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <!-- No Promotions Fallback -->
+          <ng-container *ngIf="!loadingPromotions && !currentPromotion">
+            <div class="h-100 d-flex align-items-center justify-content-center p-4 text-white text-center">
+              <div>
+                <i class="fas fa-tags fa-3x mb-3" style="opacity: 0.7;"></i>
+                <p class="mb-0">No promotions available at the moment.</p>
+                <button class="btn btn-light btn-sm rounded-pill mt-3" (click)="fetchCustomerSegmentation()">
+                  <i class="fas fa-refresh me-2"></i>Check Again
+                </button>
+              </div>
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- Carousel End -->
+<!-- Interactive Recommendations & Segmentation End -->
 
 <!-- Searvices Start -->
 <div class="container-fluid px-0">
@@ -228,36 +353,7 @@
 </div>
 <!-- Searvices End -->
 
-<!-- Products Offer Start -->
-<div class="container-fluid bg-light py-5">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-        <a href="#" class="d-flex align-items-center justify-content-between border bg-white rounded p-4">
-          <div>
-            <p class="text-muted mb-3">Find The Best Camera for You!</p>
-            <h3 class="text-primary">Smart Camera</h3>
-            <h1 class="display-3 text-secondary mb-0">40% <span
-              class="text-primary fw-normal">Off</span></h1>
-          </div>
-          <img src="/assets/img/product-1.png" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-        <a href="#" class="d-flex align-items-center justify-content-between border bg-white rounded p-4">
-          <div>
-            <p class="text-muted mb-3">Find The Best Whatches for You!</p>
-            <h3 class="text-primary">Smart Whatch</h3>
-            <h1 class="display-3 text-secondary mb-0">20% <span
-              class="text-primary fw-normal">Off</span></h1>
-          </div>
-          <img src="/assets/img/product-2.png" class="img-fluid" alt="">
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Products Offer End -->
+
 
 
 <!-- Our Products Start -->
@@ -319,11 +415,17 @@
                           </div>
                         </div>
                         <div class="text-center rounded-bottom p-4">
-                          <!-- <span class="d-block mb-1">
-                            <span class="badge bg-light text-dark">{{ group.category.name }}</span>
-                          </span> -->
                           <a [routerLink]="['/client/single', product.id]" class="d-block h4">{{ product.name }}</a>
-                          <span class="text-primary fs-5">{{ product.price | currency }}</span>
+                          <ng-container *ngIf="discountPercent && discountPercent > 0; else noDiscount">
+                            <div>
+                              <span class="text-muted small me-2"><del>{{ product.price | currency }}</del></span>
+                              <span class="text-primary fs-5">{{ (product.price * (1 - (discountPercent / 100))) | currency }}</span>
+                              <div class="small text-success">-{{ discountPercent }}%</div>
+                            </div>
+                          </ng-container>
+                          <ng-template #noDiscount>
+                            <span class="text-primary fs-5">{{ product.price | currency }}</span>
+                          </ng-template>
                         </div>
                         <div class="text-muted small py-1 px-2">{{ product.description | slice:0:50 }}<span *ngIf="product.description.length > 50">...</span></div>
                       </div>

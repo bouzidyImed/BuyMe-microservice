@@ -175,9 +175,18 @@
     </button>
 
 <button class="btn btn-sm btn-primary"
-        *ngIf="order.paymentMethod === 'COD' && order.paymentStatus !== 'PAID_COD'"
+  *ngIf="order.paymentMethod === 'COD' && order.paymentStatus !== 'PAID_COD'"
         (click)="markDelivered(order)"
         [disabled]="operationInProgress">
+  Mark Delivered
+</button>
+
+<!-- For CARD payments allow marking delivered as well (will also mark payment PAID and decrement stock) -->
+<button class="btn btn-sm btn-primary"
+  *ngIf="order.paymentMethod === 'CARD' && order.status !== 'DELIVERED'"
+  (click)="markDelivered(order)"
+  [disabled]="operationInProgress">
+  <span *ngIf="operationInProgress" class="spinner-border spinner-border-sm me-1"></span>
   Mark Delivered
 </button>
 

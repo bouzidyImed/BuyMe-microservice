@@ -135,3 +135,97 @@ section.container {
 html {
   scroll-behavior: smooth;
 }
+
+/* Animations for Recommendations & Segmentation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.recommendation-item {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.promotion-banner {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Smooth transitions for carousel navigation */
+.carousel-content-transition {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects for interactive elements */
+.btn-link:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.btn-link:active {
+  transform: scale(0.95);
+}
+
+/* Promotion indicator dots */
+.promotion-dot {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.promotion-dot:hover {
+  transform: scale(1.3);
+}
+
+/* Recommendation image hover effect */
+.recommendation-image {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommendation-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Promotion card improvements */
+.promo-card {
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0,123,255,0.95) 0%, rgba(0,86,179,0.95) 100%);
+  box-shadow: 0 12px 40px rgba(2,6,23,0.35);
+}
+
+.pulse-badge {
+  animation: pulse 1.6s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,255,255,0.15); }
+  50% { transform: scale(1.06); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,255,255,0.0); }
+}

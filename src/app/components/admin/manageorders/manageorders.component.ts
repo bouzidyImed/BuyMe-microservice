@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { timeout, catchError } from 'rxjs/operators';
 import { throwError, Subscription } from 'rxjs';
 import { OrderService, OrderItem } from '../../../services/order.service';
+import { ProductService } from '../../../services/product.service';
 import { PaymentService } from '../../../services/payment.service';
 import { UserService, UserProfile } from '../../../services/user.service';
 import { Router } from '@angular/router';
@@ -45,6 +46,7 @@ export class ManageordersComponent implements OnInit, OnDestroy {
     private router: Router,
     private paymentService: PaymentService,
     private userService: UserService
+    , private productService: ProductService
   ) {}
 
   ngOnInit(): void {
@@ -141,6 +143,8 @@ export class ManageordersComponent implements OnInit, OnDestroy {
   }
 
   approveOrder(order: OrderItem) {
+    const id = this.getOrderId(order);
+    if (!id) return;
     if (order.status === 'APPROVED') return;
 
     // Only require explicit force when payment FAILED. If payment is PENDING, allow approval.
@@ -153,7 +157,7 @@ export class ManageordersComponent implements OnInit, OnDestroy {
     this.approvingOrder = true;
     this.operationInProgress = true;
 
-    const sub = this.orderService.approveOrder(order.id, needForce)
+    const sub = this.orderService.approveOrder(id, needForce)
       .pipe(
         timeout(10000),
         catchError(error => {
@@ -164,7 +168,7 @@ export class ManageordersComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (updatedOrder) => {
           // Update the order in the list
-          const index = this.orders.findIndex(o => o.id === order.id);
+          const index = this.orders.findIndex(o => this.getOrderId(o) === id);
           if (index !== -1) {
             this.orders[index] = updatedOrder;
           }
@@ -181,24 +185,67 @@ export class ManageordersComponent implements OnInit, OnDestroy {
   }
 
 markDelivered(order: OrderItem) {
-  if (order.paymentMethod !== 'COD') {
-    this.displayAlert('Only COD orders can be marked as delivered.', 'error');
-    return;
-  }
-
-  if (!confirm(`Mark order #${order.id} as delivered?`)) return;
+  const id = this.getOrderId(order);
+  if (!id) return;
+  if (!confirm(`Mark order #${id} as delivered?`)) return;
 
   this.operationInProgress = true;
 
-  const sub = this.orderService.markAsDelivered(order.id).subscribe({
+  const sub = this.orderService.markAsDelivered(id).subscribe({
     next: (updatedOrder) => {
-      // Update local list
-      const idx = this.orders.findIndex(o => o.id === order.id);
+      // Update local list status
+      const idx = this.orders.findIndex(o => this.getOrderId(o) === id);
       if (idx !== -1) {
-        this.orders[idx].paymentStatus = 'PAID_COD';  // Force local update
         this.orders[idx].status = 'DELIVERED';
+        // normalize paymentStatus for UI if needed
+        if (order.paymentMethod === 'COD') this.orders[idx].paymentStatus = 'PAID_COD';
       }
-      this.displayAlert('Order marked as delivered!', 'success');
+
+      // Decrease product stock by ordered quantity (for both CARD and COD)
+      try {
+        const prodSub = this.productService.getById(order.productId).subscribe({
+          next: (prod) => {
+            try {
+              const currentQty = Number(prod?.quantity) || 0;
+              const newQty = Math.max(0, currentQty - (order.qteOrdered || 0));
+              const updatePayload = { ...prod, quantity: newQty };
+              this.productService.update(prod.id, updatePayload).subscribe({
+                next: () => {
+                  // If order was paid by CARD, ensure payment status recorded as PAID
+                  if (order.paymentMethod === 'CARD') {
+                    try {
+                      this.orderService.markPaymentPaid(id).subscribe({
+                        next: () => {
+                          this.displayAlert('Order marked as delivered, payment recorded and stock updated.', 'success');
+                        },
+                        error: () => {
+                          this.displayAlert('Order delivered and stock updated; failed to mark payment as paid.', 'info');
+                        }
+                      });
+                    } catch (e) {
+                      this.displayAlert('Order delivered and stock updated; payment mark skipped.', 'info');
+                    }
+                  } else {
+                    this.displayAlert('Order marked as delivered and stock updated.', 'success');
+                  }
+                },
+                error: () => {
+                  this.displayAlert('Order marked as delivered but failed to update stock.', 'info');
+                }
+              });
+            } catch (e) {
+              this.displayAlert('Order marked as delivered (stock update skipped).', 'info');
+            }
+          },
+          error: () => {
+            this.displayAlert('Order marked as delivered but failed to fetch product for stock update.', 'info');
+          }
+        });
+        this.subscriptions.push(prodSub);
+      } catch (e) {
+        // ignore product update failures
+      }
+
       this.operationInProgress = false;
     },
     error: (err) => {
@@ -309,5 +356,14 @@ getPaymentStatusBadgeClass(order: OrderItem): string {
       // ignore
     }
     this.router.navigate(['/login']);
+  }
+  // Template helper: safely extract an order id from different shapes
+  getOrderId(orderOrId: number | OrderItem | any): number | null {
+    if (!orderOrId) return null;
+    if (typeof orderOrId === 'number') return orderOrId;
+    if (orderOrId.id != null) return orderOrId.id;
+    if (orderOrId.orderId != null) return orderOrId.orderId;
+    if (orderOrId.orderID != null) return orderOrId.orderID;
+    return null;
   }
 }

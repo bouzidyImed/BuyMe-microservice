@@ -224,10 +224,10 @@
             <table class="table">
               <thead>
                 <tr class="text-center">
-                  <th scope="col" class="text-start">Name</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Total</th>
+                  <th scope="col" class="text-start text-dark">Name</th>
+                  <th scope="col" class="text-dark">Price</th>
+                  <th scope="col" class="text-dark">Quantity</th>
+                  <th scope="col" class="text-dark">Total</th>
                 </tr>
               </thead>
               <tbody *ngIf="(items$ | async) as items">
@@ -259,10 +259,16 @@
                   </td>
                 </tr>
 
+                <tr *ngIf="items.length > 0 && (getDiscountPercent() > 0)">
+                  <td colspan="2" class="py-4 text-start">Discount ({{ getDiscountPercent() }}%)</td>
+                  <td></td>
+                  <td class="py-4 text-success">-{{ (getSubtotal(items) - getTotalWithDiscount(items)) | currency }}</td>
+                </tr>
+
                 <tr *ngIf="items.length > 0">
                   <td colspan="2" class="py-4 text-start"><strong>TOTAL</strong></td>
                   <td></td>
-                  <td class="py-4"><strong>{{ getSubtotal(items) | currency }}</strong></td>
+                  <td class="py-4"><strong>{{ getTotalWithDiscount(items) | currency }}</strong></td>
                 </tr>
               </tbody>
             </table>

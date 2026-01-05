@@ -31,7 +31,7 @@ export class CheckoutComponent {
 
   items$!: Observable<CartItem[]>;  // ← Will be assigned in constructor
 
-  private cartService!: CartService;  // ← Non-null assertion
+  public cartService!: CartService;  // ← Exposed for template access via getters
   private orderService!: OrderService;
   private paymentService!: PaymentService;
   private router!: Router;
@@ -54,6 +54,18 @@ export class CheckoutComponent {
     return items.reduce((sum, item) => sum + item.price * item.quantity, 0);
   }
 
+  getTotalWithDiscount(items: CartItem[]): number {
+    const subtotal = this.getSubtotal(items);
+    const pct = this.getDiscountPercent();
+    return Math.max(0, subtotal * (1 - (pct / 100)));
+  }
+
+  getDiscountPercent(): number {
+    return this.cartService && typeof this.cartService.getDiscountPercent === 'function'
+      ? this.cartService.getDiscountPercent()
+      : 0;
+  }
+
   async placeOrders() {
     if (this.processing) return;
     this.processing = true;
@@ -67,6 +79,7 @@ export class CheckoutComponent {
 
       const payments = [];
 
+      const discountPercent = this.cartService.getDiscountPercent ? this.cartService.getDiscountPercent() : 0;
       for (const item of items) {
         const orderPayload: CreateOrderRequest = {
           productId: item.productId,
@@ -78,10 +91,11 @@ export class CheckoutComponent {
         const order = await firstValueFrom(this.orderService.createOrder(orderPayload));
 
         if (this.paymentMethod === 'CARD') {
+          const amountForItem = (item.price * item.quantity) * (1 - (discountPercent / 100));
           const paymentDto = {
             orderId: order.id,
             paymentMethod: this.paymentMethod,
-            amount: item.price * item.quantity
+            amount: Math.max(0, amountForItem)
           };
           const cardDto = {
             cardNumber: this.cardNumber,
@@ -91,10 +105,11 @@ export class CheckoutComponent {
           const pay = await firstValueFrom(this.paymentService.createPaymentWithCard(paymentDto, cardDto));
           payments.push(pay);
         } else {
+          const amountForItem = (item.price * item.quantity) * (1 - (discountPercent / 100));
           const codPayload = {
             orderId: order.id,
             paymentMethod: this.paymentMethod,
-            amount: item.price * item.quantity
+            amount: Math.max(0, amountForItem)
           };
           const pay = await firstValueFrom(this.paymentService.createPayment(codPayload));
           payments.push(pay);

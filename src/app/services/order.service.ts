@@ -68,6 +68,18 @@ export class OrderService {
     return this.http.delete<void>(url);
   }
 
+  // Client delete (cancel) their own order
+  deleteMyOrder(orderId: number): Observable<void> {
+    const url = `${this.apiUrl}/${orderId}`;
+    return this.http.delete<void>(url);
+  }
+
+  // Client cancel request (soft-cancel) - backend may implement a dedicated cancel endpoint
+  cancelMyOrder(orderId: number): Observable<OrderItem> {
+    const url = `${this.apiUrl}/${orderId}/cancel`;
+    return this.http.put<OrderItem>(url, {});
+  }
+
   // Mark payment status (used by admin to mark COD as paid when delivered)
   markPaymentPaid(orderId: number) {
     const url = `${this.apiUrl}/${orderId}/payment-status?paymentStatus=PAID`;

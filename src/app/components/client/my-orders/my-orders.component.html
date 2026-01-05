@@ -112,14 +112,22 @@
           <div class="card order-card">
             <div class="card-body d-flex justify-content-between align-items-center">
               <div>
-                <h5 class="mb-1">Order #{{ o.id }}</h5>
+                <h5 class="mb-1">Order #{{ getOrderId(o) }}</h5>
                 <div class="order-meta">Placed: {{ o.orderDate | date:'medium' }}</div>
                 <p class="mb-0 mt-2">Product ID: <strong>#{{ o.productId }}</strong> &nbsp; • &nbsp; Quantity: <strong>{{ o.qteOrdered }}</strong></p>
                 <p class="mb-0">Payment Method: <strong>{{ o.paymentMethod || 'Unknown' }}</strong></p>  <!-- Added -->
               </div>
               <div class="order-actions">
-                <span class="badge status me-2">{{ o.status }}</span>
-                <a class="btn btn-outline-primary btn-sm" [routerLink]="['/client/orders', o.id]">Details</a>
+                <span class="badge me-2" [class]="getStatusBadgeClass(o.status)">{{ o.status }}</span>
+                <a class="btn btn-outline-primary btn-sm me-2" [routerLink]="['/client/orders', getOrderId(o)]">Details</a>
+                <button *ngIf="o.status === 'PENDING'" class="btn btn-outline-warning btn-sm me-2" (click)="cancelOrder(o)" [disabled]="loading">
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+                  Cancel
+                </button>
+                <button *ngIf="o.status !== 'PENDING'" class="btn btn-outline-danger btn-sm" (click)="deleteOrder(o)" [disabled]="loading">
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+                  Delete
+                </button>
               </div>
             </div>
           </div>

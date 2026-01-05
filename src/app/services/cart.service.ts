@@ -17,12 +17,43 @@ export class CartService {
   private readonly itemsSubject = new BehaviorSubject<CartItem[]>(this.loadFromStorage());
   readonly items$ = this.itemsSubject.asObservable();
 
+  // discount percent applied to the user (0-100)
+  private readonly discountSubject = new BehaviorSubject<number>(this.loadDiscountFromStorage());
+  readonly discount$ = this.discountSubject.asObservable();
+
   private readonly apiUrl: string;
 
   constructor(private readonly http: HttpClient, @Inject(APP_CONFIG) private readonly config: any) {
     const base = (this.config?.apiUrl || '').replace(/\/$/, '');
     // backend orders endpoint is under /api/orders
     this.apiUrl = base.replace(/\/api$/, '') + '/api/orders';
+  }
+
+  private saveDiscountToStorage(pct: number) {
+    localStorage.setItem('user_discount_percent', String(pct || 0));
+  }
+
+  private loadDiscountFromStorage(): number {
+    const raw = localStorage.getItem('user_discount_percent');
+    const v = raw ? Number(raw) : 0;
+    return isNaN(v) ? 0 : v;
+  }
+
+  getDiscountPercent(): number {
+    return this.discountSubject.value || 0;
+  }
+
+  setDiscountPercent(pct: number) {
+    const n = Math.max(0, Math.min(100, Number(pct) || 0));
+    this.discountSubject.next(n);
+    this.saveDiscountToStorage(n);
+  }
+
+  getTotalWithDiscount(items: CartItem[]): number {
+    const subtotal = items.reduce((s, it) => s + (it.price * it.quantity), 0);
+    const pct = this.getDiscountPercent();
+    const discounted = subtotal * (1 - pct / 100);
+    return Math.max(0, discounted);
   }
 
   private saveToStorage(items: CartItem[]) {

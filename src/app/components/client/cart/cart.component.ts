@@ -19,6 +19,7 @@ export class CartComponent {
   filteredItems: CartItem[] = [];
   searchTerm = '';
   private allItems: CartItem[] = [];
+  discountPercent = 0;
 
   constructor(private readonly cartService: CartService, private readonly router: Router) {
     this.items$ = this.cartService.items$;
@@ -26,6 +27,8 @@ export class CartComponent {
       this.allItems = items;
       this.filteredItems = items;
     });
+    // subscribe to discount updates
+    this.cartService.discount$.subscribe(pct => this.discountPercent = pct || 0);
   }
 
   increase(item: CartItem) {
@@ -57,6 +60,10 @@ export class CartComponent {
 
   getSubtotal(items: CartItem[]) {
     return items.reduce((s, it) => s + (it.price * it.quantity), 0);
+  }
+
+  getTotalWithDiscount(items: CartItem[]) {
+    return this.cartService.getTotalWithDiscount(items) + this.shippingRate;
   }
 
   proceedToCheckout() {
