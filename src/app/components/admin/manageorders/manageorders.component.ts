@@ -9,6 +9,7 @@ import { ProductService } from '../../../services/product.service';
 import { PaymentService } from '../../../services/payment.service';
 import { UserService, UserProfile } from '../../../services/user.service';
 import { Router } from '@angular/router';
+import { ModalService } from '../../../shared/modal.service';
 
 type AlertType = 'success' | 'error' | 'info';
 
@@ -26,6 +27,8 @@ export class ManageordersComponent implements OnInit, OnDestroy {
 
   // user cache: userId -> UserProfile
   userMap: Record<number, UserProfile | undefined> = {};
+  // product cache: productId -> productName
+  productMap: Record<number, string | undefined> = {};
   // pagination
   pageSize = 10;
   currentPage = 1;
@@ -46,7 +49,8 @@ export class ManageordersComponent implements OnInit, OnDestroy {
     private router: Router,
     private paymentService: PaymentService,
     private userService: UserService
-    , private productService: ProductService
+    , private productService: ProductService,
+    private modalService: ModalService
   ) {}
 
   ngOnInit(): void {
@@ -95,6 +99,7 @@ export class ManageordersComponent implements OnInit, OnDestroy {
           this.orders = orders || [];
           this.ordersLoading = false;
           this.loadUsersForOrders();
+          this.loadProductsForOrders();
         },
         error: () => {
           this.ordersLoading = false;
@@ -142,15 +147,16 @@ export class ManageordersComponent implements OnInit, OnDestroy {
     try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (_) {}
   }
 
-  approveOrder(order: OrderItem) {
+  async approveOrder(order: OrderItem) {
     const id = this.getOrderId(order);
     if (!id) return;
-    if (order.status === 'APPROVED') return;
+    if (order.status === 'APPROVED' || order.status === 'CANCELLED') return;
 
     // Only require explicit force when payment FAILED. If payment is PENDING, allow approval.
     const needForce = order.paymentStatus === 'FAILED';
     if (needForce) {
-      const ok = confirm(`Order #${order.id} payment status is '${order.paymentStatus}'. Force-approve?`);
+      // ask for confirmation via modal
+      const ok = await this.modalService.showConfirm(`Order #${order.id} payment status is '${order.paymentStatus}'. Force-approve?`);
       if (!ok) return;
     }
 
@@ -184,10 +190,11 @@ export class ManageordersComponent implements OnInit, OnDestroy {
     this.subscriptions.push(sub);
   }
 
-markDelivered(order: OrderItem) {
+async markDelivered(order: OrderItem) {
   const id = this.getOrderId(order);
   if (!id) return;
-  if (!confirm(`Mark order #${id} as delivered?`)) return;
+  const ok = await this.modalService.showConfirm(`Mark order #${id} as delivered?`);
+  if (!ok) return;
 
   this.operationInProgress = true;
 
@@ -267,9 +274,10 @@ getPaymentInfo(order: OrderItem): string {
   return 'Unknown';
 }
 
-  declineOrder(order: OrderItem) {
+  async declineOrder(order: OrderItem) {
     if (order.status === 'CANCELLED') return;
-    if (!confirm(`Decline order #${order.id}? This will cancel the order.`)) return;
+    const ok = await this.modalService.showConfirm(`Decline order #${order.id}? This will cancel the order.`);
+    if (!ok) return;
     this.operationInProgress = true;
     const sub = this.orderService.declineOrder(order.id).subscribe({
       next: () => {
@@ -288,8 +296,9 @@ getPaymentInfo(order: OrderItem): string {
     this.subscriptions.push(sub);
   }
 
-  deleteOrder(order: OrderItem) {
-    if (!confirm(`Permanently delete order #${order.id}?`)) return;
+  async deleteOrder(order: OrderItem) {
+    const ok = await this.modalService.showConfirm(`Permanently delete order #${order.id}?`);
+    if (!ok) return;
     this.operationInProgress = true;
     const sub = this.orderService.deleteOrder(order.id).subscribe({
       next: () => {
@@ -315,6 +324,24 @@ getPaymentInfo(order: OrderItem): string {
       });
       this.subscriptions.push(sub);
     });
+  }
+
+  // Fetch product names for all unique productIds in current orders
+  private loadProductsForOrders() {
+    const ids = Array.from(new Set(this.orders.map(o => o.productId)));
+    ids.forEach(id => {
+      if (this.productMap[id] !== undefined) return; // already requested or loaded
+      const sub = this.productService.getById(id).subscribe({
+        next: (prod) => { if (prod && prod.name) this.productMap[id] = prod.name; else this.productMap[id] = String(id); },
+        error: () => { this.productMap[id] = String(id); }
+      });
+      this.subscriptions.push(sub);
+    });
+  }
+
+  getProductName(productId: number): string {
+    const name = this.productMap[productId];
+    return name != null ? name : String(productId);
   }
 
   getStatusBadgeClass(status: string): string {

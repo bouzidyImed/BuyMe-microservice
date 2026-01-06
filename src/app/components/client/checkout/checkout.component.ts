@@ -6,6 +6,7 @@ import { OrderService, CreateOrderRequest } from '../../../services/order.servic
 import { PaymentService } from '../../../services/payment.service';
 import { Router, RouterModule } from '@angular/router';
 import { firstValueFrom, Observable } from 'rxjs';
+import { ModalService } from '../../../shared/modal.service';
 
 interface CartItem {
   productId: number;
@@ -40,7 +41,8 @@ export class CheckoutComponent {
     cartService: CartService,
     orderService: OrderService,
     paymentService: PaymentService,
-    router: Router
+    router: Router,
+    private modalService: ModalService
   ) {
     this.cartService = cartService;
     this.orderService = orderService;
@@ -73,7 +75,7 @@ export class CheckoutComponent {
     try {
       const items: CartItem[] = await firstValueFrom(this.items$);
       if (!items || items.length === 0) {
-        alert('Your cart is empty.');
+        this.modalService.showAlert('Your cart is empty.', 'Cart');
         return;
       }
 
@@ -117,15 +119,17 @@ export class CheckoutComponent {
       }
 
       this.cartService.clear();
-      alert(
+      this.modalService.showAlert(
         this.paymentMethod === 'CARD'
           ? 'Order placed and paid successfully — thank you!'
-          : 'Order placed successfully. Pay on delivery when you receive the items.'
+          : 'Order placed successfully. Pay on delivery when you receive the items.',
+        'Order placed',
+        3000
       );
       this.router.navigate(['/client/home']);
     } catch (err: any) {
       console.error('Checkout failed', err);
-      alert('Checkout failed: ' + (err.error?.message || err.message || 'Please try again.'));
+      this.modalService.showAlert('Checkout failed: ' + (err.error?.message || err.message || 'Please try again.'), 'Error');
     } finally {
       this.processing = false;
     }

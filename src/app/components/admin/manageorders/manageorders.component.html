@@ -124,7 +124,7 @@
         <tbody>
           <tr *ngFor="let order of pagedOrders">
             <td><span class="badge bg-light text-dark">#{{ order.id }}</span></td>
-            <td class="fw-semibold">{{ order.productId }}</td>
+            <td class="fw-semibold">{{ getProductName(order.productId) }}</td>
             <td>
               <ng-container *ngIf="userMap[order.userId] as user; else noUser">
                 <div *ngIf="user.phone; else userNoPhone">
@@ -159,20 +159,22 @@
 <td class="text-end">
   <div class="btn-group" role="group">
 
-    <!-- Approve Button -->
-    <button class="btn btn-sm btn-success"
-            (click)="approveOrder(order)"
-            [disabled]="order.status === 'APPROVED' || approvingOrder">
-      <span *ngIf="approvingOrder" class="spinner-border spinner-border-sm me-1"></span>
-      Approve
-    </button>
+    <!-- Approve / Decline Buttons (hidden for CANCELLED orders) -->
+    <ng-container *ngIf="order.status !== 'CANCELLED'">
+      <button class="btn btn-sm btn-success"
+              (click)="approveOrder(order)"
+              [disabled]="order.status === 'APPROVED' || approvingOrder">
+        <span *ngIf="approvingOrder" class="spinner-border spinner-border-sm me-1"></span>
+        Approve
+      </button>
 
-    <!-- Decline Button -->
-    <button class="btn btn-sm btn-warning"
-            (click)="declineOrder(order)"
-            [disabled]="order.status === 'CANCELLED' || operationInProgress">
-      Decline
-    </button>
+      <!-- Decline Button -->
+      <button class="btn btn-sm btn-warning"
+              (click)="declineOrder(order)"
+              [disabled]="operationInProgress">
+        Decline
+      </button>
+    </ng-container>
 
 <button class="btn btn-sm btn-primary"
   *ngIf="order.paymentMethod === 'COD' && order.paymentStatus !== 'PAID_COD'"

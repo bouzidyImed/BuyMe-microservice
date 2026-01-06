@@ -1,24 +1,16 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { LoginService } from '../../services/login.service';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { MatToolbar } from '@angular/material/toolbar';
-import { MatAnchor, MatButton } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 import { UserProfile, UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [
-    RouterLink,
-    RouterLinkActive,
-    CommonModule,
-    MatToolbar,
-    MatAnchor,
-    MatButton,
-    NgOptimizedImage
+    CommonModule
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'

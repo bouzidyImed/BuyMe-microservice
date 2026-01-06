@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { forkJoin } from 'rxjs';
@@ -10,6 +11,7 @@ import { RecommenderService } from '../../../services/recommender.service';
 import { UserService } from '../../../services/user.service';
 import { CustomerSegmentationService, Promotion } from '../../../services/customer-segmentation.service';
 import { APP_CONFIG } from '../../../../main';
+import { ModalService } from '../../../shared/modal.service';
 
 interface Category {
   id: number;
@@ -37,7 +39,7 @@ interface CategoryGroup {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -81,6 +83,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   recommendationFade = true;
 
 
+  // user id extracted from JWT 'sub' claim (if available)
+  userId: string | null = null;
+  // search term for product filtering
+  searchTerm: string = '';
+  // product search term (admin-style input on manageproduct)
+  productSearchTerm: string = '';
+
   constructor(
     private readonly categoryService: CategoryService,
     private readonly productService: ProductService,
@@ -89,6 +98,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private readonly userService: UserService,
     private readonly segmentationService: CustomerSegmentationService,
     private readonly router: Router,
+    private readonly modalService: ModalService,
     @Inject(APP_CONFIG) config: any
   ) {
     const apiFromConfig: string = (config?.apiUrl || '').replace(/\/$/, '');
@@ -121,7 +131,9 @@ export class HomeComponent implements OnInit, OnDestroy {
         const parts = token.split('.');
         if (parts.length >= 2) {
           const payloadJson = JSON.parse(atob(parts[1].replace(/-/g, '+').replace(/_/g, '/')));
-          this.userDisplayName = payloadJson.preferred_username || payloadJson.name || payloadJson.email || null;
+            this.userDisplayName = payloadJson.preferred_username || payloadJson.name || payloadJson.email || null;
+            // keep raw sub (can be UUID). backend will match by string equality when filtering orders
+            this.userId = payloadJson.sub || null;
         }
       }
     } catch (e) {
@@ -166,11 +178,45 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getProductsForActiveTab(): Product[] {
+    // Prefer the admin-style productSearchTerm if filled, otherwise fall back to the general searchTerm
+    const termSource = (this.productSearchTerm && this.productSearchTerm.trim()) ? this.productSearchTerm : this.searchTerm;
+    const term = termSource ? termSource.toLowerCase().trim() : '';
+    let products: Product[] = [];
     if (this.selectedCategoryId === 'all') {
-      return this.allProducts;
+      products = this.allProducts;
+    } else {
+      const group = this.categoriesWithProducts.find(g => g.category.id === this.selectedCategoryId);
+      products = group ? group.products : [];
     }
-    const group = this.categoriesWithProducts.find(g => g.category.id === this.selectedCategoryId);
-    return group ? group.products : [];
+
+    if (!term) return products;
+
+    return products.filter(p => {
+      const name = (p.name || '').toString().toLowerCase();
+      const desc = (p.description || '').toString().toLowerCase();
+      const cat = (p.categoryName || '').toString().toLowerCase();
+      return name.includes(term) || desc.includes(term) || cat.includes(term);
+    });
+  }
+
+  filteredProductsForGroup(group: CategoryGroup): Product[] {
+    const termSource = (this.productSearchTerm && this.productSearchTerm.trim()) ? this.productSearchTerm : this.searchTerm;
+    const term = termSource ? termSource.toLowerCase().trim() : '';
+    if (!term) return group.products;
+    return (group.products || []).filter(p => {
+      const name = (p.name || '').toString().toLowerCase();
+      const desc = (p.description || '').toString().toLowerCase();
+      const cat = (p.categoryName || '').toString().toLowerCase();
+      return name.includes(term) || desc.includes(term) || cat.includes(term);
+    });
+  }
+
+  hasAnyMatchingProducts(): boolean {
+    if (!this.categoriesWithProducts || this.categoriesWithProducts.length === 0) return false;
+    const termSource = (this.productSearchTerm && this.productSearchTerm.trim()) ? this.productSearchTerm : this.searchTerm;
+    const term = termSource ? termSource.toLowerCase().trim() : '';
+    if (!term) return this.categoriesWithProducts.some(g => (g.products || []).length > 0);
+    return this.categoriesWithProducts.some(g => this.filteredProductsForGroup(g).length > 0);
   }
 
   cardAnimationDelay(index: number): string {
@@ -189,7 +235,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     // validate against stock
     const available = product.quantity ?? 0;
     if (existingQty + 1 > available) {
-      alert('Cannot add to cart: requested quantity exceeds available stock.');
+      this.modalService.showAlert('Cannot add to cart: requested quantity exceeds available stock.', 'Warning');
       return;
     }
 
@@ -204,7 +250,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     const pct = (promo as any).discount_percent ?? (promo as any).discount ?? 0;
     const msg = pct ? `Applied ${pct}% discount for ${target}` : `Promotion for ${target}`;
     // For now show a simple confirmation — integrators can wire this to checkout/coupon logic
-    alert(msg);
+    this.modalService.showAlert(msg, 'Promotion Applied', 2500);
   }
 
   private fetchCatalogue(): void {
@@ -330,22 +376,40 @@ export class HomeComponent implements OnInit, OnDestroy {
     
     this.loadingPromotions = true;
     
-    this.segmentationService.runSegmentation({ n_clusters: 3, send: false }).subscribe({
+    const payload: any = { n_clusters: 3, send: false };
+    if (this.userId) payload.userId = this.userId;
+    this.segmentationService.runSegmentation(payload).subscribe({
       next: (response) => {
         this.customerPromotions = (response.promotions || []).map((p: any) => ({
           ...p,
           display_name: this.userDisplayName || p.customer_id
         }));
-        // Set the first promotion as current (or a random one)
-        if (this.customerPromotions.length > 0) {
-          this.currentPromotion = this.customerPromotions[0];
+
+        // Only apply promotions that explicitly target the current logged-in user.
+        // This prevents a promotion computed for another customer from being shown
+        // to everyone (which previously caused new users to see 10% by default).
+        const promosForUser = this.customerPromotions.filter((p: any) => {
+          try {
+            return this.userId && String(p.customer_id) === String(this.userId);
+          } catch (e) {
+            return false;
+          }
+        });
+
+        if (promosForUser.length > 0) {
+          this.currentPromotion = promosForUser[0];
           this.currentPromotionIndex = 0;
-          // capture discount percent and store to cart service
           const pct = Number((this.currentPromotion as any).discount_percent ?? (this.currentPromotion as any).discount ?? 0) || 0;
           this.discountPercent = pct;
           try { this.cartService.setDiscountPercent(pct); } catch (e) { /* ignore if service not available */ }
-          // Start auto-rotating promotions
+          // Start auto-rotating promotions (only meaningful when user has promos)
           this.startPromotionRotation();
+        } else {
+          // No promotions for this user — ensure we don't show any discount
+          this.currentPromotion = null;
+          this.currentPromotionIndex = 0;
+          this.discountPercent = 0;
+          try { this.cartService.setDiscountPercent(0); } catch (e) { /* ignore */ }
         }
         this.loadingPromotions = false;
       },

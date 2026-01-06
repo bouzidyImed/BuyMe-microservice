@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { OrderService, OrderItem } from '../../../services/order.service';
+import { ModalService } from '../../../shared/modal.service';
 
 @Component({
   selector: 'app-my-orders',
@@ -17,15 +18,16 @@ export class MyOrdersComponent implements OnInit {
   pageSize = 5;
   currentPage = 1;
 
-  constructor(private readonly orderService: OrderService, private readonly router: Router) {}
+  constructor(private readonly orderService: OrderService, private readonly router: Router, private readonly modalService: ModalService) {}
 
-  deleteOrder(orderOrId: number | OrderItem) {
+  async deleteOrder(orderOrId: number | OrderItem) {
     const id = typeof orderOrId === 'number' ? orderOrId : (orderOrId.id ?? (orderOrId as any).orderId ?? undefined);
     if (!id) {
       this.error = 'Order id is missing.';
       return;
     }
-    if (!confirm(`Delete order #${id}?`)) return;
+    const ok = await this.modalService.showConfirm(`Delete order #${id}?`);
+    if (!ok) return;
     this.loading = true;
     this.orderService.deleteMyOrder(id).subscribe({
       next: () => {
@@ -39,7 +41,7 @@ export class MyOrdersComponent implements OnInit {
     });
   }
 
-  cancelOrder(orderOrId: number | OrderItem) {
+  async cancelOrder(orderOrId: number | OrderItem) {
     const id = this.getOrderId(orderOrId);
     if (!id) {
       this.error = 'Order id is missing.';
@@ -56,11 +58,12 @@ export class MyOrdersComponent implements OnInit {
     if (order.status !== 'PENDING') {
       // Friendly message and do not call backend
       this.error = null;
-      alert('Only pending orders can be cancelled.');
+      this.modalService.showAlert('Only pending orders can be cancelled.', 'Info');
       return;
     }
 
-    if (!confirm(`Cancel order #${id}?`)) return;
+    const ok = await this.modalService.showConfirm(`Cancel order #${id}?`);
+    if (!ok) return;
     this.loading = true;
     this.orderService.cancelMyOrder(id).subscribe({
       next: (updated) => {

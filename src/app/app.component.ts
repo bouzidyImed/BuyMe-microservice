@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {NavbarComponent} from './components/nav-bar/nav-bar.component';
+import { NavbarComponent } from './components/nav-bar/nav-bar.component';
+import { SharedModalComponent } from './shared/shared-modal.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, NavbarComponent, SharedModalComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'BuyMeFront';

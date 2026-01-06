@@ -4,6 +4,7 @@ import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../../services/product.service';
 import { CartService } from '../../../services/cart.service';
 import { ReviewService } from '../../../services/review.service';
+import { ModalService } from '../../../shared/modal.service';
 import { APP_CONFIG } from '../../../../main';
 
 @Component({
@@ -21,7 +22,6 @@ export class SingleComponent implements OnInit {
   reviews: any[] = [];
   selectedRating = 0;
   isAuthenticated = false;
-  private readonly productImageBaseUrl: string;
   discountPercent = 0;
 
   constructor(
@@ -30,19 +30,9 @@ export class SingleComponent implements OnInit {
     private cartService: CartService,
     private router: Router,
     private reviewService: ReviewService,
+    private modalService: ModalService,
     @Inject(APP_CONFIG) private config: any
-  ) {
-    const apiFromConfig: string = (this.config?.apiUrl || '').replace(/\/$/, '');
-    if (apiFromConfig.includes('api-gateway')) {
-      this.productImageBaseUrl = `${globalThis.location.protocol}//${globalThis.location.hostname}:8081/api/uploads/products`;
-    } else if (apiFromConfig.endsWith('/api')) {
-      this.productImageBaseUrl = `${apiFromConfig}/uploads/products`;
-    } else if (/^https?:\/\/[^/]+:\d+$/.test(apiFromConfig)) {
-      this.productImageBaseUrl = `${apiFromConfig}/api/uploads/products`;
-    } else {
-      this.productImageBaseUrl = `${apiFromConfig}/uploads/products`;
-    }
-  }
+  ) {}
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -70,23 +60,10 @@ export class SingleComponent implements OnInit {
         // load existing reviews for product
         this.loadReviews();
 
-        // CRITICAL: Trigger Owl Carousel re-initialization via global event
-        // This tells main.js to initialize new carousels. Also attempt jQuery trigger if available.
+        // Initialize carousel after images are loaded
         setTimeout(() => {
-          try {
-            window.dispatchEvent(new Event('carousel:refresh'));
-            const $ = (window as any).$;
-            if ($ && $.fn && typeof $.fn.owlCarousel !== 'undefined') {
-              // refresh owl carousel instances if present
-              const el = $('.single-carousel');
-              if (el && el.length) {
-                try { el.trigger('refresh.owl.carousel'); } catch (e) { /* ignore */ }
-              }
-            }
-          } catch (e) {
-            // ignore
-          }
-        }, 500);
+          this.initializeCarousel();
+        }, 100);
       },
       error: (err) => {
         this.error = err.error?.message || err.message || 'Unable to load product.';
@@ -109,11 +86,10 @@ export class SingleComponent implements OnInit {
 
     const available = this.product.quantity ?? Infinity;
     if (this.quantity > available) {
-      alert('Cannot add to cart: requested quantity exceeds available stock.');
+      this.modalService.showAlert('Cannot add to cart: requested quantity exceeds available stock.', 'Warning');
       return;
     }
 
-    // Keep stored item prices as the original product price; discounts are applied at totals/checkout.
     this.cartService.addToCartProduct(
       {
         id: this.product.id,
@@ -134,28 +110,46 @@ export class SingleComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  // Updated method to match HomeComponent's logic
   getImageUrl(img: string): string {
     if (!img) return '/assets/img/product-3.png';
-    try {
-      // if the image value is an object (sometimes API returns objects), try common fields
-      if (typeof img === 'object' && img !== null) {
-        const obj: any = img as any;
-        const candidate = obj.url || obj.path || obj.src || obj.data || obj.value;
-        if (candidate) return this.getImageUrl(String(candidate));
-      }
-      // if already a data URL or absolute URL or root-relative, return as-is
-      if (typeof img === 'string') {
-        if (img.startsWith('data:') || img.startsWith('http') || img.startsWith('/')) return img;
-      }
-    } catch (e) {
-      return '/assets/img/product-3.png';
+    
+    // Check if it's already a data URL or full URL (like in HomeComponent)
+    if (img.startsWith('data:') || img.startsWith('http') || img.startsWith('/')) {
+      return img;
     }
-    return `${this.productImageBaseUrl}/${img}`;
+    
+    // If it's just a filename, construct the URL (fallback logic)
+    const apiFromConfig: string = (this.config?.apiUrl || '').replace(/\/$/, '');
+    let productImageBaseUrl = '';
+    
+    if (apiFromConfig.includes('api-gateway')) {
+      productImageBaseUrl = `${globalThis.location.protocol}//${globalThis.location.hostname}:8081/api/uploads/products`;
+    } else if (apiFromConfig.endsWith('/api')) {
+      productImageBaseUrl = `${apiFromConfig}/uploads/products`;
+    } else if (/^https?:\/\/[^/]+:\d+$/.test(apiFromConfig)) {
+      productImageBaseUrl = `${apiFromConfig}/api/uploads/products`;
+    } else {
+      productImageBaseUrl = `${apiFromConfig}/uploads/products`;
+    }
+    
+    return `${productImageBaseUrl}/${img}`;
   }
 
+  // Method to get product image - same as HomeComponent
   getProductImage(product: any): string {
     if (product?.images && product.images.length > 0) {
-      return this.getImageUrl(product.images[0]);
+      // In HomeComponent, images are already base64 strings
+      // Return the first image as-is
+      const firstImg = product.images[0];
+      if (typeof firstImg === 'string') {
+        return firstImg;
+      }
+      // If it's an object with properties, try to extract the image data
+      if (typeof firstImg === 'object') {
+        return (firstImg as any).url || (firstImg as any).data || (firstImg as any).src || 
+               (firstImg as any).path || (firstImg as any).value || '/assets/img/product-3.png';
+      }
     }
     return '/assets/img/product-3.png';
   }
@@ -168,18 +162,10 @@ export class SingleComponent implements OnInit {
   }
 
   onImageLoaded(): void {
-    try {
-      window.dispatchEvent(new Event('carousel:refresh'));
-      const $ = (window as any).$;
-      if ($ && $.fn && typeof $.fn.owlCarousel !== 'undefined') {
-        const el = $('.single-carousel');
-        if (el && el.length) {
-          try { el.trigger('refresh.owl.carousel'); } catch (e) { /* ignore */ }
-        }
-      }
-    } catch (e) {
-      // ignore
-    }
+    // Reinitialize carousel when images are loaded
+    setTimeout(() => {
+      this.initializeCarousel();
+    }, 50);
   }
 
   loadReviews(): void {
@@ -196,11 +182,11 @@ export class SingleComponent implements OnInit {
 
   submitReview(): void {
     if (!this.isAuthenticated) {
-      alert('You must be logged in to submit a rating.');
+      this.modalService.showAlert('You must be logged in to submit a rating.', 'Login required');
       return;
     }
     if (!this.selectedRating || this.selectedRating < 1 || this.selectedRating > 5) {
-      alert('Please select a rating between 1 and 5 stars.');
+      this.modalService.showAlert('Please select a rating between 1 and 5 stars.', 'Invalid rating');
       return;
     }
     const payload = { rating: this.selectedRating };
@@ -211,7 +197,7 @@ export class SingleComponent implements OnInit {
         this.productService.getById(this.product.id).subscribe(p => this.product = p);
         this.showSuccessModal();
       },
-      error: (err) => alert(err.error || err.error?.message || err.message || 'Unable to submit review.')
+      error: (err) => this.modalService.showAlert(err.error || err.error?.message || err.message || 'Unable to submit review.', 'Error')
     });
   }
 
@@ -222,8 +208,36 @@ export class SingleComponent implements OnInit {
       const modal = (window as any).bootstrap?.Modal?.getOrCreateInstance(el) || (window as any).bootstrap?.Modal?.new(el);
       modal.show();
     } catch (e) {
-      // fallback to simple alert
-      alert('Rating submitted successfully');
+      // fallback to simple alert modal
+      this.modalService.showAlert('Rating submitted successfully', 'Success', 2000);
+    }
+  }
+
+  private initializeCarousel(): void {
+    try {
+      window.dispatchEvent(new Event('carousel:refresh'));
+      const $ = (window as any).$;
+      if ($ && $.fn && typeof $.fn.owlCarousel !== 'undefined') {
+        const el = $('.single-carousel');
+        if (el && el.length) {
+          // Destroy and reinitialize if needed
+          if (el.data('owl.carousel')) {
+            el.trigger('destroy.owl.carousel');
+            el.removeClass('owl-loaded');
+          }
+          el.owlCarousel({
+            items: 1,
+            dots: true,
+            nav: true,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            dotsData: true
+          });
+        }
+      }
+    } catch (e) {
+      console.warn('Could not initialize carousel:', e);
     }
   }
 }

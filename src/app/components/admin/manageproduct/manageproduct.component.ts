@@ -7,6 +7,7 @@ import { throwError, Subscription } from 'rxjs';
 import { ProductService } from '../../../services/product.service';
 import { CategoryService } from '../../../services/category.service';
 import { Router } from '@angular/router';
+import { ModalService } from '../../../shared/modal.service';
 
 type AlertType = 'success' | 'error' | 'info';
 
@@ -73,7 +74,8 @@ export class ManageproductComponent implements OnInit, OnDestroy {
   constructor(
     private productService: ProductService,
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
+    private modalService: ModalService
   ) {}
 
   ngOnInit(): void {
@@ -188,8 +190,9 @@ saveCategory() {
   });
   this.subscriptions.push(sub);
 }
-  deleteCategory(id: number) {
-    if (!confirm('Delete this category? This cannot be undone.')) return;
+  async deleteCategory(id: number) {
+    const ok = await this.modalService.showConfirm('Delete this category? This cannot be undone.');
+    if (!ok) return;
 
     this.operationInProgress = true;
 
@@ -322,8 +325,9 @@ saveCategory() {
   });
   this.subscriptions.push(sub);
 }
-  deleteProduct(id: number) {
-    if (!confirm('Delete this product? This cannot be undone.')) return;
+  async deleteProduct(id: number) {
+    const ok = await this.modalService.showConfirm('Delete this product? This cannot be undone.');
+    if (!ok) return;
 
     this.operationInProgress = true;
 

@@ -109,19 +109,13 @@
       <div class="col-lg-7 col-xl-9 wow fadeInUp" data-wow-delay="0.1s">
         <div class="row g-4 single-product">
           <div class="col-xl-6">
-              <div *ngIf="product; else noImages" #carousel class="single-carousel owl-carousel">
-                <div class="single-item" *ngFor="let img of (product.images || []); let i = index"
-                  [attr.data-dot]="'<img class=\'img-fluid\' src=\'' + getImageUrl(img) + '\' alt=\'\'>'">
-                <div class="single-inner bg-light rounded">
-                  <img [src]="getImageUrl(img)" (error)="onImageError($event)" (load)="onImageLoaded()" class="img-fluid rounded" alt="Image">
-                </div>
-              </div>
-            </div>
-            <ng-template #noImages>
-              <div class="single-inner bg-light rounded">
-                <img src="/assets/img/product-3.png" class="img-fluid rounded" alt="Image">
-              </div>
-            </ng-template>
+                            <img [src]="getProductImage(product)" (error)="onImageError($event)" class="img-fluid w-100 rounded-top" alt="{{ product.name }}"/>
+
+             <ng-template #noImages>
+    <div class="single-inner bg-light rounded">
+      <img src="/assets/img/product-3.png" class="img-fluid rounded" alt="Default Image">
+    </div>
+  </ng-template>
           </div>
           <div class="col-xl-6">
             <h4 class="fw-bold mb-3">{{ product?.name || 'Product' }}</h4>

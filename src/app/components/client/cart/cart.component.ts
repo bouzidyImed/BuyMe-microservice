@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CartService, CartItem } from '../../../services/cart.service';
+import { ModalService } from '../../../shared/modal.service';
 import { Router, RouterModule } from '@angular/router';
 
 
@@ -21,7 +22,7 @@ export class CartComponent {
   private allItems: CartItem[] = [];
   discountPercent = 0;
 
-  constructor(private readonly cartService: CartService, private readonly router: Router) {
+  constructor(private readonly cartService: CartService, private readonly router: Router, private readonly modalService: ModalService) {
     this.items$ = this.cartService.items$;
     this.items$.subscribe(items => {
       this.allItems = items;
@@ -34,7 +35,7 @@ export class CartComponent {
   increase(item: CartItem) {
     // enforce stock limit if available
     if (typeof item.stock === 'number' && item.quantity >= item.stock) {
-      alert('Cannot add more — product stock limit reached.');
+      this.modalService.showAlert('Cannot add more — product stock limit reached.', 'Warning');
       return;
     }
     this.cartService.addToCartProduct({ id: item.productId, name: item.name, price: item.price, images: item.image ? [item.image] : [], stock: item.stock }, 1);
